@@ -1,0 +1,50 @@
+{
+  "BlueBlur": {
+    "commit": "ed3487b760bb49ab25b6ca6ba1a5a17096089ea7",
+    "url": "https://github.com/blueskythlikesclouds/BlueBlur.git"
+  },
+  "DSAnimStudio": {
+    "commit": "f1bff06cd422de991b0a0fa8a2da81db43417318",
+    "url": "https://github.com/Meowmaritus/DSAnimStudio.git"
+  },
+  "HavokAnimationExporter": {
+    "commit": "22d2756f5ab5d0df10f6554c674c3494fb9acae1",
+    "url": "https://github.com/blueskythlikesclouds/HavokAnimationExporter.git"
+  },
+  "HavokLib": {
+    "commit": "ef5d5c6f5ab8d7f32cb4e8983300b8db61e4dc6b",
+    "url": "https://github.com/PredatorCZ/HavokLib.git"
+  },
+  "HedgeDocs": {
+    "commit": "d6eb7c1d3a5699761834f6c65775920c18958655",
+    "url": "https://github.com/HedgeDocs/HedgeDocs.github.io.git"
+  },
+  "HedgeLib": {
+    "commit": "6b51064d80174516cf50a4146e1f561c28c2b381",
+    "url": "https://github.com/Radfordhound/HedgeLib.git"
+  },
+  "hkxlib": {
+    "commit": "d3254dc72b2d834d5e222f3a688428aaa0cb1a3f",
+    "url": "https://github.com/aerisarn/hkxlib.git"
+  },
+  "libgens-sonicglvl": {
+    "commit": "b68600afef28b40267c25c7ac1b28f9045cfb0ad",
+    "url": "https://github.com/DarioSamo/libgens-sonicglvl.git"
+  },
+  "ModelConverter": {
+    "commit": "bce13c978613b38c27f38c3fc3d6d6b9b2294bb9",
+    "url": "https://github.com/blueskythlikesclouds/ModelConverter.git"
+  },
+  "SkythTools": {
+    "commit": "5e7538683521fed54bea9ad2eab731d83508740e",
+    "url": "https://github.com/blueskythlikesclouds/SkythTools.git"
+  },
+  "SoulsAssetPipeline": {
+    "commit": "d11caf989c917c7a43e2c7559915b1c5af218153",
+    "url": "https://github.com/Meowmaritus/SoulsAssetPipeline.git"
+  },
+  "SoulsFormats": {
+    "commit": "9c0da6b0721372b34f36b4be503ec020dca1043a",
+    "url": "https://github.com/JKAnderson/SoulsFormats.git"
+  }
+}

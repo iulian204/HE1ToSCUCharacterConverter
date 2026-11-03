@@ -1,0 +1,18 @@
+{
+  "chr_Sonic_HD.model": {
+    "bytes": 1118692,
+    "sha256": "7c6d9ebcd79388efa3748a1332730481ef5196f4adc50b171a32898678f9b936"
+  },
+  "chr_Sonic_HD.skl.hkx": {
+    "bytes": 10752,
+    "sha256": "e7c89d3af5b792856b15ddd049a1b4e1bac78ee1d9b6ef1a90ff48d6432e7914"
+  },
+  "sn_idle_loop.anm.hkx": {
+    "bytes": 21264,
+    "sha256": "5d76dcd6f6a7d8cb22b652772b616400199f62dc5aebdb7e5a80cf4a7044c86f"
+  },
+  "sn_idle03.anm.hkx": {
+    "bytes": 260640,
+    "sha256": "cd8efd1ab365fa76a258f0b29a56e067169ade275b6a65f57e81a8dc93004790"
+  }
+}
