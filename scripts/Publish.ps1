@@ -6,6 +6,8 @@ if ($LASTEXITCODE -ne 0) {throw 'Publish failed.'}
 Copy-Item -LiteralPath (Join-Path $workspace 'LICENSE') -Destination $OutputDirectory
 Copy-Item -LiteralPath (Join-Path $workspace 'THIRD-PARTY-NOTICES.md') -Destination $OutputDirectory
 Copy-Item -LiteralPath (Join-Path $workspace 'README.md') -Destination $OutputDirectory
+Copy-Item -LiteralPath (Join-Path $workspace 'CHANGELOG.md') -Destination $OutputDirectory
+Copy-Item -LiteralPath (Join-Path $workspace 'docs') -Destination $OutputDirectory -Recurse -Force
 Copy-Item -LiteralPath (Join-Path $workspace 'src\HE1ToSCU.Core\ThirdParty\HedgeLib-LICENSE.txt') -Destination $OutputDirectory
 $dotnetRoot = Split-Path -Parent (Get-Command dotnet).Source
 Copy-Item -LiteralPath (Join-Path $dotnetRoot 'LICENSE.txt') -Destination (Join-Path $OutputDirectory 'RUNTIME-LICENSE.txt')

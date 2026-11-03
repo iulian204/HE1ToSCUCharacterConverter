@@ -6,7 +6,8 @@ public sealed record Bone(string Name, int Parent, Matrix4x4 Rest);
 public sealed record Vertex(Vector3 Position, Vector3 Normal, Vector4 Tangent, Vector2 UV, Vector2 UV2,
     Vector4 Color, int[] Bones, Vector4 Weights);
 public sealed record Surface(string Material, string Slot, List<Vertex> Vertices, List<int> Indices);
-public sealed record ModelAsset(string Name, List<Bone> Bones, List<Surface> Surfaces, IReadOnlyDictionary<string, He1Material>? Materials = null);
+public sealed record ModelAsset(string Name, List<Bone> Bones, List<Surface> Surfaces, IReadOnlyDictionary<string, He1Material>? Materials = null,
+    IReadOnlyDictionary<int,int>? RigControls = null);
 public sealed record Pose(Vector3 Translation, Quaternion Rotation, Vector3 Scale)
 {
     public Matrix4x4 Matrix => Matrix4x4.CreateScale(Scale) * Matrix4x4.CreateFromQuaternion(Rotation) * Matrix4x4.CreateTranslation(Translation);
@@ -19,8 +20,19 @@ public sealed record Pose(Vector3 Translation, Quaternion Rotation, Vector3 Scal
             throw new InvalidDataException("Transform contains shear; it cannot be represented by a Godot bone track.");
         return result;
     }
+    public static Pose Relative(Pose local, Matrix4x4 rest)
+    {
+        // Extract rotation before applying authored scales. Matrix decomposition
+        // loses rotation at zero scale and can swap negative axes between keys.
+        var rigid=local with {Scale=Vector3.One};
+        var basis=FromMatrix(rigid.Matrix*Spatial.Inverse(rest));
+        return basis with {Scale=basis.Scale*local.Scale};
+    }
 }
-public sealed record AnimationClip(string Name, float Duration, int[] TrackToBone, Pose[][] Frames, RootMotion? RootMotion = null);
+public enum AnimationBlend { Normal, AdditiveDeprecated, Additive }
+public sealed record AnimationClip(string Name, float Duration, int[] TrackToBone, Pose[][] Frames, RootMotion? RootMotion = null,
+    float[]? Times = null, Func<float, Pose[]>? SourceSampler = null, float[]? Discontinuities = null,
+    AnimationBlend Blend = AnimationBlend.Normal, string? BakedReference = null);
 public sealed record HavokAsset(List<Bone> Bones, List<AnimationClip> Animations);
 
 public static class Spatial
@@ -42,13 +54,13 @@ public static class Spatial
         float[] y = [b.M11,b.M12,b.M13,b.M14,b.M21,b.M22,b.M23,b.M24,b.M31,b.M32,b.M33,b.M34,b.M41,b.M42,b.M43,b.M44];
         return x.Zip(y).All(p => float.IsFinite(p.First) && float.IsFinite(p.Second) && MathF.Abs(p.First-p.Second) <= epsilon);
     }
-    public static void ValidateSkeleton(IReadOnlyList<Bone> bones)
+    public static void ValidateSkeleton(IReadOnlyList<Bone> bones,bool exportNames=true)
     {
         if (bones.Select(b => b.Name).Distinct(StringComparer.Ordinal).Count() != bones.Count)
             throw new InvalidDataException("Duplicate bone names are ambiguous.");
         for (int i = 0; i < bones.Count; i++)
         {
-            if (string.IsNullOrWhiteSpace(bones[i].Name) || bones[i].Name.IndexOfAny([':', '/', '@', '"']) >= 0)
+            if (string.IsNullOrWhiteSpace(bones[i].Name) || (exportNames && bones[i].Name.IndexOfAny([':', '/', '@', '"']) >= 0))
                 throw new InvalidDataException($"Bone name '{bones[i].Name}' is not a valid Godot 3 bone name.");
             var seen = new HashSet<int> { i };
             for (int p = bones[i].Parent; p != -1; p = bones[p].Parent)

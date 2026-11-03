@@ -13,12 +13,12 @@ public static class GodotWriter
     // VariantParser's text Transform constructor accepts basis ROWS (unlike GDScript's three axis vectors).
     private static string Transform(Matrix4x4 m)=>$"Transform( {F(m.M11)}, {F(m.M21)}, {F(m.M31)}, {F(m.M12)}, {F(m.M22)}, {F(m.M32)}, {F(m.M13)}, {F(m.M23)}, {F(m.M33)}, {F(m.M41)}, {F(m.M42)}, {F(m.M43)} )";
     private static void Save(string path,StringBuilder text)=>File.WriteAllText(path,text.ToString(),new UTF8Encoding(false));
-    public static void Write(ModelAsset model,IReadOnlyList<AnimationClip> clips,string directory,CancellationToken token,Action<string>? log = null)
+    public static void Write(ModelAsset model,IReadOnlyList<AnimationClip> clips,string directory,CancellationToken token,Action<string>? log = null,SourceGame game=SourceGame.SonicGenerations)
     {
         ExportNames.Validate(model, clips);
         Directory.CreateDirectory(directory);
         var materials=model.Surfaces.Select(s=>(s.Material,s.Slot)).Distinct().ToArray();
-        var materialFiles = new SpatialMaterialWriter().Write(model, directory, log, token);
+        var materialFiles = new SpatialMaterialWriter().Write(model, directory, log, token,game);
         var mesh=new StringBuilder($"[gd_resource type=\"ArrayMesh\" load_steps={materials.Length+1} format=2]\n\n");
         for(int i=0;i<materials.Length;i++)
         {
@@ -77,13 +77,14 @@ public static class GodotWriter
             if(bone<0||bone>=bones.Count)throw new InvalidDataException("Animation refers to a missing export bone.");
             text.AppendLine($"tracks/{t}/type = \"transform\"\ntracks/{t}/path = NodePath({Quote("Skeleton:"+bones[bone].Name)})\ntracks/{t}/interp = 1\ntracks/{t}/loop_wrap = true\ntracks/{t}/imported = true\ntracks/{t}/enabled = true");
             text.Append($"tracks/{t}/keys = PoolRealArray( ");
-            var inverseRest=Spatial.Inverse(Spatial.Convert(bones[bone].Rest));Quaternion previous=Quaternion.Identity;
+            Quaternion previous=Quaternion.Identity;
             for(int f=0;f<clip.Frames.Length;f++)
             {
                 // Godot 3 Skeleton applies rest * pose (column vectors). System.Numerics uses row vectors.
-                var pose=Pose.FromMatrix(Spatial.Convert(clip.Frames[f][t].Matrix)*inverseRest);
+                var sourcePose=clip.Frames[f][t] with {Translation=clip.Frames[f][t].Translation*Spatial.Scale};
+                var pose=Pose.Relative(sourcePose,Spatial.Convert(bones[bone].Rest));
                 var q=pose.Rotation;if(f>0&&Quaternion.Dot(q,previous)<0)q=-q;previous=q;
-                float time=clip.Frames.Length==1?0:clip.Duration*f/(clip.Frames.Length-1);
+                float time=AnimationSampling.Time(clip,f);
                 if(f>0)text.Append(", ");
                 text.Append($"{F(time)}, 1, {V(pose.Translation)}, {Q(q)}, {V(pose.Scale)}");
             }

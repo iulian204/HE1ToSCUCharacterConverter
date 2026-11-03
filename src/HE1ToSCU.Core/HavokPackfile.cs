@@ -7,18 +7,20 @@ internal sealed class HavokPackfile
     internal sealed record Section(int Start,int Local,int Global,int Virtual,int Exports,int End);
     public BinaryData Data { get; }
     public string Version { get; }
+    public bool Legacy { get; }
     public Dictionary<int,string> Objects { get; } = [];
     private readonly Dictionary<int,int> pointers = [];
-    public HavokPackfile(byte[] bytes)
+    public HavokPackfile(byte[] bytes,SourceGame game=SourceGame.SonicGenerations)
     {
         if(bytes.Length<64 || !bytes.AsSpan(0,8).SequenceEqual(new byte[]{0x57,0xE0,0xE0,0x57,0x10,0xC0,0xC0,0x10}))
             throw new NotSupportedException("Expected a Havok binary packfile or XML hkpackfile. Tagfiles are not supported.");
         Data=new BinaryData(bytes,bytes[17]==0);
         if(bytes[16]!=4)throw new NotSupportedException("Only 32-bit Havok packfile layouts are supported in this increment.");
-        if(Data.I32(12)!=8) throw new NotSupportedException($"Packfile header version {Data.I32(12)} is not supported.");
+        if(Data.I32(12) is not (5 or 8)) throw new NotSupportedException($"Packfile header version {Data.I32(12)} is not supported.");
         Version=Data.String(40);
-        if(!Version.StartsWith("hk_2010.2.0",StringComparison.Ordinal))
-            throw new NotSupportedException($"Binary layout {Version} is not supported. Current binary profile: Havok 2010.2.0 (Generations). XML skeletons/interleaved animations are also accepted.");
+        Legacy=Version.StartsWith("Havok-5.5.0",StringComparison.Ordinal);
+        if(game==SourceGame.SonicUnleashed ? !Legacy : !Version.StartsWith("hk_2010.2.0",StringComparison.Ordinal))
+            throw new NotSupportedException($"Binary layout {Version} does not match the selected game {game}.");
         int n=Data.Count(20,16);var sections=new List<Section>();
         for(int i=0;i<n;i++)
         {

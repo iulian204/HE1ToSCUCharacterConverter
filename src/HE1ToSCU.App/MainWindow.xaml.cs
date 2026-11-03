@@ -10,6 +10,7 @@ namespace HE1ToSCU.App;
 
 public partial class MainWindow : Window
 {
+    public SourceGame SelectedGame=>GameSelector.SelectedIndex==1?SourceGame.SonicUnleashed:SourceGame.SonicGenerations;
     private readonly ObservableCollection<FileInfo> animationFiles=[];
     private CancellationTokenSource? cancellation;
     private string? modelPath;
@@ -25,12 +26,13 @@ public partial class MainWindow : Window
             {
                 var settings=JsonSerializer.Deserialize<Dictionary<string,string>>(File.ReadAllText(SettingsPath));
                 SourceFolder.Text=settings?.GetValueOrDefault("source")??"";OutputPath.Text=settings?.GetValueOrDefault("output")??"";EditorPath.Text=settings?.GetValueOrDefault("editor")??EditorPath.Text;
+                GameSelector.SelectedIndex=settings?.GetValueOrDefault("game")=="SonicUnleashed"?1:0;
                 if(Directory.Exists(SourceFolder.Text))LoadFolder(SourceFolder.Text);
             }
         }
         catch(Exception e) when(e is IOException or JsonException or UnauthorizedAccessException){Append("Settings could not be restored: "+e.Message);}
         Append("Ready. Select a model, its matching skeleton, and the animations to export.");
-        Append("Binary HKX: 32-bit Havok 2010.2.0 skeletons, spline/interleaved animations. XML: skeletons/interleaved. Unsupported variants stop with a specific error.");
+        Append("Binary HKX: Generations Havok 2010.2.0; Unleashed Havok 5.5.0. 32-bit skeletons and spline/interleaved animations. XML: skeletons/interleaved. Unsupported variants stop with a specific error.");
         Closing+=(_,e)=>{if(cancellation!=null){cancellation.Cancel();e.Cancel=true;Append("Cancelling conversion; close again after it stops.");}};
     }
     private void Append(string message)
@@ -93,12 +95,12 @@ public partial class MainWindow : Window
     private async void Convert(object sender,RoutedEventArgs e)
     {
         if(modelPath==null||string.IsNullOrWhiteSpace(OutputPath.Text)){Append("Choose a source model and a new export folder first.");return;}
-        var request=new ConversionRequest(modelPath,SkeletonPath.Text.Trim(),animationFiles.Select(f=>f.FullName).ToArray(),OutputPath.Text.Trim(),EditorPath.Text.Trim());
+        var request=new ConversionRequest(modelPath,SkeletonPath.Text.Trim(),animationFiles.Select(f=>f.FullName).ToArray(),OutputPath.Text.Trim(),EditorPath.Text.Trim(),SelectedGame);
         cancellation=new CancellationTokenSource();Inputs.IsEnabled=false;ConvertButton.IsEnabled=false;CancelButton.IsEnabled=true;Progress.Value=0;
         try
         {
             Directory.CreateDirectory(Path.GetDirectoryName(SettingsPath)!);
-            File.WriteAllText(SettingsPath,JsonSerializer.Serialize(new Dictionary<string,string>{{"source",SourceFolder.Text},{"output",OutputPath.Text},{"editor",EditorPath.Text}}));
+            File.WriteAllText(SettingsPath,JsonSerializer.Serialize(new Dictionary<string,string>{{"source",SourceFolder.Text},{"output",OutputPath.Text},{"editor",EditorPath.Text},{"game",request.Game.ToString()}}));
             var progress=new Progress<ConversionProgress>(p=>{Progress.Value=p.Percent;Status.Text=p.Message;Append(p.Message);});
             var result=await Task.Run(()=>new ConversionService().ConvertAsync(request,progress,cancellation.Token));
             Status.Text=$"Complete · {result.Vertices:N0} vertices · {result.Bones} bones · {result.Animations} animations";

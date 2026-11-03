@@ -1,5 +1,7 @@
 # Validation results — 2026-11-03
 
+The sections below retain historical checks. Current release evidence is recorded in the version 0.4 section at the end.
+
 ## Initial 0.1 build and automated checks
 
 - .NET SDK: 8.0.418; target runtime: .NET 8; UI: WPF; Windows x64.
@@ -60,7 +62,7 @@ The file picker opened successfully. The animation conversion scenarios above we
 
 ## Not established
 
-No claim of bit-for-bit equality with the proprietary Havok sampler, complete coverage of all Havok compression modes, exhaustive animation visual correctness, Unleashed binary-HKX support, SCU gameplay retargeting, exact original shader reproduction, in-game replacement acceptance, or renderer parity is made. See the supported-format and remaining-work lists in README.md.
+The initial checks did not establish proprietary Havok sampler parity, exhaustive codec/visual coverage, Unleashed binary-HKX support, gameplay retargeting, exact shader reproduction, in-game acceptance or renderer parity. Unleashed support and broader animation regression coverage were subsequently added in version 0.4; the other boundaries still apply.
 
 ## Version 0.2 regression: user-reported batch
 
@@ -91,3 +93,39 @@ HE1SCU_VALIDATED bones=227 surfaces=13 animations=47
 HE1SCU_BINARY_VALIDATED bones=227 surfaces=13 animations=47
 RELOCATION_OK bones=227 surfaces=13 animations=47
 ```
+
+## Version 0.4 final regression — 2026-11-04
+
+The final source build completed with **0 warnings and 0 errors**. All **63 automated tests** passed (62 core and 1 WPF/STA GUI test), including both game profiles, game selection feeding the conversion request, the source-folder button layout, signed/zero scales, sparse/reference/additive handling, continuous interpolation, material parsing, power clamps and gloss/roughness behavior. The GUI test instantiates the actual window and verifies both options and retained workflow controls; native file dialogs were not exhaustively automated.
+
+| Final character export | Generations | Unleashed |
+|---|---:|---:|
+| Supplied source model | `chr_Sonic_HD.model` (v5) | `SonicRoot.model` (v5) |
+| Vertices / surfaces | 10,156 / 13 | 13,021 / 13 |
+| Original / exported bones | 114 / 170 | 111 / 161 |
+| Matching skeleton | Havok 2010.2, 32-bit LE | Havok 5.5, 32-bit BE container |
+| Animations | 325 | 219 |
+| Source-derived pose checks per engine process | 58,193 | 46,991 |
+| Maximum position error (SCU units) | 0.012900 | 0.011079 |
+| Maximum basis-axis error | 0.000823 | 0.002078 |
+| Text and fresh-process binary checks | Passed | Passed |
+| Binary-only relocation/playback checks | Passed | Passed |
+
+Both banks were regenerated from the final converter and source folders, including `C:\Users\jigai\Desktop\CorrectSUSonic\Sonic` for Unleashed. The errors remain below the 0.02 SCU position / 0.003 basis-axis thresholds. Checks cover every bone at source and adaptive keys, intermediate times and inferred loop boundaries; they compare against the managed decoder's continuously sampled source transforms through an independently composed matrix oracle. They are not an independent proprietary Havok sampler comparison. The previously reported idle/jet/boost cases use the same general logic as the rest of the bank.
+
+Final evidence is retained locally under `artifacts/v0.4-release-validation-generations` and `artifacts/v0.4-release-validation-unleashed`, with sibling `.log` files. A parser audit also read all **19 Generations models / 32 materials** and **16 Unleashed models / 19 materials** in the supplied folders with zero failures, including real v2/v4/v5 layouts. This broader parser audit does not imply full animated or visual validation of every effect model.
+
+Final text materials/textures are byte-identical to the reviewed Generations feedback-8 and Unleashed feedback-6 exports. Selected character/material renders and earlier per-clip midframe renders were inspected during the session. This is not exhaustive visual inspection of every frame.
+
+Additional material checks:
+
+- Real Generations board `_pow` textures: native compile and fresh-process binary load passed for two surfaces/materials, alongside both character material sets.
+- Stock **Godot 3.1.2 official**, GLES2: all **20** character/board materials loaded as SpatialMaterial; base specular remained bounded; HDR clearcoat strength/gloss survived a bundled binary save/load unchanged.
+- All **655,360 top-mip texels across seven baked roughness textures** matched the game-specific power/clamp/roughness calculation exactly after RGBA8 quantization. All had opaque alpha and linear texture flags.
+- Automated tests exercise both games' full 0..255 gloss range, specular-mask independence, power limits, zero/positive brightness, fitted response bounds and unchanged roughness when direct highlight strength changes.
+
+Large banks retain companion `.anim` files. Binary-only relocation copied those alongside the scene and mesh and played all 544 clips successfully. No temporary compiler scripts or source-pose binaries remained in successful exports.
+
+Still unverified: SCU gameplay acceptance/retargeting, DX11/custom renderer parity, every Havok platform/codec variant and pixel-identical original lighting. Additive clips are standalone reference-pose bakes; original runtime overlays and camera-light lobes are outside the material/animation approximation. Supported output and required companion files are documented in README.md.
+
+The self-contained Windows x64 portable executable was also launched successfully with product version 0.4.0. This checks packaged startup separately from the WPF/STA test; full end-user interaction through every native dialog remains outside the automated checks.

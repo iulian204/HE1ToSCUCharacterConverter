@@ -67,7 +67,7 @@ public sealed class MaterialAndRigTests : IDisposable
         void Ptr(int p, int target) => U(p, (uint)(target - 24));
         Ptr(24, Str("ChrSkin_dsn")); bytes[40] = 128; bytes[41] = 1; bytes[42] = 1; bytes[44] = 2; bytes[47] = 1;
         int table = Reserve(8); Ptr(48, table); int parameter = Reserve(12); Ptr(table, parameter); bytes[parameter + 2] = 1;
-        Ptr(parameter + 4, Str("power_gloss_level")); int values = Reserve(16); Ptr(parameter + 8, values);
+        Ptr(parameter + 4, Str("power_gloss_level\r")); int values = Reserve(16); Ptr(parameter + 8, values);
         float[] pgl = [50, .3f, .19f, 0]; for (int i = 0; i < 4; i++) U(values + i * 4, BitConverter.SingleToUInt32Bits(pgl[i]));
         int textures = Reserve(4); Ptr(36, textures); int entry = Reserve(12); Ptr(textures, entry);
         Ptr(entry, Str("body_dif")); Ptr(entry + 8, Str("diffuse")); bytes[entry + 5] = bytes[entry + 6] = 2;
@@ -103,6 +103,20 @@ public sealed class MaterialAndRigTests : IDisposable
         Assert.Equal(128, first[0]); Assert.Equal(191, first[1]); Assert.Equal(255, first[3]);
         Assert.Contains("flags = 7", normalText);
         Assert.Contains("flags = 23", File.ReadAllText(Path.Combine(directory, "textures/body_dif.texture.tres")));
+    }
+
+    [Theory]
+    [InlineData("ChrEye_dpn",SourceGame.SonicGenerations)]
+    [InlineData("SonicEye_dpne[bcu]",SourceGame.SonicUnleashed)]
+    public void BothEyeShaderFamiliesDecodeSurfaceNormalsFromBlueAndAlpha(string shader,SourceGame game)
+    {
+        string normal=Path.Combine(directory,"eye_nrm.dds");File.WriteAllBytes(normal,Rgba(255,64,192,160));
+        var material=new He1Material("eye",shader,.5f,false,false,new Dictionary<string,Vector4[]>(),[new("eye_nrm","normal",0,0,0,normal)]);
+        var model=new ModelAsset("rig",[],[new("eye","opaque",[],[])],new Dictionary<string,He1Material>{["eye"]=material});
+        new SpatialMaterialWriter().Write(model,directory,null,CancellationToken.None,game);
+        var match=Regex.Match(File.ReadAllText(Path.Combine(directory,"textures/eye_nrm.texture.tres")),@"PoolByteArray\( ([^)]*)");
+        var rgba=match.Groups[1].Value.Split(',').Take(4).Select(v=>byte.Parse(v.Trim())).ToArray();
+        Assert.Equal(192,rgba[0]);Assert.Equal(95,rgba[1]);Assert.Equal(255,rgba[3]);
     }
 
     private static byte[] Dds(int width, int height, string format, int count)

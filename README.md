@@ -2,7 +2,7 @@
 
 A standalone **C# / .NET 8 WPF desktop application**, with a reusable managed conversion library and a CLI. It does not install an engine plugin.
 
-This version converts extracted HE1 skeletal models and matching Generations Havok skeletons/animations into Godot 3.1.2 text resources. When an Acorn editor is selected, it also compiles and validates native Acorn binary resources.
+Converts extracted Sonic Generations and Sonic Unleashed HE1 skeletal models, materials and matching Havok skeletons/animations into Godot 3.1.2 text resources. When an Acorn editor is selected, it also compiles and validates native Acorn binary resources.
 
 ## Run
 
@@ -14,7 +14,7 @@ Open `artifacts/HE1ToSCU-win-x64/HE1ToSCU.App.exe` after publishing, or run:
 dotnet run --project src/HE1ToSCU.App
 ```
 
-1. Pick an extracted source folder or a `.model` file. You can also paste a source folder and press Enter.
+1. Select **Sonic Generations** (default) or **Sonic Unleashed**, then pick an extracted source folder or a `.model` file. You can also paste a source folder and press Enter.
 2. Choose the model. Its same-name `.skl.hkx` is selected automatically when present.
 3. Add the matching `.anm.hkx` animations. An animation export requires the matching skeleton.
 4. Choose a **new** export folder. Existing folders are never overwritten.
@@ -34,7 +34,7 @@ The published Windows x64 executable includes the .NET runtime. Acorn itself is 
 | `materials/<source-name>.tres` | Built-in SpatialMaterial approximations of the HE1 materials |
 | `textures/<source-name>.texture.tres` | Decoded source DDS textures embedded in editable ImageTexture resources |
 | `sn_dead.tres`, etc. | Native Godot Animation resources with quaternion transform tracks |
-| `chr_Sonic_HD.scn` | Acorn binary PackedScene with mesh/material/animation resources embedded for relocation |
+| `chr_Sonic_HD.scn` | Acorn binary PackedScene with embedded mesh/materials and embedded or companion animations |
 | `chr_Sonic_HD.mesh` | Standalone binary ArrayMesh |
 | `sn_dead.anim`, etc. | Standalone binary Animation resources |
 | `conversion.json` | Source paths, conversion counts, spatial profile and limitations |
@@ -43,21 +43,22 @@ The published Windows x64 executable includes the .NET runtime. Acorn itself is 
 
 Original source stems are preserved: `chr_Sonic_HD.model` produces `chr_Sonic_HD.tscn`/`.scn` and `chr_Sonic_HD.mesh`; `sn_dead.anm.hkx` produces `sn_dead.tres`/`.anim`. Filename collisions are reported instead of replacing names with numeric identifiers.
 
-Binary files and engine logs are generated only when an editor is selected. The binary scene embeds its resources so it can be moved to a different folder in an SCU project without hardcoded source or staging paths. Other files remain useful as independent resources and editable source.
+Binary files and engine logs are generated only when an editor is selected. Meshes, materials and textures are embedded. Large animation banks use relative companion `.anim` files to stay within Godot 3.1's resource limits: move these files together with the `.scn`. Smaller banks embed animations as well. Source and staging paths are not required by the relocated binary resources.
 
 ## Supported in this increment
 
-- Standard big-endian HE1 Mirage skeletal `.model` containers, versions 2/4/5/6. Version 5 is validated against the supplied Generations Sonic model; the other layouts have synthetic fixtures.
+- Standard big-endian HE1 Mirage skeletal `.model` containers, versions 2/4/5/6. Version 5 is validated against both supplied Sonic character models; real Unleashed v4 effect models and synthetic version fixtures also exercise the shared parser. Layout selection follows the file version, rather than assuming every Unleashed asset is v4.
 - Opaque, transparent, punch-through and named special mesh slots; strip restarts and degenerate triangle handling; mesh-local bone palettes remapped to skeleton indexes.
 - Float, half, byte/short normalized and selected packed normal vertex encodings. Unsupported encodings produce a specific error.
 - Positions, normals, tangents/handedness, vertex colors, UV0/UV1, four bone indexes and normalized weights. Additional UV/color sets have no direct Godot 3 ArrayMesh equivalent and are not exported.
-- **32-bit Havok 2010.2.0 binary packfiles:** skeletons, reference transforms, interleaved uncompressed and spline-compressed animation, and transform-track-to-bone binding maps.
+- **32-bit Havok 2010.2.0 (Generations) and 5.5.0 (Unleashed) binary packfiles:** skeletons, reference transforms, interleaved and spline-compressed animation, and transform-track-to-bone binding maps. The supplied Unleashed containers are big-endian with little-endian compressed spline payloads.
 - Spline scalar 8/16-bit quantization; quaternion Polar32, ThreeComp40, ThreeComp48 and uncompressed encodings. Blocks use the actual block-offset table, including overlapping boundary frames.
 - XML `hkpackfile` skeletons and interleaved animations.
 - Binary/XML `hkaDefaultAnimatedReferenceFrame` extracted root motion: XYZ translation and heading about the authored up axis are preserved on the model root. Motion is independent of skeletal bone tracks. In-place clips explicitly reset root motion; sparse complete turns retain their intermediate rotation keys. Clips retain authored motion over one cycle; gameplay accumulation across repeated cycles remains the responsibility of the character controller.
 - Automatic 10× positional scale for SCU character space, while preserving the shared Y-up basis. Translation is scaled consistently in geometry, bind/rest matrices and animation.
-- Exact-name Havok → model bone mapping, parent hierarchy checks, rest-relative Godot bone poses, quaternion normalization and sign continuity. No Euler angle conversion.
-- Automatic scale-compensation bones when clips contain nonuniform bone scaling. These reproduce Havok's quaternion/scale composition at sampled frames without stretching rotated children. Original bone names, indexes and skin palettes remain intact.
+- Exact-name Havok → model bone mapping, an unambiguous legacy `@LT` alias fallback, parent hierarchy checks, rest-relative Godot bone poses, quaternion normalization and sign continuity. No Euler angle conversion.
+- Rigid control bones preserve HE1 scale inheritance without scaling child translations or introducing shear. Signed and zero scales retain their rotations. Original skin bone names, indexes and global bind transforms remain intact.
+- Continuous spline sampling, explicit block timing and adaptive subframe baking. Sparse tracks restore the matching reference pose; additive clips are baked against that pose for standalone playback.
 - Standard Mirage `.material` v1/v3 float parameters and texture entries. Diffuse, packed normals, specular/gloss, emissive, opacity and ChrSkin falloff inputs are adapted to built-in SpatialMaterial. Materials and textures are found beside the model or in adjacent `textures`/`images` folders.
 - Managed DDS decoding for BC1/2/3/4/5 and common uncompressed RGB/RGBA formats; generated mipmaps and embedded textures require no external texture converter or Godot import step. See [material mapping](docs/SPATIAL-MATERIAL-MAPPING.md).
 
@@ -65,8 +66,8 @@ Binary files and engine logs are generated only when an editor is selected. The 
 
 This is a usable first conversion slice, **not a complete game-ready character replacement pipeline**.
 
-- Binary Havok 5.5.0 (Unleashed), 64-bit packfiles, tagfiles, delta/wavelet codecs and big-endian spline data need additional profiles/decoders. XML skeleton/interleaved input is supported, but this app does not decompress unsupported variants for you.
-- Float/morph animation tracks, additive clips and model morph targets are rejected rather than silently lost.
+- 64-bit packfiles, tagfiles, delta/wavelet codecs and big-endian compressed spline payloads are unsupported. The Unleashed container profile does not imply support for every platform or codec variant.
+- Float/morph animation tracks and model morph targets are rejected. Additive clips become standalone reference-pose animations, not runtime additive overlays. Looping is inferred from `loop` in the source name; other clips can be set to loop in the target editor.
 - Archives must already be extracted. `.ar`, `.ar.00`, `.pac` and PCK import/repacking are not implemented.
 - Material conversion approximates the original shaders; it does not reproduce HE1 light probes, colored per-pixel specular, reflection/matcap sampling or custom eye highlights. Unsupported DDS codecs (including BC7), texture arrays and volume/cube textures produce specific errors. Missing material files use neutral fallbacks; missing textures are logged.
 - Original HE1 bones and bind transforms are retained, with scale-compensation helpers added when needed. SCU player bone retargeting, attachment mapping, game scripts, animation trees, collision and gameplay wiring remain separate work.
@@ -81,14 +82,15 @@ dotnet test HE1ToSCU.sln -c Release
 ./scripts/Publish.ps1
 ```
 
-The 23 automated tests cover binary model layouts, palette mapping, inverse binds, clockwise strip parity/restarts, quaternion continuity, Godot text matrix order and locale, XML HKX input, explicit spline block offsets, malformed input, cyclic skeletons and output preservation, root-motion sampling/turns, original-name references, Havok scale compensation, material parsing, DDS decoding and shader input adaptation. No copyrighted game fixtures are bundled.
+The 63 automated tests cover formats and transforms, continuous animation sampling, sparse/additive tracks, signed scales, both Havok profiles, root motion, names, DDS/material conversion, game-specific specular/roughness behavior and the WPF game selector. Final real-asset regression validation covers all 325 supplied Generations animations and 219 supplied Unleashed animations. See [validation results](docs/VALIDATION.md) for the evidence and boundaries. No copyrighted game fixtures are bundled.
 
-CLI example (repeat `--animation` for more clips):
+CLI example (repeat `--animation` for more clips, or use `--animation-folder` to load every `.anm.hkx` in a folder):
 
 ```powershell
 dotnet run --project src/HE1ToSCU.Cli -c Release -- `
   'D:\SteamLibrary\steamapps\common\Sonic Generations\disk\bb3\Sonic\chr_Sonic_HD.model' `
   'D:\Exports\Sonic-new' `
+  --game generations `
   --skeleton 'D:\SteamLibrary\steamapps\common\Sonic Generations\disk\bb3\Sonic\chr_Sonic_HD.skl.hkx' `
   --animation 'D:\SteamLibrary\steamapps\common\Sonic Generations\disk\bb3\Sonic\sn_idle_loop.anm.hkx' `
   --acorn 'D:\AcornDirFix\BSE_Editor_Acorn1.1.1.exe'
@@ -99,6 +101,8 @@ For an additional binary-only relocation check in a fresh temporary project:
 ```powershell
 ./scripts/Verify-Export.ps1 -ExportDirectory 'D:\Exports\Sonic-new'
 ```
+
+Use `--game unleashed` for the older Havok profile and Unleashed material calculations. Model and material layouts remain version-aware within the shared conversion pipeline.
 
 Failed/cancelled writes keep an isolated `.he1scu-*` staging folder for diagnosis. Source assets and existing exports are preserved. The application stores last-used folder/editor paths in `%LOCALAPPDATA%\HE1ToSCU\settings.json`.
 

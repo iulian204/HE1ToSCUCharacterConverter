@@ -27,7 +27,7 @@ public sealed class He1MaterialReader
         public int Pointer(int field) { int p = checked(Origin + Data.Count(field, int.MaxValue)); Data.Check(p, 1); return p; }
     }
 
-    public He1Material Read(string path)
+    public He1Material Read(string path,SourceGame game=SourceGame.SonicGenerations)
     {
         var file = new Mirage(path); var b = file.Data; int root = file.Origin;
         if (file.Version is not (1 or 3)) throw new NotSupportedException($"HE1 material version {file.Version} is not supported: {Path.GetFileName(path)}.");
@@ -41,7 +41,7 @@ public sealed class He1MaterialReader
             int p = file.Pointer(table + i * 4); b.Check(p, 12);
             int n = b.U8(p + 2);
             if (n == 0 || b.U32(p + 4) == 0) continue;
-            string name = b.String(file.Pointer(p + 4));
+            string name = b.String(file.Pointer(p + 4)).Trim();
             if (name.Length == 0) continue;
             int values = file.Pointer(p + 8); b.Check(values, n * 16);
             parameters[name] = Enumerable.Range(0, n).Select(j => { int v = values + j * 16; return new Vector4(b.F32(v), b.F32(v + 4), b.F32(v + 8), b.F32(v + 12)); }).ToArray();

@@ -14,5 +14,33 @@
   "sn_idle03.anm.hkx": {
     "bytes": 260640,
     "sha256": "cd8efd1ab365fa76a258f0b29a56e067169ade275b6a65f57e81a8dc93004790"
+  },
+  "Generations/sn_idle00.anm.hkx": {
+    "bytes": 159264,
+    "sha256": "b6e87217d905da5c0452e0b60101dca3567da2a27aae914a50a37654ba44fbff"
+  },
+  "Generations/sn_jet_l_loop.anm.hkx": {
+    "bytes": 23728,
+    "sha256": "1fbd4d2eae80a6dcf5cd4ddf73b8cd29754b37e4bfc5f470fd9e4a20de111692"
+  },
+  "Generations/sn_jet_r_loop.anm.hkx": {
+    "bytes": 23728,
+    "sha256": "37c84d705aed74111bdccd1d7b775908c043a2da1d1192830e96587076523d69"
+  },
+  "Unleashed/SonicRoot.model": {
+    "bytes": 1426944,
+    "sha256": "d0c67527302039cba99864db61949db00199ede45c79b26e23a4333486b53bbb"
+  },
+  "Unleashed/SonicRoot.skl.hkx": {
+    "bytes": 27808,
+    "sha256": "999074e70a4773c44273cc2fb0846096b6ecee8c86c4cfa01c9e24c11c09e1c2"
+  },
+  "Unleashed/sonic_idle.anm.hkx": {
+    "bytes": 25600,
+    "sha256": "8fdbc89d930da643cacf46b1a9f538bd4b5202f51270aeb1e2d3d1d18772431b"
+  },
+  "Unleashed/sonic_mouth_reverse.anm.hkx": {
+    "bytes": 24272,
+    "sha256": "c694dd75072e1475173203f8f96e723c39b05dd7e3b54199f1f74043158500c2"
   }
 }

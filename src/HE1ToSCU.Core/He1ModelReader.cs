@@ -11,7 +11,7 @@ public sealed class He1ModelReader
     private int version;
     private CancellationToken token;
     private int Offset(int p) { int a = checked(origin + b.Count(p, int.MaxValue)); b.Check(a, 1); return a; }
-    public ModelAsset Read(string path, CancellationToken cancellationToken = default)
+    public ModelAsset Read(string path, CancellationToken cancellationToken = default,SourceGame game=SourceGame.SonicGenerations)
     {
         token = cancellationToken;
         b = new BinaryData(File.ReadAllBytes(path), true);
@@ -19,6 +19,8 @@ public sealed class He1ModelReader
         if (b.U32(0) != b.Bytes.Length) throw new InvalidDataException("Not a standard HE1 Mirage file (sample-chunk/HE2 containers are not supported).");
         version = b.I32(4);
         if (version is not (2 or 4 or 5 or 6)) throw new NotSupportedException($"HE1 skeletal model version {version} is not supported.");
+        // Select the actual serialized model version, including re-exported Unleashed
+        // assets using a newer shared Mirage layout; the game selects shader/HKX semantics.
         origin = b.Count(12, b.Bytes.Length);
         int root = origin;
         b.Check(root, version == 4 ? 48 : version == 2 ? 44 : 32);

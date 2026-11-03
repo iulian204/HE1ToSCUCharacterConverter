@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace HE1ToSCU.Core;
 
-public sealed record ConversionRequest(string ModelPath,string? SkeletonPath,IReadOnlyList<string> AnimationPaths,string OutputDirectory,string? AcornEditorPath=null);
+public sealed record ConversionRequest(string ModelPath,string? SkeletonPath,IReadOnlyList<string> AnimationPaths,string OutputDirectory,string? AcornEditorPath=null,SourceGame Game=SourceGame.SonicGenerations);
 public sealed record ConversionProgress(int Percent,string Message);
 public sealed record ConversionResult(string Directory,int Surfaces,int Vertices,int Bones,int Animations,bool BinaryValidated);
 
@@ -18,7 +18,8 @@ public sealed class ConversionService
         if(request.AnimationPaths.Count>0&&string.IsNullOrWhiteSpace(request.SkeletonPath))throw new InvalidDataException("Animation export requires its matching skeleton .hkx file.");
         if(!string.IsNullOrWhiteSpace(request.AcornEditorPath)&&!File.Exists(request.AcornEditorPath))throw new FileNotFoundException("Acorn editor executable does not exist.",request.AcornEditorPath);
         Report(2,"Reading HE1 geometry, vertex declarations, bone palettes and inverse bind matrices...");
-        var model=new He1ModelReader().Read(request.ModelPath,token);
+        Report(2,$"Source game: {request.Game}.");
+        var model=new He1ModelReader().Read(request.ModelPath,token,request.Game);
         Report(18,$"Loaded {model.Surfaces.Count} surfaces, {model.Surfaces.Sum(s=>s.Vertices.Count):N0} vertices and {model.Bones.Count} model bones.");
         var materials = new Dictionary<string, He1Material>(StringComparer.OrdinalIgnoreCase);
         string sourceDirectory = Path.GetDirectoryName(Path.GetFullPath(request.ModelPath))!;
@@ -27,7 +28,7 @@ public sealed class ConversionService
             token.ThrowIfCancellationRequested();
             string? materialPath = He1MaterialReader.Find(sourceDirectory, name + ".material");
             if (materialPath == null) { Report(19,$"Missing {name}.material; using a neutral SpatialMaterial."); continue; }
-            materials.Add(name, new He1MaterialReader().Read(materialPath));
+            materials.Add(name, new He1MaterialReader().Read(materialPath,request.Game));
         }
         model = model with { Materials = materials };
         Report(19,$"Read {materials.Count} HE1 materials and their texture references.");
@@ -35,14 +36,16 @@ public sealed class ConversionService
         List<Bone>? havokBones=null;
         if(!string.IsNullOrWhiteSpace(request.SkeletonPath))
         {
-            var skeleton=new HavokReader().Read(request.SkeletonPath,token);
+            var skeleton=new HavokReader().Read(request.SkeletonPath,token,request.Game);
             if(skeleton.Bones.Count==0)throw new InvalidDataException("Selected skeleton HKX has no skeleton.");
             havokBones=skeleton.Bones;
             Report(25,$"Loaded {havokBones.Count} Havok reference bones; matching model bones by exact name.");
         }
         var clips=new List<AnimationClip>();
         var modelLookup=model.Bones.Select((b,i)=>(b.Name,i)).ToDictionary(p=>p.Name,p=>p.i,StringComparer.Ordinal);
-        int[]? boneMap=havokBones?.Select(b=>modelLookup.GetValueOrDefault(b.Name,-1)).ToArray();
+        int[]? boneMap=havokBones?.Select(b=>modelLookup.TryGetValue(b.Name,out int exact) ? exact :
+            b.Name.EndsWith("@LT",StringComparison.Ordinal) ? modelLookup.GetValueOrDefault(b.Name[..^3],-1) : -1).ToArray();
+        if(boneMap!=null && boneMap.Where(i=>i>=0).Distinct().Count()!=boneMap.Count(i=>i>=0)) throw new InvalidDataException("Bone aliases are ambiguous.");
         if(havokBones!=null&&boneMap!=null)
         {
             for(int i=0;i<havokBones.Count;i++)
@@ -57,7 +60,7 @@ public sealed class ConversionService
         {
             token.ThrowIfCancellationRequested();string path=request.AnimationPaths[i];
             Report(28+30*i/Math.Max(1,request.AnimationPaths.Count),$"Decoding {Path.GetFileName(path)}...");
-            var asset=new HavokReader().Read(path,token);
+            var asset=new HavokReader().Read(path,token,request.Game);
             if(asset.Animations.Count==0)throw new InvalidDataException($"{Path.GetFileName(path)} contains no animation.");
             foreach(var clip in asset.Animations)
             {
@@ -66,15 +69,19 @@ public sealed class ConversionService
                 if(map.Distinct().Count()!=map.Length)throw new InvalidDataException("Multiple transform tracks target the same export bone.");
                 if(clips.Any(c=>c.Name==clip.Name))throw new InvalidDataException($"Duplicate animation name: {clip.Name}.");
                 if(clip.Name.IndexOfAny(['/',':','"','\n','\r'])>=0)throw new InvalidDataException("Animation name contains characters unsupported in Godot animation property names.");
-                clips.Add(clip with{TrackToBone=map});
+                var reference = model.Bones.Select(b=>Pose.FromMatrix(b.Rest)).ToArray();
+                for(int h=0;h<havokBones!.Count;h++) if(boneMap![h]>=0) reference[boneMap[h]]=Pose.FromMatrix(havokBones[h].Rest);
+                clips.Add(AnimationSampling.Complete(clip with{TrackToBone=map},reference));
+                if(clip.Blend!=AnimationBlend.Normal) Report(58,$"{clip.Name}: baking {clip.Blend} over the matching Havok reference pose for standalone playback.");
                 Report(28+30*(i+1)/request.AnimationPaths.Count,$"Decoded {clip.Name}: {clip.Frames.Length} frames, {map.Length} quaternion tracks, {clip.Duration:F3}s.");
                 if (clip.RootMotion != null) Report(28+30*(i+1)/request.AnimationPaths.Count,$"Preserving {clip.Name} root motion: {clip.RootMotion.Samples.Count} translation/heading samples.");
             }
         }
         int sourceBoneCount = model.Bones.Count;
+        var sourceModel = model; var sourceClips = clips;
         var prepared = AnimationRig.Prepare(model, clips, token);
         model = prepared.Model; clips = prepared.Clips;
-        if (prepared.Helpers > 0) Report(59,$"Added {prepared.Helpers} scale compensation bones to preserve Havok quaternion/scale inheritance ({sourceBoneCount} original bones).");
+        if (prepared.Helpers > 0) Report(59,$"Added {prepared.Helpers} rigid scale-control bones to preserve HE1 translation/rotation/scale inheritance ({sourceBoneCount} original bones).");
         string parent=Path.GetDirectoryName(destination)??throw new IOException("Export folder has no parent.");
         Directory.CreateDirectory(parent);
         string staging=Path.Combine(parent,".he1scu-"+Guid.NewGuid().ToString("N"));
@@ -82,22 +89,22 @@ public sealed class ConversionService
         try
         {
             Report(60,"Writing Godot 3 ArrayMesh, Skeleton and rest-relative quaternion Animation resources...");
-            GodotWriter.Write(model,clips,staging,token,message=>Report(64,message));
+            GodotWriter.Write(model,clips,staging,token,message=>Report(64,message),request.Game);
             bool binary=!string.IsNullOrWhiteSpace(request.AcornEditorPath);
             if(binary)
             {
                 Report(75,"Loading resources in Acorn and saving native binary mesh, animation and scene files...");
-                await AcornResourceCompiler.CompileAsync(request.AcornEditorPath!,staging,model,clips,log=>Report(82,log),token);
+                await AcornResourceCompiler.CompileAsync(request.AcornEditorPath!,staging,model,clips,sourceModel,sourceClips,log=>Report(82,log),token);
             }
             else Report(85,"Text resources written. Acorn binary validation skipped because no editor was selected.");
             Report(90,$"Converted {materials.Count} HE1 materials to textured SpatialMaterials. Custom HE1 lighting is approximated using built-in shading.");
             var result=new ConversionResult(destination,model.Surfaces.Count,model.Surfaces.Sum(s=>s.Vertices.Count),model.Bones.Count,clips.Count,binary);
             var manifest=new
             {
-                converter="HE1ToSCU 0.3",result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
+                converter="HE1ToSCU 0.4",game=request.Game.ToString(),result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
                 sourceAnimations=request.AnimationPaths,spatialProfile=new{scale=Spatial.Scale,basis="Y-up preserved"},
                 outputScene=binary?ExportNames.SceneBinary(model):ExportNames.SceneText(model),outputMesh=binary?ExportNames.MeshBinary(model):ExportNames.MeshText(model),
-                animations=clips.Select(c=>new{name=c.Name,textFile=ExportNames.AnimationText(c),binaryFile=binary?ExportNames.AnimationBinary(c):null,rootMotionSamples=c.RootMotion?.Samples.Count??0}),
+                animations=clips.Select(c=>new{name=c.Name,textFile=ExportNames.AnimationText(c),binaryFile=binary?ExportNames.AnimationBinary(c):null,rootMotionSamples=c.RootMotion?.Samples.Count??0,sourceFrames=sourceClips.Single(s=>s.Name==c.Name).Frames.Length,exportFrames=c.Frames.Length,c.BakedReference}),
                 materials=materials.Values.Select(m=>new{m.Name,m.Shader,m.AlphaThreshold,m.DoubleSided,m.Additive,parameters=m.Parameters.ToDictionary(p=>p.Key,p=>p.Value.Select(v=>new[]{v.X,v.Y,v.Z,v.W}).ToArray()),m.Textures}),
                 sourceBoneCount,scaleCompensationBones=prepared.Helpers,
                 limitations=new[]{"Custom HE1 lighting, colored specular maps and reflection/matcap shaders are approximations to SpatialMaterial.","Original HE1 rig exported; SCU player retargeting and gameplay wiring pending.","In-game acceptance and renderer parity not established."}
@@ -117,9 +124,11 @@ public sealed class ConversionService
 
 internal static class AcornResourceCompiler
 {
-    public static async Task CompileAsync(string editor,string directory,ModelAsset model,IReadOnlyList<AnimationClip> clips,Action<string> log,CancellationToken token)
+    public static async Task CompileAsync(string editor,string directory,ModelAsset model,IReadOnlyList<AnimationClip> clips,ModelAsset source,IReadOnlyList<AnimationClip> originals,Action<string> log,CancellationToken token)
     {
         File.WriteAllText(Path.Combine(directory,"project.godot"),"config_version=4\n[application]\nconfig/name=\"HE1SCU Resource Compile\"\n[rendering]\nquality/driver/driver_name=\"GLES2\"\n");
+        int samples = PoseValidation.Write(Path.Combine(directory,"__poses.bin"),model,source,clips,originals,token);
+        log($"Validating {samples:N0} source-derived keyframe, subframe and loop-boundary poses.");
         string script=BuildScript(model,clips);
         string scriptPath=Path.Combine(directory,"__compile.gd");File.WriteAllText(scriptPath,script);
         async Task RunAsync(string path,string marker,string logFile)
@@ -137,14 +146,14 @@ internal static class AcornResourceCompiler
             }
         }
         var stdout=ReadAsync(process.StandardOutput);var stderr=ReadAsync(process.StandardError);
-        using var timeout=new CancellationTokenSource(TimeSpan.FromMinutes(3));using var linked=CancellationTokenSource.CreateLinkedTokenSource(token,timeout.Token);
+        using var timeout=new CancellationTokenSource(TimeSpan.FromMinutes(10));using var linked=CancellationTokenSource.CreateLinkedTokenSource(token,timeout.Token);
         try { await process.WaitForExitAsync(linked.Token);await Task.WhenAll(stdout,stderr); }
         catch(OperationCanceledException)
         {
             if(!process.HasExited)process.Kill(true);
             await Task.WhenAll(stdout,stderr);
             if(token.IsCancellationRequested)throw;
-            throw new TimeoutException("Acorn resource compilation exceeded three minutes.");
+            throw new TimeoutException("Acorn resource compilation exceeded ten minutes.");
         }
         await File.WriteAllLinesAsync(Path.Combine(directory,logFile),lines,CancellationToken.None);
         if(process.ExitCode!=0||!lines.Any(l=>l.Contains(marker,StringComparison.Ordinal))||lines.Any(l=>l.Contains("SCRIPT ERROR",StringComparison.Ordinal)||l.StartsWith("ERROR:",StringComparison.Ordinal)))
@@ -154,7 +163,7 @@ internal static class AcornResourceCompiler
         string verifyPath=Path.Combine(directory,"__verify.gd");
         File.WriteAllText(verifyPath,BuildVerifyScript(model,clips));
         await RunAsync(verifyPath,"HE1SCU_BINARY_VALIDATED","acorn-binary-validation.log");
-        File.Delete(verifyPath);
+        File.Delete(verifyPath);File.Delete(Path.Combine(directory,"__poses.bin"));
         foreach(string file in new[]{ExportNames.SceneBinary(model),ExportNames.MeshBinary(model)})
         {
             byte[] header=File.ReadAllBytes(Path.Combine(directory,file)).Take(4).ToArray();
@@ -167,6 +176,7 @@ internal static class AcornResourceCompiler
         func fail(message):
             printerr("HE1SCU_FAILED: " + message)
             quit()
+        {{PoseValidation.GodotFunctions}}
         func _init():
             var packed = load({{ExportNames.Literal("res://" + ExportNames.SceneBinary(model))}})
             if packed == null:
@@ -184,7 +194,7 @@ internal static class AcornResourceCompiler
                 fail("standalone mesh load")
                 return
             for surface in range(mesh.get_surface_count()):
-                if mesh.surface_get_material(surface) == null or standalone_mesh.surface_get_material(surface) == null:
+                if not (mesh.surface_get_material(surface) is SpatialMaterial) or not (standalone_mesh.surface_get_material(surface) is SpatialMaterial):
                     fail("binary material load")
                     return
             if {{clips.Count}} > 0:
@@ -197,31 +207,11 @@ internal static class AcornResourceCompiler
                     if standalone_animation == null or standalone_animation.get_track_count() == 0:
                         fail("standalone animation load")
                         return
-                var expected_checks = {{PoseValidation.GodotChecks(model,clips)}}
-                for entry in expected_checks:
-                    var checked_animation = player.get_animation(entry[0])
-                    var original_loop = checked_animation.loop
-                    checked_animation.loop = false
-                    player.play(entry[0])
-                    player.seek(entry[1], true)
-                    var actual_root = instance.transform
-                    if actual_root.origin.distance_to(entry[4].origin) > 0.02:
-                        fail("root motion translation mismatch: " + str(entry[0]))
-                        return
-                    for axis in range(3):
-                        if actual_root.basis[axis].distance_to(entry[4].basis[axis]) > 0.003:
-                            fail("root motion heading mismatch: " + str(entry[0]))
-                            return
-                    for bone in range(skeleton.get_bone_count()):
-                        var actual = skeleton.get_bone_global_pose(bone).origin
-                        if is_nan(actual.length()) or actual.distance_to(entry[2][bone]) > 0.02:
-                            fail("binary bone pose mismatch")
-                            return
-                        for axis in range(3):
-                            if skeleton.get_bone_global_pose(bone).basis[axis].distance_to(entry[3][bone][axis]) > 0.003:
-                                fail("binary bone rotation/scale mismatch")
-                                return
-                    checked_animation.loop = original_loop
+                var checked_poses = check_poses(instance, skeleton)
+                if checked_poses is GDScriptFunctionState:
+                    checked_poses = yield(checked_poses, "completed")
+                if not checked_poses:
+                    return
             instance.free()
             print("HE1SCU_BINARY_VALIDATED bones={{model.Bones.Count}} surfaces={{model.Surfaces.Count}} animations={{clips.Count}}")
             quit()
@@ -237,6 +227,7 @@ internal static class AcornResourceCompiler
                 var texture = material.get(property_name)
                 if texture != null:
                     texture.resource_path = ""
+        {{PoseValidation.GodotFunctions}}
         func _init():
             var packed = load({{ExportNames.Literal("res://" + ExportNames.SceneText(model))}})
             if packed == null:
@@ -256,6 +247,9 @@ internal static class AcornResourceCompiler
                     fail("empty vertex/index buffer")
                     return
                 var material = mesh.surface_get_material(surface)
+                if not (material is SpatialMaterial):
+                    fail("expected standard SpatialMaterial")
+                    return
                 if material != null:
                     clear_material_paths(material)
             mesh.resource_path = ""
@@ -290,35 +284,18 @@ internal static class AcornResourceCompiler
                     if ResourceSaver.save("res://" + filename, animation, 1) != OK:
                         fail("animation save")
                         return
-                    animation.resource_path = ""
+                    if {{((long)clips.Count*model.Bones.Count<24000?"true":"false")}}:
+                        animation.resource_path = ""
+                    else:
+                        animation.take_over_path("res://" + filename)
                 player.stop(true)
                 for bone in range(skeleton.get_bone_count()):
                     skeleton.set_bone_pose(bone, Transform())
-                var expected_checks = {{PoseValidation.GodotChecks(model,clips)}}
-                for entry in expected_checks:
-                    var checked_animation = player.get_animation(entry[0])
-                    var original_loop = checked_animation.loop
-                    checked_animation.loop = false
-                    player.play(entry[0])
-                    player.seek(entry[1], true)
-                    var actual_root = instance.transform
-                    if actual_root.origin.distance_to(entry[4].origin) > 0.02:
-                        fail("root motion translation mismatch: " + str(entry[0]))
-                        return
-                    for axis in range(3):
-                        if actual_root.basis[axis].distance_to(entry[4].basis[axis]) > 0.003:
-                            fail("root motion heading mismatch: " + str(entry[0]))
-                            return
-                    for bone in range(skeleton.get_bone_count()):
-                        var actual = skeleton.get_bone_global_pose(bone).origin
-                        if actual.distance_to(entry[2][bone]) > 0.02:
-                            fail("pose mismatch: " + str(entry[0]) + " time=" + str(entry[1]) + " bone=" + str(bone) + " actual=" + str(actual) + " expected=" + str(entry[2][bone]))
-                            return
-                        for axis in range(3):
-                            if skeleton.get_bone_global_pose(bone).basis[axis].distance_to(entry[3][bone][axis]) > 0.003:
-                                fail("bone rotation/scale mismatch: " + str(entry[0]) + " bone=" + str(bone))
-                                return
-                    checked_animation.loop = original_loop
+                var checked_poses = check_poses(instance, skeleton)
+                if checked_poses is GDScriptFunctionState:
+                    checked_poses = yield(checked_poses, "completed")
+                if not checked_poses:
+                    return
                 player.stop(true)
                 for bone in range(skeleton.get_bone_count()):
                     skeleton.set_bone_pose(bone, Transform())
