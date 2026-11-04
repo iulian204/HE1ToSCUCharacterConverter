@@ -3,7 +3,7 @@ using System.Text.Json;
 
 namespace HE1ToSCU.Core;
 
-public sealed record ConversionRequest(string ModelPath,string? SkeletonPath,IReadOnlyList<string> AnimationPaths,string OutputDirectory,string? AcornEditorPath=null,SourceGame Game=SourceGame.SonicGenerations);
+public sealed record ConversionRequest(string ModelPath,string? SkeletonPath,IReadOnlyList<string> AnimationPaths,string OutputDirectory,string? AcornEditorPath=null,SourceGame Game=SourceGame.SonicGenerations,bool GenerateMouthL=false);
 public sealed record ConversionProgress(int Percent,string Message);
 public sealed record ConversionResult(string Directory,int Surfaces,int Vertices,int Bones,int Animations,bool BinaryValidated);
 
@@ -12,6 +12,7 @@ public sealed class ConversionService
     public async Task<ConversionResult> ConvertAsync(ConversionRequest request,IProgress<ConversionProgress>? progress=null,CancellationToken token=default)
     {
         void Report(int p,string message)=>progress?.Report(new ConversionProgress(p,message));
+        if(request.GenerateMouthL && request.Game!=SourceGame.SonicUnleashed) throw new ArgumentException("Mouth_L generation is available only for Sonic Unleashed.");
         if(!File.Exists(request.ModelPath))throw new FileNotFoundException("Select an existing HE1 .model file.",request.ModelPath);
         string destination=Path.GetFullPath(request.OutputDirectory);
         if(Directory.Exists(destination)||File.Exists(destination))throw new IOException($"Output already exists: {destination}. Choose a new export folder to preserve existing files.");
@@ -32,6 +33,7 @@ public sealed class ConversionService
         }
         model = model with { Materials = materials };
         Report(19,$"Read {materials.Count} HE1 materials and their texture references.");
+        model = MouthMeshSplitter.Split(model, token, message => Report(19, message));
         Report(20,"Spatial profile: preserve Y-up basis; scale positions and translations by 10 for SCU character space.");
         List<Bone>? havokBones=null;
         if(!string.IsNullOrWhiteSpace(request.SkeletonPath))
@@ -78,10 +80,16 @@ public sealed class ConversionService
             }
         }
         int sourceBoneCount = model.Bones.Count;
+        int generatedMouthBones = 0;
+        if(request.GenerateMouthL)
+        {
+            var mirrored = MirroredMouth.Create(model, clips, token, message=>Report(58,message));
+            model = mirrored.Model; clips = mirrored.Clips; generatedMouthBones = mirrored.GeneratedBones;
+        }
         var sourceModel = model; var sourceClips = clips;
         var prepared = AnimationRig.Prepare(model, clips, token);
         model = prepared.Model; clips = prepared.Clips;
-        if (prepared.Helpers > 0) Report(59,$"Added {prepared.Helpers} rigid scale-control bones to preserve HE1 translation/rotation/scale inheritance ({sourceBoneCount} original bones).");
+        if (prepared.Helpers > 0) Report(59,$"Added {prepared.Helpers} rigid scale-control bones to preserve HE1 translation/rotation/scale inheritance ({sourceBoneCount} original bones, {generatedMouthBones} generated mouth bones).");
         string parent=Path.GetDirectoryName(destination)??throw new IOException("Export folder has no parent.");
         Directory.CreateDirectory(parent);
         string staging=Path.Combine(parent,".he1scu-"+Guid.NewGuid().ToString("N"));
@@ -98,15 +106,16 @@ public sealed class ConversionService
             }
             else Report(85,"Text resources written. Acorn binary validation skipped because no editor was selected.");
             Report(90,$"Converted {materials.Count} HE1 materials to textured SpatialMaterials. Custom HE1 lighting is approximated using built-in shading.");
-            var result=new ConversionResult(destination,model.Surfaces.Count,model.Surfaces.Sum(s=>s.Vertices.Count),model.Bones.Count,clips.Count,binary);
+            var result=new ConversionResult(destination,model.AllSurfaces.Count(),model.AllSurfaces.Sum(s=>s.Vertices.Count),model.Bones.Count,clips.Count,binary);
             var manifest=new
             {
-                converter="HE1ToSCU 0.4",game=request.Game.ToString(),result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
+                converter="HE1ToSCU 0.5.0",game=request.Game.ToString(),request.GenerateMouthL,result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
                 sourceAnimations=request.AnimationPaths,spatialProfile=new{scale=Spatial.Scale,basis="Y-up preserved"},
                 outputScene=binary?ExportNames.SceneBinary(model):ExportNames.SceneText(model),outputMesh=binary?ExportNames.MeshBinary(model):ExportNames.MeshText(model),
+                meshes=model.MeshParts.Select(p=>new {nodePath="Skeleton/"+p.Name,textFile=ExportNames.MeshText(model,p.Name),binaryFile=binary?ExportNames.MeshBinary(model,p.Name):null,p.MouthRootBone,p.Mirrored,surfaces=p.Surfaces.Count,vertices=p.Surfaces.Sum(s=>s.Vertices.Count)}),
                 animations=clips.Select(c=>new{name=c.Name,textFile=ExportNames.AnimationText(c),binaryFile=binary?ExportNames.AnimationBinary(c):null,rootMotionSamples=c.RootMotion?.Samples.Count??0,sourceFrames=sourceClips.Single(s=>s.Name==c.Name).Frames.Length,exportFrames=c.Frames.Length,c.BakedReference}),
                 materials=materials.Values.Select(m=>new{m.Name,m.Shader,m.AlphaThreshold,m.DoubleSided,m.Additive,parameters=m.Parameters.ToDictionary(p=>p.Key,p=>p.Value.Select(v=>new[]{v.X,v.Y,v.Z,v.W}).ToArray()),m.Textures}),
-                sourceBoneCount,scaleCompensationBones=prepared.Helpers,
+                sourceBoneCount,generatedMouthBones,scaleCompensationBones=prepared.Helpers,
                 limitations=new[]{"Custom HE1 lighting, colored specular maps and reflection/matcap shaders are approximations to SpatialMaterial.","Original HE1 rig exported; SCU player retargeting and gameplay wiring pending.","In-game acceptance and renderer parity not established."}
             };
             File.WriteAllText(Path.Combine(staging,"conversion.json"),JsonSerializer.Serialize(manifest,new JsonSerializerOptions{WriteIndented=true}));
@@ -164,13 +173,14 @@ internal static class AcornResourceCompiler
         File.WriteAllText(verifyPath,BuildVerifyScript(model,clips));
         await RunAsync(verifyPath,"HE1SCU_BINARY_VALIDATED","acorn-binary-validation.log");
         File.Delete(verifyPath);File.Delete(Path.Combine(directory,"__poses.bin"));
-        foreach(string file in new[]{ExportNames.SceneBinary(model),ExportNames.MeshBinary(model)})
+        foreach(string file in model.MeshParts.Select(p=>ExportNames.MeshBinary(model,p.Name)).Prepend(ExportNames.SceneBinary(model)))
         {
             byte[] header=File.ReadAllBytes(Path.Combine(directory,file)).Take(4).ToArray();
             if(!header.SequenceEqual("RSRC"u8.ToArray())&&!header.SequenceEqual("RSCC"u8.ToArray()))throw new InvalidDataException($"Acorn did not produce a binary Godot resource: {file}.");
         }
         File.Delete(scriptPath);File.Delete(Path.Combine(directory,"project.godot"));
     }
+    private static string MeshChecks(ModelAsset model) => JsonSerializer.Serialize(model.MeshParts.Select(p=>new object[] {p.Name,"res://"+ExportNames.MeshBinary(model,p.Name),p.Surfaces.Count,!p.Mirrored}));
     private static string BuildVerifyScript(ModelAsset model,IReadOnlyList<AnimationClip> clips)=>$$"""
         extends SceneTree
         func fail(message):
@@ -185,18 +195,23 @@ internal static class AcornResourceCompiler
             var instance = packed.instance()
             get_root().add_child(instance)
             var skeleton = instance.get_node("Skeleton")
-            var mesh = skeleton.get_node("Mesh").mesh
-            if skeleton.get_bone_count() != {{model.Bones.Count}} or mesh.get_surface_count() != {{model.Surfaces.Count}}:
+            if skeleton.get_bone_count() != {{model.Bones.Count}}:
                 fail("binary scene counts")
                 return
-            var standalone_mesh = load({{ExportNames.Literal("res://" + ExportNames.MeshBinary(model))}})
-            if standalone_mesh == null or standalone_mesh.get_surface_count() != {{model.Surfaces.Count}}:
-                fail("standalone mesh load")
-                return
-            for surface in range(mesh.get_surface_count()):
-                if not (mesh.surface_get_material(surface) is SpatialMaterial) or not (standalone_mesh.surface_get_material(surface) is SpatialMaterial):
-                    fail("binary material load")
+            for entry in {{MeshChecks(model)}}:
+                var mesh_instance = skeleton.get_node(entry[0])
+                var mesh = mesh_instance.mesh
+                var standalone_mesh = load(entry[1])
+                if mesh == null or mesh.get_surface_count() != entry[2] or mesh_instance.get_node(mesh_instance.skeleton) != skeleton or mesh_instance.visible != entry[3]:
+                    fail("binary mesh/skeleton binding " + entry[0])
                     return
+                if standalone_mesh == null or standalone_mesh.get_surface_count() != entry[2]:
+                    fail("standalone mesh load " + entry[0])
+                    return
+                for surface in range(mesh.get_surface_count()):
+                    if not (mesh.surface_get_material(surface) is SpatialMaterial) or not (standalone_mesh.surface_get_material(surface) is SpatialMaterial):
+                        fail("binary material load " + entry[0])
+                        return
             if {{clips.Count}} > 0:
                 var player = instance.get_node("AnimationPlayer")
                 if player.get_animation_list().size() != {{clips.Count}}:
@@ -213,7 +228,7 @@ internal static class AcornResourceCompiler
                 if not checked_poses:
                     return
             instance.free()
-            print("HE1SCU_BINARY_VALIDATED bones={{model.Bones.Count}} surfaces={{model.Surfaces.Count}} animations={{clips.Count}}")
+            print("HE1SCU_BINARY_VALIDATED bones={{model.Bones.Count}} meshes={{model.MeshParts.Count()}} surfaces={{model.AllSurfaces.Count()}} animations={{clips.Count}}")
             quit()
         """;
     private static string BuildScript(ModelAsset model,IReadOnlyList<AnimationClip> clips)=>$$"""
@@ -236,34 +251,34 @@ internal static class AcornResourceCompiler
             var instance = packed.instance()
             get_root().add_child(instance)
             var skeleton = instance.get_node("Skeleton")
-            var mesh_instance = skeleton.get_node("Mesh")
-            var mesh = mesh_instance.mesh
-            if skeleton.get_bone_count() != {{model.Bones.Count}} or mesh.get_surface_count() != {{model.Surfaces.Count}}:
-                fail("bone/surface counts")
+            if skeleton.get_bone_count() != {{model.Bones.Count}}:
+                fail("bone counts")
                 return
-            for surface in range(mesh.get_surface_count()):
-                var arrays = mesh.surface_get_arrays(surface)
-                if arrays[0].size() == 0 or arrays[8].size() == 0:
-                    fail("empty vertex/index buffer")
+            for entry in {{MeshChecks(model)}}:
+                var mesh_instance = skeleton.get_node(entry[0])
+                var mesh = mesh_instance.mesh
+                if mesh == null or mesh.get_surface_count() != entry[2] or mesh_instance.get_node(mesh_instance.skeleton) != skeleton or mesh_instance.visible != entry[3]:
+                    fail("mesh/skeleton binding " + entry[0])
                     return
-                var material = mesh.surface_get_material(surface)
-                if not (material is SpatialMaterial):
-                    fail("expected standard SpatialMaterial")
+                for surface in range(mesh.get_surface_count()):
+                    var arrays = mesh.surface_get_arrays(surface)
+                    if arrays[0].size() == 0 or arrays[8].size() == 0:
+                        fail("empty vertex/index buffer " + entry[0])
+                        return
+                    var material = mesh.surface_get_material(surface)
+                    if not (material is SpatialMaterial):
+                        fail("expected standard SpatialMaterial")
+                        return
+                    clear_material_paths(material)
+                mesh.resource_path = ""
+                if ResourceSaver.save(entry[1], mesh, 65) != OK:
+                    fail("mesh save " + entry[0])
                     return
-                if material != null:
-                    clear_material_paths(material)
-            mesh.resource_path = ""
-            if ResourceSaver.save({{ExportNames.Literal("res://" + ExportNames.MeshBinary(model))}}, mesh, 65) != OK:
-                fail("mesh save")
-                return
-            mesh.take_over_path({{ExportNames.Literal("res://" + ExportNames.MeshBinary(model))}})
-            # Embed resources in the binary scene so it can be moved into any SCU folder.
-            # This also avoids Acorn's res://./ external-path/subresource cache mismatch.
-            for surface in range(mesh.get_surface_count()):
-                var material = mesh.surface_get_material(surface)
-                if material != null:
-                    clear_material_paths(material)
-            mesh.resource_path = ""
+                mesh.take_over_path(entry[1])
+                # Embed each mesh's resources and avoid Acorn's relative-path cache mismatch.
+                for surface in range(mesh.get_surface_count()):
+                    clear_material_paths(mesh.surface_get_material(surface))
+                mesh.resource_path = ""
             if {{clips.Count}} > 0:
                 var player = instance.get_node("AnimationPlayer")
                 var names = player.get_animation_list()
@@ -314,7 +329,7 @@ internal static class AcornResourceCompiler
                 return
             check.free()
             instance.free()
-            print("HE1SCU_VALIDATED bones={{model.Bones.Count}} surfaces={{model.Surfaces.Count}} animations={{clips.Count}}")
+            print("HE1SCU_VALIDATED bones={{model.Bones.Count}} meshes={{model.MeshParts.Count()}} surfaces={{model.AllSurfaces.Count()}} animations={{clips.Count}}")
             quit()
         """;
 }

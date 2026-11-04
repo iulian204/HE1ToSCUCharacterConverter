@@ -21,7 +21,14 @@ public sealed class GameSelectionTests
                 Assert.Equal("Sonic Generations",Assert.IsType<ComboBoxItem>(selector.Items[0]).Content);
                 Assert.Equal("Sonic Unleashed",Assert.IsType<ComboBoxItem>(selector.Items[1]).Content);
                 selector.SelectedIndex=0;Assert.Equal(SourceGame.SonicGenerations,window.SelectedGame);
+                var mouth=Assert.IsType<CheckBox>(window.FindName("GenerateMouthLeft"));
+                Assert.Equal(Visibility.Collapsed,mouth.Visibility);Assert.False(window.SelectedGenerateMouthL);
                 selector.SelectedIndex=1;Assert.Equal(SourceGame.SonicUnleashed,window.SelectedGame);
+                Assert.Equal(Visibility.Visible,mouth.Visibility);
+                mouth.IsChecked=false;Assert.False(window.SelectedGenerateMouthL);
+                mouth.IsChecked=true;Assert.True(window.SelectedGenerateMouthL);
+                selector.SelectedIndex=0;Assert.Equal(Visibility.Collapsed,mouth.Visibility);Assert.False(window.SelectedGenerateMouthL);
+                selector.SelectedIndex=1;Assert.True(window.SelectedGenerateMouthL);
                 Assert.NotNull(window.FindName("Models"));Assert.NotNull(window.FindName("Animations"));
                 Assert.NotNull(window.FindName("SourceFolder"));Assert.NotNull(window.FindName("OutputPath"));
                 var inputs=Assert.IsType<Grid>(window.FindName("Inputs"));

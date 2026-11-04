@@ -22,7 +22,7 @@ public sealed class SpatialMaterialWriter
         Directory.CreateDirectory(Path.Combine(directory, "materials"));
         Directory.CreateDirectory(Path.Combine(directory, "textures"));
         var result = new Dictionary<(string, string), string>();
-        foreach (var key in model.Surfaces.Select(s => (s.Material, s.Slot)).Distinct())
+        foreach (var key in model.AllSurfaces.Select(s => (s.Material, s.Slot)).Distinct())
         {
             token.ThrowIfCancellationRequested();
             He1Material? source = model.Materials?.GetValueOrDefault(key.Material);

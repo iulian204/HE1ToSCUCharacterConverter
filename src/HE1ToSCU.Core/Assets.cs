@@ -6,8 +6,13 @@ public sealed record Bone(string Name, int Parent, Matrix4x4 Rest);
 public sealed record Vertex(Vector3 Position, Vector3 Normal, Vector4 Tangent, Vector2 UV, Vector2 UV2,
     Vector4 Color, int[] Bones, Vector4 Weights);
 public sealed record Surface(string Material, string Slot, List<Vertex> Vertices, List<int> Indices);
+public sealed record MeshPart(string Name, List<Surface> Surfaces, string? MouthRootBone = null, bool Mirrored = false);
 public sealed record ModelAsset(string Name, List<Bone> Bones, List<Surface> Surfaces, IReadOnlyDictionary<string, He1Material>? Materials = null,
-    IReadOnlyDictionary<int,int>? RigControls = null);
+    IReadOnlyDictionary<int,int>? RigControls = null, IReadOnlyList<MeshPart>? MouthMeshes = null)
+{
+    public IEnumerable<MeshPart> MeshParts => new[] { new MeshPart("Mesh", Surfaces) }.Concat(MouthMeshes ?? []);
+    public IEnumerable<Surface> AllSurfaces => MeshParts.SelectMany(part => part.Surfaces);
+}
 public sealed record Pose(Vector3 Translation, Quaternion Rotation, Vector3 Scale)
 {
     public Matrix4x4 Matrix => Matrix4x4.CreateScale(Scale) * Matrix4x4.CreateFromQuaternion(Rotation) * Matrix4x4.CreateTranslation(Translation);

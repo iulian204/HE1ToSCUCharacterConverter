@@ -20,7 +20,8 @@
                 <Grid.ColumnDefinitions><ColumnDefinition Width="140"/><ColumnDefinition Width="*"/><ColumnDefinition Width="112"/></Grid.ColumnDefinitions>
                 <Grid.RowDefinitions><RowDefinition Height="42"/><RowDefinition Height="42"/><RowDefinition Height="42"/><RowDefinition Height="42"/><RowDefinition Height="114"/><RowDefinition Height="42"/><RowDefinition Height="42"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
                 <TextBlock Text="Source game" VerticalAlignment="Center"/>
-                <ComboBox x:Name="GameSelector" Grid.Column="1" Margin="0,3,10,3" Padding="8" SelectedIndex="0"><ComboBoxItem Content="Sonic Generations"/><ComboBoxItem Content="Sonic Unleashed"/></ComboBox>
+                <ComboBox x:Name="GameSelector" Grid.Column="1" Margin="0,3,10,3" Padding="8" SelectedIndex="0" SelectionChanged="GameChanged"><ComboBoxItem Content="Sonic Generations"/><ComboBoxItem Content="Sonic Unleashed"/></ComboBox>
+                <CheckBox x:Name="GenerateMouthLeft" Grid.Column="2" VerticalAlignment="Center" Visibility="Collapsed" Foreground="#DCE7F5" ToolTip="Create an alternate Mouth_L with separate _L bones and animation tracks. It starts hidden to avoid overlapping the original mouth."><TextBlock Text="Generate Mouth_L" TextWrapping="Wrap" FontSize="12"/></CheckBox>
                 <TextBlock Grid.Row="1" Text="Source folder" VerticalAlignment="Center"/>
                 <TextBox Grid.Row="1" x:Name="SourceFolder" Grid.Column="1" Margin="0,3,10,3" KeyDown="SourceFolderKeyDown" ToolTip="Folder containing extracted HE1 .model and .hkx assets. Press Enter to scan."/>
                 <Button Content="Folder…" Grid.Row="1" Grid.Column="2" Margin="0,3" Click="BrowseSource"/>

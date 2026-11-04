@@ -129,3 +129,33 @@ Large banks retain companion `.anim` files. Binary-only relocation copied those 
 Still unverified: SCU gameplay acceptance/retargeting, DX11/custom renderer parity, every Havok platform/codec variant and pixel-identical original lighting. Additive clips are standalone reference-pose bakes; original runtime overlays and camera-light lobes are outside the material/animation approximation. Supported output and required companion files are documented in README.md.
 
 The self-contained Windows x64 portable executable was also launched successfully with product version 0.4.0. This checks packaged startup separately from the WPF/STA test; full end-user interaction through every native dialog remains outside the automated checks.
+
+## Mouth mesh preview — 2026-11-04
+
+- Build succeeded with zero warnings/errors; **69 tests passed** (68 core, one GUI). Added coverage for independent mouth branches sharing a material, descendant/teeth geometry, case variants, ignored locator/zero-weight slots, conservative boundary assignment, unchanged faces/weights/attributes, shared skeleton references, original animation paths and output-name collisions.
+- Real Generations Sonic: body **15,888 triangles / 9,310 vertices**; `Mouth` and `Mouth_L` each **705 triangles / 423 vertices**, including teeth. Combined totals remain **17,298 triangles / 10,156 vertices**. Twelve body surfaces and two surfaces per mouth yield sixteen surfaces across three mesh nodes.
+- Real Unleashed Sonic: body **18,408 triangles / 12,160 vertices**; `Mouth` **1,482 triangles / 861 vertices**. Combined totals remain **19,890 triangles / 13,021 vertices**, with thirteen surfaces across two mesh nodes.
+- The real-asset audit matched every output face to its original ordered Vertex objects, preserving winding, every attribute and all skin weights/indexes. Materials/textures for both games match v0.4.0 byte-for-byte.
+- Both complete banks (**325 + 219 animations**) passed text/native compile, fresh-process binary verification and source-pose comparisons. The expected body/mouth surface counts and each MeshInstance's shared Skeleton binding are checked. Pose counts/error bounds remain unchanged from v0.4.0.
+- Binary-only relocation checks passed for all three Generations meshes and both Unleashed meshes, with all 544 animations. Every mesh has an independent `.mesh` resource and is embedded in its character scene. Existing resource/in-game validation boundaries still apply.
+
+Local evidence: `artifacts/mouth-split-generations`, `artifacts/mouth-split-unleashed` and their sibling logs. This preview is a local development build following v0.4.0.
+
+## Optional mirrored Mouth_L preview — 2026-11-04
+
+- **75 automated tests passed** (74 core, one WPF/STA GUI). The game-dependent checkbox visibility and gated request flag are tested. Geometry tests check reflected normals, reversed winding, tangent handedness, weight-index remapping, unchanged UVs/colors, positive instance transforms, hidden default, idempotence and name collisions. A skinning oracle covers head/body rotation, moving parents, nonuniform scales and signed scale crossing through zero, followed by the adaptive/scale-control stage.
+- All **219 Unleashed clips** were independently compared at **23,655 source-key/intermediate/block-boundary times**. All original sampled bone poses stayed unchanged. The five generated bones' skin matrices matched the analytical parent-frame reflection with maximum element error **3.81469727e-6**. This includes the additive/reference-baked `sonic_mouth_reverse` clip.
+- Enabled Unleashed full-bank export: **111 original + 5 generated + 51 control bones = 167**, three meshes, fourteen surfaces, 219 animations. Text and fresh binary processes each passed **47,003 pose checks**, with maximum original/global position error 0.011079 SCU units and basis-axis error 0.002078. Both verify the generated mesh is hidden and bound to the same Skeleton.
+- Generations regression: all **325 clips / 58,193 pose checks per process** passed, retaining 170 bones and the authored three-mesh layout. Maximum errors remain 0.012900 SCU position / 0.000823 basis-axis. The generator is not run for this profile.
+- Binary-only relocation/playback passed for both complete banks. Static Unleashed exports also passed with the option off (111 bones/two meshes) and on (116 bones/three meshes). The value-free CLI flag was exercised as the last argument.
+- Original body/mouth text meshes match byte-for-byte between static off/on exports, and both games' materials/textures match the preceding mouth-split preview byte-for-byte. Native renders checked original and alternate mouths in idle and mouth-reversal poses; the original alone is visible on initial load. These targeted visual checks do not claim exhaustive per-frame pixel parity or in-game SCU acceptance.
+
+Local evidence: `artifacts/mirrored-mouth-unleashed`, `artifacts/mirrored-mouth-generations-regression`, `artifacts/mirrored-mouth-static-on`, `artifacts/mirrored-mouth-static-off`, `artifacts/mirrored-mouth-animation-audit.log` and `artifacts/mirrored-mouth-renders`.
+
+## Version 0.5.0 release finalization — 2026-11-04
+
+The complete mouth separation/mirroring diff was reviewed after user acceptance. Finalization changed version metadata and release documentation only; the validated conversion behavior was retained. The final Release solution build has zero warnings/errors, and all 75 automated tests pass.
+
+The 219-clip independent mirrored-skinning audit was rerun successfully (23,655 samples, maximum skin-matrix error 3.81469727e-6, original tracks unchanged). Fresh binary-only relocation/playback checks again passed for all 219 Unleashed and 325 Generations animations in the approved full-bank exports. Their text/fresh-binary pose-check results remain recorded above. The versioned v0.5.0 CLI also generated and fresh-process validated new static Generations and mirrored Unleashed exports; manifests report the correct converter version and mirror option.
+
+Release packaging uses a self-contained Windows x64 application and a source archive of the release commit. Both archives are checked for integrity and exclusion of game assets, references, diagnostic output and build intermediates. Published artifact digests are checked against local SHA-256 values. Materials remain standard SpatialMaterial; in-game SCU acceptance and gameplay retargeting are not established by these checks.

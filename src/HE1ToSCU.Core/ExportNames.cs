@@ -12,8 +12,8 @@ public static class ExportNames
     }
     public static string SceneText(ModelAsset model) => File(model.Name, ".tscn");
     public static string SceneBinary(ModelAsset model) => File(model.Name, ".scn");
-    public static string MeshText(ModelAsset model) => File(model.Name, ".mesh.tres");
-    public static string MeshBinary(ModelAsset model) => File(model.Name, ".mesh");
+    public static string MeshText(ModelAsset model, string nodeName = "Mesh") => File(model.Name + (nodeName == "Mesh" ? "" : "_" + nodeName), ".mesh.tres");
+    public static string MeshBinary(ModelAsset model, string nodeName = "Mesh") => File(model.Name + (nodeName == "Mesh" ? "" : "_" + nodeName), ".mesh");
     public static string AnimationText(AnimationClip clip) => File(clip.Name, ".tres");
     public static string AnimationBinary(AnimationClip clip) => File(clip.Name, ".anim");
     internal static string Literal(string text) => JsonSerializer.Serialize(text);
@@ -35,7 +35,8 @@ public static class ExportNames
         {
             if (!files.Add(name)) throw new InvalidDataException($"Output filename collision: {name}. Original names are preserved; select uniquely named assets.");
         }
-        foreach (var name in new[] { SceneText(model), SceneBinary(model), MeshText(model), MeshBinary(model), "conversion.json", "acorn-validation.log", "acorn-binary-validation.log" }) Add(name);
+        foreach (var name in new[] { SceneText(model), SceneBinary(model), "conversion.json", "acorn-validation.log", "acorn-binary-validation.log" }) Add(name);
+        foreach (var part in model.MeshParts) { Add(MeshText(model, part.Name)); Add(MeshBinary(model, part.Name)); }
         foreach (var clip in clips) { Add(AnimationText(clip)); Add(AnimationBinary(clip)); }
     }
 }

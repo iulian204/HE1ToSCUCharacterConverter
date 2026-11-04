@@ -36,6 +36,7 @@ The published Windows x64 executable includes the .NET runtime. Acorn itself is 
 | `sn_dead.tres`, etc. | Native Godot Animation resources with quaternion transform tracks |
 | `chr_Sonic_HD.scn` | Acorn binary PackedScene with embedded mesh/materials and embedded or companion animations |
 | `chr_Sonic_HD.mesh` | Standalone binary ArrayMesh |
+| `chr_Sonic_HD_Mouth.mesh.tres` / `.mesh`, `_Mouth_L.mesh.tres` / `.mesh` | Separate weighted mouth meshes; the second is generated when a second mouth branch exists |
 | `sn_dead.anim`, etc. | Standalone binary Animation resources |
 | `conversion.json` | Source paths, conversion counts, spatial profile and limitations |
 | `acorn-validation.log` | Text load, pose comparisons and native save results |
@@ -44,6 +45,10 @@ The published Windows x64 executable includes the .NET runtime. Acorn itself is 
 Original source stems are preserved: `chr_Sonic_HD.model` produces `chr_Sonic_HD.tscn`/`.scn` and `chr_Sonic_HD.mesh`; `sn_dead.anm.hkx` produces `sn_dead.tres`/`.anim`. Filename collisions are reported instead of replacing names with numeric identifiers.
 
 Binary files and engine logs are generated only when an editor is selected. Meshes, materials and textures are embedded. Large animation banks use relative companion `.anim` files to stay within Godot 3.1's resource limits: move these files together with the `.scn`. Smaller banks embed animations as well. Source and staging paths are not required by the relocated binary resources.
+
+Mouth separation is automatic and follows mouth/jaw/lip/teeth/tongue bone branches and their skin weights, including mouth geometry sharing body materials. Each triangle belongs to exactly one mesh; vertex attributes, weights and bone indexes are preserved. The body stays at `Skeleton/Mesh`; Generations Sonic adds `Skeleton/Mouth` and `Skeleton/Mouth_L`, while Unleashed Sonic adds `Skeleton/Mouth`. All use the same Skeleton and AnimationPlayer. Models without weighted mouth geometry keep a single mesh. The export manifest lists every mesh and its source mouth-bone branch.
+
+When **Sonic Unleashed** is selected, the optional **Generate Mouth_L** checkbox appears beside the game selector. It defaults off and remembers your preference. Enabling it creates a reflected alternate mouth with its own `_L` bone branch and mirrored animation tracks. Geometry, normals, triangle winding and tangent handedness are adjusted together. The original mouth starts visible and generated `Mouth_L` starts hidden: switch their visibility to use the alternate mouth without overlapping surfaces. Both remain children of the same Skeleton. Existing Generations mouths are retained as authored.
 
 ## Supported in this increment
 
@@ -82,7 +87,7 @@ dotnet test HE1ToSCU.sln -c Release
 ./scripts/Publish.ps1
 ```
 
-The 63 automated tests cover formats and transforms, continuous animation sampling, sparse/additive tracks, signed scales, both Havok profiles, root motion, names, DDS/material conversion, game-specific specular/roughness behavior and the WPF game selector. Final real-asset regression validation covers all 325 supplied Generations animations and 219 supplied Unleashed animations. See [validation results](docs/VALIDATION.md) for the evidence and boundaries. No copyrighted game fixtures are bundled.
+The 75 automated tests cover formats and transforms, continuous animation sampling, sparse/additive tracks, signed scales, both Havok profiles, root motion, names, DDS/material conversion, game-specific specular/roughness behavior, mouth partitioning/mirroring and the WPF game/options selectors. Real-asset regression validation covers all 325 supplied Generations animations and 219 supplied Unleashed animations. See [validation results](docs/VALIDATION.md) for the evidence and boundaries. No copyrighted game fixtures are bundled.
 
 CLI example (repeat `--animation` for more clips, or use `--animation-folder` to load every `.anm.hkx` in a folder):
 
@@ -103,6 +108,8 @@ For an additional binary-only relocation check in a fresh temporary project:
 ```
 
 Use `--game unleashed` for the older Havok profile and Unleashed material calculations. Model and material layouts remain version-aware within the shared conversion pipeline.
+
+Add `--generate-mouth-l` to an Unleashed CLI conversion to create the same optional mirrored mouth. This flag takes no value and is rejected for Generations.
 
 Failed/cancelled writes keep an isolated `.he1scu-*` staging folder for diagnosis. Source assets and existing exports are preserved. The application stores last-used folder/editor paths in `%LOCALAPPDATA%\HE1ToSCU\settings.json`.
 

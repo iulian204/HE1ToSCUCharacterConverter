@@ -22,16 +22,31 @@ func _init():
     var instance = packed.instance()
     get_root().add_child(instance)
     var skeleton = instance.get_node("Skeleton")
-    var mesh = skeleton.get_node("Mesh").mesh
-    if mesh == null or skeleton.get_bone_count() == 0:
+    if skeleton.get_bone_count() == 0:
         printerr("RELOCATION_FAILED rig")
         quit()
         return
-    for surface in range(mesh.get_surface_count()):
-        if mesh.surface_get_material(surface) == null:
-            printerr("RELOCATION_FAILED material")
+    var meshes = 0
+    var surfaces = 0
+    for child in skeleton.get_children():
+        if not (child is MeshInstance):
+            continue
+        var mesh = child.mesh
+        if mesh == null or child.get_node(child.skeleton) != skeleton:
+            printerr("RELOCATION_FAILED mesh/skeleton")
             quit()
             return
+        for surface in range(mesh.get_surface_count()):
+            if not (mesh.surface_get_material(surface) is SpatialMaterial):
+                printerr("RELOCATION_FAILED material")
+                quit()
+                return
+        meshes += 1
+        surfaces += mesh.get_surface_count()
+    if meshes == 0:
+        printerr("RELOCATION_FAILED no meshes")
+        quit()
+        return
     var count = 0
     if instance.has_node("AnimationPlayer"):
         var player = instance.get_node("AnimationPlayer")
@@ -44,7 +59,7 @@ func _init():
             player.play(name)
             player.seek(animation.length * 0.5, true)
             count += 1
-    print("RELOCATION_OK bones=" + str(skeleton.get_bone_count()) + " surfaces=" + str(mesh.get_surface_count()) + " animations=" + str(count))
+    print("RELOCATION_OK bones=" + str(skeleton.get_bone_count()) + " meshes=" + str(meshes) + " surfaces=" + str(surfaces) + " animations=" + str(count))
     instance.free()
     quit()
 '@
