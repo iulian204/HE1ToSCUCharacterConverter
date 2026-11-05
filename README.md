@@ -1,12 +1,14 @@
 # HE1 → SCU Character Converter
 
-A standalone **C# / .NET 8 WPF desktop application**, with a reusable managed conversion library and a CLI. It does not install an engine plugin.
+A standalone **C# / .NET 10 desktop application** with an Avalonia Fluent interface, a reusable managed conversion library and a CLI.
 
 Converts extracted Sonic Generations and Sonic Unleashed HE1 skeletal models, materials and matching Havok skeletons/animations into Godot 3.1.2 text resources. When an Acorn editor is selected, it also compiles and validates native Acorn binary resources.
 
 ## Run
 
-Download the Windows x64 portable ZIP from [Releases](https://github.com/iulian204/HE1ToSCUCharacterConverter/releases/latest), extract it, and launch `HE1ToSCU.App.exe`. The .NET runtime is included. Game assets and the Acorn editor are not bundled.
+Download the Windows x64 portable ZIP from [Releases](https://github.com/iulian204/HE1ToSCUCharacterConverter/releases/latest), extract it, and launch `HE1ToSCU.App.exe`. The .NET 10 runtime is included. Supply your own game assets and Acorn editor.
+
+The **Appearance** selector offers **Automatic**, **Light** and **Dark**. Automatic follows the Windows app theme as it changes. The selection is saved immediately. The window uses Mica where Windows supports it and a solid themed background otherwise. Windows controls the appearance of its native file dialogs.
 
 Open `artifacts/HE1ToSCU-win-x64/HE1ToSCU.App.exe` after publishing, or run:
 
@@ -81,13 +83,15 @@ This is a usable first conversion slice, **not a complete game-ready character r
 
 ## Build and test
 
+Install the .NET 10 SDK specified in `global.json` or a compatible newer .NET 10 SDK.
+
 ```powershell
 dotnet build HE1ToSCU.sln -c Release
 dotnet test HE1ToSCU.sln -c Release
 ./scripts/Publish.ps1
 ```
 
-The 75 automated tests cover formats and transforms, continuous animation sampling, sparse/additive tracks, signed scales, both Havok profiles, root motion, names, DDS/material conversion, game-specific specular/roughness behavior, mouth partitioning/mirroring and the WPF game/options selectors. Real-asset regression validation covers all 325 supplied Generations animations and 219 supplied Unleashed animations. See [validation results](docs/VALIDATION.md) for the evidence and boundaries. No copyrighted game fixtures are bundled.
+Automated tests cover formats, transforms, animation sampling, both Havok profiles, DDS and material conversion, mouth geometry and the Avalonia workflow. Real-asset regression validation covers all 325 supplied Generations animations and 219 supplied Unleashed animations. See [validation results](docs/VALIDATION.md) for the evidence and boundaries. No copyrighted game fixtures are bundled.
 
 CLI example (repeat `--animation` for more clips, or use `--animation-folder` to load every `.anm.hkx` in a folder):
 
@@ -116,10 +120,11 @@ Failed/cancelled writes keep an isolated `.he1scu-*` staging folder for diagnosi
 ## Solution layout
 
 ```text
-src/HE1ToSCU.App/       WPF window, file/folder pickers, async conversion, log/progress
+src/HE1ToSCU.App/       Avalonia Fluent window, file/folder pickers, async conversion, log/progress
 src/HE1ToSCU.Core/      HE1 reader, HKX fixups/decoding, math, Godot writer, Acorn compiler
 src/HE1ToSCU.Cli/       Command-line access to the same conversion service
 tests/HE1ToSCU.Tests/   Deterministic synthetic format/math regression tests
+tests/HE1ToSCU.GuiTests/ Headless Avalonia workflow and appearance tests
 scripts/               Publishing and binary-only relocation verification
 docs/                  Reference evidence, pinned source revisions and validation results
 ```

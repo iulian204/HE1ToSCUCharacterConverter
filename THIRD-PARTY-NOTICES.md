@@ -19,4 +19,6 @@ HE1 structures and vertex format definitions were implemented with reference to 
 
 BlueBlur, SkythTools, HavokAnimationExporter, ModelConverter, HedgeDocs, libgens-sonicglvl and upstream Godot were inspected for format and engine behavior. Exact repository revisions are in `docs/reference-lock.json`. These complete repositories are not linked into or shipped with the executable. No game assets, Acorn executable, proprietary Havok SDK or FBX SDK are included in the distributable.
 
-The application uses the .NET 8 runtime and WPF. Microsoft .NET runtime license notices are included by the self-contained publish output. xUnit and Microsoft.NET.Test.Sdk are development/test dependencies only.
+## Desktop and runtime dependencies
+
+The desktop app uses Avalonia and Avalonia Fluent (MIT), with MicroCom and Tmds.DBus Protocol (MIT) among its transitive dependencies. Their notices are in `docs/licenses`. The Windows x64 package also includes the notices from the bundled ANGLE, SkiaSharp and HarfBuzzSharp NuGet packages, plus the Microsoft .NET 10 runtime licenses. xUnit and Microsoft.NET.Test.Sdk are test dependencies.

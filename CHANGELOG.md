@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.1
+
+- Replace WPF with Avalonia Fluent while preserving the existing conversion workflow and settings.
+- Adopt Windows 11 card and control styling, with native window chrome, system accent colors and a focus-aware Mica backdrop where supported.
+- Make the animation list easier to read, with an empty state and clearer selection and focus indicators.
+- Choose Automatic, Light or Dark from the main window. Automatic follows the Windows app theme live.
+- Bundle .NET 10 LTS in the portable Windows x64 release. Existing Generations and Unleashed formats and export options carry over.
+
 ## 0.6.0
 
 - Recover missing tangents from mesh geometry and UVs, fixing exports such as Generations Shadow.

@@ -1,0 +1,122 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:io="using:System.IO"
+        x:Class="HE1ToSCU.App.MainWindow"
+        Title="HE1 → SCU Character Converter" Width="1060" Height="870"
+        MinWidth="560" MinHeight="420" WindowStartupLocation="CenterScreen"
+        Background="Transparent" TransparencyLevelHint="Mica,None"
+        TransparencyBackgroundFallback="{DynamicResource WindowFallbackBrush}"
+        FontFamily="Segoe UI Variable Text, Segoe UI" FontSize="14">
+    <Panel>
+        <Border x:Name="InactiveMica" Background="{DynamicResource WindowFallbackBrush}"
+                Opacity="0" IsHitTestVisible="False"/>
+        <Grid Margin="24,18" RowDefinitions="*,Auto">
+            <ScrollViewer x:Name="WorkspaceScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <Grid x:Name="Workspace" RowDefinitions="Auto,Auto,*"
+                      Height="{Binding #WorkspaceScroll.Bounds.Height, Mode=OneWay}" MinHeight="750">
+                    <Grid ColumnDefinitions="*,148" ColumnSpacing="12" Margin="0,0,0,16">
+                        <StackPanel>
+                            <TextBlock Text="HE1 → SCU" FontSize="32" FontWeight="SemiBold"/>
+                            <TextBlock Text="Character Converter" FontSize="14" FontWeight="SemiBold" Margin="0,1,0,5"/>
+                            <TextBlock Text="Models, skeletons and quaternion animation tracks for Acorn / Godot 3.1.2." TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" VerticalAlignment="Top" Spacing="4">
+                            <TextBlock Text="Appearance" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12"/>
+                            <ComboBox x:Name="AppearanceSelector" AutomationProperties.Name="Appearance"
+                                      SelectionChanged="AppearanceChanged" ToolTip.Tip="Automatic follows the Windows app theme.">
+                                <ComboBoxItem Content="Automatic"/>
+                                <ComboBoxItem Content="Light"/>
+                                <ComboBoxItem Content="Dark"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+                    <Grid x:Name="Inputs" Grid.Row="1" RowDefinitions="Auto,Auto,Auto,Auto" Margin="0,0,0,12">
+                        <TextBlock Text="Source assets" Classes="sectionTitle" Margin="0,0,0,6"/>
+                        <Border Grid.Row="1" Classes="settingsCard" Margin="0,0,0,12">
+                            <Grid ColumnDefinitions="112,*,140" RowDefinitions="Auto,Auto,Auto,Auto,102"
+                                  ColumnSpacing="12" RowSpacing="7">
+                                <TextBlock Text="Source game" VerticalAlignment="Center"/>
+                                <ComboBox x:Name="GameSelector" Grid.Column="1" SelectedIndex="0" SelectionChanged="GameChanged" AutomationProperties.Name="Source game">
+                                    <ComboBoxItem Content="Sonic Generations"/>
+                                    <ComboBoxItem Content="Sonic Unleashed"/>
+                                </ComboBox>
+                                <CheckBox x:Name="GenerateMouthLeft" Grid.Column="2" VerticalAlignment="Center" IsVisible="False" FontSize="13"
+                                          Content="Generate Mouth_L" ToolTip.Tip="Create an alternate Mouth_L with separate _L bones and animation tracks. It starts hidden to avoid overlapping the original mouth."/>
+                                <TextBlock Grid.Row="1" Text="Source folder" VerticalAlignment="Center"/>
+                                <TextBox x:Name="SourceFolder" Grid.Row="1" Grid.Column="1" KeyDown="SourceFolderKeyDown" AutomationProperties.Name="Source folder"
+                                         ToolTip.Tip="Folder containing extracted HE1 .model and .hkx assets. Press Enter to scan."/>
+                                <Button x:Name="SourceBrowseButton" Content="Folder…" Grid.Row="1" Grid.Column="2" Click="BrowseSource" AutomationProperties.Name="Browse source folder"/>
+                                <TextBlock Text="HE1 model" Grid.Row="2" VerticalAlignment="Center"/>
+                                <ComboBox x:Name="Models" Grid.Row="2" Grid.Column="1" SelectionChanged="ModelChanged" AutomationProperties.Name="HE1 model"
+                                          ToolTip.Tip="Choose a .model in the source folder">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate x:DataType="io:FileInfo"><TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis"/></DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                                <Button x:Name="ModelBrowseButton" Content="File…" Grid.Row="2" Grid.Column="2" Click="BrowseModel" AutomationProperties.Name="Browse model"/>
+                                <TextBlock Text="Skeleton .hkx" Grid.Row="3" VerticalAlignment="Center"/>
+                                <TextBox x:Name="SkeletonPath" Grid.Row="3" Grid.Column="1" AutomationProperties.Name="Skeleton HKX"
+                                         ToolTip.Tip="Matching .skl.hkx; required when exporting animations"/>
+                                <Button x:Name="SkeletonBrowseButton" Content="File…" Grid.Row="3" Grid.Column="2" Click="BrowseSkeleton" AutomationProperties.Name="Browse skeleton"/>
+                                <TextBlock Text="Animations" Grid.Row="4" Margin="0,6,0,0"/>
+                                <Grid Grid.Row="4" Grid.Column="1">
+                                    <ListBox x:Name="Animations" Classes="animationList" SelectionMode="Multiple"
+                                             AutomationProperties.Name="Animations">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate x:DataType="io:FileInfo">
+                                                <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis"/>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                    <StackPanel x:Name="AnimationsEmptyState" Margin="12,8" Spacing="2" VerticalAlignment="Center"
+                                                IsHitTestVisible="False" IsVisible="{Binding !#Animations.ItemCount}">
+                                        <TextBlock Text="No animations added" FontWeight="SemiBold" TextWrapping="Wrap"/>
+                                        <TextBlock Text="Use Add to select matching HKX or XML files." FontSize="12"
+                                                   Foreground="{DynamicResource SecondaryTextBrush}" TextWrapping="Wrap"/>
+                                    </StackPanel>
+                                </Grid>
+                                <StackPanel Grid.Row="4" Grid.Column="2" Spacing="8">
+                                    <Button x:Name="AnimationAddButton" Content="Add…" Click="AddAnimations" AutomationProperties.Name="Add animations"/>
+                                    <Button x:Name="AnimationRemoveButton" Content="Remove" Click="RemoveAnimations" IsEnabled="{Binding !!#Animations.SelectedItems.Count}" AutomationProperties.Name="Remove selected animations"/>
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                        <TextBlock Grid.Row="2" Text="Export" Classes="sectionTitle" Margin="0,0,0,6"/>
+                        <Border Grid.Row="3" Classes="settingsCard">
+                            <Grid ColumnDefinitions="112,*,140" RowDefinitions="Auto,Auto,Auto"
+                                  ColumnSpacing="12" RowSpacing="7">
+                                <TextBlock Text="Export folder" Grid.Row="0" VerticalAlignment="Center"/>
+                                <TextBox x:Name="OutputPath" Grid.Row="0" Grid.Column="1" AutomationProperties.Name="Export folder"
+                                         ToolTip.Tip="New export directory. Existing directories are preserved."/>
+                                <Button x:Name="OutputBrowseButton" Content="Folder…" Grid.Row="0" Grid.Column="2" Click="BrowseOutput" AutomationProperties.Name="Browse export parent folder"/>
+                                <TextBlock Text="Acorn editor" Grid.Row="1" VerticalAlignment="Center"/>
+                                <TextBox x:Name="EditorPath" Grid.Row="1" Grid.Column="1" AutomationProperties.Name="Acorn editor"
+                                         ToolTip.Tip="Optional. Uses Acorn to validate and write .scn, .mesh and .anim. Leave blank for text resources."/>
+                                <Button x:Name="EditorBrowseButton" Content="File…" Grid.Row="1" Grid.Column="2" Click="BrowseEditor" AutomationProperties.Name="Browse Acorn editor"/>
+                                <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Margin="0,4,0,0" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12"
+                                           Text="Scale and coordinates are handled automatically. HE1 textures and parameters are adapted to SpatialMaterial. Export preserves the HE1 rig; SCU player retargeting is a separate step."/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="2" RowDefinitions="Auto,*" MinHeight="130">
+                        <DockPanel Margin="0,0,0,8">
+                            <Button x:Name="SaveLogButton" Content="Save log…" DockPanel.Dock="Right" HorizontalAlignment="Right" Click="SaveLog"/>
+                            <TextBlock Text="Conversion log" Classes="sectionTitle" VerticalAlignment="Center"/>
+                        </DockPanel>
+                        <TextBox x:Name="Log" Classes="log" Grid.Row="1" Padding="10,8" IsReadOnly="True" AcceptsReturn="True" VerticalContentAlignment="Top"
+                                 AutomationProperties.Name="Conversion log" FontFamily="Consolas" FontSize="12"
+                                 TextWrapping="NoWrap" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"/>
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+            <Grid Grid.Row="1" Margin="0,14,0,0" ColumnDefinitions="*,90,155" ColumnSpacing="10">
+                <StackPanel Margin="0,0,8,0" VerticalAlignment="Center" Spacing="6">
+                    <TextBlock x:Name="Status" Text="Ready to convert" FontSize="12" Foreground="{DynamicResource SecondaryTextBrush}" TextTrimming="CharacterEllipsis"/>
+                    <ProgressBar x:Name="Progress" Maximum="100" Height="4" CornerRadius="2" AutomationProperties.Name="Conversion progress"/>
+                </StackPanel>
+                <Button x:Name="CancelButton" Grid.Column="1" Content="Cancel" IsEnabled="False" Click="Cancel"/>
+                <Button x:Name="ConvertButton" Grid.Column="2" Content="Convert character" Classes="accent" Click="Convert"/>
+            </Grid>
+        </Grid>
+    </Panel>
+</Window>

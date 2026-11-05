@@ -87,7 +87,7 @@ The actual Generations Sonic uses independent `MouthReference` and `MouthReferen
 
 ## Optional Unleashed mirrored mouth
 
-`GenerateMouthL` is an opt-in conversion request flag, exposed as `Generate Mouth_L` only when Unleashed is selected in WPF, and as the value-free CLI flag `--generate-mouth-l`. The UI remembers the preference while gating it off for Generations; the core rejects a Generations request with this flag. The default remains disabled. Existing authored left mouths are retained rather than duplicated, empty/unweighted mouth locators are ignored, and conflicting generated bone names produce an explicit error.
+`GenerateMouthL` is an opt-in conversion request flag, exposed as `Generate Mouth_L` only when Unleashed is selected in the desktop app, and as the value-free CLI flag `--generate-mouth-l`. The UI remembers the preference while gating it off for Generations; the core rejects a Generations request with this flag. The default remains disabled. Existing authored left mouths are retained rather than duplicated, empty/unweighted mouth locators are ignored, and conflicting generated bone names produce an explicit error.
 
 The new mesh reflects positions and normals across model X, reverses triangle winding, reflects tangent XYZ and negates tangent handedness. UVs, colors, material assignments and weight magnitudes remain unchanged. Every bone in the weighted mouth branch is duplicated with `_L` appended; vertex indexes are remapped to those new bones. Original bone indexes and geometry are untouched. No negative MeshInstance scale is used.
 

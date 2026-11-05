@@ -205,3 +205,10 @@ Local evidence is in `artifacts/shader-family-audit`, `artifacts/shader-audit-ex
 - Verified the existing explicit failures for the three quantized clips in the additional Generations fixtures. In-game SCU playback, renderer parity and a native GLES3 parallax visual comparison remain unverified.
 
 Local audit evidence is in `artifacts/v0.6-audit`.
+
+## Version 0.6.1 desktop migration
+
+- Clean Release build on .NET SDK 10.0.403 completed with zero warnings or errors. All 120 tests passed, including 7 Avalonia workflow tests covering both appearance variants, settings persistence, picker options, the animation list, keyboard input, progress, cancellation and existing-directory protection.
+- Inspected the self-contained Windows x64 preview on Windows 11 in Light and Dark at its default and maximized sizes. Verified native chrome, Mica, the system accent, empty and selected animation rows, a native HKX picker, and live Windows Dark → Light → Dark in Automatic mode. Restored the original Windows appearance and application settings. Compact layout was checked headlessly. Physical high-DPI and every native dialog were outside the manual check.
+- Converted Unleashed Sonic with a real HKX clip and the optional mirrored mouth through the portable GUI. Acorn validated and relocated the binary scene, and all 29 output resources matched an equivalent .NET 10 CLI run byte for byte. A second GUI run for Generations was unavailable after the Windows automation helper failed to activate its window. Both games were exercised through the CLI and automated GUI profile tests.
+- Compared 33 native exports with v0.6.0, including the 325-clip Generations bank and the 219-clip Unleashed bank. All 654 clips retained their track structure, key counts and timing. All meshes, material resources and textures matched byte for byte. With .NET 10, rest transforms and animation poses differed slightly in floating-point rounding. The maximum component differences were 0.00000333 for rest transforms, 0.000003934 export units for animation translation and 0.00000072 for scale. All 33 binary scenes passed fresh-process Acorn relocation.

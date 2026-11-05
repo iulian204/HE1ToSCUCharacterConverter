@@ -1,0 +1,287 @@
+<Styles xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <!-- WinUI 3 Common_themeresources_any.xaml palette. Keep the Fluent control behavior. -->
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="WindowFallbackBrush" Color="#F3F3F3"/>
+                    <SolidColorBrush x:Key="CardFillBrush" Color="#B3FFFFFF"/>
+                    <SolidColorBrush x:Key="CardStrokeBrush" Color="#0F000000"/>
+                    <SolidColorBrush x:Key="SecondaryTextBrush" Color="#9E000000"/>
+                    <SolidColorBrush x:Key="ControlFillBrush" Color="#B3FFFFFF"/>
+                    <SolidColorBrush x:Key="ControlHoverBrush" Color="#80F9F9F9"/>
+                    <SolidColorBrush x:Key="ControlPressedBrush" Color="#4DF9F9F9"/>
+                    <SolidColorBrush x:Key="ControlDisabledBrush" Color="#4DF9F9F9"/>
+                    <SolidColorBrush x:Key="ControlStrokeBrush" Color="#0F000000"/>
+                    <SolidColorBrush x:Key="InputActiveBrush" Color="#FFFFFF"/>
+                    <SolidColorBrush x:Key="WellFillBrush" Color="#EEEEEE"/>
+                    <SolidColorBrush x:Key="WellStrokeBrush" Color="#29000000"/>
+                    <SolidColorBrush x:Key="RowHoverBrush" Color="#09000000"/>
+                    <SolidColorBrush x:Key="RowSelectedBrush" Color="#0F000000"/>
+                    <SolidColorBrush x:Key="RowPressedBrush" Color="#06000000"/>
+                    <SolidColorBrush x:Key="FlyoutFillBrush" Color="#F9F9F9"/>
+                    <SolidColorBrush x:Key="FlyoutStrokeBrush" Color="#0F000000"/>
+                    <SolidColorBrush x:Key="OnAccentBrush" Color="#FFFFFF"/>
+                    <SolidColorBrush x:Key="CheckStrokeBrush" Color="#72000000"/>
+                    <SolidColorBrush x:Key="ProgressTrackBrush" Color="#0F000000"/>
+                    <SolidColorBrush x:Key="AccentFillBrush" Color="{DynamicResource SystemAccentColorDark2}" Opacity="1"/>
+                    <SolidColorBrush x:Key="AccentHoverBrush" Color="{DynamicResource SystemAccentColorDark2}" Opacity="0.9"/>
+                    <SolidColorBrush x:Key="AccentPressedBrush" Color="{DynamicResource SystemAccentColorDark2}" Opacity="0.8"/>
+                    <LinearGradientBrush x:Key="ButtonStrokeBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+                        <GradientStop Color="#0F000000" Offset="0.92"/>
+                        <GradientStop Color="#29000000" Offset="1"/>
+                    </LinearGradientBrush>
+                    <LinearGradientBrush x:Key="FieldStrokeBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+                        <GradientStop Color="#0F000000" Offset="0.95"/>
+                        <GradientStop Color="#72000000" Offset="1"/>
+                    </LinearGradientBrush>
+
+                    <StaticResource x:Key="ButtonBackground" ResourceKey="ControlFillBrush"/>
+                    <StaticResource x:Key="ComboBoxBackground" ResourceKey="ControlFillBrush"/>
+                    <StaticResource x:Key="ComboBoxBackgroundUnfocused" ResourceKey="ControlFillBrush"/>
+                    <StaticResource x:Key="TextControlBackground" ResourceKey="ControlFillBrush"/>
+                    <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="ControlHoverBrush"/>
+                    <StaticResource x:Key="ComboBoxBackgroundPointerOver" ResourceKey="ControlHoverBrush"/>
+                    <StaticResource x:Key="TextControlBackgroundPointerOver" ResourceKey="ControlHoverBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillUncheckedPointerOver" ResourceKey="ControlHoverBrush"/>
+                    <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="ControlPressedBrush"/>
+                    <StaticResource x:Key="ComboBoxBackgroundPressed" ResourceKey="ControlPressedBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillUncheckedPressed" ResourceKey="ControlPressedBrush"/>
+                    <StaticResource x:Key="ButtonBackgroundDisabled" ResourceKey="ControlDisabledBrush"/>
+                    <StaticResource x:Key="ComboBoxBackgroundDisabled" ResourceKey="ControlDisabledBrush"/>
+                    <StaticResource x:Key="TextControlBackgroundDisabled" ResourceKey="ControlDisabledBrush"/>
+                    <StaticResource x:Key="AccentButtonBackgroundDisabled" ResourceKey="ControlDisabledBrush"/>
+                    <StaticResource x:Key="ButtonBorderBrush" ResourceKey="ButtonStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxBorderBrush" ResourceKey="ButtonStrokeBrush"/>
+                    <StaticResource x:Key="ButtonBorderBrushPointerOver" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ButtonBorderBrushPressed" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ButtonBorderBrushDisabled" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxBorderBrushPointerOver" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxBorderBrushPressed" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxBorderBrushDisabled" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="TextControlBorderBrushDisabled" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="TextControlBorderBrush" ResourceKey="FieldStrokeBrush"/>
+                    <StaticResource x:Key="TextControlBorderBrushPointerOver" ResourceKey="FieldStrokeBrush"/>
+                    <StaticResource x:Key="TextControlBackgroundFocused" ResourceKey="InputActiveBrush"/>
+                    <StaticResource x:Key="ComboBoxDropDownBackground" ResourceKey="FlyoutFillBrush"/>
+                    <StaticResource x:Key="ToolTipBackground" ResourceKey="FlyoutFillBrush"/>
+                    <StaticResource x:Key="MenuFlyoutPresenterBackground" ResourceKey="FlyoutFillBrush"/>
+                    <StaticResource x:Key="ComboBoxDropDownBorderBrush" ResourceKey="FlyoutStrokeBrush"/>
+                    <StaticResource x:Key="ToolTipBorderBrush" ResourceKey="FlyoutStrokeBrush"/>
+                    <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="FlyoutStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundPointerOver" ResourceKey="RowHoverBrush"/>
+                    <StaticResource x:Key="MenuFlyoutItemBackgroundPointerOver" ResourceKey="RowHoverBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundSelected" ResourceKey="RowSelectedBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundSelectedPointerOver" ResourceKey="RowSelectedBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundPressed" ResourceKey="RowPressedBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundSelectedPressed" ResourceKey="RowPressedBrush"/>
+                    <StaticResource x:Key="MenuFlyoutItemBackgroundPressed" ResourceKey="RowPressedBrush"/>
+                    <StaticResource x:Key="AccentButtonForeground" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="AccentButtonForegroundPointerOver" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="AccentButtonForegroundPressed" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckGlyphForegroundChecked" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckGlyphForegroundCheckedPointerOver" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckGlyphForegroundCheckedPressed" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="AccentButtonBackground" ResourceKey="AccentFillBrush"/>
+                    <StaticResource x:Key="TextControlBorderBrushFocused" ResourceKey="AccentFillBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillChecked" ResourceKey="AccentFillBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundStrokeChecked" ResourceKey="AccentFillBrush"/>
+                    <StaticResource x:Key="AccentButtonBackgroundPointerOver" ResourceKey="AccentHoverBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" ResourceKey="AccentHoverBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver" ResourceKey="AccentHoverBrush"/>
+                    <StaticResource x:Key="AccentButtonBackgroundPressed" ResourceKey="AccentPressedBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillCheckedPressed" ResourceKey="AccentPressedBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed" ResourceKey="AccentPressedBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundStrokeUnchecked" ResourceKey="CheckStrokeBrush"/>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="WindowFallbackBrush" Color="#202020"/>
+                    <SolidColorBrush x:Key="CardFillBrush" Color="#0DFFFFFF"/>
+                    <SolidColorBrush x:Key="CardStrokeBrush" Color="#19000000"/>
+                    <SolidColorBrush x:Key="SecondaryTextBrush" Color="#C5FFFFFF"/>
+                    <SolidColorBrush x:Key="ControlFillBrush" Color="#0FFFFFFF"/>
+                    <SolidColorBrush x:Key="ControlHoverBrush" Color="#15FFFFFF"/>
+                    <SolidColorBrush x:Key="ControlPressedBrush" Color="#08FFFFFF"/>
+                    <SolidColorBrush x:Key="ControlDisabledBrush" Color="#0BFFFFFF"/>
+                    <SolidColorBrush x:Key="ControlStrokeBrush" Color="#12FFFFFF"/>
+                    <SolidColorBrush x:Key="InputActiveBrush" Color="#B31E1E1E"/>
+                    <SolidColorBrush x:Key="WellFillBrush" Color="#1C1C1C"/>
+                    <SolidColorBrush x:Key="WellStrokeBrush" Color="#18FFFFFF"/>
+                    <SolidColorBrush x:Key="RowHoverBrush" Color="#0FFFFFFF"/>
+                    <SolidColorBrush x:Key="RowSelectedBrush" Color="#18FFFFFF"/>
+                    <SolidColorBrush x:Key="RowPressedBrush" Color="#0AFFFFFF"/>
+                    <SolidColorBrush x:Key="FlyoutFillBrush" Color="#2C2C2C"/>
+                    <SolidColorBrush x:Key="FlyoutStrokeBrush" Color="#33000000"/>
+                    <SolidColorBrush x:Key="OnAccentBrush" Color="#E4000000"/>
+                    <SolidColorBrush x:Key="CheckStrokeBrush" Color="#8BFFFFFF"/>
+                    <SolidColorBrush x:Key="ProgressTrackBrush" Color="#15FFFFFF"/>
+                    <SolidColorBrush x:Key="AccentFillBrush" Color="{DynamicResource SystemAccentColorLight2}" Opacity="1"/>
+                    <SolidColorBrush x:Key="AccentHoverBrush" Color="{DynamicResource SystemAccentColorLight2}" Opacity="0.9"/>
+                    <SolidColorBrush x:Key="AccentPressedBrush" Color="{DynamicResource SystemAccentColorLight2}" Opacity="0.8"/>
+                    <LinearGradientBrush x:Key="ButtonStrokeBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+                        <GradientStop Color="#12FFFFFF" Offset="0.92"/>
+                        <GradientStop Color="#18FFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+                    <LinearGradientBrush x:Key="FieldStrokeBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+                        <GradientStop Color="#12FFFFFF" Offset="0.95"/>
+                        <GradientStop Color="#8BFFFFFF" Offset="1"/>
+                    </LinearGradientBrush>
+
+                    <StaticResource x:Key="ButtonBackground" ResourceKey="ControlFillBrush"/>
+                    <StaticResource x:Key="ComboBoxBackground" ResourceKey="ControlFillBrush"/>
+                    <StaticResource x:Key="ComboBoxBackgroundUnfocused" ResourceKey="ControlFillBrush"/>
+                    <StaticResource x:Key="TextControlBackground" ResourceKey="ControlFillBrush"/>
+                    <StaticResource x:Key="ButtonBackgroundPointerOver" ResourceKey="ControlHoverBrush"/>
+                    <StaticResource x:Key="ComboBoxBackgroundPointerOver" ResourceKey="ControlHoverBrush"/>
+                    <StaticResource x:Key="TextControlBackgroundPointerOver" ResourceKey="ControlHoverBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillUncheckedPointerOver" ResourceKey="ControlHoverBrush"/>
+                    <StaticResource x:Key="ButtonBackgroundPressed" ResourceKey="ControlPressedBrush"/>
+                    <StaticResource x:Key="ComboBoxBackgroundPressed" ResourceKey="ControlPressedBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillUncheckedPressed" ResourceKey="ControlPressedBrush"/>
+                    <StaticResource x:Key="ButtonBackgroundDisabled" ResourceKey="ControlDisabledBrush"/>
+                    <StaticResource x:Key="ComboBoxBackgroundDisabled" ResourceKey="ControlDisabledBrush"/>
+                    <StaticResource x:Key="TextControlBackgroundDisabled" ResourceKey="ControlDisabledBrush"/>
+                    <StaticResource x:Key="AccentButtonBackgroundDisabled" ResourceKey="ControlDisabledBrush"/>
+                    <StaticResource x:Key="ButtonBorderBrush" ResourceKey="ButtonStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxBorderBrush" ResourceKey="ButtonStrokeBrush"/>
+                    <StaticResource x:Key="ButtonBorderBrushPointerOver" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ButtonBorderBrushPressed" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ButtonBorderBrushDisabled" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxBorderBrushPointerOver" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxBorderBrushPressed" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxBorderBrushDisabled" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="TextControlBorderBrushDisabled" ResourceKey="ControlStrokeBrush"/>
+                    <StaticResource x:Key="TextControlBorderBrush" ResourceKey="FieldStrokeBrush"/>
+                    <StaticResource x:Key="TextControlBorderBrushPointerOver" ResourceKey="FieldStrokeBrush"/>
+                    <StaticResource x:Key="TextControlBackgroundFocused" ResourceKey="InputActiveBrush"/>
+                    <StaticResource x:Key="ComboBoxDropDownBackground" ResourceKey="FlyoutFillBrush"/>
+                    <StaticResource x:Key="ToolTipBackground" ResourceKey="FlyoutFillBrush"/>
+                    <StaticResource x:Key="MenuFlyoutPresenterBackground" ResourceKey="FlyoutFillBrush"/>
+                    <StaticResource x:Key="ComboBoxDropDownBorderBrush" ResourceKey="FlyoutStrokeBrush"/>
+                    <StaticResource x:Key="ToolTipBorderBrush" ResourceKey="FlyoutStrokeBrush"/>
+                    <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="FlyoutStrokeBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundPointerOver" ResourceKey="RowHoverBrush"/>
+                    <StaticResource x:Key="MenuFlyoutItemBackgroundPointerOver" ResourceKey="RowHoverBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundSelected" ResourceKey="RowSelectedBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundSelectedPointerOver" ResourceKey="RowSelectedBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundPressed" ResourceKey="RowPressedBrush"/>
+                    <StaticResource x:Key="ComboBoxItemBackgroundSelectedPressed" ResourceKey="RowPressedBrush"/>
+                    <StaticResource x:Key="MenuFlyoutItemBackgroundPressed" ResourceKey="RowPressedBrush"/>
+                    <StaticResource x:Key="AccentButtonForeground" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="AccentButtonForegroundPointerOver" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="AccentButtonForegroundPressed" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckGlyphForegroundChecked" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckGlyphForegroundCheckedPointerOver" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckGlyphForegroundCheckedPressed" ResourceKey="OnAccentBrush"/>
+                    <StaticResource x:Key="AccentButtonBackground" ResourceKey="AccentFillBrush"/>
+                    <StaticResource x:Key="TextControlBorderBrushFocused" ResourceKey="AccentFillBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillChecked" ResourceKey="AccentFillBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundStrokeChecked" ResourceKey="AccentFillBrush"/>
+                    <StaticResource x:Key="AccentButtonBackgroundPointerOver" ResourceKey="AccentHoverBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" ResourceKey="AccentHoverBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver" ResourceKey="AccentHoverBrush"/>
+                    <StaticResource x:Key="AccentButtonBackgroundPressed" ResourceKey="AccentPressedBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundFillCheckedPressed" ResourceKey="AccentPressedBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed" ResourceKey="AccentPressedBrush"/>
+                    <StaticResource x:Key="CheckBoxCheckBackgroundStrokeUnchecked" ResourceKey="CheckStrokeBrush"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+            <CornerRadius x:Key="ControlCornerRadius">4</CornerRadius>
+            <CornerRadius x:Key="OverlayCornerRadius">8</CornerRadius>
+            <Thickness x:Key="TextControlBorderThemeThicknessFocused">1,1,1,2</Thickness>
+            <Thickness x:Key="ComboBoxDropdownBorderPadding">4,0</Thickness>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <Style Selector="Border.settingsCard">
+        <Setter Property="Background" Value="{DynamicResource CardFillBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource CardStrokeBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="8"/>
+        <Setter Property="Padding" Value="15,11"/>
+    </Style>
+    <Style Selector="TextBlock.sectionTitle">
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="14"/>
+    </Style>
+    <Style Selector="Button">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="MinHeight" Value="32"/>
+        <Setter Property="Padding" Value="12,5"/>
+    </Style>
+    <Style Selector="Button:pressed">
+        <Setter Property="RenderTransform" Value="none"/>
+    </Style>
+    <Style Selector="ComboBox">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+    </Style>
+    <Style Selector="ComboBoxItem">
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Margin" Value="0,1"/>
+        <Setter Property="MinHeight" Value="32"/>
+    </Style>
+    <Style Selector="ComboBox /template/ Border#PopupBorder">
+        <Setter Property="BoxShadow" Value="0 4 14 0 #26000000"/>
+    </Style>
+    <Style Selector="TextBox.log /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="{DynamicResource WellFillBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource WellStrokeBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+    <Style Selector="TextBox.log:focus-within /template/ Border#PART_BorderElement">
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentFillBrush}"/>
+    </Style>
+    <Style Selector="ListBox.animationList">
+        <Setter Property="Background" Value="{DynamicResource WellFillBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource WellStrokeBrush}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="ClipToBounds" Value="True"/>
+        <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="False"/>
+    </Style>
+    <Style Selector="ListBox.animationList:focus-within">
+        <Setter Property="BorderBrush" Value="{DynamicResource AccentFillBrush}"/>
+    </Style>
+    <Style Selector="ListBox.animationList ListBoxItem">
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="MinHeight" Value="32"/>
+        <Setter Property="Padding" Value="12,5"/>
+        <Setter Property="Margin" Value="0,1"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <ContentPresenter Name="PART_ContentPresenter"
+                                      Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}"
+                                      Padding="{TemplateBinding Padding}" Content="{TemplateBinding Content}"
+                                      ContentTemplate="{TemplateBinding ContentTemplate}" VerticalContentAlignment="Center"
+                                      HorizontalContentAlignment="Stretch"/>
+                    <Border Name="SelectionMark" IsVisible="False" IsHitTestVisible="False" Width="3" Height="16"
+                            HorizontalAlignment="Left" VerticalAlignment="Center" CornerRadius="2"
+                            Background="{DynamicResource AccentFillBrush}"/>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="ListBox.animationList ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource RowHoverBrush}"/>
+    </Style>
+    <Style Selector="ListBox.animationList ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource RowSelectedBrush}"/>
+    </Style>
+    <Style Selector="ListBox.animationList ListBoxItem:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource RowPressedBrush}"/>
+    </Style>
+    <Style Selector="ListBox.animationList ListBoxItem:selected:not(:disabled) /template/ Border#SelectionMark">
+        <Setter Property="IsVisible" Value="True"/>
+    </Style>
+    <Style Selector="ProgressBar">
+        <Setter Property="Background" Value="{DynamicResource ProgressTrackBrush}"/>
+        <Setter Property="Foreground" Value="{DynamicResource AccentFillBrush}"/>
+    </Style>
+    <Style Selector="ToolTip">
+        <Setter Property="CornerRadius" Value="4"/>
+        <Setter Property="Padding" Value="10,7"/>
+    </Style>
+</Styles>
