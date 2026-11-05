@@ -7,6 +7,18 @@ public static class MaterialAppearance
 {
     public static bool EyeShader(string shader) => shader.StartsWith("ChrEye",StringComparison.OrdinalIgnoreCase) || shader.StartsWith("SonicEye",StringComparison.OrdinalIgnoreCase);
 
+    internal static bool ShaderFamily(string? shader, string family) => shader != null &&
+        (shader.Equals(family, StringComparison.OrdinalIgnoreCase) || shader.StartsWith(family + "_", StringComparison.OrdinalIgnoreCase));
+
+    internal static int GlossChannel(string? shader, SourceGame game)
+    {
+        if (shader != null && EyeShader(shader)) return 1;
+        // The Generations character-metal programs sample sampPower.w. The
+        // Xbox 360 SonicMetal fetch writes sampled R into a temporary's W.
+        return game == SourceGame.SonicGenerations &&
+            (ShaderFamily(shader, "ChrMetal") || ShaderFamily(shader, "PamChrMetal")) ? 3 : 0;
+    }
+
     public static Vector4 Diffuse(He1Material? material,SourceGame game)
     {
         var value=material?.Parameter("diffuse",Vector4.One) ?? new Vector4(.72f,.77f,.86f,1);
@@ -27,6 +39,40 @@ public static class MaterialAppearance
 
     public static bool ReflectiveFinish(He1Material? material) => material!=null && !EyeShader(material.Shader) &&
         material.Textures.Any(t=>t.Type.Equals("reflection",StringComparison.OrdinalIgnoreCase));
+
+    // EnmMetal combines diffuse paint with a separate reflective response.
+    public static float Metalness(He1Material? material, SourceGame game) =>
+        game == SourceGame.SonicGenerations &&
+        material?.Shader.StartsWith("EnmMetal_", StringComparison.OrdinalIgnoreCase) == true ? .6f : 0;
+
+    private static readonly float[] linearSrgb = Enumerable.Range(0, 256).Select(i =>
+    {
+        float s = i / 255f;
+        return s <= .04045f ? s / 12.92f : MathF.Pow((s + .055f) / 1.055f, 2.4f);
+    }).ToArray();
+    internal static ReadOnlySpan<float> LinearSrgb => linearSrgb;
+    internal static byte EncodeSrgb(float linear)
+    {
+        linear = Math.Clamp(linear, 0, 1);
+        return (byte)MathF.Round(255 *
+            (linear <= .0031308f ? 12.92f * linear : 1.055f * MathF.Pow(linear, 1 / 2.4f) - .055f));
+    }
+
+    public static float EquivalentMetalSpecular(float dielectricSpecular, float metallic, Vector4 diffuse, DdsImage? albedo)
+    {
+        var color = new Vector3(diffuse.X, diffuse.Y, diffuse.Z);
+        if (albedo != null)
+        {
+            Vector3 sum = Vector3.Zero;
+            for (int i = 0; i < albedo.Pixels.Length; i += 4)
+                sum += new Vector3(LinearSrgb[albedo.Pixels[i]], LinearSrgb[albedo.Pixels[i + 1]], LinearSrgb[albedo.Pixels[i + 2]]);
+            color *= sum / (albedo.Pixels.Length / 4);
+        }
+        float albedoLuminance = Math.Clamp(Vector3.Dot(color, new(.2126f, .7152f, .0722f)), 0, 1);
+        // Express the mixed GGX F0 in the fitter's dielectric scalar units.
+        float f0 = (1 - metallic) * .16f * dielectricSpecular * dielectricSpecular + metallic * albedoLuminance;
+        return MathF.Sqrt(f0 / .16f);
+    }
 
     public static float SkinFresnelScale(He1Material? material)
     {

@@ -50,6 +50,51 @@ public sealed class ConversionTests : IDisposable
         var corrupt=ModelFixture(version);BinaryPrimitives.WriteUInt32BigEndian(corrupt.AsSpan(28),uint.MaxValue);
         File.WriteAllBytes(path,corrupt);Assert.ThrowsAny<Exception>(()=>new He1ModelReader().Read(path));
     }
+    [Theory]
+    [InlineData(1, -1)]
+    [InlineData(-1, 1)]
+    [InlineData(0, 1)]
+    public void MissingTangentsUseUvDirectionAndPreserveAuthoredVertices(int uvV, int handedness)
+    {
+        string path = Path.Combine(directory, "missing-tangent.model");
+        File.WriteAllBytes(path, ModelFixture(5, 0x7FFFFFFF, uvV));
+
+        var vertices = Assert.Single(new He1ModelReader().Read(path).Surfaces).Vertices;
+        Vector3 direction = uvV == 0 ? Vector3.UnitX : Vector3.UnitY;
+        Assert.Equal(new Vector4(direction, handedness), vertices[0].Tangent);
+        Assert.Equal(new Vector4(direction, handedness), vertices[1].Tangent);
+        Assert.Equal(new Vector4(Vector3.UnitX, 1), vertices[2].Tangent);
+    }
+
+    [Fact]
+    public void OtherNonFiniteVertexFloatsAreRejected()
+    {
+        string path = Path.Combine(directory, "invalid-vertex.model");
+        File.WriteAllBytes(path, ModelFixture(5, 0x7FC00000));
+        Assert.Contains("Non-finite float", Assert.Throws<InvalidDataException>(() => new He1ModelReader().Read(path)).Message);
+
+        var bytes = ModelFixture(5);
+        int Offset(int p) => 24 + BinaryPrimitives.ReadInt32BigEndian(bytes.AsSpan(p));
+        int group = Offset(Offset(28));
+        int mesh = Offset(Offset(group + 4));
+        BinaryPrimitives.WriteUInt32BigEndian(bytes.AsSpan(Offset(mesh + 20)), 0x7FFFFFFF);
+        File.WriteAllBytes(path, bytes);
+        Assert.Contains("Non-finite float", Assert.Throws<InvalidDataException>(() => new He1ModelReader().Read(path)).Message);
+    }
+
+    [Fact]
+    public void NonFiniteHalfUvIsRejectedBeforeExport()
+    {
+        var bytes = ModelFixture(5);
+        int Offset(int p) => 24 + BinaryPrimitives.ReadInt32BigEndian(bytes.AsSpan(p));
+        int group = Offset(Offset(28));
+        int mesh = Offset(Offset(group + 4));
+        BinaryPrimitives.WriteUInt32BigEndian(bytes.AsSpan(Offset(mesh + 24) + 76), 0x2C235F);
+        BinaryPrimitives.WriteUInt16BigEndian(bytes.AsSpan(Offset(mesh + 20) + 56), 0x7C00);
+        string path = Path.Combine(directory, "invalid-half-uv.model");
+        File.WriteAllBytes(path, bytes);
+        Assert.Contains("Non-finite half float", Assert.Throws<InvalidDataException>(() => new He1ModelReader().Read(path)).Message);
+    }
     [Fact]
     public void TextTransformsUseGodotRowsAndLowercaseExponentUnderForeignLocale()
     {
@@ -124,7 +169,7 @@ public sealed class ConversionTests : IDisposable
         Assert.Throws<NotSupportedException>(()=>new HavokReader().Read(path));
         path=Fixture("bad.model","truncated");Assert.Throws<InvalidDataException>(()=>new He1ModelReader().Read(path));
     }
-    private static byte[] ModelFixture(int version)
+    private static byte[] ModelFixture(int version, uint missingTangentBits = 0, int uvV = 1)
     {
         var bytes=new List<byte>(new byte[24]);
         int Reserve(int n){int p=bytes.Count;bytes.AddRange(new byte[n]);return p;}
@@ -137,11 +182,27 @@ public sealed class ConversionTests : IDisposable
         if(version>=5){U(root,1);int table=Reserve(4);Pointer(root+4,table);Pointer(table,group);}
         U(group,1);int meshes=Reserve(4);Pointer(group+4,meshes);int mesh=Reserve(44);Pointer(meshes,mesh);
         Pointer(mesh,Str("material"));U(mesh+4,3);int faces=Reserve(6);Pointer(mesh+8,faces);bytes[faces+3]=1;bytes[faces+5]=2;
-        U(mesh+12,3);U(mesh+16,20);int vertices=Reserve(60);Pointer(mesh+20,vertices);
-        for(int i=0;i<3;i++){F(vertices+i*20,i==1?1:0);F(vertices+i*20+4,i==2?1:0);bytes[vertices+i*20+12]=0;bytes[vertices+i*20+16]=255;}
-        int declaration=Reserve(48);Pointer(mesh+24,declaration);
+        const int stride = 64;
+        U(mesh+12,3);U(mesh+16,stride);int vertices=Reserve(3 * stride);Pointer(mesh+20,vertices);
+        for (int i = 0; i < 3; i++)
+        {
+            int v = vertices + i * stride;
+            F(v, i == 1 ? 1 : 0);
+            F(v + 4, i == 2 ? 1 : 0);
+            bytes[v + 16] = 255;
+            F(v + 28, 1); // normal Z
+            F(v + 32, 1); // tangent X
+            if (i < 2 && missingTangentBits != 0)
+                for (int component = 0; component < 3; component++) U(v + 32 + component * 4, missingTangentBits);
+            F(v + 48, 1); // binormal Y
+            F(v + 56, i == 2 ? 1 : 0);
+            F(v + 60, i == 1 ? uvV : 0);
+        }
+        int declaration=Reserve(96);Pointer(mesh+24,declaration);
         void Element(int p,int offset,uint format,byte type){bytes[p+3]=(byte)offset;U(p+4,format);bytes[p+9]=type;}
-        Element(declaration,0,0x2A23B9,0);Element(declaration+12,12,0x1A2286,2);Element(declaration+24,16,0x1A2086,1);U(declaration+40,uint.MaxValue);
+        Element(declaration,0,0x2A23B9,0);Element(declaration+12,12,0x1A2286,2);Element(declaration+24,16,0x1A2086,1);
+        Element(declaration+36,20,0x2A23B9,3);Element(declaration+48,32,0x2A23B9,6);Element(declaration+60,44,0x2A23B9,7);
+        Element(declaration+72,56,0x2C23A5,5);U(declaration+88,uint.MaxValue);
         U(mesh+28,1);int palette=Reserve(2);Pointer(mesh+32,palette);bytes[palette+(version==6?1:0)]=1;
         int nodeField=root+(version==4?32:version==2?24:16);U(nodeField,2);int nodes=Reserve(8);Pointer(nodeField+4,nodes);
         for(int i=0;i<2;i++){int n=Reserve(8);Pointer(nodes+i*4,n);U(n,i==0?uint.MaxValue:0);Pointer(n+4,Str(i==0?"root":"child"));}

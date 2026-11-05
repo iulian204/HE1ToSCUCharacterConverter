@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0
+
+- Recover missing tangents from mesh geometry and UVs, fixing exports such as Generations Shadow.
+- Route secondary UV normal and emission maps correctly and embed their textures in native exports.
+- Improve Generations enemy materials with per-pixel painted-metal reflectance, brighter glass and authored emission.
+- Restore textured boost and stomp effects, and improve shader-specific gloss and depth mapping.
+- Improve export stability and diagnostics for malformed geometry, large textures and optional maps.
+
 ## 0.5.0
 
 - Automatically separate mouth geometry using bone weights, including both Generations mouths and their teeth, while sharing the existing Skeleton and animations.

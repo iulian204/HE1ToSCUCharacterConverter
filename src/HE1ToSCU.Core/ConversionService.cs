@@ -109,7 +109,7 @@ public sealed class ConversionService
             var result=new ConversionResult(destination,model.AllSurfaces.Count(),model.AllSurfaces.Sum(s=>s.Vertices.Count),model.Bones.Count,clips.Count,binary);
             var manifest=new
             {
-                converter="HE1ToSCU 0.5.0",game=request.Game.ToString(),request.GenerateMouthL,result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
+                converter="HE1ToSCU 0.6.0",game=request.Game.ToString(),request.GenerateMouthL,result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
                 sourceAnimations=request.AnimationPaths,spatialProfile=new{scale=Spatial.Scale,basis="Y-up preserved"},
                 outputScene=binary?ExportNames.SceneBinary(model):ExportNames.SceneText(model),outputMesh=binary?ExportNames.MeshBinary(model):ExportNames.MeshText(model),
                 meshes=model.MeshParts.Select(p=>new {nodePath="Skeleton/"+p.Name,textFile=ExportNames.MeshText(model,p.Name),binaryFile=binary?ExportNames.MeshBinary(model,p.Name):null,p.MouthRootBone,p.Mirrored,surfaces=p.Surfaces.Count,vertices=p.Surfaces.Sum(s=>s.Vertices.Count)}),
@@ -166,17 +166,20 @@ internal static class AcornResourceCompiler
         }
         await File.WriteAllLinesAsync(Path.Combine(directory,logFile),lines,CancellationToken.None);
         if(process.ExitCode!=0||!lines.Any(l=>l.Contains(marker,StringComparison.Ordinal))||lines.Any(l=>l.Contains("SCRIPT ERROR",StringComparison.Ordinal)||l.StartsWith("ERROR:",StringComparison.Ordinal)))
-            throw new InvalidDataException("Acorn could not validate the exported resources. See acorn-validation.log in the diagnostic staging folder.");
+            throw new InvalidDataException($"Acorn could not validate the exported resources. See {logFile} in the diagnostic staging folder.");
         }
         await RunAsync(scriptPath,"HE1SCU_VALIDATED","acorn-validation.log");
         string verifyPath=Path.Combine(directory,"__verify.gd");
         File.WriteAllText(verifyPath,BuildVerifyScript(model,clips));
         await RunAsync(verifyPath,"HE1SCU_BINARY_VALIDATED","acorn-binary-validation.log");
         File.Delete(verifyPath);File.Delete(Path.Combine(directory,"__poses.bin"));
+        var header = new byte[4];
         foreach(string file in model.MeshParts.Select(p=>ExportNames.MeshBinary(model,p.Name)).Prepend(ExportNames.SceneBinary(model)))
         {
-            byte[] header=File.ReadAllBytes(Path.Combine(directory,file)).Take(4).ToArray();
-            if(!header.SequenceEqual("RSRC"u8.ToArray())&&!header.SequenceEqual("RSCC"u8.ToArray()))throw new InvalidDataException($"Acorn did not produce a binary Godot resource: {file}.");
+            using var stream = File.OpenRead(Path.Combine(directory, file));
+            if (stream.ReadAtLeast(header, header.Length, false) != header.Length ||
+                (!header.AsSpan().SequenceEqual("RSRC"u8) && !header.AsSpan().SequenceEqual("RSCC"u8)))
+                throw new InvalidDataException($"Acorn did not produce a binary Godot resource: {file}.");
         }
         File.Delete(scriptPath);File.Delete(Path.Combine(directory,"project.godot"));
     }
@@ -238,8 +241,8 @@ internal static class AcornResourceCompiler
             quit()
         func clear_material_paths(material):
             material.resource_path = ""
-            for property_name in ["albedo_texture", "normal_texture", "roughness_texture", "emission_texture", "rim_texture"]:
-                var texture = material.get(property_name)
+            for slot in range(SpatialMaterial.TEXTURE_MAX):
+                var texture = material.get_texture(slot)
                 if texture != null:
                     texture.resource_path = ""
         {{PoseValidation.GodotFunctions}}

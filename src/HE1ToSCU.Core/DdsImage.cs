@@ -7,6 +7,12 @@ namespace HE1ToSCU.Core;
 /// <summary>Managed top-level DDS decoder for HE1 BC1/2/3/4/5 and uncompressed RGB(A).</summary>
 public sealed record DdsImage(int Width, int Height, byte[] Pixels)
 {
+    internal int ResampleOffset(int x, int y, int width, int height)
+    {
+        int column = (int)((long)x * Width / width), row = (int)((long)y * Height / height);
+        return (row * Width + column) * 4;
+    }
+
     public static DdsImage Read(string path) => Decode(File.ReadAllBytes(path));
     public static DdsImage Decode(byte[] bytes)
     {

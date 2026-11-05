@@ -71,7 +71,7 @@ When **Sonic Unleashed** is selected, the optional **Generate Mouth_L** checkbox
 
 This is a usable first conversion slice, **not a complete game-ready character replacement pipeline**.
 
-- 64-bit packfiles, tagfiles, delta/wavelet codecs and big-endian compressed spline payloads are unsupported. The Unleashed container profile does not imply support for every platform or codec variant.
+- 64-bit packfiles, tagfiles, quantized animation (`hkaQuantizedAnimation`), delta/wavelet codecs and big-endian compressed spline payloads are unsupported. For a folder with mixed codecs, select the supported clips individually.
 - Float/morph animation tracks and model morph targets are rejected. Additive clips become standalone reference-pose animations, not runtime additive overlays. Looping is inferred from `loop` in the source name; other clips can be set to loop in the target editor.
 - Archives must already be extracted. `.ar`, `.ar.00`, `.pac` and PCK import/repacking are not implemented.
 - Material conversion approximates the original shaders; it does not reproduce HE1 light probes, colored per-pixel specular, reflection/matcap sampling or custom eye highlights. Unsupported DDS codecs (including BC7), texture arrays and volume/cube textures produce specific errors. Missing material files use neutral fallbacks; missing textures are logged.

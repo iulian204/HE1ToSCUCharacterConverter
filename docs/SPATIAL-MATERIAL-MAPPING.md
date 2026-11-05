@@ -23,15 +23,19 @@ r = (2 / (n + 2)) ^ 0.25
 
 This matches the normal-incidence peaks of normalized Blinn and GGX distributions: `D_Blinn(1)=(n+2)/(2*pi)` and `D_GGX(1)=1/(pi*r^4)`, where GGX alpha is `r^2`. It is a distribution approximation, not an exact BRDF equivalence.
 
-With a gloss map, the converter bakes RGBA8 roughness using the same formula per texel, retaining the source power clamp. Explicit gloss slots and `_pow`/`_pow_HD` names are detected. R is used normally; ChrEye/SonicEye surface gloss uses G. Roughness textures use linear sampling, generated mipmaps and material roughness 1. Without a gloss map, roughness is constant. Specular RGB noise never becomes roughness noise: this avoids the patchy skin/fur and overly smooth cloth produced by the previous intensity-dependent mapping.
+With a gloss map, the converter bakes RGBA8 roughness using the same formula per texel, retaining the source power clamp. Explicit `gloss` and `power` slots and `_pow`/`_pow_HD` names are detected. R is used normally. ChrEye and SonicEye surface gloss use G, and Generations ChrMetal and PamChrMetal read A from their gloss textures. Roughness textures use linear sampling, generated mipmaps and material roughness 1. Without a gloss map, roughness is constant. Specular RGB intensity is fitted independently from roughness.
 
-`metallic_specular` is fitted globally to source brightness, material specular luminance and the histogram of specular RGB luminance/gloss samples. The canonical view has `V=N`, samples a hemisphere of light directions, and minimizes integrated squared error against `B * (N.H)^n`. The fit averages the upstream GLES2/GLES3 geometry terms and uses Godot's dielectric `F0=0.16*s^2`. Numerical quadrature resolves narrow highlights. Exported base `s` stays in [0,1]; metallic remains zero. This global scalar cannot preserve colored, spatially varying specular intensity.
+`metallic_specular` is fitted globally to source brightness, material specular luminance and the histogram of specular RGB luminance/gloss samples. The canonical view has `V=N`, samples a hemisphere of light directions, and minimizes integrated squared error against `B * (N.H)^n`. The fit averages the upstream GLES2/GLES3 geometry terms and uses Godot's dielectric `F0=0.16*s^2`. Numerical quadrature resolves narrow highlights. Exported base `s` stays in [0,1]. This global scalar cannot preserve colored, spatially varying specular intensity.
 
 ## Highlight and color adaptation
 
 Reflective finishes can need more direct highlight brightness than the bounded base fit supplies. A separate desired fit (allowing scalar up to 2.5) defines the additional direct response. Built-in GTR1 clearcoat approximates that difference, preserving its normal-incidence peak and minimizing remaining angular shape error. This is a practical Godot approximation, not a reconstruction of the source camera-light lobe. Generations reflective finishes apply the final preview's 1.55 brightness factor to the desired fit; Unleashed uses its game-specific brightness directly.
 
 In Godot 3.1.2, this clearcoat term adds direct lighting without increasing the base environment reflection. Clearcoat strength can exceed the Inspector's 0..1 hint: the unmodified stock float setter and binary resource serializer preserve these HDR values. Both Acorn and stock 3.1.2 were checked. Editing the value through a range-limited Inspector control may clamp it. The base roughness, albedo and sky-reflection scalar are unchanged by this highlight adjustment.
+
+Generations `EnmMetal_*` materials with matching primary-UV diffuse and specular sampling bake per-pixel base color and metalness. The source shader uses specular RGB for the direct highlight and specular alpha for a separate matcap term. The bake uses RGB as a color input, excludes specular alpha, and converts the power-matched highlight peak to target reflectance with `F0 = 8*pi*brightness/(power+2)` before applying the texture color and material specular luminance. A hue-preserving clamp keeps reflectance within the representable range. The bake solves the Godot metallic mix against both the source diffuse color and this reflectance. It preserves diffuse alpha and the original roughness calculation. When the textures cannot share a bake, a scalar painted-metal approximation and fitted direct highlight are used.
+
+Generations `EnmGlass_*` materials use the source shader's separate `mrgChrEmissionParam.rgb * ambient.rgb * mrgChrEmissionParam.w` contribution. Its alpha combines diffuse alpha with a view-normal matcap sample. SpatialMaterial uses a front-weighted average of the matcap alpha for that coverage, retaining the source blend mode and mapped normals. Brightness and coverage can therefore approximate the original lens, while its view-dependent glint pattern depends on target lighting.
 
 Where a ChrSkin/SonicSkin material supplies `mrgFresnelParam`, the normal-incidence specular fitting scale uses `clamp(x,0,1)*max(y,0)`. This reduces the Unleashed fur's broad white sheen without recoloring its diffuse texture. The full view-dependent source Fresnel curve is not reproduced.
 
@@ -45,10 +49,25 @@ The supplied Unleashed eye, cloth and enamel shaders tint direct diffuse separat
 | Alpha, optional opacity texture, scalar opacity | Albedo alpha, transparency/alpha scissor as appropriate |
 | ChrSkin/SonicCloth packed normal | X=R*A, Y=G, reconstructed Z; green inverted for the tangent convention |
 | ChrEye/SonicEye packed surface normal | B/A channels, with reconstructed Z; custom highlight normals excluded |
+| Normal texture assigned to the second source UV set | `detail_normal` on UV2 with neutral multiplicative detail albedo. The original albedo and mesh UVs stay in place |
 | Emissive parameters and texture | Emission color/texture, default white multiplier for a texture with zero stored emission |
 | Skin falloff/displacement texture | Approximate built-in rim texture and intensity |
 | Double-sided, additive material, punch slot | Culling, blending and alpha-scissor settings |
 
 Zero stored `diffuse.w` is treated as default opacity 1 for the supplied opaque materials. Missing textures are logged. DDS BC1/2/3/4/5 and supported uncompressed RGB/RGBA are decoded in managed C#; mipmaps and embedded ImageTextures require no external converter or import step. Colors use sRGB; normal/roughness maps remain linear.
 
-Reflection/matcap sampling, original GI/probes, independent ambient tint, colored per-pixel specular, refraction, extra UV routing and custom eye highlights have no equivalent in this approximation. Other source UV indexes are logged and primary UVs are used. Native loading, numerical fitting and the preview renders establish useful conversion behavior, not pixel parity or in-game SCU acceptance.
+Reflection/matcap sampling, original GI/probes, independent ambient tint, colored per-pixel specular, refraction and custom eye highlights remain outside this approximation. Unsupported UV assignments are logged and fall back to primary UVs. Native loading, numerical fitting and preview renders cover the converter output. In-game SCU acceptance and pixel parity remain unverified.
+
+## Shader library audit
+
+The supplied library contains 3,081 Generations HLSL files and 1,446 Unleashed assembly files. The per-file pass indexed 3,973 pixel programs and 554 vertex programs into 294 game/family groups. The local reports at `artifacts/shader-family-audit/files.csv` and `artifacts/shader-family-audit/families.tsv` include file hashes, used sampler and parameter names, and operation counts. Register-use and data-flow checks on the affected variants guided these conversion rules.
+
+| Source family | SpatialMaterial conversion |
+|---|---|
+| Generations `EnmEmission`, `EnmIgnore` and `EnmGlass` | Constant emission and optional texture from `(mrgChrEmissionParam.rgb + sample) * ambient.rgb * mrgChrEmissionParam.w`. Variants with the `l` sampler accept a displacement-tagged emission texture. Coverage follows the sampled diffuse/matcap alpha, including when an unused opacity entry aliases the diffuse texture. |
+| `Luminescence` variants with an emission sampler | Emit from the authored texture, with ambient tint for the Generations path. The Unleashed assembly adds the sampled RGB independently of its diffuse lighting. |
+| `IgnoreLight` in both games and Generations `IgnoreLightTwice` | Use unshaded albedo. For textured effects with zero diffuse RGB, use the stored effect color as the standalone tint and retain the source opacity and blend mode. Twice doubles the RGB. Generations `E` variants also read their separate emission parameter and texture. `IgnoreLightV` includes vertex lighting. |
+| Emission texture on source UV index 1 | Use Godot's emission UV2 setting. |
+| `Parallax` in both games | Map compatible primary-UV height textures to the built-in red-channel depth slot. The source offset magnitude is 0.03. Godot uses its own tangent-space offset model, and stock GLES2 does not render this depth effect. |
+
+The audit also includes screen passes, vertex programs, runtime lighting, water, fur shells, multi-layer blends and distortion shaders. These can require stage or mesh data beyond a material resource. The converter keeps its supported texture and parameter mappings for those families. In particular, the Unleashed `DayEnemyMetal*` assembly uses paired highlight exponents from diffuse alpha and a separate environment term, so the Generations `EnmMetal` bake is not applied to it.

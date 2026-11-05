@@ -1,6 +1,6 @@
-# Validation results — 2026-11-03
+# Validation results
 
-The sections below retain historical checks. Current release evidence is recorded in the version 0.4 section at the end.
+The sections below retain historical checks. The latest release evidence is at the end.
 
 ## Initial 0.1 build and automated checks
 
@@ -159,3 +159,49 @@ The complete mouth separation/mirroring diff was reviewed after user acceptance.
 The 219-clip independent mirrored-skinning audit was rerun successfully (23,655 samples, maximum skin-matrix error 3.81469727e-6, original tracks unchanged). Fresh binary-only relocation/playback checks again passed for all 219 Unleashed and 325 Generations animations in the approved full-bank exports. Their text/fresh-binary pose-check results remain recorded above. The versioned v0.5.0 CLI also generated and fresh-process validated new static Generations and mirrored Unleashed exports; manifests report the correct converter version and mirror option.
 
 Release packaging uses a self-contained Windows x64 application and a source archive of the release commit. Both archives are checked for integrity and exclusion of game assets, references, diagnostic output and build intermediates. Published artifact digests are checked against local SHA-256 values. Materials remain standard SpatialMaterial; in-game SCU acceptance and gameplay retargeting are not established by these checks.
+
+## Additional Generations character regression — 2026-11-05
+
+Tested the `EnemyEFighter`, `silver`, `rouge` and `tails` folders under the extracted Generations `disk/bb2` directory using the development build with the Shadow tangent fix. Each animated model used its matching skeleton. Acorn validated text and fresh binary resources and compared source-derived key, subframe and loop-boundary poses.
+
+| Asset | Models exported | Animations passed | Pose samples per process | Unsupported clip |
+|---|---:|---:|---:|---|
+| Egg Fighter | 7 | 41/41 | 8,055 | |
+| Silver | 1 | 15/16 | 4,826 | `sv_idle_loop` |
+| Rouge | 1 | 17/18 | 7,504 | `ru_pam_pose` |
+| Tails | 1 | 21/22 | 7,302 | `tl_pam_pose` |
+
+The three excluded clips use `hkaQuantizedAnimation`. Full-bank attempts stopped at those clips with the unsupported-codec error. The supported sets were rerun by passing each remaining clip explicitly. Egg Fighter's sword and five breakable pieces were exported separately from its animated model. Silver and Rouge each produced two mouth meshes. Tails produced one mouth branch mesh that also contains the nose surface weighted to that branch.
+
+Binary-only relocation passed for all ten scenes, including material type checks and midpoint playback of all 94 exported clips. Local evidence is in `artifacts/character-regression-20261105`. Visual parity and in-game playback were outside these checks.
+
+## UV2 normal and masked metallic regression — 2026-11-05
+
+- All 85 automated tests passed. Acorn validated 13 native exports and their binary-only relocation, including Egg Fighter, its sword and breakable pieces, the Generations shock bar, Silver, Rouge, Tails, and Sonic from both games. The 94 supported clips in the earlier character regression passed again.
+- Fresh Sonic, Silver, Rouge and Tails text resources matched the previous exports byte-for-byte. Egg Fighter's native body materials reloaded with detail normals on UV2 and specular alpha bound to the metallic channel. The shock bar exercised the same metallic rule through a separate asset.
+- The Egg Fighter and Generations Sonic source meshes measure 2.090 and 1.103 units high at rest. Their exports measure 20.902 and 11.032, preserving the source height ratio of 1.895. Egg Fighter's two exported idle loops measured 19.398–20.651 units high across 11 samples per clip. The 85 Egg Fighter placement entries checked in six Generations `#euc` archives carry no scale field. Runtime scaling and in-game size remain unverified.
+
+Local evidence is in `artifacts/material-uv2-metal-final` and `artifacts/material-uv2-metal-preview`.
+
+The follow-up painted-metal finish replaced the alpha-based approximation. All 86 tests and all 13 native and relocation checks passed, covering the same 94 animations. Across those exports, 270 text resources matched byte-for-byte and 12 `EnmMetal_*` materials changed. The Egg Fighter comparison uses fresh native exports, with the same pose, camera and lights. See `artifacts/metallic-finish-final` and `artifacts/material-uv2-metal-preview/egg-fighter-finish-comparison.png`.
+
+The reference-based follow-up uses the specular RGB atlas to distinguish paint and bare metal and restores the separate enemy-glass emission/opacity inputs. All 87 tests passed. Fresh native exports of the same 13 scenes passed the Acorn and binary-only relocation checks with 94 supported animations. The separate shock bar exercised the metal bake. The Egg Fighter comparison from fresh exports is `artifacts/material-uv2-metal-preview/egg-fighter-source-channels-final.png`. View-dependent source matcap highlights and in-game visual parity remain unverified.
+
+## Full shader library audit — 2026-11-05
+
+- The per-file audit indexed 4,527 shaders across both games. See the [material mapping notes](SPATIAL-MATERIAL-MAPPING.md#shader-library-audit) for the applied rules and the boundary between material inputs and runtime shader effects.
+- Release build passed with zero warnings/errors and all 105 tests passed. Native conversion and binary-only relocation passed for 17 scenes and 94 supported animations. The new scene checks cover the Generations dash ring and upreel emission maps and unshaded boost effects in both games.
+- The original 13-case bank produced 293 byte-identical text resources. Within that bank, only the intended Silver and shock-bar emission/coverage resources changed. The rendered Silver comparison uses the final binary scene and shows the restored cyan trim.
+- Generations character-metal alpha gloss, emission UV2 and the parallax mapping were covered by controlled fixtures. A native GLES3 visual comparison for parallax remains unverified.
+
+Local evidence is in `artifacts/shader-family-audit`, `artifacts/shader-audit-exports` and `artifacts/shader-audit-preview/silver-shader-audit.png`.
+
+## Version 0.6.0 release audit — 2026-11-05
+
+- Clean restore and Release build passed with zero warnings/errors. All 114 automated tests passed, including WPF game selection, tangent recovery and malformed half-floats, UV routing, material-family behavior, wide/tall texture resampling and optional-map diagnostics.
+- Acorn compiled and reloaded 33 scenes with 654 supported animations. Every scene passed binary-only relocation and SpatialMaterial checks. This includes both complete Sonic banks, Shadow, Silver, Rouge, Tails, Egg Fighter and boost/stomp assets from both games.
+- Fresh static exports from the v0.5.0 source archive and the prior complete Sonic banks match the candidate's 636 comparable text resources byte-for-byte. A fresh v0.5.0 replay reproduced Shadow's tangent failure. The candidate exported Shadow and all 16 matching animations successfully.
+- Stock Godot 3.1.2 official, GLES2, loaded the Egg Fighter, Silver, dash-ring and boost text scenes and confirmed their UV2 normal, metallic, emission and unshaded properties. The candidate also matched the previously rendered Egg Fighter, Silver and boost text outputs byte-for-byte.
+- Verified the existing explicit failures for the three quantized clips in the additional Generations fixtures. In-game SCU playback, renderer parity and a native GLES3 parallax visual comparison remain unverified.
+
+Local audit evidence is in `artifacts/v0.6-audit`.

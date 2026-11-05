@@ -112,6 +112,7 @@ public sealed class He1ModelReader
         }
         if (!elements.Any(e=>e.Type==0 && e.Index==0)) throw new InvalidDataException("Mesh has no POSITION0.");
         var output=new List<Vertex>(vertexCount);
+        bool[]? missingTangents = null;
         for(int i=0;i<vertexCount;i++)
         {
             if((i&1023)==0) token.ThrowIfCancellationRequested();
@@ -125,7 +126,17 @@ public sealed class He1ModelReader
                 if (e.Type is not (0 or 1 or 2 or 3 or 5 or 6 or 7 or 10)) continue;
                 int size=FormatSize(e.Format);
                 if(e.Offset>stride-size) throw new InvalidDataException("Vertex element exceeds vertex stride.");
-                var v=ReadElement(vertices+i*stride+e.Offset,e.Format);
+                int address = vertices + i * stride + e.Offset;
+                // Some HE1 meshes store this NaN triplet in TANGENT0. Treat only
+                // that encoding as missing data and leave other float checks strict.
+                if (e.Type == 6 && e.Format == 0x2A23B9 &&
+                    b.U32(address) == 0x7FFFFFFF && b.U32(address + 4) == 0x7FFFFFFF &&
+                    b.U32(address + 8) == 0x7FFFFFFF)
+                {
+                    (missingTangents ??= new bool[vertexCount])[i] = true;
+                    continue;
+                }
+                var v=ReadElement(address,e.Format);
                 var xyz=new Vector3(v.X,v.Y,v.Z);
                 switch(e.Type)
                 {
@@ -154,7 +165,58 @@ public sealed class He1ModelReader
         }
         var strip=Enumerable.Range(0,faceCount).Select(i=>(int)b.U16(faces+i*2)).ToArray();
         var triangles=DecodeStrip(strip,vertexCount);
+        if (missingTangents is not null) RebuildTangents(output, triangles, missingTangents);
         return new Surface(material,slot,output,triangles);
+    }
+    private void RebuildTangents(List<Vertex> vertices, List<int> triangles, bool[] missing)
+    {
+        var tangents = new Vector3[vertices.Count];
+        var bitangents = new Vector3[vertices.Count];
+        for (int i = 0; i < triangles.Count; i += 3)
+        {
+            if (i % 3072 == 0) token.ThrowIfCancellationRequested();
+            int a = triangles[i], b = triangles[i + 1], c = triangles[i + 2];
+            if (!missing[a] && !missing[b] && !missing[c]) continue;
+            Vector3 edge1 = vertices[b].Position - vertices[a].Position;
+            Vector3 edge2 = vertices[c].Position - vertices[a].Position;
+            Vector2 uv1 = vertices[b].UV - vertices[a].UV;
+            Vector2 uv2 = vertices[c].UV - vertices[a].UV;
+            float determinant = uv1.X * uv2.Y - uv1.Y * uv2.X;
+            float area = Vector3.Cross(edge1, edge2).Length();
+            if (MathF.Abs(determinant) <= 1e-12f || area == 0) continue;
+
+            // Solve the UV derivatives and weight by triangle area before averaging.
+            float weight = area / determinant;
+            Vector3 tangent = (edge1 * uv2.Y - edge2 * uv1.Y) * weight;
+            Vector3 bitangent = (edge2 * uv1.X - edge1 * uv2.X) * weight;
+            Accumulate(a);
+            Accumulate(b);
+            Accumulate(c);
+            void Accumulate(int vertex)
+            {
+                tangents[vertex] += tangent;
+                bitangents[vertex] += bitangent;
+            }
+        }
+        for (int i = 0; i < vertices.Count; i++)
+        {
+            if ((i & 1023) == 0) token.ThrowIfCancellationRequested();
+            if (!missing[i]) continue;
+            Vertex vertex = vertices[i];
+            Vector3 normal = vertex.Normal;
+            Vector3 tangent = tangents[i] - normal * Vector3.Dot(normal, tangents[i]);
+            float lengthSquared = tangent.LengthSquared();
+            if (float.IsFinite(lengthSquared) && lengthSquared > 0)
+                tangent /= MathF.Sqrt(lengthSquared);
+            else
+            {
+                // Collapsed UVs cannot define a direction. Use a perpendicular axis.
+                Vector3 axis = MathF.Abs(normal.X) < 0.9f ? Vector3.UnitX : Vector3.UnitY;
+                tangent = Vector3.Normalize(axis - normal * Vector3.Dot(normal, axis));
+            }
+            float handedness = Vector3.Dot(Vector3.Cross(normal, tangent), bitangents[i]) < 0 ? -1 : 1;
+            vertices[i] = vertex with { Tangent = new Vector4(tangent, handedness) };
+        }
     }
     private static Vector3 Unit(Vector3 v,Vector3 fallback)=>v.LengthSquared()>1e-12f?Vector3.Normalize(v):fallback;
     public static List<int> DecodeStrip(IEnumerable<int> strip,int vertexCount)
@@ -196,7 +258,12 @@ public sealed class He1ModelReader
         }
         if(f is 0x2C235F or 0x1A2360)
         {
-            float H(int i)=>(float)BitConverter.UInt16BitsToHalf(b.U16(p+i*2));
+            float H(int i)
+            {
+                int address = p + i * 2;
+                float value = (float)BitConverter.UInt16BitsToHalf(b.U16(address));
+                return float.IsFinite(value) ? value : throw new InvalidDataException($"Non-finite half float at 0x{address:X}.");
+            }
             return new(H(0),H(1),f==0x1A2360?H(2):0,f==0x1A2360?H(3):0);
         }
         if(f is 0x2C2359 or 0x2C2259 or 0x2C2159 or 0x2C2059 or 0x1A235A or 0x1A225A or 0x1A215A or 0x1A205A)
