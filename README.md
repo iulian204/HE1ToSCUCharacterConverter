@@ -129,4 +129,32 @@ scripts/               Publishing and binary-only relocation verification
 docs/                  Reference evidence, pinned source revisions and validation results
 ```
 
-See [format evidence](docs/FORMAT-EVIDENCE.md), [validation results](docs/VALIDATION.md), and [third-party notices](THIRD-PARTY-NOTICES.md). This project is licensed under **GPL-3.0-or-later**, including its attributed spline decoder adaptation.
+## Credits
+
+Thanks to the authors and contributors of the repositories that informed the converter.
+
+### Hedgehog Engine and target formats
+
+- Mirage model and material formats, vertex layouts, and inverse bind matrices. [Radfordhound/HedgeLib](https://github.com/Radfordhound/HedgeLib)
+- Engine-side model, skeleton, animation, and archive relationships. [blueskythlikesclouds/BlueBlur](https://github.com/blueskythlikesclouds/BlueBlur)
+- Asset tools and Havok tagfile examples. [blueskythlikesclouds/SkythTools](https://github.com/blueskythlikesclouds/SkythTools)
+- Havok reference poses, bone bindings, and animation frame layout. [blueskythlikesclouds/HavokAnimationExporter](https://github.com/blueskythlikesclouds/HavokAnimationExporter)
+- Model node serialization, mesh slots, palettes, and vertex processing. [blueskythlikesclouds/ModelConverter](https://github.com/blueskythlikesclouds/ModelConverter)
+- Hedgehog Engine format and tool documentation. [HedgeDocs/HedgeDocs.github.io](https://github.com/HedgeDocs/HedgeDocs.github.io)
+- Legacy model layouts, skeleton matrices, and animation bindings. [DarioSamo/libgens-sonicglvl](https://github.com/DarioSamo/libgens-sonicglvl)
+- Supplemental Sonic Generations material and shader references. [blueskythlikesclouds/GenerationsRaytracing](https://github.com/blueskythlikesclouds/GenerationsRaytracing)
+- Target resource serialization, skeleton poses, and animation track layout. [godotengine/godot 3.1.2-stable](https://github.com/godotengine/godot/tree/3.1.2-stable)
+
+### Havok decoding references
+
+- The managed spline decoder is adapted from SoulsAssetPipeline, whose decoder builds on HavokLib. Credit to Lukas Cone, Meowmaritus, and Katalash. [Meowmaritus/SoulsAssetPipeline](https://github.com/Meowmaritus/SoulsAssetPipeline), [PredatorCZ/HavokLib](https://github.com/PredatorCZ/HavokLib)
+- Additional animation and binary-format references. [Meowmaritus/DSAnimStudio](https://github.com/Meowmaritus/DSAnimStudio), [aerisarn/hkxlib](https://github.com/aerisarn/hkxlib), [JKAnderson/SoulsFormats](https://github.com/JKAnderson/SoulsFormats)
+
+### Desktop and testing
+
+- Desktop framework and Fluent theme. [AvaloniaUI/Avalonia](https://github.com/AvaloniaUI/Avalonia)
+- Windows 11 color and control styling references. [microsoft/microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml)
+- Runtime and desktop dependencies. [dotnet/runtime](https://github.com/dotnet/runtime), [AvaloniaUI/angle](https://github.com/AvaloniaUI/angle), [mono/SkiaSharp](https://github.com/mono/SkiaSharp), [kekekeks/MicroCom](https://github.com/kekekeks/MicroCom), [tmds/Tmds.DBus](https://github.com/tmds/Tmds.DBus)
+- Test and coverage tooling. [xunit/xunit](https://github.com/xunit/xunit), [microsoft/vstest](https://github.com/microsoft/vstest), [coverlet-coverage/coverlet](https://github.com/coverlet-coverage/coverlet)
+
+See [pinned reference revisions](docs/reference-lock.json), [format evidence](docs/FORMAT-EVIDENCE.md), [validation results](docs/VALIDATION.md), and [third-party notices](THIRD-PARTY-NOTICES.md). This project is licensed under **GPL-3.0-or-later**, including its attributed spline decoder adaptation.
