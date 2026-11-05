@@ -28,6 +28,7 @@ public partial class MainWindow : Window
 
     private readonly string settingsPath;
     private readonly ILocalFileDialogs dialogs;
+    private readonly Func<bool> allowsMica;
     private readonly Func<ConversionRequest, IProgress<ConversionProgress>, CancellationToken, Task<ConversionResult>> convertAsync;
     private readonly ObservableCollection<FileInfo> animationFiles = [];
     private readonly Transitions micaFade =
@@ -37,6 +38,8 @@ public partial class MainWindow : Window
     private Dictionary<string, string> settings = [];
     private CancellationTokenSource? cancellation;
     private IPlatformSettings? platformSettings;
+    private IDisposable? backdropWatcher;
+    private bool micaRequested;
     private string? modelPath;
     private string? lastModelName;
 
@@ -46,10 +49,12 @@ public partial class MainWindow : Window
     public MainWindow() : this(DefaultSettingsPath) { }
 
     internal MainWindow(string settingsPath, ILocalFileDialogs? dialogs = null,
-        Func<ConversionRequest, IProgress<ConversionProgress>, CancellationToken, Task<ConversionResult>>? convert = null)
+        Func<ConversionRequest, IProgress<ConversionProgress>, CancellationToken, Task<ConversionResult>>? convert = null,
+        Func<bool>? allowsMica = null)
     {
         this.settingsPath = settingsPath;
         this.dialogs = dialogs ?? new LocalFileDialogs(this);
+        this.allowsMica = allowsMica ?? WindowsBackdropSettings.AllowsMica;
         convertAsync = convert ?? new ConversionService().ConvertAsync;
         InitializeComponent();
         Animations.ItemsSource = animationFiles;
@@ -91,11 +96,10 @@ public partial class MainWindow : Window
         base.OnOpened(e);
         platformSettings = this.GetPlatformSettings();
         if (platformSettings != null)
-        {
-            UpdateBackdrop(platformSettings.GetColorValues());
             platformSettings.ColorValuesChanged += SystemColorsChanged;
-        }
-        UpdateMicaFocus();
+        if (TryGetPlatformHandle()?.HandleDescriptor == "HWND")
+            backdropWatcher = WindowsBackdropSettings.Watch(() => UpdateBackdrop());
+        UpdateBackdrop();
 
         var screen = Screens.ScreenFromWindow(this) ?? Screens.Primary;
         if (screen != null)
@@ -109,20 +113,22 @@ public partial class MainWindow : Window
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         base.OnPropertyChanged(change);
-        if (change.Property == IsActiveProperty || change.Property == ActualTransparencyLevelProperty)
-            UpdateMicaFocus();
+        if (change.Property == IsActiveProperty && IsActive && IsVisible)
+            UpdateBackdrop(animateFocus: true);
+        else if (change.Property == IsActiveProperty || change.Property == ActualTransparencyLevelProperty)
+            UpdateBackdropCover(animateFocus: change.Property == IsActiveProperty);
     }
 
-    private void UpdateMicaFocus()
+    private void UpdateBackdropCover(bool animateFocus)
     {
-        if (InactiveMica is not { } layer) return;
+        if (BackdropCover is not { } layer) return;
 
         // Fade only the neutral layer over Mica, leaving the controls and native backdrop intact.
-        bool hasMica = ActualTransparencyLevel == WindowTransparencyLevel.Mica;
-        bool animate = hasMica && OperatingSystem.IsWindows() &&
+        bool hasMica = micaRequested && ActualTransparencyLevel == WindowTransparencyLevel.Mica;
+        bool animate = animateFocus && hasMica && OperatingSystem.IsWindows() &&
             SystemParametersInfo(0x1042 /* SPI_GETCLIENTAREAANIMATION */, 0, out bool enabled, 0) && enabled;
         layer.Transitions = animate ? micaFade : null;
-        layer.Opacity = hasMica && !IsActive ? 1 : 0;
+        layer.Opacity = !hasMica || !IsActive ? 1 : 0;
     }
 
     [DllImport("user32.dll", EntryPoint = "SystemParametersInfoW")]
@@ -131,26 +137,51 @@ public partial class MainWindow : Window
 
     protected override void OnClosed(EventArgs e)
     {
+        backdropWatcher?.Dispose();
+        backdropWatcher = null;
         if (platformSettings != null)
             platformSettings.ColorValuesChanged -= SystemColorsChanged;
         platformSettings = null;
         base.OnClosed(e);
     }
 
-    private void SystemColorsChanged(object? sender, PlatformColorValues colors)
+    private void SystemColorsChanged(object? sender, PlatformColorValues _)
     {
-        if (Dispatcher.UIThread.CheckAccess()) UpdateBackdrop(colors);
+        if (Dispatcher.UIThread.CheckAccess()) UpdateBackdrop();
         else Dispatcher.UIThread.Post(() =>
         {
-            if (platformSettings != null) UpdateBackdrop(colors);
+            if (platformSettings != null) UpdateBackdrop();
         });
     }
 
-    private void UpdateBackdrop(PlatformColorValues colors)
+    private void UpdateBackdrop(bool animateFocus = false)
     {
-        bool highContrast = colors.ContrastPreference == ColorContrastPreference.High;
-        if (highContrast == (TransparencyLevelHint[0] == WindowTransparencyLevel.None)) return;
-        TransparencyLevelHint = highContrast ? [WindowTransparencyLevel.None] : [WindowTransparencyLevel.Mica, WindowTransparencyLevel.None];
+        bool allowMica = false;
+        try
+        {
+            allowMica = platformSettings?.GetColorValues().ContrastPreference == ColorContrastPreference.NoPreference
+                && allowsMica();
+        }
+        catch (Exception e) when (WindowsBackdropSettings.IsUnavailable(e)) { }
+
+        if (micaRequested == allowMica && TransparencyLevelHint.Contains(WindowTransparencyLevel.Mica) == allowMica)
+        {
+            if (animateFocus) UpdateBackdropCover(animateFocus: true);
+            return;
+        }
+
+        micaRequested = allowMica;
+        // Cover before changing the native hint. Avalonia may report Transparent on non-redirection surfaces.
+        if (!allowMica) UpdateBackdropCover(animateFocus: false);
+        try
+        {
+            TransparencyLevelHint = allowMica ? [WindowTransparencyLevel.Mica, WindowTransparencyLevel.None] : [WindowTransparencyLevel.None];
+        }
+        catch (Exception e) when (WindowsBackdropSettings.IsUnavailable(e))
+        {
+            micaRequested = false;
+        }
+        UpdateBackdropCover(animateFocus: false);
     }
 
     private void AppearanceChanged(object? sender, SelectionChangedEventArgs e)

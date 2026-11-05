@@ -4,12 +4,12 @@
         x:Class="HE1ToSCU.App.MainWindow"
         Title="HE1 → SCU Character Converter" Width="1060" Height="870"
         MinWidth="560" MinHeight="420" WindowStartupLocation="CenterScreen"
-        Background="Transparent" TransparencyLevelHint="Mica,None"
+        Background="Transparent" TransparencyLevelHint="None"
         TransparencyBackgroundFallback="{DynamicResource WindowFallbackBrush}"
         FontFamily="Segoe UI Variable Text, Segoe UI" FontSize="14">
     <Panel>
-        <Border x:Name="InactiveMica" Background="{DynamicResource WindowFallbackBrush}"
-                Opacity="0" IsHitTestVisible="False"/>
+        <Border x:Name="BackdropCover" Background="{DynamicResource WindowFallbackBrush}"
+                IsHitTestVisible="False"/>
         <Grid Margin="24,18" RowDefinitions="*,Auto">
             <ScrollViewer x:Name="WorkspaceScroll" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                 <Grid x:Name="Workspace" RowDefinitions="Auto,Auto,*"

@@ -8,7 +8,7 @@ Converts extracted Sonic Generations and Sonic Unleashed HE1 skeletal models, ma
 
 Download the Windows x64 portable ZIP from [Releases](https://github.com/iulian204/HE1ToSCUCharacterConverter/releases/latest), extract it, and launch `HE1ToSCU.App.exe`. The .NET 10 runtime is included. Supply your own game assets and Acorn editor.
 
-The **Appearance** selector offers **Automatic**, **Light** and **Dark**. Automatic follows the Windows app theme as it changes. The selection is saved immediately. The window uses Mica where Windows supports it and a solid themed background otherwise. Windows controls the appearance of its native file dialogs.
+The **Appearance** selector offers **Automatic**, **Light** and **Dark**. Automatic follows the Windows app theme as it changes. The selection is saved immediately. The window uses Mica on supported Windows 11 systems when **Transparency effects** is on. A solid Fluent background is used on Windows 10 or whenever Mica is unavailable. Changing transparency takes effect without restarting. Windows controls the appearance of its native file dialogs.
 
 Open `artifacts/HE1ToSCU-win-x64/HE1ToSCU.App.exe` after publishing, or run:
 

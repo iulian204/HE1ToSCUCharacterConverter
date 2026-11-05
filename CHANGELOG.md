@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.6.2
+
+- Use an opaque Light or Dark Fluent background when Windows or the compositor cannot provide Mica.
+- Apply Windows transparency changes live while retaining the existing appearance modes and Mica focus fade.
+
 ## 0.6.1
 
 - Replace WPF with Avalonia Fluent while preserving the existing conversion workflow and settings.
