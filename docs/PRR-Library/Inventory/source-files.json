@@ -1,0 +1,2134 @@
+{
+  "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "982f2a63e2358dfc56a4c732edd7c07740b6a515acb3eca46f76b0e4a9025e23"
+  },
+  "he1shaders/gens hlsl/ChrDefault_Eye_@n@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "0185410b6f6588e24497f8f5c63d7cdc3fad60439f20849470c962534ce2e21d"
+  },
+  "he1shaders/gens hlsl/ChrDefault_Eye_@n@p.wvu.hlsl": {
+    "exists": true,
+    "sha256": "c43022a39d5e92c7f3a2fc65220575b8a8f0bb831cc235e2fc668feac15ea364"
+  },
+  "he1shaders/gens hlsl/ChrEye_dpne1.shader-list": {
+    "exists": true,
+    "sha256": "675f3377a4ca93765bf8158e66abf3a06d373e51fae6692e0255cd3e0cd4963b"
+  },
+  "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "cfd3ea650dc8775e54e7f3d2750beb7aaa41f6eeed1cde6faf51c27ec4308827"
+  },
+  "he1shaders/gens hlsl/ChrEye_dpne2.shader-list": {
+    "exists": true,
+    "sha256": "f983be7af22f0d932377485aeb911a4a415374fb217ea89d3b6a3a6b998f9b49"
+  },
+  "he1shaders/gens hlsl/ChrEye_dpne[c].shader-list": {
+    "exists": true,
+    "sha256": "f983be7af22f0d932377485aeb911a4a415374fb217ea89d3b6a3a6b998f9b49"
+  },
+  "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "a712feec4c5be977a6cb041bcb8f90e2d5506f675a3844503960f2b63eaaac6a"
+  },
+  "he1shaders/gens hlsl/ChrEye_dpne.shader-list": {
+    "exists": true,
+    "sha256": "54da16dc43b8c750e0e812d53ceef73878922da0b18883e5aad9863dfd4a40e0"
+  },
+  "he1shaders/gens hlsl/ChrSkinHalf_dse11@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "b838e76b4c4d0682f4973401bb068b8c4852ad8ff465e620949dda3539ea72ed"
+  },
+  "he1shaders/gens hlsl/ChrDefault_@v@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "a7faa858efb05959424339eed966788c72c5dbf7d5c3f93c9f6f9e72f9512c0d"
+  },
+  "he1shaders/gens hlsl/ChrDefault_@v@p.wvu.hlsl": {
+    "exists": true,
+    "sha256": "ad39e5ebf48363266303a7b55dafcabef49443674ebfd615cbb115010e6173d4"
+  },
+  "he1shaders/gens hlsl/ChrSkinHalf_dse11.shader-list": {
+    "exists": true,
+    "sha256": "3f01af5b9067e4d387c5e44e0a878e0d38c5d423b5b7837ffbc3a91f83c1928e"
+  },
+  "he1shaders/gens hlsl/ChrSkinIgnore_dsle11@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "6f23e6e6ec88b84bf593fe60194ecf744828c775ee3ff9efe572d6b8bfdd1b1e"
+  },
+  "he1shaders/gens hlsl/ChrSkinIgnore_dsle11.shader-list": {
+    "exists": true,
+    "sha256": "6d754f18ca7c1d3f2051a08877d928f5f8605866825a19df5c08a03f98b46d4a"
+  },
+  "he1shaders/gens hlsl/ChrSkin_ds@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "0a87974211c03f91d1dc571f1a7dfd59662328c6cedade02652555ec3497888d"
+  },
+  "he1shaders/gens hlsl/ChrSkin_ds.shader-list": {
+    "exists": true,
+    "sha256": "cbc2e58e5e68c1fdcda9dd027af077d675a2dde51bfe761c74b29f34858f0fbf"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dse1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "89c90af2f8e844e70086cd9063769d8c24f2a3babab327369a67f4b590b7635e"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dse1.shader-list": {
+    "exists": true,
+    "sha256": "a9c8383e23411a15fb74f277fb2b8c2f290d18ad43c084cbb8503a7c311c577b"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dse2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "7d5932de390caab471b43b5fd138d700abacb823e264075868fec24585d50616"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dse2.shader-list": {
+    "exists": true,
+    "sha256": "842580c709c7a349eca58aaf2e640623b60a8d0d1a1f11f7cde4f76c07947251"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dse@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "8cb08b04cf323c9d475497f7f4c0b5b62065c8598690e33fde203831989d2003"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dse.shader-list": {
+    "exists": true,
+    "sha256": "ef68570286302abc1a827036cf43750af64c4ce8e090d7e7b93bb10cd9724fa7"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsf@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "365ef3ebe77a375c650a6f6a15c88603ca1d1131aa587f6d95b5a6f7b0e8fa75"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsf.shader-list": {
+    "exists": true,
+    "sha256": "0a180b923df918816793425ce4aa6d2d5bc4b48c0dc0e9b197fb1348a48ffe01"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsfe1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "7b1ad4d48c5f13ea0e89f7894337dbb0e098839b57e400492f6712f8d7735f97"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsfe1.shader-list": {
+    "exists": true,
+    "sha256": "fdd4a5951198ac4dbae9baeb6d1441eb4c331d39efc4099ad635c72a17bb3bd2"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsfe2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "a8660627284e235ab64e5e6ead3540cec48facf381152ce0234cdbb0dfe2ef6d"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsfe2.shader-list": {
+    "exists": true,
+    "sha256": "3b8808ee7fb44bb1d70e67ce61fbf82169f1578b09d4ba0355402023f894b78e"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsfe@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "29c7c37a1c95cbb0ca5121baaed322649b23515db789baa1b495f107afd34970"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsfe.shader-list": {
+    "exists": true,
+    "sha256": "443df0fa17321a31e6fa4f218ef81d72bfea1b0da5acf9ff740057078c2214eb"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsn@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "dd4860ccf1819a1ae426e245c7f86642d6db76f22f20ab1d4790f9720d1f3c2c"
+  },
+  "he1shaders/gens hlsl/ChrDefault_@nv@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "fa1ab636cc32a2384941f4b53467c68760c5a32c4aea695e0e4b0038dbc552cf"
+  },
+  "he1shaders/gens hlsl/ChrDefault_@nv@p.wvu.hlsl": {
+    "exists": true,
+    "sha256": "4866a85023b212908fe635dddc5b0eed384d8ca01b7de5963e167cc4b5b162ff"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsn.shader-list": {
+    "exists": true,
+    "sha256": "c58910831f13939d9c11c0b3d3030d120baa6c60b8493968c7d11095c8b7fff3"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsne1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "c322e17244cfec456c2d5ecdc3e0915b5c0799761698248887da9eb4e0f54b38"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsne1.shader-list": {
+    "exists": true,
+    "sha256": "d358906f5a94d411b8aec1ee10ea171c05fd9c736859faeac4fe330e0c201018"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsne@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "e888a2248c364b628244e86300d8d3c16adbc5cb4323aff4f24cc4d058fc418f"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsne.shader-list": {
+    "exists": true,
+    "sha256": "c2cdeb7cbecd950b33e0d7246df191059df07b292c1f187d8868a690212c318e"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsnf@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "a0059944e938803d2c91795c23736548a3b73b181acbe16ab4c84a53a2aa7367"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsnf.shader-list": {
+    "exists": true,
+    "sha256": "94b53f46ff46b996bff4f009b1e8ba274b2b883e0988e3d2116f550e18d168d0"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsnfe1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "cc17fe6dfe6844615e8576d3aff3b2c92c6713dcee3460b075a17f0181b5d866"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsnfe1.shader-list": {
+    "exists": true,
+    "sha256": "4b7810ca24ad7c08d74fce79f68de44e0a6ce514979bfee6de875ac14dc69a74"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsnfe@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "8b20a074063192bd406ed0386894b82feba03d3c59471669e9a9ce91093da443"
+  },
+  "he1shaders/gens hlsl/ChrSkin_dsnfe.shader-list": {
+    "exists": true,
+    "sha256": "285215593353afb702a52db0e94e66b4de7fc3159c087d063a3533fa9280a39b"
+  },
+  "he1shaders/gens hlsl/Common_d@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "d2ba96749c845d9887cce196f53c1db328ec341240ece45cae9d7017db5ef3ce"
+  },
+  "he1shaders/gens hlsl/Default_@@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "9dc45c2838b88851a09949f8d8b1baa8ac41df33ac608b05b354d03810de8c59"
+  },
+  "he1shaders/gens hlsl/Default_@@p.wvu.hlsl": {
+    "exists": true,
+    "sha256": "d3c1099154ca0c4017c9c9256db47bd2343097e68886a59e7343ea499698d6f2"
+  },
+  "he1shaders/gens hlsl/Common_d.shader-list": {
+    "exists": true,
+    "sha256": "158c5dd71aa9b731f4b2967d23019a66a3a1d1fe7ba6604c0491b6b4df555b2b"
+  },
+  "he1shaders/gens hlsl/Common_d[b].shader-list": {
+    "exists": true,
+    "sha256": "dfcc759655197072536e4261424552674ca6656cf384c337ff66513ead5caf77"
+  },
+  "he1shaders/gens hlsl/Common_d[bu].shader-list": {
+    "exists": true,
+    "sha256": "dfcc759655197072536e4261424552674ca6656cf384c337ff66513ead5caf77"
+  },
+  "he1shaders/gens hlsl/Common_d[bv].shader-list": {
+    "exists": true,
+    "sha256": "dfcc759655197072536e4261424552674ca6656cf384c337ff66513ead5caf77"
+  },
+  "he1shaders/gens hlsl/Common_d[bw].shader-list": {
+    "exists": true,
+    "sha256": "dfcc759655197072536e4261424552674ca6656cf384c337ff66513ead5caf77"
+  },
+  "he1shaders/gens hlsl/Common_d[u].shader-list": {
+    "exists": true,
+    "sha256": "dfcc759655197072536e4261424552674ca6656cf384c337ff66513ead5caf77"
+  },
+  "he1shaders/gens hlsl/Common_d[uv].shader-list": {
+    "exists": true,
+    "sha256": "dfcc759655197072536e4261424552674ca6656cf384c337ff66513ead5caf77"
+  },
+  "he1shaders/gens hlsl/Common_d[v].shader-list": {
+    "exists": true,
+    "sha256": "dfcc759655197072536e4261424552674ca6656cf384c337ff66513ead5caf77"
+  },
+  "he1shaders/gens hlsl/Common_d[w].shader-list": {
+    "exists": true,
+    "sha256": "dfcc759655197072536e4261424552674ca6656cf384c337ff66513ead5caf77"
+  },
+  "he1shaders/gens hlsl/Common_da@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "799f0274c17e5a05991aff2f73d7f5168eccacb3f01683fb62bff5a5e9397e4f"
+  },
+  "he1shaders/gens hlsl/Common_da.shader-list": {
+    "exists": true,
+    "sha256": "f5c72ecd21945aeab4d2a73910bc485a8c0342c641d39bf812eb601737b060f3"
+  },
+  "he1shaders/gens hlsl/Common_de1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "d983516677aa57fe0422ebc8696361cf48cae4144cd4bfdf22749c63b1668d66"
+  },
+  "he1shaders/gens hlsl/Common_de1.shader-list": {
+    "exists": true,
+    "sha256": "b53ea6ac6109d5a25a1954bf85f1a4635fe156db0b1079f0712f0aa3199d302c"
+  },
+  "he1shaders/gens hlsl/Common_de2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "e19dd5ae67c2974766ad7e3d0b5cba4715440e94e2c3633f3be762748b76c84e"
+  },
+  "he1shaders/gens hlsl/Common_de2.shader-list": {
+    "exists": true,
+    "sha256": "94f955d959905c8218a67f59bd95635abf7bae2abdc5caf5e725afd9b75e67c6"
+  },
+  "he1shaders/gens hlsl/Common_de[c].shader-list": {
+    "exists": true,
+    "sha256": "94f955d959905c8218a67f59bd95635abf7bae2abdc5caf5e725afd9b75e67c6"
+  },
+  "he1shaders/gens hlsl/Common_de@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "cbe8d50a0dcd609f1837807a186341e62349ebbbd472fa0fa51faaa1fe1e35a0"
+  },
+  "he1shaders/gens hlsl/Common_de.shader-list": {
+    "exists": true,
+    "sha256": "dd57669ff865a6c252fd67af6a7ab39a8f3fe852b0f34ff276cfa0663de59249"
+  },
+  "he1shaders/gens hlsl/Common_de[b].shader-list": {
+    "exists": true,
+    "sha256": "dd57669ff865a6c252fd67af6a7ab39a8f3fe852b0f34ff276cfa0663de59249"
+  },
+  "he1shaders/gens hlsl/Common_de[bw].shader-list": {
+    "exists": true,
+    "sha256": "dd57669ff865a6c252fd67af6a7ab39a8f3fe852b0f34ff276cfa0663de59249"
+  },
+  "he1shaders/gens hlsl/Common_dn@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "e3a48271a83e42c607dc5c6b29699df01601cbbb1c28d6788c3ffe444532c856"
+  },
+  "he1shaders/gens hlsl/Default_@n@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "2b1b087e54c6becf7c41b81c74f2b636514c15cf56dfad5f55f4df5c23584181"
+  },
+  "he1shaders/gens hlsl/Default_@n@p.wvu.hlsl": {
+    "exists": true,
+    "sha256": "3298863c62da79186c7f5cdeb22c458a47dbdb85b8942d2f2ba7010a86decfd0"
+  },
+  "he1shaders/gens hlsl/Common_dn.shader-list": {
+    "exists": true,
+    "sha256": "c9b55602a5432c5ba94d9c5e85410408e16f467af659d18b7dfdbcd31a73f64a"
+  },
+  "he1shaders/gens hlsl/Common_dn[b].shader-list": {
+    "exists": true,
+    "sha256": "e1be64d9f5db8143c4c41ae2cbda5bcdc137a9b05691d55e3c285cb93a72438a"
+  },
+  "he1shaders/gens hlsl/Common_dn[bv].shader-list": {
+    "exists": true,
+    "sha256": "e1be64d9f5db8143c4c41ae2cbda5bcdc137a9b05691d55e3c285cb93a72438a"
+  },
+  "he1shaders/gens hlsl/Common_dn[bw].shader-list": {
+    "exists": true,
+    "sha256": "e1be64d9f5db8143c4c41ae2cbda5bcdc137a9b05691d55e3c285cb93a72438a"
+  },
+  "he1shaders/gens hlsl/Common_dn[v].shader-list": {
+    "exists": true,
+    "sha256": "e1be64d9f5db8143c4c41ae2cbda5bcdc137a9b05691d55e3c285cb93a72438a"
+  },
+  "he1shaders/gens hlsl/Common_dne1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "ec9584472a893c61ffabec70725dea0bb2492ed324c1f1b442a1151629be68f8"
+  },
+  "he1shaders/gens hlsl/Common_dne1.shader-list": {
+    "exists": true,
+    "sha256": "54caddb8fb024080fa8aa4a8309169a8cf87270eaa87d67a03e03691ac8286d5"
+  },
+  "he1shaders/gens hlsl/Common_dne2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "fff439d8a458d19a9ce2edbd14284777dd956fc79cd5a647633bb1302e319033"
+  },
+  "he1shaders/gens hlsl/Common_dne1[v].shader-list": {
+    "exists": true,
+    "sha256": "308dfbcf0f2ea84cea46ed1355602341e89d312dc25dd15764304494c9505ace"
+  },
+  "he1shaders/gens hlsl/Common_dne2.shader-list": {
+    "exists": true,
+    "sha256": "308dfbcf0f2ea84cea46ed1355602341e89d312dc25dd15764304494c9505ace"
+  },
+  "he1shaders/gens hlsl/Common_dne2[v].shader-list": {
+    "exists": true,
+    "sha256": "308dfbcf0f2ea84cea46ed1355602341e89d312dc25dd15764304494c9505ace"
+  },
+  "he1shaders/gens hlsl/Common_dne[bc].shader-list": {
+    "exists": true,
+    "sha256": "308dfbcf0f2ea84cea46ed1355602341e89d312dc25dd15764304494c9505ace"
+  },
+  "he1shaders/gens hlsl/Common_dne[bcv].shader-list": {
+    "exists": true,
+    "sha256": "308dfbcf0f2ea84cea46ed1355602341e89d312dc25dd15764304494c9505ace"
+  },
+  "he1shaders/gens hlsl/Common_dne[c].shader-list": {
+    "exists": true,
+    "sha256": "308dfbcf0f2ea84cea46ed1355602341e89d312dc25dd15764304494c9505ace"
+  },
+  "he1shaders/gens hlsl/Common_dne[cv].shader-list": {
+    "exists": true,
+    "sha256": "308dfbcf0f2ea84cea46ed1355602341e89d312dc25dd15764304494c9505ace"
+  },
+  "he1shaders/gens hlsl/Common_dne@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "7da1f0d9e0e6ce8249b40a4fb4df5afc6228d24d2bb9f60e9484d2c7a133b03b"
+  },
+  "he1shaders/gens hlsl/Common_dne.shader-list": {
+    "exists": true,
+    "sha256": "fb95e6e70f9b86b5b73d255bfdb564babdd68b2827d19c4cabaa5bf0fcd4d36f"
+  },
+  "he1shaders/gens hlsl/Common_dne[b].shader-list": {
+    "exists": true,
+    "sha256": "fb95e6e70f9b86b5b73d255bfdb564babdd68b2827d19c4cabaa5bf0fcd4d36f"
+  },
+  "he1shaders/gens hlsl/Common_dp@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "35e8832c3b0dfb81017c62e58a675706d51a98372286e708d7682fa4a636f18a"
+  },
+  "he1shaders/gens hlsl/Common_dp.shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/gens hlsl/Common_dp[b].shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/gens hlsl/Common_dp[bu].shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/gens hlsl/Common_dp[bw].shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/gens hlsl/Common_dp[u].shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/gens hlsl/Common_dp[uv].shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/gens hlsl/Common_dp[v].shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/gens hlsl/Common_dp[w].shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/gens hlsl/Common_dp@E@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "f725959f0c5b5cba9aaaeaffc1ae5b993ec0f8822c0bea69134a26e6301691a9"
+  },
+  "he1shaders/gens hlsl/Common_dp[E].shader-list": {
+    "exists": true,
+    "sha256": "a84ab4ba1b2d73de348b54d146ae43a2d21d1794857fa2ffb25681f9f35a1c42"
+  },
+  "he1shaders/gens hlsl/Common_dpe1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "8d88c08e07845944b3a6173748ba684fcb82a2712860ebb8a726ef9c8c417818"
+  },
+  "he1shaders/gens hlsl/Common_dpe1.shader-list": {
+    "exists": true,
+    "sha256": "73e3d017b94812f98708ab574b4ed0c87ec8216a465b1c498f046fa20adf32f3"
+  },
+  "he1shaders/gens hlsl/Common_dpe2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "70ac7ada5fb00591c088b493991f0038111c041ca72067182e346b0be66bb3cf"
+  },
+  "he1shaders/gens hlsl/Common_dpe2.shader-list": {
+    "exists": true,
+    "sha256": "83ea807c09dc3a7265edab07f3c972a493bd299c4061758ba8a7650b5ba3da9f"
+  },
+  "he1shaders/gens hlsl/Common_dpe[bc].shader-list": {
+    "exists": true,
+    "sha256": "83ea807c09dc3a7265edab07f3c972a493bd299c4061758ba8a7650b5ba3da9f"
+  },
+  "he1shaders/gens hlsl/Common_dpe[c].shader-list": {
+    "exists": true,
+    "sha256": "83ea807c09dc3a7265edab07f3c972a493bd299c4061758ba8a7650b5ba3da9f"
+  },
+  "he1shaders/gens hlsl/Common_dpe@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "d33f73f9c6353f41887dc85ca0e6c3cbbcbdbe6c778dfbfb4ef58a63ca043f0c"
+  },
+  "he1shaders/gens hlsl/Common_dpe.shader-list": {
+    "exists": true,
+    "sha256": "617118f56396b8e5e1b20feae5a2784417fa38eda8759471e27b093bcd2019bc"
+  },
+  "he1shaders/gens hlsl/Common_dpe[b].shader-list": {
+    "exists": true,
+    "sha256": "617118f56396b8e5e1b20feae5a2784417fa38eda8759471e27b093bcd2019bc"
+  },
+  "he1shaders/gens hlsl/Common_dpe[uv].shader-list": {
+    "exists": true,
+    "sha256": "617118f56396b8e5e1b20feae5a2784417fa38eda8759471e27b093bcd2019bc"
+  },
+  "he1shaders/gens hlsl/Common_dpe[v].shader-list": {
+    "exists": true,
+    "sha256": "617118f56396b8e5e1b20feae5a2784417fa38eda8759471e27b093bcd2019bc"
+  },
+  "he1shaders/gens hlsl/Common_dpe[w].shader-list": {
+    "exists": true,
+    "sha256": "617118f56396b8e5e1b20feae5a2784417fa38eda8759471e27b093bcd2019bc"
+  },
+  "he1shaders/gens hlsl/Common_dpn@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "a970a4589f7b09e6781c59231aa4461751032964c1942016f7daa2bd309affdd"
+  },
+  "he1shaders/gens hlsl/Common_dpn.shader-list": {
+    "exists": true,
+    "sha256": "236a46cff167d85199916fd593511918e87c380318f0514adf6cbb7f0713c896"
+  },
+  "he1shaders/gens hlsl/Common_dpn[b].shader-list": {
+    "exists": true,
+    "sha256": "d33dee8fbfca7c3a595a9eb9b0bd1b6d2e6e4bc10efc273ccc1f9270c7cb60f9"
+  },
+  "he1shaders/gens hlsl/Common_dpn[bv].shader-list": {
+    "exists": true,
+    "sha256": "d33dee8fbfca7c3a595a9eb9b0bd1b6d2e6e4bc10efc273ccc1f9270c7cb60f9"
+  },
+  "he1shaders/gens hlsl/Common_dpn[bw].shader-list": {
+    "exists": true,
+    "sha256": "d33dee8fbfca7c3a595a9eb9b0bd1b6d2e6e4bc10efc273ccc1f9270c7cb60f9"
+  },
+  "he1shaders/gens hlsl/Common_dpn[u].shader-list": {
+    "exists": true,
+    "sha256": "d33dee8fbfca7c3a595a9eb9b0bd1b6d2e6e4bc10efc273ccc1f9270c7cb60f9"
+  },
+  "he1shaders/gens hlsl/Common_dpn[uv].shader-list": {
+    "exists": true,
+    "sha256": "d33dee8fbfca7c3a595a9eb9b0bd1b6d2e6e4bc10efc273ccc1f9270c7cb60f9"
+  },
+  "he1shaders/gens hlsl/Common_dpn[v].shader-list": {
+    "exists": true,
+    "sha256": "d33dee8fbfca7c3a595a9eb9b0bd1b6d2e6e4bc10efc273ccc1f9270c7cb60f9"
+  },
+  "he1shaders/gens hlsl/Common_dpn[w].shader-list": {
+    "exists": true,
+    "sha256": "d33dee8fbfca7c3a595a9eb9b0bd1b6d2e6e4bc10efc273ccc1f9270c7cb60f9"
+  },
+  "he1shaders/gens hlsl/Common_dpn@E@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "1aeefcc707d93980485ef095a4e7a199a0e8f18424c39e72564fe10b68eaacce"
+  },
+  "he1shaders/gens hlsl/Common_dpn[E].shader-list": {
+    "exists": true,
+    "sha256": "33e7de1a8c848735d2ec07105ca600b1837380f66b2cc6c467d9898ca6dce564"
+  },
+  "he1shaders/gens hlsl/Common_dpne1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "28de7c67d2e982b6b0956960a615cd2ac33189deed48d850d979321eb02ace5d"
+  },
+  "he1shaders/gens hlsl/Common_dpne1.shader-list": {
+    "exists": true,
+    "sha256": "a7fe35c39d681a49853050a6e6c4978bf44de26512350f92452ab66cdf637185"
+  },
+  "he1shaders/gens hlsl/Common_dpne2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "97e3185548e2f0d30ebf0956660d0f56a47714a79122216122090d6f793ea892"
+  },
+  "he1shaders/gens hlsl/Common_dpne2.shader-list": {
+    "exists": true,
+    "sha256": "b9c0e8ee362b05216c166e4d4ff84f7630a312a6f3d069d44d9afdc0998fd827"
+  },
+  "he1shaders/gens hlsl/Common_dpne[bc].shader-list": {
+    "exists": true,
+    "sha256": "b9c0e8ee362b05216c166e4d4ff84f7630a312a6f3d069d44d9afdc0998fd827"
+  },
+  "he1shaders/gens hlsl/Common_dpne[bcw].shader-list": {
+    "exists": true,
+    "sha256": "b9c0e8ee362b05216c166e4d4ff84f7630a312a6f3d069d44d9afdc0998fd827"
+  },
+  "he1shaders/gens hlsl/Common_dpne[c].shader-list": {
+    "exists": true,
+    "sha256": "b9c0e8ee362b05216c166e4d4ff84f7630a312a6f3d069d44d9afdc0998fd827"
+  },
+  "he1shaders/gens hlsl/Common_dpne@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "f7a7e523fcb45a903d369cda082d3514b4bb7d05c7b4e8b7b18c9697924d71cd"
+  },
+  "he1shaders/gens hlsl/Common_dpne.shader-list": {
+    "exists": true,
+    "sha256": "f888f828b57dbad4d6039dcc84cb2a6716d7c7faa07b255d065d9f3da990f80e"
+  },
+  "he1shaders/gens hlsl/Common_dpne[b].shader-list": {
+    "exists": true,
+    "sha256": "f888f828b57dbad4d6039dcc84cb2a6716d7c7faa07b255d065d9f3da990f80e"
+  },
+  "he1shaders/gens hlsl/Common_dpne[bw].shader-list": {
+    "exists": true,
+    "sha256": "f888f828b57dbad4d6039dcc84cb2a6716d7c7faa07b255d065d9f3da990f80e"
+  },
+  "he1shaders/gens hlsl/Common_dpne[v].shader-list": {
+    "exists": true,
+    "sha256": "f888f828b57dbad4d6039dcc84cb2a6716d7c7faa07b255d065d9f3da990f80e"
+  },
+  "he1shaders/gens hlsl/Common_dpnne2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "a06876253c83c75c82a633231a3d4b1e66c86055b0d3bc597074ba3cca87d464"
+  },
+  "he1shaders/gens hlsl/Common_dpnne2.shader-list": {
+    "exists": true,
+    "sha256": "16d24e5243e650c861eca8761883b4747e240e2820958b16d0962635af58c230"
+  },
+  "he1shaders/gens hlsl/Common_dpnr@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "73e45680e39f9419d58d2166a7f719340cd4cfa19d24014615a6c50bcf7eb430"
+  },
+  "he1shaders/gens hlsl/Common_dpnr.shader-list": {
+    "exists": true,
+    "sha256": "b870c3897f96d9c602dde06018e44eec71e6c8a09241e641770aab12814965f7"
+  },
+  "he1shaders/gens hlsl/Common_dpr@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "4ecc76cd0e1bba252f2cb81c6ea83b69c64f65e8165860f8614bbeeb54188b25"
+  },
+  "he1shaders/gens hlsl/Common_dpr.shader-list": {
+    "exists": true,
+    "sha256": "fad265a84df96ca0de763423d9c7a32bc0b9923ec7f99584f1d5104f526d9dfe"
+  },
+  "he1shaders/gens hlsl/Common_dsae1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "44df9a93b71807f6f0834ce9dd2a2b91f75c0bec2cd556ca5c7579dd2fc2ca0a"
+  },
+  "he1shaders/gens hlsl/Common_dsae1.shader-list": {
+    "exists": true,
+    "sha256": "36817367e467fbfc2eb04d534d1c092d295df8bcb063fafcfc34c008391a41c3"
+  },
+  "he1shaders/gens hlsl/Common_dse1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "2b9cbbdccb3d4abaee03f75e5934e04564e590d05937852e0ab4ef8553ac35b2"
+  },
+  "he1shaders/gens hlsl/Common_dse1.shader-list": {
+    "exists": true,
+    "sha256": "58353b0ae18ff92c1465ad5b1d03b2d89c07c633411fd5186541272b2d49778e"
+  },
+  "he1shaders/gens hlsl/Common_dse2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "7b1ffbb16dfd494616722e71b7ec49f0bc5de6d964ffc3ca9236539820049058"
+  },
+  "he1shaders/gens hlsl/Common_dse2.shader-list": {
+    "exists": true,
+    "sha256": "e06bd5ef23876e68c74cd07417715ae26a25cc41ccc201fbdf3183f6ad23b8dd"
+  },
+  "he1shaders/gens hlsl/Common_dse[c].shader-list": {
+    "exists": true,
+    "sha256": "e06bd5ef23876e68c74cd07417715ae26a25cc41ccc201fbdf3183f6ad23b8dd"
+  },
+  "he1shaders/gens hlsl/Common_dse@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "60d8aa93da90a2fdf921577b496687d28fedbc985b2049e187841dacf471009c"
+  },
+  "he1shaders/gens hlsl/Common_dse.shader-list": {
+    "exists": true,
+    "sha256": "8b080f4e1924d999127d4dc8a98c8d1ad9acda4d8cae80554439e740a581f005"
+  },
+  "he1shaders/gens hlsl/Common_dsn@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "dc5a5f789b7e24a9321c8c68c9b6848e5bb195ba5233a36df7b7c8e3bb311182"
+  },
+  "he1shaders/gens hlsl/Common_dsn.shader-list": {
+    "exists": true,
+    "sha256": "4b8983dc96a985758bf77099087b69d4ed3298368d2eb49ff4fa414a43ad00aa"
+  },
+  "he1shaders/gens hlsl/Common_dsn[b].shader-list": {
+    "exists": true,
+    "sha256": "4b8983dc96a985758bf77099087b69d4ed3298368d2eb49ff4fa414a43ad00aa"
+  },
+  "he1shaders/gens hlsl/Common_dsn[bw].shader-list": {
+    "exists": true,
+    "sha256": "4b8983dc96a985758bf77099087b69d4ed3298368d2eb49ff4fa414a43ad00aa"
+  },
+  "he1shaders/gens hlsl/Common_dsne1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "45f305b0050778f05ffcc45a59efb28024427971326a55b631be2f7ecaafcd77"
+  },
+  "he1shaders/gens hlsl/Common_dsne1.shader-list": {
+    "exists": true,
+    "sha256": "4dd9351d73e97f5bd761cf5839cb3b35427864be5617f2444503b47878328472"
+  },
+  "he1shaders/gens hlsl/Common_dsne@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "c0845fa8150f47c6f0daf7152b97b8f1562c33d3f7e3fdbb5c54b524a9f753ce"
+  },
+  "he1shaders/gens hlsl/Common_dsne.shader-list": {
+    "exists": true,
+    "sha256": "a096b209b027f4073b355cd4c50caa896045f5d2961c103ca8d12dde05425fea"
+  },
+  "he1shaders/gens hlsl/Common_dsne[b].shader-list": {
+    "exists": true,
+    "sha256": "a096b209b027f4073b355cd4c50caa896045f5d2961c103ca8d12dde05425fea"
+  },
+  "he1shaders/gens hlsl/Common_dsnne1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "119569d74669045e04a1b093a3d96d09257db535afacae212ce73509b7671f09"
+  },
+  "he1shaders/gens hlsl/Common_dsnne1.shader-list": {
+    "exists": true,
+    "sha256": "8b0e9459bce916365d0b6905f8111209e74a0e32b9c8c4dcb9b659dcb90bad8a"
+  },
+  "he1shaders/gens hlsl/Common_dsp@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "9411fc6d2c5d825444c85cb559e9b051c111670460fe42acc279ce0683bc3065"
+  },
+  "he1shaders/gens hlsl/Common_dsp.shader-list": {
+    "exists": true,
+    "sha256": "e05a999efba2fde2eb85a19fed3c0d60cdb1ba0485289ba795aba1b4e5f331e4"
+  },
+  "he1shaders/gens hlsl/Common_dspe@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "bdcc07811633b02953eeb50cf1fbd86d906d57ae34a8c80b236d472d208f8088"
+  },
+  "he1shaders/gens hlsl/Common_dspe.shader-list": {
+    "exists": true,
+    "sha256": "7e57ec1d4f93cefba4eb19ebb1afa4c214473eb56e212b81dbdb84bc2dfa8505"
+  },
+  "he1shaders/gens hlsl/Common_dspn@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "355fd18be4aabf20ab2a695c541f5c9ff9eaee249d6b66868b668c116a19bdd8"
+  },
+  "he1shaders/gens hlsl/Common_dspn.shader-list": {
+    "exists": true,
+    "sha256": "4815a5bd8fce7e745b99e4767f4c65f3f43bbd7c017f59ab988bfb56bddd1db7"
+  },
+  "he1shaders/gens hlsl/Common_dspne2@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "06cd2f3d25a8c8ba5ba177bb4ef203e85b6eb86da3339714cfe0d22ac558735f"
+  },
+  "he1shaders/gens hlsl/Common_dspne2.shader-list": {
+    "exists": true,
+    "sha256": "f416f92c3abb43cbb75c6ad6e179eb7604bfb46a63a4503a1bae3d395a7c7baa"
+  },
+  "he1shaders/gens hlsl/Common_dspne[c].shader-list": {
+    "exists": true,
+    "sha256": "f416f92c3abb43cbb75c6ad6e179eb7604bfb46a63a4503a1bae3d395a7c7baa"
+  },
+  "he1shaders/gens hlsl/Common_dspne@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "874796b720c9575e216a099f30e3b8f9d4950ff72ef652b0d2e337d8acac23ac"
+  },
+  "he1shaders/gens hlsl/Common_dspne.shader-list": {
+    "exists": true,
+    "sha256": "f05c79f7566083bf266d93f82b4fcae3953db11a26d80dd0f3a84b88eed75a38"
+  },
+  "he1shaders/gens hlsl/EnmCloud_nfe1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "dfd3374b4f21a2da3d2fa91aad469551ec2cb4f3002606fd08c0f0a37d0bae72"
+  },
+  "he1shaders/gens hlsl/EnmCloud_nfe1.shader-list": {
+    "exists": true,
+    "sha256": "c82d51d21f58252f1c18817784e0db342c06fd7c909f3e8e91afb4107543a9b1"
+  },
+  "he1shaders/gens hlsl/EnmEmission_d@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "6e187b7b2d264d61dd51d17457d20f3a8dfc270df4e48c43f6e7d540316170d7"
+  },
+  "he1shaders/gens hlsl/EnmEmission_d.shader-list": {
+    "exists": true,
+    "sha256": "763ab20cd8a5edae07a1babd610afe3c8c1d39af66204597049d8fc22e746d50"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dl@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "d6d187f5fc88eb70d23661f38f7bf313a21096611a91dab45d6c13f36d4aca37"
+  },
+  "he1shaders/gens hlsl/ChrDefault_MultiUV_@@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "b79ca5390833834113d961d6ceeacae230bf380b1cf451849f0b548c07661c4b"
+  },
+  "he1shaders/gens hlsl/ChrDefault_MultiUV_@@p.wvu.hlsl": {
+    "exists": true,
+    "sha256": "6853781aa681bde80e7e1c852fb5d37ccbe7a3d265ce1eece63589502eaa26e9"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dl.shader-list": {
+    "exists": true,
+    "sha256": "c3e57d6fa8976bdc8299030693cd309ffc7a0eb4567104ab9a6ec20f5981fe3e"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dsl@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "72868b5b65b898cb19cb7df26ba616c9f83164535d96c975473d2522fef1015a"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dsl.shader-list": {
+    "exists": true,
+    "sha256": "520df92518618bce6bdf6053808b9ba87a11785701c2aafc37dba72ce816c233"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dsle1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "154cd9d1faae3a9d2b6b87ab81b18bec97079c0f4a2df211211da1cee3f17968"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dsle1.shader-list": {
+    "exists": true,
+    "sha256": "61fd5ecfc0fca63bce7c3ac21609679c2bf7d1a92949a8c73ae279ec85e1c5da"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dsnl@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "07de6d0513b91d07d1c29f184c22ca3a76db67fa692bd36a9b6d3d69c3812f90"
+  },
+  "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "9a514d56de3be6e3b340468b6a7a6854743ed24c93d7f9918802a84047f82eda"
+  },
+  "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@p.wvu.hlsl": {
+    "exists": true,
+    "sha256": "3861c8f7efd20212baae17dc87713f02738a13a29b2bcf70ce5dd9e4e179afef"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dsnl.shader-list": {
+    "exists": true,
+    "sha256": "7ed2057903b281c4b44354604e8e4e01ce4d1aea5a26eca525ab351d01b5d637"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dsnle1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "66e8d08cc326027e9579e73047a3a82ec1ee7e6b3101224501808e88e317ae4a"
+  },
+  "he1shaders/gens hlsl/EnmEmission_dsnle1.shader-list": {
+    "exists": true,
+    "sha256": "087cf910b0648919804d14db0a25517a2c8d2fdcb028fa401c0bf0d4e907b0fd"
+  },
+  "he1shaders/gens hlsl/EnmGlass_dse1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "7570e3a067e9c82a80037b09e077fcb69f7b4321316302cbd20e619d15027863"
+  },
+  "he1shaders/gens hlsl/EnmGlass_dse1.shader-list": {
+    "exists": true,
+    "sha256": "888c70bf0346846dc6d4a073e32f138697bec8e7319af8d92f17f783915171b5"
+  },
+  "he1shaders/gens hlsl/EnmGlass_dsle1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "8db9ba3d32911d9eb581184cb68927446657e79a04d3dc81cd8e730f7d1b3542"
+  },
+  "he1shaders/gens hlsl/EnmGlass_dsle1.shader-list": {
+    "exists": true,
+    "sha256": "5eb6aa4a45341331b1ec19134fa328efd71f77f66afac24061cfadc98bb301b5"
+  },
+  "he1shaders/gens hlsl/EnmGlass_dsne1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "ee8a46a40d7eaa4aa5a59fd008f97ab94cb87fca33d66cb3a6b631cc20983c44"
+  },
+  "he1shaders/gens hlsl/EnmGlass_dsne1.shader-list": {
+    "exists": true,
+    "sha256": "00877c0c2a2be97cac253e736c4ccc3555f535908a14f940ada3b7afbb7278ee"
+  },
+  "he1shaders/gens hlsl/EnmGlass_dsnle1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "a00c7a1b7dce4e6956fef997f4b29ec2cdda7042c63ad21afe1d3e1dd88ccbf3"
+  },
+  "he1shaders/gens hlsl/EnmGlass_dsnle1.shader-list": {
+    "exists": true,
+    "sha256": "9b55c419e36f09dd81e50c659f20bd52f1bed886b57a68c93a297bb986d45385"
+  },
+  "he1shaders/gens hlsl/EnmGlass_e1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "523bb2579ff3a0d7581a9133b8713a1a25a6e878e3f411864655cca91a57e1ae"
+  },
+  "he1shaders/gens hlsl/EnmGlass_e1.shader-list": {
+    "exists": true,
+    "sha256": "e3272bec1dc6e3b88d49c46ed726d17c51fb4d647ab9d5c9201f96bc4e791c68"
+  },
+  "he1shaders/gens hlsl/EnmIgnore_dl@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "3321b4dac5313fc58a0a7d0b43a9e90709c4b7ea09220f5761017850706379b2"
+  },
+  "he1shaders/gens hlsl/EnmIgnore_dl.shader-list": {
+    "exists": true,
+    "sha256": "a2fee979eb912bab495a1ee205dc661e205ff69f01be58039f186d6414402c0a"
+  },
+  "he1shaders/gens hlsl/EnmIgnore_dle1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "58062faae4f7a0eadfde67d686843b0bb1b7b8ce157380743166712c3dacc56b"
+  },
+  "he1shaders/gens hlsl/EnmIgnore_dle1.shader-list": {
+    "exists": true,
+    "sha256": "b6143556417513925cc04dc083d588e8a4d194e93418f5d2b2effeb31aaef5b3"
+  },
+  "he1shaders/gens hlsl/EnmIgnore_dsle1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "a0a7a2b66348c74d9976e6d153aeb5a9ec7473c51aa75e9f840a898a52253f39"
+  },
+  "he1shaders/gens hlsl/EnmIgnore_dsle1.shader-list": {
+    "exists": true,
+    "sha256": "e280d2302d79cb090814aad36d8529adbfc6950500253e4e6d646c2bec4ab2d2"
+  },
+  "he1shaders/gens hlsl/EnmIgnore_le1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "caec412f6e1a590b0a461ea0f3f03f9b2b02c840927717a7e15e61ad7357a032"
+  },
+  "he1shaders/gens hlsl/EnmIgnore_le1.shader-list": {
+    "exists": true,
+    "sha256": "6bb24457d68fb923a75659b1b8e4e838c408e3a6191bfac7466bdfb0e3e45d10"
+  },
+  "he1shaders/gens hlsl/EnmMetal_dse1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "030fc38e1e6f30ac917ad78b3a29b5116bb4050dd59b204b98dcc68d29fbfe29"
+  },
+  "he1shaders/gens hlsl/EnmMetal_dse1.shader-list": {
+    "exists": true,
+    "sha256": "1bd555f528488345329b0a35995131ac3accd3dfcf75c3b6ce06cc19369ab9ec"
+  },
+  "he1shaders/gens hlsl/EnmMetal_dsfe1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "2851659a8e5d389a61b2c771392d4a98fe68784992a319805440db000131d519"
+  },
+  "he1shaders/gens hlsl/EnmMetal_dsfe1.shader-list": {
+    "exists": true,
+    "sha256": "78e4abb6c16a5d60055e6f0999a33847264cc6d0522eb596ec486f0f0544b6c3"
+  },
+  "he1shaders/gens hlsl/EnmMetal_dsne1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "8625f609167ea89b952e1d4d4bdfcee01d49efeb7c9d64a6391be1bd6870bb1b"
+  },
+  "he1shaders/gens hlsl/EnmMetal_dsne1.shader-list": {
+    "exists": true,
+    "sha256": "5efcdad8fe1630e1925c330b8475842a21be3d4cf998bafef186ce0d7f4b217b"
+  },
+  "he1shaders/gens hlsl/EnmMetal_dsnfe1@@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "3f35a21e1b58d8225b5def0417fd7384c390f401df653194c44eb770fd40e0ee"
+  },
+  "he1shaders/gens hlsl/EnmMetal_dsnfe1.shader-list": {
+    "exists": true,
+    "sha256": "f9b041c2df32542a79914340ee650412c9591b77d4c76065df78444905360f87"
+  },
+  "he1shaders/gens hlsl/IgnoreLightTwice_d@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "13bbf7e0e5e3eaae10b635f97dfb069de1ca142bde95696c336698df8fc2a8b6"
+  },
+  "he1shaders/gens hlsl/Default_@v@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "9dc45c2838b88851a09949f8d8b1baa8ac41df33ac608b05b354d03810de8c59"
+  },
+  "he1shaders/gens hlsl/Default_@v@p.wvu.hlsl": {
+    "exists": true,
+    "sha256": "d3c1099154ca0c4017c9c9256db47bd2343097e68886a59e7343ea499698d6f2"
+  },
+  "he1shaders/gens hlsl/IgnoreLightTwice_d.shader-list": {
+    "exists": true,
+    "sha256": "a5760ee892d89e7a88534500cfd02c31651c9d1a2ddde1d3f8c7f3bc8c930c28"
+  },
+  "he1shaders/gens hlsl/IgnoreLightV_d@s@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "d6e7f5694494f286cc62ca6970222ea5002332a29ad4257cfbc2ee9344bed3dc"
+  },
+  "he1shaders/gens hlsl/IgnoreLightV_@@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "19b875bd9d1bf40555ec4ab1c948b05bb99e825b10b9baeecf975a28c07bcb5e"
+  },
+  "he1shaders/gens hlsl/IgnoreLightV_d[s].shader-list": {
+    "exists": true,
+    "sha256": "d7f42641895bbcb17fbe2454a8074ddf3d16be1b992e454a567ae4cffa78b637"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_d@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "29ede8d316dccf876103c393817e53c048ed9cab6a24e8acb9df95e96917320a"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_d.shader-list": {
+    "exists": true,
+    "sha256": "4dc79b1856d6dca87b478f2a2ec34ce3161f7b54e15f937d23bf3060a74b7a80"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_d[b].shader-list": {
+    "exists": true,
+    "sha256": "4dc79b1856d6dca87b478f2a2ec34ce3161f7b54e15f937d23bf3060a74b7a80"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_d[bu].shader-list": {
+    "exists": true,
+    "sha256": "4dc79b1856d6dca87b478f2a2ec34ce3161f7b54e15f937d23bf3060a74b7a80"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_d[buv].shader-list": {
+    "exists": true,
+    "sha256": "4dc79b1856d6dca87b478f2a2ec34ce3161f7b54e15f937d23bf3060a74b7a80"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_d[bv].shader-list": {
+    "exists": true,
+    "sha256": "4dc79b1856d6dca87b478f2a2ec34ce3161f7b54e15f937d23bf3060a74b7a80"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_d[u].shader-list": {
+    "exists": true,
+    "sha256": "4dc79b1856d6dca87b478f2a2ec34ce3161f7b54e15f937d23bf3060a74b7a80"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_d[uv].shader-list": {
+    "exists": true,
+    "sha256": "4dc79b1856d6dca87b478f2a2ec34ce3161f7b54e15f937d23bf3060a74b7a80"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_d[v].shader-list": {
+    "exists": true,
+    "sha256": "4dc79b1856d6dca87b478f2a2ec34ce3161f7b54e15f937d23bf3060a74b7a80"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_dE@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "54cd7b2acf4550a7772cacdc2a6a9dd629d2202007c40b4d7a391f532a197455"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_dE.shader-list": {
+    "exists": true,
+    "sha256": "ca9a191639abcf1ff0609541e891c156687fe2fadfcdac9a1e2f941a342d9270"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_da@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "215c2ad8a77524731a361c0d2372577642c40815d3e384ca4667325447cb9d58"
+  },
+  "he1shaders/gens hlsl/IgnoreLight_da.shader-list": {
+    "exists": true,
+    "sha256": "3e8d5faa04b620ab637bd69a9c9dd0593831e1ac8c47c70d0f26c1d27dd0d81b"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_d@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "538c2dd02097022ea30f71f58de34077692ede6f98379b3ebfe36db9fb8e2380"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_d.shader-list": {
+    "exists": true,
+    "sha256": "8ed929f9b7237422f9fcb8ec43427d23c8fc035f8a2d08c890ab61d38c638c61"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dn@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "616dbf132bd0cb41316d48bea922bae27801382947d0864bed95d06b36cfb009"
+  },
+  "he1shaders/gens hlsl/Default_@nv@.wvu.hlsl": {
+    "exists": true,
+    "sha256": "2b1b087e54c6becf7c41b81c74f2b636514c15cf56dfad5f55f4df5c23584181"
+  },
+  "he1shaders/gens hlsl/Default_@nv@p.wvu.hlsl": {
+    "exists": true,
+    "sha256": "3298863c62da79186c7f5cdeb22c458a47dbdb85b8942d2f2ba7010a86decfd0"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dn.shader-list": {
+    "exists": true,
+    "sha256": "2633c48547c10e2fb5419b80bff9acb7474471b31cdc76aee4aa3199b77db815"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dp@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "b6269522077f0d825829dddc07b63ac44da5904e77d06e9211d0ca0938621e5b"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dp.shader-list": {
+    "exists": true,
+    "sha256": "a0b8034f8685b51853dacbbd0de6f5a093c4e773bb4bd805df8fd895cc866672"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpdpv@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "1abcc05db2f298043810b2b9baf2226fd8f12d455cdaea8f57cd16d5940badd0"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpdpv.shader-list": {
+    "exists": true,
+    "sha256": "0bb3f20bf0e25717921a756960803c512a15107e4d1b8b46d324306f6b78fbc7"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpe1@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "26bd7e79e95a03c34ca9f51e0142dde11b6b59fdfaf2358127b1f3cf9691fa83"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpe1.shader-list": {
+    "exists": true,
+    "sha256": "c7aea3baada9453e0d51227c5031ef48904530870073b7e95c5a1d10f9316c90"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpe2@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "b976676b49c22366e95e72d537ffaee5c7908fd130e044bfbbf9f1476a4ffb2b"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpe2.shader-list": {
+    "exists": true,
+    "sha256": "cef6d5ea6315455d86734fa6c237419d828e77f9c0f0d2098af2295395cc4a06"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpn@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "8ab8ffe704e2d78023758a060eafe033151db97a24c7564a8852a2b837ae46f0"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpn.shader-list": {
+    "exists": true,
+    "sha256": "28b7b6856e6d80b15a75d8e8eadca450c4605c4ae53c8b323a260b3233874fec"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpndp@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "00212deffa4dbff9cddcfb505a95bd0e230805e0ffbb59faf841ee67f58ee170"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpndp.shader-list": {
+    "exists": true,
+    "sha256": "8a8448217597facf6df12a41ee896aade2289f47ca2dcd6247456ddfcb432543"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpnv@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "d976e1c0da0e9c2d9ce9a2ff5c9780194d00ec2766379413ff854d075270ff3c"
+  },
+  "he1shaders/gens hlsl/LuminescenceV_dpnv.shader-list": {
+    "exists": true,
+    "sha256": "662ad4ee271fc1894eb1e5b938151adf28c75225d4db44647f53b939a0d633e8"
+  },
+  "he1shaders/gens hlsl/Luminescence_d@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "2bb866853a632e95f5456b5c8bb98e0f68b46f429605cec930eebc9128086515"
+  },
+  "he1shaders/gens hlsl/Luminescence_d.shader-list": {
+    "exists": true,
+    "sha256": "7b8ec58d0e9f63cdf61ef44ff0fcd974de76a520578d44136377192f8f2fd2ca"
+  },
+  "he1shaders/gens hlsl/Luminescence_d[b].shader-list": {
+    "exists": true,
+    "sha256": "7b8ec58d0e9f63cdf61ef44ff0fcd974de76a520578d44136377192f8f2fd2ca"
+  },
+  "he1shaders/gens hlsl/Luminescence_d[bu].shader-list": {
+    "exists": true,
+    "sha256": "7b8ec58d0e9f63cdf61ef44ff0fcd974de76a520578d44136377192f8f2fd2ca"
+  },
+  "he1shaders/gens hlsl/Luminescence_d[buv].shader-list": {
+    "exists": true,
+    "sha256": "7b8ec58d0e9f63cdf61ef44ff0fcd974de76a520578d44136377192f8f2fd2ca"
+  },
+  "he1shaders/gens hlsl/Luminescence_d[bv].shader-list": {
+    "exists": true,
+    "sha256": "7b8ec58d0e9f63cdf61ef44ff0fcd974de76a520578d44136377192f8f2fd2ca"
+  },
+  "he1shaders/gens hlsl/Luminescence_d[v].shader-list": {
+    "exists": true,
+    "sha256": "7b8ec58d0e9f63cdf61ef44ff0fcd974de76a520578d44136377192f8f2fd2ca"
+  },
+  "he1shaders/gens hlsl/Luminescence_dE@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "39826f6fbf467632944aee5bfb544aa3d391e6a2b324434436eef34f57dab197"
+  },
+  "he1shaders/gens hlsl/Luminescence_dE.shader-list": {
+    "exists": true,
+    "sha256": "b22352ad2133c2a942203bfc2053fe04ff820524def39a568c91e5e15975619c"
+  },
+  "he1shaders/gens hlsl/Luminescence_dE[b].shader-list": {
+    "exists": true,
+    "sha256": "b22352ad2133c2a942203bfc2053fe04ff820524def39a568c91e5e15975619c"
+  },
+  "he1shaders/gens hlsl/Luminescence_dE[bv].shader-list": {
+    "exists": true,
+    "sha256": "b22352ad2133c2a942203bfc2053fe04ff820524def39a568c91e5e15975619c"
+  },
+  "he1shaders/gens hlsl/Luminescence_dE[v].shader-list": {
+    "exists": true,
+    "sha256": "b22352ad2133c2a942203bfc2053fe04ff820524def39a568c91e5e15975619c"
+  },
+  "he1shaders/gens hlsl/Luminescence_dnE@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "ae5456a3562d033a6f7fff1586d3bac3a9f236209f29d070807cf0ec3a60755e"
+  },
+  "he1shaders/gens hlsl/Luminescence_dnE.shader-list": {
+    "exists": true,
+    "sha256": "efc6266a23e901791c7861c343d1093b02da92ff5d9996fb6e778c181b69b077"
+  },
+  "he1shaders/gens hlsl/Luminescence_dnE[u].shader-list": {
+    "exists": true,
+    "sha256": "efc6266a23e901791c7861c343d1093b02da92ff5d9996fb6e778c181b69b077"
+  },
+  "he1shaders/gens hlsl/Luminescence_dnE[uv].shader-list": {
+    "exists": true,
+    "sha256": "efc6266a23e901791c7861c343d1093b02da92ff5d9996fb6e778c181b69b077"
+  },
+  "he1shaders/gens hlsl/Luminescence_dnE[v].shader-list": {
+    "exists": true,
+    "sha256": "efc6266a23e901791c7861c343d1093b02da92ff5d9996fb6e778c181b69b077"
+  },
+  "he1shaders/gens hlsl/Luminescence_dne1E@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "1bfde45ae990ae671884fc64e0557de93a824f8aaeefe578dae0b0d02237a119"
+  },
+  "he1shaders/gens hlsl/Luminescence_dne1E.shader-list": {
+    "exists": true,
+    "sha256": "eb190ae2becee762699cc46c91f9ef2b8cc389eb6d441f5170d7247effeaa514"
+  },
+  "he1shaders/gens hlsl/Luminescence_dne2E@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "9bfea85f0d03fd9716d64f427dd248b78ebaab043b46775365c98250f27a4913"
+  },
+  "he1shaders/gens hlsl/Luminescence_dne2E.shader-list": {
+    "exists": true,
+    "sha256": "c035801ba941ead168919846484cc30f7f6c68e844628b92fa70beb671a4e77e"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpE@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "8bb4a75450953475e2270f5f5ee917b5e30e00b71868d99a24c2cee2cf344d6a"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpE.shader-list": {
+    "exists": true,
+    "sha256": "760def4da23ad694e65bfddf72d45c075a1473be1ce564f0cff1f62dfbb8d2a4"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpE[v].shader-list": {
+    "exists": true,
+    "sha256": "760def4da23ad694e65bfddf72d45c075a1473be1ce564f0cff1f62dfbb8d2a4"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpe1E@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "675a43e55e0513d4e8594b74c617a4517fe3c24fa8cf58d5591c42d9e863e7f8"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpe1E.shader-list": {
+    "exists": true,
+    "sha256": "e20ae2c2bfff61f6140141dabada9841cb045f6274b72d34c2ddd09e34cfc2c5"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpe2E@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "4fd9c2cf989c7d7dcdf687b05c4aeba0b647fbd1c79aa45377b0d33a48a9e128"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpe2E.shader-list": {
+    "exists": true,
+    "sha256": "b5d754c9a73c4db64c46d0a3fcfb859266ad60deb711b1dacc82304d7a9c1c31"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpnE@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "3f6d4435ba570bdbf85b8a8f39fb09f4f82e9665f250be77c9bfc2ae53ec4eb3"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpnE.shader-list": {
+    "exists": true,
+    "sha256": "8e5bdb945b2cc225e8c1e701a3fe8eaac2e8c38e464ceeec41e89230994c45f5"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpnE[v].shader-list": {
+    "exists": true,
+    "sha256": "8e5bdb945b2cc225e8c1e701a3fe8eaac2e8c38e464ceeec41e89230994c45f5"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpne1E@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "74b0386b52d78f5a0477e0950ee961e0339c8ce1b29df182f892c294e6303531"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpne1E.shader-list": {
+    "exists": true,
+    "sha256": "5df631767ad89a6cf78d3c7c95f8396158a4f9c103d320f50a88e0de02abd228"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpne2E@v@.wpu.hlsl": {
+    "exists": true,
+    "sha256": "7a7e045baa613fd48c6d93278df5586944a594849b816d604334c238525bb13a"
+  },
+  "he1shaders/gens hlsl/Luminescence_dpne2E.shader-list": {
+    "exists": true,
+    "sha256": "453bbd6297ea95c31da083dad87bddc3dbc2d16fcce06cc58b800dc9d0bd1426"
+  },
+  "he1shaders/unleashed asm/Common_d@@.xpu.asm": {
+    "exists": true,
+    "sha256": "e1ceffee2f9229b39ee19013f462b425b32c8e5e34234d076a23241a29c19c0a"
+  },
+  "he1shaders/unleashed asm/Default_@@.xvu.asm": {
+    "exists": true,
+    "sha256": "324f7489e5e9016bc81dca4cf454bcd80557bdb93b6d6a8df4db4809b5fcd953"
+  },
+  "he1shaders/unleashed asm/Default_@b@.xvu.asm": {
+    "exists": true,
+    "sha256": "018a0e0e2c6a78c296e682376ed85d03a42b8e474143c34497354375c8ee337e"
+  },
+  "he1shaders/unleashed asm/Default_@bu@.xvu.asm": {
+    "exists": true,
+    "sha256": "90e4ebcd0b5ae154a1a8ac738bb88ddded7ec52fd0cf726e236cb206d97b4efb"
+  },
+  "he1shaders/unleashed asm/Default_@u@.xvu.asm": {
+    "exists": true,
+    "sha256": "051cf28e2491abe9c5297a29729681c489e63bdbb75e6938ed6de4ee1c976092"
+  },
+  "he1shaders/unleashed asm/Default_@@p.xvu.asm": {
+    "exists": true,
+    "sha256": "00effb603ab4916a8f26a0aa5b49d09032f8d36c4477eeb30d42aea52ca8c182"
+  },
+  "he1shaders/unleashed asm/Default_@b@p.xvu.asm": {
+    "exists": true,
+    "sha256": "8a9d58708dc7c9dd722898919f57fb37632ab3d098250a5d0c91c75b73bcd4fa"
+  },
+  "he1shaders/unleashed asm/Default_@bu@p.xvu.asm": {
+    "exists": true,
+    "sha256": "d71ee84fce05f36d74da1271a5cc7c08f3512a56667ac2b665a7208f65818ea1"
+  },
+  "he1shaders/unleashed asm/Default_@u@p.xvu.asm": {
+    "exists": true,
+    "sha256": "d683dc8d17354ee2502bc2f654d7cc899c2a3ba64f9b37d66a7499806eb77797"
+  },
+  "he1shaders/unleashed hlsl/Common_d.shader-list": {
+    "exists": true,
+    "sha256": "045b362b55708ca59d41e5be0720d11ee96396c752ec84bebad4629dfd185f33"
+  },
+  "he1shaders/unleashed hlsl/Common_d[b].shader-list": {
+    "exists": true,
+    "sha256": "5ad48ce6e248fe4f34522b70481ca1e17cbf42c68dde395cab6e81626ab84d31"
+  },
+  "he1shaders/unleashed hlsl/Common_d[bu].shader-list": {
+    "exists": true,
+    "sha256": "f929dfd6da93688d690d30a7bc9c04f107ad8ca4e027463f791ec367e346a22f"
+  },
+  "he1shaders/unleashed hlsl/Common_d[bw].shader-list": {
+    "exists": true,
+    "sha256": "5ad48ce6e248fe4f34522b70481ca1e17cbf42c68dde395cab6e81626ab84d31"
+  },
+  "he1shaders/unleashed hlsl/Common_d[u].shader-list": {
+    "exists": true,
+    "sha256": "c0053f9c05a0e6df3b089d5b5f4f730fb1d2bb53a8e5cc448f8261c1129ffa1a"
+  },
+  "he1shaders/unleashed hlsl/Common_d[w].shader-list": {
+    "exists": true,
+    "sha256": "dfcc759655197072536e4261424552674ca6656cf384c337ff66513ead5caf77"
+  },
+  "he1shaders/unleashed asm/Common_d@v@.xpu.asm": {
+    "exists": true,
+    "sha256": "bd6edd2efe52d3ea3b61cc484e7ca170c223d8a7ef8b05c18f8f3c9e04ac2c51"
+  },
+  "he1shaders/unleashed asm/Default_@bv@.xvu.asm": {
+    "exists": true,
+    "sha256": "2c9143160dc7051e44b7fa2f08347aa71a4b53b7207bf360f52aabeead871b56"
+  },
+  "he1shaders/unleashed asm/Default_@uv@.xvu.asm": {
+    "exists": true,
+    "sha256": "529f89255059b80db1a64f8d6fc1ec3d71dcd0103cdf709ae78d09fcd1b2ed2b"
+  },
+  "he1shaders/unleashed asm/Default_@v@.xvu.asm": {
+    "exists": true,
+    "sha256": "a0f92c73cd6587adf2cedc2b7bb14757e28f44268becd8f53e8267e59596bc40"
+  },
+  "he1shaders/unleashed asm/Default_@bv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "43e6300f1a6fb8f7896161457bbb226a232705266fdb552c8e8b6db9fc116141"
+  },
+  "he1shaders/unleashed asm/Default_@uv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "a9a5aba37578b5d05c3fa93c72e415d110ebf388bb10e6a27d782dd788a11ff9"
+  },
+  "he1shaders/unleashed asm/Default_@v@p.xvu.asm": {
+    "exists": true,
+    "sha256": "36c2784dbae87d7136df1569f54a38155caf0a9f4d58394c0e7e83c408cc0c40"
+  },
+  "he1shaders/unleashed hlsl/Common_d[bv].shader-list": {
+    "exists": true,
+    "sha256": "1381184e4a864b53830ea112ad267ae170e1b20c90347819a3682bf6dfebf463"
+  },
+  "he1shaders/unleashed hlsl/Common_d[uv].shader-list": {
+    "exists": true,
+    "sha256": "9db83206d519d76c47ec65383beaf5872425f55621abfef43a5275377a1fbb03"
+  },
+  "he1shaders/unleashed hlsl/Common_d[v].shader-list": {
+    "exists": true,
+    "sha256": "ce27ca3be444355f17c82ab99bafbc15e09c075ee2575a82dc223680b00c3740"
+  },
+  "he1shaders/unleashed asm/Common_de@@.xpu.asm": {
+    "exists": true,
+    "sha256": "75b102d1ea1d624e825d2a632d181d0a7432ba5ff72d5908c6bf962b1b5c5de3"
+  },
+  "he1shaders/unleashed hlsl/Common_de.shader-list": {
+    "exists": true,
+    "sha256": "dd57669ff865a6c252fd67af6a7ab39a8f3fe852b0f34ff276cfa0663de59249"
+  },
+  "he1shaders/unleashed hlsl/Common_de[b].shader-list": {
+    "exists": true,
+    "sha256": "d6ae02d94440f6cdfc6bcc2ec2e886085c3f301cd020499c9fa65be7e5ea6b87"
+  },
+  "he1shaders/unleashed hlsl/Common_de[bw].shader-list": {
+    "exists": true,
+    "sha256": "d6ae02d94440f6cdfc6bcc2ec2e886085c3f301cd020499c9fa65be7e5ea6b87"
+  },
+  "he1shaders/unleashed asm/Common_dn@@.xpu.asm": {
+    "exists": true,
+    "sha256": "312e47e96c2204daf827f40f6f7abf8b2f532feaada118f11702287ff97db1b6"
+  },
+  "he1shaders/unleashed asm/Default_@n@.xvu.asm": {
+    "exists": true,
+    "sha256": "7ed8e7fac44ea4ea6a0d4cf6d254a2f27f6cfc9ebc295a0426ab8c0f49c86ac1"
+  },
+  "he1shaders/unleashed asm/Default_@bn@.xvu.asm": {
+    "exists": true,
+    "sha256": "cb223aaa397cc23229851d8a7e7516180c846711299cf235224cd9107120e11d"
+  },
+  "he1shaders/unleashed asm/Default_@n@p.xvu.asm": {
+    "exists": true,
+    "sha256": "09ec6e173f42e498b4aaac2b9a55d3b211a07a0636c46ad59533a444b2b57f2d"
+  },
+  "he1shaders/unleashed asm/Default_@bn@p.xvu.asm": {
+    "exists": true,
+    "sha256": "4f67568ffa659133d1806f13b6c9282e2668ab646f2a7a3c3ba615089117769b"
+  },
+  "he1shaders/unleashed hlsl/Common_dn.shader-list": {
+    "exists": true,
+    "sha256": "8031610aad1b5a5f5a1850cf58fc06386d70d714e1df24a7b685e01da617fa64"
+  },
+  "he1shaders/unleashed hlsl/Common_dn[b].shader-list": {
+    "exists": true,
+    "sha256": "82b39263bd2c6845aa6bb41e0ac1d1bde74eef4d9eb76cbf84df03aacfc81d4e"
+  },
+  "he1shaders/unleashed hlsl/Common_dn[bw].shader-list": {
+    "exists": true,
+    "sha256": "82b39263bd2c6845aa6bb41e0ac1d1bde74eef4d9eb76cbf84df03aacfc81d4e"
+  },
+  "he1shaders/unleashed asm/Common_dn@v@.xpu.asm": {
+    "exists": true,
+    "sha256": "04a7e3195377f633c83b48a0d482254c21563d423f97bfadcc9c31f9a3835ec6"
+  },
+  "he1shaders/unleashed asm/Default_@bnv@.xvu.asm": {
+    "exists": true,
+    "sha256": "ae903f78c54183ed3006c58b7809fe827cf92355fa68e113c96e415119a892c8"
+  },
+  "he1shaders/unleashed asm/Default_@nv@.xvu.asm": {
+    "exists": true,
+    "sha256": "aa0fe19c0f33f696f4e538b63c24cf6e254541c52a3b767a370ace4632857e55"
+  },
+  "he1shaders/unleashed asm/Default_@bnv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "9eeff768551c3e5884cbfe335cd42ed175bce53ef4ce1002cc0fc95bdcbadff3"
+  },
+  "he1shaders/unleashed asm/Default_@nv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "5e90759b523211bd3cdc1055d31042e0a1835f2205fd3448ecbfcd8592a6fa58"
+  },
+  "he1shaders/unleashed hlsl/Common_dn[bv].shader-list": {
+    "exists": true,
+    "sha256": "66345f844fa28754a827f0445ee24770ff6a3b29cfc40006a4e52025b5a5c505"
+  },
+  "he1shaders/unleashed hlsl/Common_dn[v].shader-list": {
+    "exists": true,
+    "sha256": "2d13d54b741d370ab557f963e925f95f3654702a1a37b187a79e18a7eead3093"
+  },
+  "he1shaders/unleashed asm/Common_dne@@.xpu.asm": {
+    "exists": true,
+    "sha256": "0f6a36b045c0eeb9c5aa51aaec55ee065f434cb61a6366fd1a3e86f593a41b0f"
+  },
+  "he1shaders/unleashed hlsl/Common_dne.shader-list": {
+    "exists": true,
+    "sha256": "fb95e6e70f9b86b5b73d255bfdb564babdd68b2827d19c4cabaa5bf0fcd4d36f"
+  },
+  "he1shaders/unleashed hlsl/Common_dne[b].shader-list": {
+    "exists": true,
+    "sha256": "9a384b5f90fca041cd2982d8197bd851d26693fd2a659ae9896adeb46f666757"
+  },
+  "he1shaders/unleashed asm/Common_dne@c@.xpu.asm": {
+    "exists": true,
+    "sha256": "4d4f980f746ad7ffe6b74431ae0df7f342087866fee8ed580d732a3162f5e4e5"
+  },
+  "he1shaders/unleashed hlsl/Common_dne[bc].shader-list": {
+    "exists": true,
+    "sha256": "1b8872197f91e18043581db8ef3fcfb0502c843e1289d84d5950953a6b1a00d9"
+  },
+  "he1shaders/unleashed hlsl/Common_dne[c].shader-list": {
+    "exists": true,
+    "sha256": "0f57ed87f7ba285b9681219ea385f1a8fa9f8844c511b8b8ea2d3fffaf0e67fd"
+  },
+  "he1shaders/unleashed asm/Common_dne@cv@.xpu.asm": {
+    "exists": true,
+    "sha256": "beddbbc690003a7c2e183a4c92db8d5bc03fa2e8c4f013633f23dfb179f418b5"
+  },
+  "he1shaders/unleashed hlsl/Common_dne[bcv].shader-list": {
+    "exists": true,
+    "sha256": "4c60e5f88e2381ab01f6317260922566817f569544c450491c088c798c795915"
+  },
+  "he1shaders/unleashed asm/Common_dp@@.xpu.asm": {
+    "exists": true,
+    "sha256": "99c1e3b1089b935f103a331d4aa41779fd44193693018a71db72fdb8fb129eb5"
+  },
+  "he1shaders/unleashed hlsl/Common_dp.shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/unleashed hlsl/Common_dp[b].shader-list": {
+    "exists": true,
+    "sha256": "bd5da0d3329b57fe08c2f5111e91cd490faa1c3d67295569876fd51569b98e6f"
+  },
+  "he1shaders/unleashed hlsl/Common_dp[bu].shader-list": {
+    "exists": true,
+    "sha256": "e2c772c9949a1f4ff7b64a1032a9397428a3b4e2d290e859dd66773095348850"
+  },
+  "he1shaders/unleashed hlsl/Common_dp[bw].shader-list": {
+    "exists": true,
+    "sha256": "bd5da0d3329b57fe08c2f5111e91cd490faa1c3d67295569876fd51569b98e6f"
+  },
+  "he1shaders/unleashed hlsl/Common_dp[u].shader-list": {
+    "exists": true,
+    "sha256": "a118a0d42426752b760b3194fa37ac5863a3dfcfbd974856fc3f4fc9b56fa260"
+  },
+  "he1shaders/unleashed hlsl/Common_dp[w].shader-list": {
+    "exists": true,
+    "sha256": "e6879a9b1aec7171c01d653e1dbbdaff45d2d2a0a0b3d27bf89a8d6a7c846114"
+  },
+  "he1shaders/unleashed asm/Common_dp@v@.xpu.asm": {
+    "exists": true,
+    "sha256": "d304496493e47f016f2f69b6001ab6c017385fb4924d38909cccccecc519e667"
+  },
+  "he1shaders/unleashed hlsl/Common_dp[uv].shader-list": {
+    "exists": true,
+    "sha256": "b261fa976c9cbd919f3e98de3eec8b8b134e3c007474bc0d630567a041e0ce3c"
+  },
+  "he1shaders/unleashed hlsl/Common_dp[v].shader-list": {
+    "exists": true,
+    "sha256": "00a14bc72782032cec88c670c512fc693b36c53aa80a7bfee93a4b47f9812cbe"
+  },
+  "he1shaders/unleashed asm/Common_dpe@@.xpu.asm": {
+    "exists": true,
+    "sha256": "bad89b0fcb33c5db6c82408c8bb41f9d87be3c75dd4298e221774de26fdbd3da"
+  },
+  "he1shaders/unleashed hlsl/Common_dpe.shader-list": {
+    "exists": true,
+    "sha256": "617118f56396b8e5e1b20feae5a2784417fa38eda8759471e27b093bcd2019bc"
+  },
+  "he1shaders/unleashed hlsl/Common_dpe[b].shader-list": {
+    "exists": true,
+    "sha256": "e42a9a72233f34f4bcb2d151be9c0ce06040d4d7e1b06509a1f6989da6fff51f"
+  },
+  "he1shaders/unleashed hlsl/Common_dpe[w].shader-list": {
+    "exists": true,
+    "sha256": "617118f56396b8e5e1b20feae5a2784417fa38eda8759471e27b093bcd2019bc"
+  },
+  "he1shaders/unleashed asm/Common_dpe@c@.xpu.asm": {
+    "exists": true,
+    "sha256": "1bd9a1b25a7ad71a2aac6d9b97bd7fda44ef38cda59ebb12ab46e98741f78ec7"
+  },
+  "he1shaders/unleashed hlsl/Common_dpe[bc].shader-list": {
+    "exists": true,
+    "sha256": "fa66ae2021cdc52e8e6f616d7f2ceb95e95296ec1f884ac747e7a45b02eccf64"
+  },
+  "he1shaders/unleashed hlsl/Common_dpe[c].shader-list": {
+    "exists": true,
+    "sha256": "fb2e2e4c1ecc5e43cc9c1e748033bd3e071e46d3a9cd4cce6eda0e61a3ac1144"
+  },
+  "he1shaders/unleashed asm/Common_dpe@v@.xpu.asm": {
+    "exists": true,
+    "sha256": "6c7dfbc65de3df21ad7ee72e764684b15f5a4db3cbd819b10a35fd3a056d5c18"
+  },
+  "he1shaders/unleashed hlsl/Common_dpe[uv].shader-list": {
+    "exists": true,
+    "sha256": "69119a440d92a2e66255d11675cfd6ac7d79b35daf20ca8da323098ea358f975"
+  },
+  "he1shaders/unleashed asm/Common_dpn@@.xpu.asm": {
+    "exists": true,
+    "sha256": "96b5670094aac341369b6a61d96c197d9534380d55435ec282aaeaf0c9ec2ea3"
+  },
+  "he1shaders/unleashed asm/Default_@nu@.xvu.asm": {
+    "exists": true,
+    "sha256": "9ef4afa903bd04a01030ecb73e68d9bba6b18d9deb3fd54e6d44fa9ff4725663"
+  },
+  "he1shaders/unleashed asm/Default_@nu@p.xvu.asm": {
+    "exists": true,
+    "sha256": "28daa075a29a77b5e7d9fca0e32dcd8e23c342312c6d0fdb9792ffc809d6ed15"
+  },
+  "he1shaders/unleashed hlsl/Common_dpn.shader-list": {
+    "exists": true,
+    "sha256": "694ac06e7628d72d2cd395b814874d35e3b2c35131ff31f2a9325272d4b17732"
+  },
+  "he1shaders/unleashed hlsl/Common_dpn[b].shader-list": {
+    "exists": true,
+    "sha256": "afd715a6d885e089cee279c9cf072e7341f5eb9d8c59aba581bbda497eae5b8c"
+  },
+  "he1shaders/unleashed hlsl/Common_dpn[bw].shader-list": {
+    "exists": true,
+    "sha256": "afd715a6d885e089cee279c9cf072e7341f5eb9d8c59aba581bbda497eae5b8c"
+  },
+  "he1shaders/unleashed hlsl/Common_dpn[u].shader-list": {
+    "exists": true,
+    "sha256": "c3cd90e2fdfb13fdfda7094d2b9e1504cd5b1fba242515cbe182c97d2991d0b0"
+  },
+  "he1shaders/unleashed hlsl/Common_dpn[w].shader-list": {
+    "exists": true,
+    "sha256": "d33dee8fbfca7c3a595a9eb9b0bd1b6d2e6e4bc10efc273ccc1f9270c7cb60f9"
+  },
+  "he1shaders/unleashed asm/Common_dpn@v@.xpu.asm": {
+    "exists": true,
+    "sha256": "a0cfb2eee61e9e261987a789f4a57eaf653d2dd6eadac2e181a629500572fa09"
+  },
+  "he1shaders/unleashed asm/Default_@nuv@.xvu.asm": {
+    "exists": true,
+    "sha256": "eb77e0acfb363ef30c0b6d691e2ffdcafc5761b3451ade1a95bd6d0148b08f69"
+  },
+  "he1shaders/unleashed asm/Default_@nuv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "30fbc8d70e429eedaa6de1e57a9d27ba6d2fbb845d37c032dcc4a7b948f5b737"
+  },
+  "he1shaders/unleashed hlsl/Common_dpn[bv].shader-list": {
+    "exists": true,
+    "sha256": "1476af945e9b7e4b8f94c44d8b1cd8f9dbad9024813a755a1161a5d4010494ef"
+  },
+  "he1shaders/unleashed hlsl/Common_dpn[uv].shader-list": {
+    "exists": true,
+    "sha256": "286dbb227731546c5d83db5b08f0d18fbaad33c7835361936f84e144e9f7f767"
+  },
+  "he1shaders/unleashed hlsl/Common_dpn[v].shader-list": {
+    "exists": true,
+    "sha256": "1db8e0ee2f587b7c84b8fa7cef151fd0e01063ed766eb41ea96c107ff8315c48"
+  },
+  "he1shaders/unleashed asm/Common_dpne@@.xpu.asm": {
+    "exists": true,
+    "sha256": "a44896a92125936ed854b33e46ffb417aa7ded85afd3b291658380c9287bec2f"
+  },
+  "he1shaders/unleashed hlsl/Common_dpne.shader-list": {
+    "exists": true,
+    "sha256": "f888f828b57dbad4d6039dcc84cb2a6716d7c7faa07b255d065d9f3da990f80e"
+  },
+  "he1shaders/unleashed hlsl/Common_dpne[b].shader-list": {
+    "exists": true,
+    "sha256": "3f622d7389d2c2c225d637fb60e99f8ae839f72425dae1044d98924b9c88632f"
+  },
+  "he1shaders/unleashed hlsl/Common_dpne[bw].shader-list": {
+    "exists": true,
+    "sha256": "3f622d7389d2c2c225d637fb60e99f8ae839f72425dae1044d98924b9c88632f"
+  },
+  "he1shaders/unleashed asm/Common_dpne@c@.xpu.asm": {
+    "exists": true,
+    "sha256": "b1872f69f98f78f999cb0f4b5a98c6751692092bfbb3c7a206e564e1bed881f2"
+  },
+  "he1shaders/unleashed hlsl/Common_dpne[bc].shader-list": {
+    "exists": true,
+    "sha256": "1716454c27a7a9311d2b16c502c7f8568b1c6d1e70a177e529e80d640ebd9caa"
+  },
+  "he1shaders/unleashed hlsl/Common_dpne[bcw].shader-list": {
+    "exists": true,
+    "sha256": "1716454c27a7a9311d2b16c502c7f8568b1c6d1e70a177e529e80d640ebd9caa"
+  },
+  "he1shaders/unleashed hlsl/Common_dpne[c].shader-list": {
+    "exists": true,
+    "sha256": "622d28842e4c5f88c8d01b91cbf4a31da9573cae17266e43472afe9e31e659c7"
+  },
+  "he1shaders/unleashed asm/Common_dpne@v@.xpu.asm": {
+    "exists": true,
+    "sha256": "0808b3ebee2d68b7a3350e5cf3b9217f49b81d844f849c60abe2f2109fd1c9d1"
+  },
+  "he1shaders/unleashed hlsl/Common_dpne[v].shader-list": {
+    "exists": true,
+    "sha256": "f6868c646a01a80ef3b2a389ba65406a2f36bdf6ae420d53be937177afb7a2a3"
+  },
+  "he1shaders/unleashed asm/Common_dpnr@@.xpu.asm": {
+    "exists": true,
+    "sha256": "60313f34be270788b2d639c928f7c02623a3195c4211e3345145f5beb16d3e6b"
+  },
+  "he1shaders/unleashed hlsl/Common_dpnr.shader-list": {
+    "exists": true,
+    "sha256": "6f53c49a931c8ae55fb41c7a599b3b34af0a5a6a1950ed5939eaa85316da38eb"
+  },
+  "he1shaders/unleashed asm/Common_dpr@@.xpu.asm": {
+    "exists": true,
+    "sha256": "226fd56361b6f87caaf2ac648f8826a70185b730faabdeebc599b576c3f0b1d2"
+  },
+  "he1shaders/unleashed hlsl/Common_dpr.shader-list": {
+    "exists": true,
+    "sha256": "29fea1fe83d70e5de313de05677f1d84c6fafc1e98ef017799b4aebb623a14ec"
+  },
+  "he1shaders/unleashed asm/Common_dsn@@.xpu.asm": {
+    "exists": true,
+    "sha256": "ccf49bc33219f6870848f328ce426cc5079dcc624e8ca97d0dd13c090eb8b1ea"
+  },
+  "he1shaders/unleashed hlsl/Common_dsn[b].shader-list": {
+    "exists": true,
+    "sha256": "07818a56d8b392200508b09a67f52a2d838e6593af763c2b0ee30d8ee5a410ab"
+  },
+  "he1shaders/unleashed hlsl/Common_dsn[bw].shader-list": {
+    "exists": true,
+    "sha256": "07818a56d8b392200508b09a67f52a2d838e6593af763c2b0ee30d8ee5a410ab"
+  },
+  "he1shaders/unleashed asm/Common_dsne@@.xpu.asm": {
+    "exists": true,
+    "sha256": "7467f2d31b9bf74dd28ef4e390e0f888f83402537fa57daf29fe63438e469ef1"
+  },
+  "he1shaders/unleashed hlsl/Common_dsne[b].shader-list": {
+    "exists": true,
+    "sha256": "57cf9953e38d2d037eea8992562a97b2b62675189c5c9e88b4622be275dc18ff"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetalBody_dspne@@.xpu.asm": {
+    "exists": true,
+    "sha256": "e34fde827b1703bbf1ffbf1e11975d15ee8df5e8a607a5d59689ee8e29bb5f64"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetalBody_@bn@.xvu.asm": {
+    "exists": true,
+    "sha256": "cb223aaa397cc23229851d8a7e7516180c846711299cf235224cd9107120e11d"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetalBody_@bn@p.xvu.asm": {
+    "exists": true,
+    "sha256": "4f67568ffa659133d1806f13b6c9282e2668ab646f2a7a3c3ba615089117769b"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetalBody_dspne[b].shader-list": {
+    "exists": true,
+    "sha256": "e99b779026482a9fefb4140649ca06ff7fe074e40f2294ca94b3b80bfd64971f"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetalSocket_dspne@@.xpu.asm": {
+    "exists": true,
+    "sha256": "e34fde827b1703bbf1ffbf1e11975d15ee8df5e8a607a5d59689ee8e29bb5f64"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetalSocket_@bn@.xvu.asm": {
+    "exists": true,
+    "sha256": "cb223aaa397cc23229851d8a7e7516180c846711299cf235224cd9107120e11d"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetalSocket_@bn@p.xvu.asm": {
+    "exists": true,
+    "sha256": "4f67568ffa659133d1806f13b6c9282e2668ab646f2a7a3c3ba615089117769b"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetalSocket_dspne[b].shader-list": {
+    "exists": true,
+    "sha256": "89fc11f4ded2c43338783cd205f10ef2beb5a5c3b4f65d4d76441674251b1ddd"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetal_dspne@@.xpu.asm": {
+    "exists": true,
+    "sha256": "e34fde827b1703bbf1ffbf1e11975d15ee8df5e8a607a5d59689ee8e29bb5f64"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetal_@bn@.xvu.asm": {
+    "exists": true,
+    "sha256": "cb223aaa397cc23229851d8a7e7516180c846711299cf235224cd9107120e11d"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetal_@bn@p.xvu.asm": {
+    "exists": true,
+    "sha256": "4f67568ffa659133d1806f13b6c9282e2668ab646f2a7a3c3ba615089117769b"
+  },
+  "he1shaders/unleashed asm/DayEnemyMetal_dspne[b].shader-list": {
+    "exists": true,
+    "sha256": "1847b03287d9451b9d4135a3ee470e63e517be954d542c86ee61322da2b19918"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_d@@.xpu.asm": {
+    "exists": true,
+    "sha256": "81fc2df1ee670b8c7ee659684260020289ec12a7351458b11359c49829398174"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@@.xvu.asm": {
+    "exists": true,
+    "sha256": "b213bc9ab01e13dd99eb967060c8aff2f6af0d40d8a6df931ba66964271f3c08"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@b@.xvu.asm": {
+    "exists": true,
+    "sha256": "4775ae81a6baad2e6bb6f584f7044490166369f356d9fe2088b34f86db90bec4"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@bu@.xvu.asm": {
+    "exists": true,
+    "sha256": "53e42d2646276d02e2b442be152c285b6aaeeff7b0ddbd286bd6bf2a640e35cb"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@u@.xvu.asm": {
+    "exists": true,
+    "sha256": "debb10eb59361827281e22d919768d691545627307fb0474bbc1c8ef9ca2617d"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@@p.xvu.asm": {
+    "exists": true,
+    "sha256": "f09ba8ee83d2c2cf393f6881c8874b6a010ba8764e51771b383e7d64ccd3edac"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@b@p.xvu.asm": {
+    "exists": true,
+    "sha256": "a9a49241b46cfccb1fe0d0e7f6d259df4b9a0f5a13133e6085310079375896db"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@bu@p.xvu.asm": {
+    "exists": true,
+    "sha256": "653510be4f7ab0e515f226c8f23966b448d9a0037951579e3031c4345ec9ba96"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@u@p.xvu.asm": {
+    "exists": true,
+    "sha256": "a6676b03d0b2d56280d900d1a0f1b6489a3195393cb2d897f5a0f43342f7e0c9"
+  },
+  "he1shaders/unleashed hlsl/IgnoreLight_d.shader-list": {
+    "exists": true,
+    "sha256": "c3820197629ebe943607e199ceef4c86d66c63545afde2ed9c27c622d2c63df4"
+  },
+  "he1shaders/unleashed hlsl/IgnoreLight_d[b].shader-list": {
+    "exists": true,
+    "sha256": "a10d1154fc351442f87b012630a5f389d3c7008daaf690f80ee364192af0627d"
+  },
+  "he1shaders/unleashed hlsl/IgnoreLight_d[bu].shader-list": {
+    "exists": true,
+    "sha256": "f25b3db1636ce02ac953013707ea6884e866680449b7c396cdac67125401b4a6"
+  },
+  "he1shaders/unleashed hlsl/IgnoreLight_d[u].shader-list": {
+    "exists": true,
+    "sha256": "ee6a843c3c722b3975c470a56b28b33c3152cd52c967027fa5b806f57e22c0e2"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_d@v@.xpu.asm": {
+    "exists": true,
+    "sha256": "b084febcb564ca38c7af539ac7f80bc4991f83c9d12a342c7958840a2249f8de"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@buv@.xvu.asm": {
+    "exists": true,
+    "sha256": "2a1332e15a10e4e47798be49a1a55c80404e465bec800b549ec342eeea3220e6"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@bv@.xvu.asm": {
+    "exists": true,
+    "sha256": "08ef65266f2938e2ea40c9bb78407a18d04c5390d485a5bebd8ecc8ad3deab1d"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@uv@.xvu.asm": {
+    "exists": true,
+    "sha256": "20744190c3c4a19855e75595b3e3a1c2ca57ca97896ce7a19da8561c4f7deb07"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@v@.xvu.asm": {
+    "exists": true,
+    "sha256": "bb15854077f5311c16506e48a8126ed3b0a7106aa42d330029b4956b66a687ee"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@buv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "1b2a1146edf4a3b865d181c9960bc1d978e1a3a13fee1cff81b2b5900b20d0ea"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@bv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "ff737165dc4abe2bc1b303a05d9ccadb8080590202de5bbc7f4fbec4c1054bc2"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@uv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "a2b3b979e913a520cd4550f1cbeb7dbcf3f716511d2a32ba945d850123566f46"
+  },
+  "he1shaders/unleashed asm/IgnoreLight_@v@p.xvu.asm": {
+    "exists": true,
+    "sha256": "ec7e3157b3fe7df895de766b7021eb48d25b75bc2af9016e95420c2ad88d2eae"
+  },
+  "he1shaders/unleashed hlsl/IgnoreLight_d[buv].shader-list": {
+    "exists": true,
+    "sha256": "fc0bff1cd0b2796651267577e34ca8f421746a9b95559be207f86e1e79236d78"
+  },
+  "he1shaders/unleashed hlsl/IgnoreLight_d[bv].shader-list": {
+    "exists": true,
+    "sha256": "93097a37507f4fb6541fc854d14ea5979367f5f88c39199bbb52ec037670aecc"
+  },
+  "he1shaders/unleashed hlsl/IgnoreLight_d[uv].shader-list": {
+    "exists": true,
+    "sha256": "477c0577f5f61d2b670c9ed70a4fd47901a5e3f742d37b0759b269f6e058ef05"
+  },
+  "he1shaders/unleashed hlsl/IgnoreLight_d[v].shader-list": {
+    "exists": true,
+    "sha256": "8b7bf092755e61185f68efd8bd2ba1fb2be2b39030775656a854be146171e553"
+  },
+  "he1shaders/unleashed asm/Luminescence_d@E@.xpu.asm": {
+    "exists": true,
+    "sha256": "42448f28af33f3069d14b684ebde10a7662c2e9ecdb0d3ff261b3b4d6487c8ea"
+  },
+  "he1shaders/unleashed asm/SSS_@@.xvu.asm": {
+    "exists": true,
+    "sha256": "d75ddbc01fd4c4a0fd11abed077656fd49d4d93064ade31aa2758d3587d99f9a"
+  },
+  "he1shaders/unleashed asm/SSS_@b@.xvu.asm": {
+    "exists": true,
+    "sha256": "d418421ad24b632e932583e23aca6648d7361a730e26ae57bd92d9cab2d692cf"
+  },
+  "he1shaders/unleashed asm/SSS_@@p.xvu.asm": {
+    "exists": true,
+    "sha256": "eba73b09ce5c4626a360bc37ecc97bcc8557775ffaecd3c4c6455ef14071cec3"
+  },
+  "he1shaders/unleashed asm/SSS_@b@p.xvu.asm": {
+    "exists": true,
+    "sha256": "a698371fe9f7370a936c8f08051884a03783e0ca964df6910fce45961b09875e"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_d.shader-list": {
+    "exists": true,
+    "sha256": "3bcc0066c976a026cf8867de6d94932d4b1fdeb68cda3ba7ab096896d967883b"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_d[b].shader-list": {
+    "exists": true,
+    "sha256": "e372b2878bb38375f898b8874dba5efe2eaf73ddac8f7627526d41e9be228bb6"
+  },
+  "he1shaders/unleashed asm/Luminescence_d@Ev@.xpu.asm": {
+    "exists": true,
+    "sha256": "6ec37730b9e5f1d38cd47fa7340e3a2088bbdc60d06bb8a536d2b949343aaca9"
+  },
+  "he1shaders/unleashed asm/SSS_@buv@.xvu.asm": {
+    "exists": true,
+    "sha256": "14a3dc1e7bb58c27764c222e4c45fc914aa787acc643b792c169dcfbafd879e7"
+  },
+  "he1shaders/unleashed asm/SSS_@bv@.xvu.asm": {
+    "exists": true,
+    "sha256": "a2d1473a7c96b608e19d35017e4f6720e87fadc9b2ea07bde60a53b30efdc65b"
+  },
+  "he1shaders/unleashed asm/SSS_@buv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "a4fa5d7896f5f6ad024881f3e2a0cc99e652a5a4a12bf6f884853d0f96ad4038"
+  },
+  "he1shaders/unleashed asm/SSS_@bv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "88684d637dc86e990d45f09aaf4b02f03be46ecb71017b324cb2774ddbfeb98c"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_d[buv].shader-list": {
+    "exists": true,
+    "sha256": "178d3fa50505466dbbd7097eaa43684cdb5fa0d3352f2722161ceb560e937959"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_d[bv].shader-list": {
+    "exists": true,
+    "sha256": "c50fc5d1e76e061a5e809baecf6521d034a5682ddf13b4de3016db4101d45dcb"
+  },
+  "he1shaders/unleashed asm/Luminescence_dE@@.xpu.asm": {
+    "exists": true,
+    "sha256": "4802aca4977f38240d24d99370990fbdb5754da189a269478906b85ee6f1a3e6"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_dE.shader-list": {
+    "exists": true,
+    "sha256": "eae952bc794efb931efb4ac052026625c4250ace9dd964b26cda1c60c2123c88"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_dE[b].shader-list": {
+    "exists": true,
+    "sha256": "e36dc13fd78647a044f642d9ffbb02c12eb0927d4beddd1965021f647cc71e72"
+  },
+  "he1shaders/unleashed asm/Luminescence_dE@v@.xpu.asm": {
+    "exists": true,
+    "sha256": "da3398cb561e158c955bb0f01050a8e9f124a3e6ca7c2018965cdea80fffd7ab"
+  },
+  "he1shaders/unleashed asm/SSS_@v@.xvu.asm": {
+    "exists": true,
+    "sha256": "bd6e5234fa959b3e0b73031200ddca5ca13ea4fc97dac386d76b16101e1a85fe"
+  },
+  "he1shaders/unleashed asm/SSS_@v@p.xvu.asm": {
+    "exists": true,
+    "sha256": "7c427fe10104dde187608d98f75ec1c79cf66d43bb5d3e7c31d75908ecb4a026"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_dE[bv].shader-list": {
+    "exists": true,
+    "sha256": "2835dca1cd70cff3f58931590e21749cb04c7b1ec390abe013693362504dc415"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_dE[v].shader-list": {
+    "exists": true,
+    "sha256": "c66e33489f0a57d02d0e02ab86dc127318896137360b37455a20d1481d840520"
+  },
+  "he1shaders/unleashed asm/Luminescence_dnE@@.xpu.asm": {
+    "exists": true,
+    "sha256": "d5422142826ab8ff186aec2ead14c930eb0f9e7469d66fd60f94fd7022eb4178"
+  },
+  "he1shaders/unleashed asm/SSS_@n@.xvu.asm": {
+    "exists": true,
+    "sha256": "3690378235a582ea6fe2affc4432d477bf7ed769b9913587f61ccd385cef691b"
+  },
+  "he1shaders/unleashed asm/SSS_@nu@.xvu.asm": {
+    "exists": true,
+    "sha256": "50c9b811a0c2c242d753498a46a5c4aa6d9e108754424fad4364341aec336a54"
+  },
+  "he1shaders/unleashed asm/SSS_@n@p.xvu.asm": {
+    "exists": true,
+    "sha256": "509eeb2a66a35232462bf9562a477dd2e4783375e385e35e8be01ca8e8d263b6"
+  },
+  "he1shaders/unleashed asm/SSS_@nu@p.xvu.asm": {
+    "exists": true,
+    "sha256": "4b23ec3d72cc2600600ee9eaf9e6f18efa5a02faa449a42f8d27677629d5de5b"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_dnE.shader-list": {
+    "exists": true,
+    "sha256": "39021c951feb6875532edfa91ca51b953ba1d380151b728b309f13e35b699a4c"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_dnE[u].shader-list": {
+    "exists": true,
+    "sha256": "ab390621a6fc32a91e51484b565932a22590a70debd65894835cec9e36a3d632"
+  },
+  "he1shaders/unleashed asm/Luminescence_dnE@v@.xpu.asm": {
+    "exists": true,
+    "sha256": "8522f55852c562984fb313708407bc9226521d39b8c5e8b717f3079988dd9aff"
+  },
+  "he1shaders/unleashed asm/SSS_@nuv@.xvu.asm": {
+    "exists": true,
+    "sha256": "8355af91b1ce75542f79373c5c5d72dcfdbad573f221d1570d6077d2d6cd6a36"
+  },
+  "he1shaders/unleashed asm/SSS_@nuv@p.xvu.asm": {
+    "exists": true,
+    "sha256": "e555ca34c89edacc0748964741a330fd07c22305ca58175bb8f845b2726a0980"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_dnE[uv].shader-list": {
+    "exists": true,
+    "sha256": "c14fb6f40276d7f8e2eef3e24e54d92e8dea3037c59948810379eed8611141b6"
+  },
+  "he1shaders/unleashed asm/Luminescence_dpE@@.xpu.asm": {
+    "exists": true,
+    "sha256": "e78b535e6c0d800fb9a086d1ac7b618088ec28c71290beb623b91818678007e1"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_dpE.shader-list": {
+    "exists": true,
+    "sha256": "2c4e287cb0d3ae397edffcf768e9ea683dadec831fe17745b7184bedf57d2547"
+  },
+  "he1shaders/unleashed asm/Luminescence_dpnE@@.xpu.asm": {
+    "exists": true,
+    "sha256": "c15249131ce64e9381109c0c2321ddb8054a782655901c008dd0d45328754925"
+  },
+  "he1shaders/unleashed hlsl/Luminescence_dpnE.shader-list": {
+    "exists": true,
+    "sha256": "be14a227ca0ae5da1bfb7f4d5b0a49fc52f4e14728509e7e2156607ca2f6ee69"
+  },
+  "he1shaders/unleashed asm/NightEnemyCommon_drE@@.xpu.asm": {
+    "exists": true,
+    "sha256": "bee1a61298549bca9783255b892daa0f050538949af77ed381ff3bf060e97548"
+  },
+  "he1shaders/unleashed asm/NightEnemyCommon_@b@.xvu.asm": {
+    "exists": true,
+    "sha256": "e8def24f4ed4513504bce680c60d06f16054a6f5495ce128960607ee2a5b88e0"
+  },
+  "he1shaders/unleashed asm/NightEnemyCommon_@b@p.xvu.asm": {
+    "exists": true,
+    "sha256": "7c31db20044254d36244c75942bb1ee2cc1125a1d7209d296ae07b8767e38c0d"
+  },
+  "he1shaders/unleashed asm/NightEnemyCommon_drE[b].shader-list": {
+    "exists": true,
+    "sha256": "cdc6d14b88fc57987e1fac3c3031ba441b2448b246ce7602a6265115ead1299d"
+  },
+  "he1shaders/unleashed asm/SonicCloth_ds@@.xpu.asm": {
+    "exists": true,
+    "sha256": "3a9e9cd4f60e3bb85ad8d0adb574056ba70a546fecc45971fbad3709b55c435d"
+  },
+  "he1shaders/unleashed asm/CharactorSSS_@bd@.xvu.asm": {
+    "exists": true,
+    "sha256": "63bd3a03099306c840b4dcaaf3f005f4cd3eca85960c319e857e60975d6440ac"
+  },
+  "he1shaders/unleashed asm/CharactorSSS_@bd@p.xvu.asm": {
+    "exists": true,
+    "sha256": "9e1f1837eab810a3b83cdcd1b94858877e50cf34b82edb8c45491c94e5f1cf2e"
+  },
+  "he1shaders/unleashed asm/SonicCloth_ds[b].shader-list": {
+    "exists": true,
+    "sha256": "884b79b9f593ee18e9ca20a08b0925a5103ec88a6ca7735c1749ce6300b4fdeb"
+  },
+  "he1shaders/unleashed asm/SonicCloth_dsn@@.xpu.asm": {
+    "exists": true,
+    "sha256": "b8dbc359603b644b56230acb4238e10a2f8a22a8c69c5de9cc0a6981a098e2e2"
+  },
+  "he1shaders/unleashed asm/CharactorSSS_@bdn@.xvu.asm": {
+    "exists": true,
+    "sha256": "11e798e0b03dae9f8583b442277f39bee5a877e77a9e59b878afd965e766c667"
+  },
+  "he1shaders/unleashed asm/CharactorSSS_@bdn@p.xvu.asm": {
+    "exists": true,
+    "sha256": "84283ddec27bedd3dcbaa511d9feed5f0cfd187abfd69d6c7787fdfea28cd262"
+  },
+  "he1shaders/unleashed asm/SonicCloth_dsn[b].shader-list": {
+    "exists": true,
+    "sha256": "70e6ebb20a25fc96c94e102b5db03768c7cce85a64913b8206fcc3d50292cd16"
+  },
+  "he1shaders/unleashed asm/SonicEnamel_dspe@@.xpu.asm": {
+    "exists": true,
+    "sha256": "4bea3d31d7116844380ffd19f493b11c1ce9d050dfa3d7b0e203ac5cbd2cd76e"
+  },
+  "he1shaders/unleashed asm/CharactorDefault_@b@.xvu.asm": {
+    "exists": true,
+    "sha256": "d081d236fc226fc541f467eb6801434196277f06e257a0e25f88e7c6a8851a9a"
+  },
+  "he1shaders/unleashed asm/CharactorDefault_@b@p.xvu.asm": {
+    "exists": true,
+    "sha256": "8976750c51c7dcb8926aa8da3229a0ca0714d843870c46e102e0d3cbb3bf3763"
+  },
+  "he1shaders/unleashed asm/SonicEnamel_dspe[b].shader-list": {
+    "exists": true,
+    "sha256": "346796904870e4be66415c552b1a1c1eda862069054ac46de0c577febde9cb20"
+  },
+  "he1shaders/unleashed asm/SonicEnamel_dspe@c@.xpu.asm": {
+    "exists": true,
+    "sha256": "0c97f34a33674b64a66991caf89b2077cf862f45ff758bcb5d7c4b153a877812"
+  },
+  "he1shaders/unleashed asm/SonicEnamel_dspe[bc].shader-list": {
+    "exists": true,
+    "sha256": "86c1f3275678f7cc503564a7f5421a2d6f1b7d81ca1ab854be3aefeaaef32a08"
+  },
+  "he1shaders/unleashed asm/SonicEnamel_dspne@@.xpu.asm": {
+    "exists": true,
+    "sha256": "67d73d936555ba0fb7ae7e2e69a2c480f773c5a00ce7b55e0f475ea8a59ab7f7"
+  },
+  "he1shaders/unleashed asm/CharactorDefault_@bn@.xvu.asm": {
+    "exists": true,
+    "sha256": "c68a11a67c8570e75c09b023742ac2361b87e59f03a4b4cf4abcfa658cd6ddae"
+  },
+  "he1shaders/unleashed asm/CharactorDefault_@bn@p.xvu.asm": {
+    "exists": true,
+    "sha256": "d704b7ab73beb50a4dae2a3cd68058ac288378b72d1853b3d05e41d9dd784bb9"
+  },
+  "he1shaders/unleashed asm/SonicEnamel_dspne[b].shader-list": {
+    "exists": true,
+    "sha256": "9f225095d54703e62fa247f5c53d2cd22b9c76a373094d06c08112023937c975"
+  },
+  "he1shaders/unleashed asm/SonicEnamel_dspne@c@.xpu.asm": {
+    "exists": true,
+    "sha256": "5eb4956bcaaa3db48df056987e1dfbf8d0c81938dcc76a0e9af66a8b714fcde2"
+  },
+  "he1shaders/unleashed asm/SonicEnamel_dspne[bc].shader-list": {
+    "exists": true,
+    "sha256": "c0f2e9fb4f31026acc40ecfe61bdf6999ee7ffec23b44adf003fd4f95a6300cf"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpe@@.xpu.asm": {
+    "exists": true,
+    "sha256": "3ffdd5de55252aa08ac2ac63fe57b40ea2e797e04fcde191c8e8fefa833416f9"
+  },
+  "he1shaders/unleashed asm/SonicEye_@b@.xvu.asm": {
+    "exists": true,
+    "sha256": "07b065dc6660a822702ea602cde36ac1d29ccd749ad2de3886a1e2a09fae5240"
+  },
+  "he1shaders/unleashed asm/SonicEye_@bu@.xvu.asm": {
+    "exists": true,
+    "sha256": "270c9ea63844e485b59c45fbde575eba78178221bb48e0cb6559aaa6d3f43c15"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpe[b].shader-list": {
+    "exists": true,
+    "sha256": "4523106aec825cc8df1d99d4a26112711ceb16816ac6e73e20fca66ca8a6fa34"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpe[bu].shader-list": {
+    "exists": true,
+    "sha256": "f4b5b8dd97664183ad8843c13929d0ca61ef75dbd716ee8aad3771738b17a188"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpe@c@.xpu.asm": {
+    "exists": true,
+    "sha256": "5c79d5177e4ca2ddc911b7ffbb32c21b38ac3dedca14c76150066102a8e377e1"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpe[bc].shader-list": {
+    "exists": true,
+    "sha256": "744382170af00b82971d3bc56e7588f7417f3ef6e4c15bfb7d8ce217ccfd9297"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpe[bcu].shader-list": {
+    "exists": true,
+    "sha256": "8a7b66b13f4cfc8130284f903157208a92753f2b10e114a20fbb9165b55e0864"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpne@@.xpu.asm": {
+    "exists": true,
+    "sha256": "392365be21cf663d19fd7d2ac8a51acbc4551696eba79575168c8bef511351ca"
+  },
+  "he1shaders/unleashed asm/SonicEye_@bn@.xvu.asm": {
+    "exists": true,
+    "sha256": "815e9fbad8e86a338538c983de351595a692dbc263e373203caeac2f87388c53"
+  },
+  "he1shaders/unleashed asm/SonicEye_@bnu@.xvu.asm": {
+    "exists": true,
+    "sha256": "e1f2d8c15fa186416a3d18c7411b0ac6d3cd58355c0f04f0146bd1a3e9a4fc00"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpne[b].shader-list": {
+    "exists": true,
+    "sha256": "bec8bc1e5c5a320e6752b406e73e9aaf4268ec1fedc509ccf88e05f18e2438b0"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpne[bu].shader-list": {
+    "exists": true,
+    "sha256": "17385f4625c3ccfd9a6885ff52e6284a6e0c95d30de243035aef9fc6a83c88f6"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpne@c@.xpu.asm": {
+    "exists": true,
+    "sha256": "41e70ab74613a1125652019c6c724a96a60991f8fe9d2d5cc83faf51c70eee45"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpne[bc].shader-list": {
+    "exists": true,
+    "sha256": "7186ed1fa83b916945f26761f01d3886a5f742125455e9feec06f74b5ee31f39"
+  },
+  "he1shaders/unleashed asm/SonicEye_dpne[bcu].shader-list": {
+    "exists": true,
+    "sha256": "d17758eda5427f8f6e58bfd68dfca253731835439f2adb39b6b7c5a6df16ad47"
+  },
+  "he1shaders/unleashed asm/SonicMetal_dpe@@.xpu.asm": {
+    "exists": true,
+    "sha256": "de9aef8759a23221734b36a410fe5f9958b584bfa801ae0ae283917f80c77148"
+  },
+  "he1shaders/unleashed asm/CharactorSphereRef_@b@.xvu.asm": {
+    "exists": true,
+    "sha256": "994af06f36746331e1e0aab3b2034f97d376048bb967810a88992c3362effad4"
+  },
+  "he1shaders/unleashed asm/Dummy_@@p.xvu.asm": {
+    "exists": true,
+    "sha256": "620ff3a0e591a34409f32048985feafbe081a8bc0373f7ab90c76e07dbb67d7a"
+  },
+  "he1shaders/unleashed asm/SonicMetal_dpe[b].shader-list": {
+    "exists": true,
+    "sha256": "7d98484dad55ff8f07bdf454cd6f908a2718dcd0f4d8faa66097b8051eae77ae"
+  },
+  "he1shaders/unleashed asm/SonicMetal_dpe@c@.xpu.asm": {
+    "exists": true,
+    "sha256": "3e86a9a07ab39a911696a4e9659f66f322f1e8033d78f657640f04d89cb05baa"
+  },
+  "he1shaders/unleashed asm/SonicMetal_dpe[bc].shader-list": {
+    "exists": true,
+    "sha256": "2062349435cfcf012e9d2674a530253034c904f2fc9e8d85b5929ea97a6fde9f"
+  },
+  "he1shaders/unleashed asm/SonicMetal_dpne@@.xpu.asm": {
+    "exists": true,
+    "sha256": "d1e8af60d53a6b3f6b0d730150c92d2b8c0b56dd5f0d2f801a5c7125f6ac9404"
+  },
+  "he1shaders/unleashed asm/CharactorSphereRef_@bn@.xvu.asm": {
+    "exists": true,
+    "sha256": "578e8ff495388465c57a7493bba55b9cba664d5da4c2e2234cfcbbe3399d404d"
+  },
+  "he1shaders/unleashed asm/SonicMetal_dpne[b].shader-list": {
+    "exists": true,
+    "sha256": "f02ec4e77cd807c9ae9a371f7bd9f95e6b3e53740781b27f9c673b5ef9775f2e"
+  },
+  "he1shaders/unleashed asm/SonicMetal_dpne@c@.xpu.asm": {
+    "exists": true,
+    "sha256": "a3c4189eb0eca5b23b543917c5de9caed625b42eb6a571de62e1ce91bdb529f3"
+  },
+  "he1shaders/unleashed asm/SonicMetal_dpne[bc].shader-list": {
+    "exists": true,
+    "sha256": "3ddec7a20612d599e80b695438a1243fde28bb4f74c5af05916800ce254508be"
+  },
+  "he1shaders/unleashed asm/SonicSkin_dnf@@.xpu.asm": {
+    "exists": true,
+    "sha256": "4c9c6fe95167856cf9e7f2d335c2985041d37398b68b5a475bd315f71014ae01"
+  },
+  "he1shaders/unleashed asm/CharactorNodeInvX_@bn@.xvu.asm": {
+    "exists": true,
+    "sha256": "24d6691b13dd7ffc951e00e593fc45d47b670db0f8828849a753fde5b5218eec"
+  },
+  "he1shaders/unleashed asm/CharactorNodeInvX_@bn@p.xvu.asm": {
+    "exists": true,
+    "sha256": "3ff6df242956cc86902f89dcbd805adeb97a0223e50926d1cd425bb7e62535e9"
+  },
+  "he1shaders/unleashed asm/SonicSkinNodeInvX_dnf[b].shader-list": {
+    "exists": true,
+    "sha256": "32647c7171788c649aa3e4a83c47db7d76c5eeda4e82d3f057c104fa21a82d09"
+  },
+  "he1shaders/unleashed asm/SonicSkin_dspf@@.xpu.asm": {
+    "exists": true,
+    "sha256": "73d158ab41fccb866891dd87e55fc3dd03883ed1ef6c5a544f5b5b66ef0d5035"
+  },
+  "he1shaders/unleashed asm/CharactorNodeInvX_@b@.xvu.asm": {
+    "exists": true,
+    "sha256": "7dfe99f66fc8c91a1a8532fd98cbccfb0115f393aed78d7c81005a98b3709361"
+  },
+  "he1shaders/unleashed asm/CharactorNodeInvX_@b@p.xvu.asm": {
+    "exists": true,
+    "sha256": "e9d9a786beb9fd531c47cc33814719a0864573540c8dda6d5b2bd19cd7e58135"
+  },
+  "he1shaders/unleashed asm/SonicSkinNodeInvX_dspf[b].shader-list": {
+    "exists": true,
+    "sha256": "8aa7bbebec95763601fce3c53bb3c4e50f5adde89f52a8d88f8b4bda47faad66"
+  },
+  "he1shaders/unleashed asm/SonicSkin_dspf[b].shader-list": {
+    "exists": true,
+    "sha256": "8eba82cd8c18105e8d858b37d429d54e5f3e7d83f526be9e6e6397a38b2ed98c"
+  },
+  "he1shaders/unleashed asm/SonicSkin_dspnf@@.xpu.asm": {
+    "exists": true,
+    "sha256": "d2dab5f530f084098039ebf15467f97ef824a6d070d6bacc03782f0c5c41254c"
+  },
+  "he1shaders/unleashed asm/SonicSkinNodeInvX_dspnf[b].shader-list": {
+    "exists": true,
+    "sha256": "fec479981fb7785697ca0eb4b6ed8455f1869d7f8656c09241c0c9078e0ad3c6"
+  },
+  "he1shaders/unleashed asm/SonicSkin_dspnf[b].shader-list": {
+    "exists": true,
+    "sha256": "3c30f007c1b19e55abd286622509d18d827a640376d7a713fa6676546bf86fcb"
+  }
+}

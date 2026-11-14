@@ -10,7 +10,13 @@ $sceneResource = ConvertTo-Json -InputObject ('res://' + $sceneFiles[0].Name) -C
 $verifyPath = Join-Path ([System.IO.Path]::GetTempPath()) ('HE1SCU-relocation-' + [guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $verifyPath | Out-Null
 Get-ChildItem -LiteralPath $exportPath -File | Where-Object {$_.Extension -in '.scn','.mesh','.anim'} | ForEach-Object {Copy-Item -LiteralPath $_.FullName -Destination $verifyPath}
-Set-Content -LiteralPath (Join-Path $verifyPath 'project.godot') -Value "config_version=4`n[rendering]`nquality/driver/driver_name=`"GLES2`"" -Encoding utf8
+$renderer = 'GLES2'
+$manifestPath = Join-Path $exportPath 'conversion.json'
+if (Test-Path -LiteralPath $manifestPath) {
+    $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
+    if ($manifest.prr.enabled -and $manifest.prr.shaderMaterials -gt 0) { $renderer = 'GLES3' }
+}
+Set-Content -LiteralPath (Join-Path $verifyPath 'project.godot') -Value "config_version=4`n[rendering]`nquality/driver/driver_name=`"$renderer`"" -Encoding utf8
 $script = @'
 extends SceneTree
 func _init():
@@ -37,10 +43,23 @@ func _init():
             quit()
             return
         for surface in range(mesh.get_surface_count()):
-            if not (mesh.surface_get_material(surface) is SpatialMaterial):
+            var material = mesh.surface_get_material(surface)
+            if not (material is SpatialMaterial or material is ShaderMaterial):
                 printerr("RELOCATION_FAILED material")
                 quit()
                 return
+            if material is ShaderMaterial:
+                if material.shader == null or (material.shader.resource_path != "" and material.shader.resource_path.find("::") < 0):
+                    printerr("RELOCATION_FAILED external or missing shader")
+                    quit()
+                    return
+                for property in material.get_property_list():
+                    if property.name.begins_with("shader_param/"):
+                        var texture = material.get(property.name)
+                        if texture is Texture and ((texture.resource_path != "" and texture.resource_path.find("::") < 0) or texture.get_data() == null):
+                            printerr("RELOCATION_FAILED external or invalid sampler")
+                            quit()
+                            return
         meshes += 1
         surfaces += mesh.get_surface_count()
     if meshes == 0:

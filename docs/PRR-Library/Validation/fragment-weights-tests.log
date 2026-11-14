@@ -1,0 +1,8 @@
+test_balanced_group_and_plain_weight_have_same_meaning (test_fragment_weights.Weights.test_balanced_group_and_plain_weight_have_same_meaning) ... ok
+test_constructor_weight_preserves_parenthesis (test_fragment_weights.Weights.test_constructor_weight_preserves_parenthesis) ... ok
+test_original_symbolic_weight_remains_identical (test_fragment_weights.Weights.test_original_symbolic_weight_remains_identical) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

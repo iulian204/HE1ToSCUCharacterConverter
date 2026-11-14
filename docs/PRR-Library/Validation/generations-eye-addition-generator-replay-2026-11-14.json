@@ -1,0 +1,614 @@
+{
+  "programs": 152,
+  "byte_identical": 152,
+  "rows": {
+    "Generations/ChrEye_dpne1@@.shader": {
+      "sha256": "e0be70d0e7164016780032a64d8c3e1dbc1f2b38ff4d8fd1da6e27d3f5e6d388",
+      "byte_identical": true
+    },
+    "Generations/ChrEye_dpne2@@.shader": {
+      "sha256": "49faae176c22fb3a229dd8d632cd9ebfd5f67c476b0722d6a4c62bd5dbcd103a",
+      "byte_identical": true
+    },
+    "Generations/ChrEye_dpne@@.shader": {
+      "sha256": "3d039a8ca611cab7f14769146d042629db8e86d0040d807045c8f610bb02d5a7",
+      "byte_identical": true
+    },
+    "Generations/ChrSkinHalf_dse11@@.shader": {
+      "sha256": "7652d19333db1cdbacab974bb62b8124f02c17ce518b29bc993f8c1cfd2fa1ee",
+      "byte_identical": true
+    },
+    "Generations/ChrSkinIgnore_dsle11@@.shader": {
+      "sha256": "dbfdde7a3306e4aed856d1b6758fa77549af18273f1c3d2ece1c1d427a9b15c0",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_ds@@.shader": {
+      "sha256": "65c393ca3011d67fde2975fee2813304f94e971b1ef9360e99bcead84a29e50b",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dse1@@.shader": {
+      "sha256": "1646184eb24b9d5ccb8e20683e4c6a9323917f349f44c1555acb6e31b7cd0b6c",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dse2@@.shader": {
+      "sha256": "3b7a73dd38143d4fb7ae058100501dfe3c62d20aa53f7f7ca580c5528b0b20fd",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dse@@.shader": {
+      "sha256": "cf7fea7d3c1b0b022d1789a358ec65f31cc12f1b7d366fc9e38a7d1fa5e41074",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsf@@.shader": {
+      "sha256": "f778b89562345ea804d626d86feae8a224e8a933c612692f7aae7d27e2658cbb",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsfe1@@.shader": {
+      "sha256": "cfdc6cc54e5896c53a5073fecd4882548ec5d411d2f408543d535e79a985accd",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsfe2@@.shader": {
+      "sha256": "2a2045011b286bf4608f4606f6923cbb0608771580222416b55ecf306eb3eebd",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsfe@@.shader": {
+      "sha256": "6c1634de65a49c137e6471840284f68fd366c60caffa89291af78e86f8f470c9",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsn@@.shader": {
+      "sha256": "49519574df307dabb52fc991c121cb599b856cca3bbd0d044ff6bf6bf7a81b66",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsne1@@.shader": {
+      "sha256": "660d6e355e2e8e66a90d50baf87b3c9c59467966f85dc739ff7c58b46649a018",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsne@@.shader": {
+      "sha256": "3bcc96274c48fa683046dc1e5638e82aae83faca8536abbd98ffacc846d8876a",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsnf@@.shader": {
+      "sha256": "92db92bebdfb26aad1f63690196c5e26d57594e4664be53cf994562658dfe633",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsnfe1@@.shader": {
+      "sha256": "1ed0ab3417242c935a10a2e5265122e1f948391fdb43220f5782437da6fae7bf",
+      "byte_identical": true
+    },
+    "Generations/ChrSkin_dsnfe@@.shader": {
+      "sha256": "abf515a1217acd44acb1a67c095e587b23934f1ae6e5195e37420d9f90845b26",
+      "byte_identical": true
+    },
+    "Generations/Common_d@@.shader": {
+      "sha256": "4d8e2045783fd025eed9bd341cbcc147f6d461a6a13dce39ad5dab97f9765237",
+      "byte_identical": true
+    },
+    "Generations/Common_da@@.shader": {
+      "sha256": "2def9a3539ddc75430b1dbb349ad29e1da94e227ede4e40503fba80198b275c6",
+      "byte_identical": true
+    },
+    "Generations/Common_de1@@.shader": {
+      "sha256": "56cc2fcb29a2a4adfc1fb258cca6ec85ef1036582dcbfc22306dc62d19abf5ba",
+      "byte_identical": true
+    },
+    "Generations/Common_de2@@.shader": {
+      "sha256": "5e242a8b8b2b7ee2f247443cbda5f1f2bc25ed4183e8b479af59bdec9737f148",
+      "byte_identical": true
+    },
+    "Generations/Common_de@@.shader": {
+      "sha256": "4e842cfbdbd282c9e2e3f377bb51d56a2745384b4c13b5d540e15a91ce2f70f5",
+      "byte_identical": true
+    },
+    "Generations/Common_dn@@.shader": {
+      "sha256": "5af3b01e6fb0e954a97a7f73de0bb6e917f800fc108fb6460709cf700e5d2fc9",
+      "byte_identical": true
+    },
+    "Generations/Common_dne1@@.shader": {
+      "sha256": "1bc1efab73d17b02b3530aabca14dbe5a95860ebe8553f466b5a5b15ec7f9cf5",
+      "byte_identical": true
+    },
+    "Generations/Common_dne2@@.shader": {
+      "sha256": "58a610b5ed25e73956911be579000f08e743f355220f1761959dc02e70bfc0f0",
+      "byte_identical": true
+    },
+    "Generations/Common_dne@@.shader": {
+      "sha256": "543f517e173067505e66e9bd52f936996422cfede69739ebaad74b0c6ae8de55",
+      "byte_identical": true
+    },
+    "Generations/Common_dp@@.shader": {
+      "sha256": "03b19ae671e792999f27e570e5da3fa5e392e44c8feb9b834fa86101f4318c23",
+      "byte_identical": true
+    },
+    "Generations/Common_dp@E@.shader": {
+      "sha256": "775dee911e61f98368c77eb64d367cfbce486d07ed02277eb9f43499656d7909",
+      "byte_identical": true
+    },
+    "Generations/Common_dpe1@@.shader": {
+      "sha256": "2f743d647f5ddb77ea432a2ac78ee29ed31943e87aef0d7bc7f7e412da96144a",
+      "byte_identical": true
+    },
+    "Generations/Common_dpe2@@.shader": {
+      "sha256": "cd471e3a78e86f6c639807251850ec71cc4a212f9a9cd6f289ea7560ffcf831f",
+      "byte_identical": true
+    },
+    "Generations/Common_dpe@@.shader": {
+      "sha256": "597645b9fd994c060e86494352c3cb6bcec5a5728c094f6838f8dc14325b74cd",
+      "byte_identical": true
+    },
+    "Generations/Common_dpn@@.shader": {
+      "sha256": "0a9e363ed323431ae97936af63bf80e4a2c56e92170470099d60f96504dab372",
+      "byte_identical": true
+    },
+    "Generations/Common_dpn@E@.shader": {
+      "sha256": "0734b1431c795d3c5ca2034746bad1477bf7666720b8bf213dc1c3f12f8671b7",
+      "byte_identical": true
+    },
+    "Generations/Common_dpne1@@.shader": {
+      "sha256": "1ac4d474a86576f0a27ee3bf495103a6cc30fe48ce5a527432de85ea6bfe57a3",
+      "byte_identical": true
+    },
+    "Generations/Common_dpne2@@.shader": {
+      "sha256": "b56af64bf41070d938cdefeaa39275f34d6e99ab42bb05d203860ec452ea4a87",
+      "byte_identical": true
+    },
+    "Generations/Common_dpne@@.shader": {
+      "sha256": "1352fdff677682b12e909ae65a114edbf366d599a75e34484b573a9a5ded44fa",
+      "byte_identical": true
+    },
+    "Generations/Common_dpnne2@@.shader": {
+      "sha256": "753365d27a89a05c498aa8da99b70b638eef16827e5c35292ed13d70527fd363",
+      "byte_identical": true
+    },
+    "Generations/Common_dpnr@@.shader": {
+      "sha256": "c9f84d28b064e0059145431474ad70587930857b97b959a2a6d807787517bd02",
+      "byte_identical": true
+    },
+    "Generations/Common_dpr@@.shader": {
+      "sha256": "b96047460c9d1d1e2398a34370608ab9d59d24ddbce2b659fa34a28cd0d61408",
+      "byte_identical": true
+    },
+    "Generations/Common_dsae1@@.shader": {
+      "sha256": "fa8a86f8dd8e6de87094616bd42b7f9409b7a9c3803d55b73612a8ad12815429",
+      "byte_identical": true
+    },
+    "Generations/Common_dse1@@.shader": {
+      "sha256": "a677816885a6c4f2aa4109647c09dbe5d6a3d031b8754d07d660422fe7ea321b",
+      "byte_identical": true
+    },
+    "Generations/Common_dse2@@.shader": {
+      "sha256": "6bedfb35fa5151a579dfb37eb3990b91f8bddff06382b0e654346be58f7a1329",
+      "byte_identical": true
+    },
+    "Generations/Common_dse@@.shader": {
+      "sha256": "f69aa134d7019ea607bc6a7570e2ae3e00e2dc105710d7b3ea14a14354e6d070",
+      "byte_identical": true
+    },
+    "Generations/Common_dsn@@.shader": {
+      "sha256": "fa94bacc4ee5f46280c7f0e18e87f3bf8b8c3ee056a8ec0af25cfc2f04fa2b29",
+      "byte_identical": true
+    },
+    "Generations/Common_dsne1@@.shader": {
+      "sha256": "a9b14a7a86c9c06b027d0344842ad8e03d445f707915419312dde9674cb796b5",
+      "byte_identical": true
+    },
+    "Generations/Common_dsne@@.shader": {
+      "sha256": "686524cfa5307e7dcf31be0b793be7eeeb34dcdb64f37b95edf9292fd7d3c856",
+      "byte_identical": true
+    },
+    "Generations/Common_dsnne1@@.shader": {
+      "sha256": "4d748b95803aec07d6fc77729333d5de49985f64b631b51efeb35af903231953",
+      "byte_identical": true
+    },
+    "Generations/Common_dsp@@.shader": {
+      "sha256": "3313e83cd50d72f1a5a878f7b054a17b40a9b10b26022d0d1d9db195511628de",
+      "byte_identical": true
+    },
+    "Generations/Common_dspe@@.shader": {
+      "sha256": "99a0759908af2a0671b520d86f85762a370d0c5bd485a140295d457821ca7505",
+      "byte_identical": true
+    },
+    "Generations/Common_dspn@@.shader": {
+      "sha256": "09004e0219374d2e83b2f710f7dc247e3608ce8ba2863152d437e2b596baa55f",
+      "byte_identical": true
+    },
+    "Generations/Common_dspne2@@.shader": {
+      "sha256": "c0d6b18e23580aa73b2a25a951f68de088e2085aa2884dcd9e6fd4b05c6943f9",
+      "byte_identical": true
+    },
+    "Generations/Common_dspne@@.shader": {
+      "sha256": "271cc912a2fb452e22d5af5a8a25034bdea3b6197c2f2a5fd2d4fbb678ae2e4f",
+      "byte_identical": true
+    },
+    "Generations/EnmCloud_nfe1@@.shader": {
+      "sha256": "0c7c4a410ffa9df5dd6e19966b5244f466daa01ccf08a552f960e2786ac6af9c",
+      "byte_identical": true
+    },
+    "Generations/EnmEmission_d@@.shader": {
+      "sha256": "b29f764f7f9dbb67dedb65461dc99bde3be7b46c45d662c189805e71afcb694b",
+      "byte_identical": true
+    },
+    "Generations/EnmEmission_dl@@.shader": {
+      "sha256": "efd15acef79355698feca8885ce8590e6bc6029eea1c70711e618b017eab6a25",
+      "byte_identical": true
+    },
+    "Generations/EnmEmission_dsl@@.shader": {
+      "sha256": "1c728f926a34900d6f44e94eadfd07b4925b1133748eff7d8937060f0aab62eb",
+      "byte_identical": true
+    },
+    "Generations/EnmEmission_dsle1@@.shader": {
+      "sha256": "bba7790d842e134190bc7eb612ab5bb38e6ed47665eee41c9656cf58b01655d4",
+      "byte_identical": true
+    },
+    "Generations/EnmEmission_dsnl@@.shader": {
+      "sha256": "ceb995ced9389fc5059e0797e241a1c1dd43f6255fc47b6b48cb0ef8f6f1d8ca",
+      "byte_identical": true
+    },
+    "Generations/EnmEmission_dsnle1@@.shader": {
+      "sha256": "6471949edb2a64f33b9c4d9152737efd2dd945822e46f5e323339827213e89ba",
+      "byte_identical": true
+    },
+    "Generations/EnmGlass_dse1@@.shader": {
+      "sha256": "a3f0e4d53252c42d1f28f45849715c33150d49f3a43b2588e2a3021fcf066437",
+      "byte_identical": true
+    },
+    "Generations/EnmGlass_dsle1@@.shader": {
+      "sha256": "49e014a32f578c521d8bde7029ca46528e72fda802990c65f71505c759c90aad",
+      "byte_identical": true
+    },
+    "Generations/EnmGlass_dsne1@@.shader": {
+      "sha256": "a6152757f98f824777c1951e8079fe2d074c114ae9c1a419a88b6df3388cffbf",
+      "byte_identical": true
+    },
+    "Generations/EnmGlass_dsnle1@@.shader": {
+      "sha256": "29c963c3101ba88f76713239c328168d05257400b4c006cc45778fa8921b4d8d",
+      "byte_identical": true
+    },
+    "Generations/EnmGlass_e1@@.shader": {
+      "sha256": "0687117571dc2f1c2854d7f1180981792d05e85a494e85cec874d1efd5e1bd6b",
+      "byte_identical": true
+    },
+    "Generations/EnmIgnore_dl@@.shader": {
+      "sha256": "ddf8b65d045f50768ca893225560576d27184f8c06ecb314a8594edcc3edb17b",
+      "byte_identical": true
+    },
+    "Generations/EnmIgnore_dle1@@.shader": {
+      "sha256": "8fe1e6e084b3eec4cbe44cd852d4a15f705923ba9dcc2c36459dde870b76b2a7",
+      "byte_identical": true
+    },
+    "Generations/EnmIgnore_dsle1@@.shader": {
+      "sha256": "95cf429c3305f5d70ae1b212235272b773ac145ca6acb0f27d772abc6568e2d1",
+      "byte_identical": true
+    },
+    "Generations/EnmIgnore_le1@@.shader": {
+      "sha256": "dbccdcdd6b1b5f1da11f3b51360a54c3650e27d6a818b40f35ea74990fa9e2e8",
+      "byte_identical": true
+    },
+    "Generations/EnmMetal_dse1@@.shader": {
+      "sha256": "59e5791e1609218eba16cba2d0bcc9bdf6725a6d22df688c47beb8d978b41733",
+      "byte_identical": true
+    },
+    "Generations/EnmMetal_dsfe1@@.shader": {
+      "sha256": "35be3a8255bcc91f842d0525f955324896f31f22fe39e2086ca3ae1a2531e96d",
+      "byte_identical": true
+    },
+    "Generations/EnmMetal_dsne1@@.shader": {
+      "sha256": "17e0639e6e19cc3d427940c7716608409933d4fcff715f154d08b8671a4ae442",
+      "byte_identical": true
+    },
+    "Generations/EnmMetal_dsnfe1@@.shader": {
+      "sha256": "bdaddf6241cd4319b42971ce06321222fc7bb0132a52b311281d91a7f8480b37",
+      "byte_identical": true
+    },
+    "Generations/IgnoreLightTwice_d@v@.shader": {
+      "sha256": "b5de4726f2b750e8ac8e108fc684a4580ea25384279ffd53a96bbc2cbf9d5ccd",
+      "byte_identical": true
+    },
+    "Generations/IgnoreLightV_d@s@.shader": {
+      "sha256": "d745815199ffc11092714f400410ed4e0f556df3cecd68950bb60a8f3bbaf7cd",
+      "byte_identical": true
+    },
+    "Generations/IgnoreLight_d@v@.shader": {
+      "sha256": "50a1adf47f706045e741992c8c164ca13aa023df8ff9c40ea8df991721326c5e",
+      "byte_identical": true
+    },
+    "Generations/IgnoreLight_dE@v@.shader": {
+      "sha256": "1e3440bdcf35fbd66343860f6cfe358fc660215dbcfdf360e5483a4fa3ba0134",
+      "byte_identical": true
+    },
+    "Generations/IgnoreLight_da@v@.shader": {
+      "sha256": "55afd0ce41f2f723cc9dfc6997f2bc4fee32c53baacae4ac15c2fe43130f53d7",
+      "byte_identical": true
+    },
+    "Generations/LuminescenceV_d@v@.shader": {
+      "sha256": "24d395de04db5b854a4a2be75fda6150f2199c092dcd72046d60dc01fc1dbcf6",
+      "byte_identical": true
+    },
+    "Generations/LuminescenceV_dn@v@.shader": {
+      "sha256": "09951dd6756101e2619c4d72354792eb244dfde166177564a57c61029a1cc8f3",
+      "byte_identical": true
+    },
+    "Generations/LuminescenceV_dp@v@.shader": {
+      "sha256": "cbb29864c816c89ded7959ad9fe2403d237d698911fcfbcb4b4e488d1ac1917b",
+      "byte_identical": true
+    },
+    "Generations/LuminescenceV_dpdpv@v@.shader": {
+      "sha256": "e7c9c907d6506f1971e83216d2ad53bb0a2aa4e81b47a25b00c5750814dd81a0",
+      "byte_identical": true
+    },
+    "Generations/LuminescenceV_dpe1@v@.shader": {
+      "sha256": "d81d8b18fc2817a9c585a85d5085f4e1568532265ff1217725025ac07e247826",
+      "byte_identical": true
+    },
+    "Generations/LuminescenceV_dpe2@v@.shader": {
+      "sha256": "4c225e65899035da7a11a7cf6b09bde845a55bd5dd72974ceadc09fdedefa723",
+      "byte_identical": true
+    },
+    "Generations/LuminescenceV_dpn@v@.shader": {
+      "sha256": "0b3de08bf5dc7f37975343bf35ff6eb7306d6169c76faff027013d1644185207",
+      "byte_identical": true
+    },
+    "Generations/LuminescenceV_dpndp@v@.shader": {
+      "sha256": "ab60d62a2c08a74ac8fcc39f27ee01f49dcc11b53c4d3a37123601d6219bdfd0",
+      "byte_identical": true
+    },
+    "Generations/LuminescenceV_dpnv@v@.shader": {
+      "sha256": "5fac547a202529939e9ba62f9079289f970759363be08a7f7638040a6c0439dd",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_d@v@.shader": {
+      "sha256": "ae1488aca5187c25ce412cd46bcaba577e438e09522f1ab6f79e61d0d6a55279",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dE@v@.shader": {
+      "sha256": "a1fc6840caa77b7f565c0d7424ba7f204845291eec15414f00ba4e15030bc445",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dnE@v@.shader": {
+      "sha256": "592f8479ee141939910162125cdfdb4385ef5a74cda4e984bc5f20fc5372631b",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dne1E@v@.shader": {
+      "sha256": "b507162cc068070f6dbcf2f3ee74b0344df8986086c4015a7c19c65131b1aefd",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dne2E@v@.shader": {
+      "sha256": "fa00250ecec528a8b32e778059278ac9b00ff15cd3a08b8d9bbdb8655079a3ec",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dpE@v@.shader": {
+      "sha256": "00feb7a5933d2be457fe060ee75769f83a28e5f6dd14af123515f36b33da4c69",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dpe1E@v@.shader": {
+      "sha256": "fe18a83a70cb2278bf0266ca50035d200ad1e66da2f9aa0a39aed63cc85355b0",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dpe2E@v@.shader": {
+      "sha256": "e93ac6f76ac45a770a3f697ebc3ed727e3d897e9ce8b740b3c52ba5f8c3d5ccf",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dpnE@v@.shader": {
+      "sha256": "726896833eb444bb558f928b97fa350b75bcb592738f9d9929cee9ec30098420",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dpne1E@v@.shader": {
+      "sha256": "1abfec812dc200b97942d470e67bc2d19800e3ef92e4403a11bf18f6316dd071",
+      "byte_identical": true
+    },
+    "Generations/Luminescence_dpne2E@v@.shader": {
+      "sha256": "c0ea37a51f21744ab3870fd86f80f42b8ae478bee560a2246a88e5184935cb15",
+      "byte_identical": true
+    },
+    "Unleashed/Common_d@@.shader": {
+      "sha256": "e28263faee55f78dd982db0b89dcdeb33bd17975a539e0b06cf7afffeda1f131",
+      "byte_identical": true
+    },
+    "Unleashed/Common_d@v@.shader": {
+      "sha256": "53a3c1095a1d6c64eb33178ad62f36c1e4a56bcf569fe6645d731b31dbf604d5",
+      "byte_identical": true
+    },
+    "Unleashed/Common_de@@.shader": {
+      "sha256": "aae06e7aa2d270189d5a9b48bdfc5a6a577d2763b7d9ca84e9ec4bc5f1165f10",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dn@@.shader": {
+      "sha256": "6e1dc0044a9d0af50052c292b01050415c0e01ae0df4593d52544ebad0dff519",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dn@v@.shader": {
+      "sha256": "179426213a9fa775097978aeb7ed19526355c83b77f1582775470f21f85b7bf9",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dne@@.shader": {
+      "sha256": "a3bdf50c88900322e978fa23cb44acb17d1c615c3305a70778195fe7e1280542",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dne@c@.shader": {
+      "sha256": "6051fe606aeb5430166c3abc2be4dcf78fa61dc88fc950c5b395250e3108f1b4",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dne@cv@.shader": {
+      "sha256": "cb7b93293fd4392e0a37c82ee070507c20618559c854200bbca6e1fa6a9f7c83",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dp@@.shader": {
+      "sha256": "1a5394cabe618500da1c7f02992da375991bf52af251f7c2716b0fc595fcbfb0",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dp@v@.shader": {
+      "sha256": "e8fa7599d6663fd35fe163fa71d164346206bf41badf748131a4c7d63d1acb5d",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpe@@.shader": {
+      "sha256": "c6337d87ab1f526e15e266aabdda44666abee4c7ced01bc7304fff0b80fa8d0b",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpe@c@.shader": {
+      "sha256": "ca43bfce0cf66d6d24942a941ad80ecf5ec6c3984133fd0205961f4b68230073",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpe@v@.shader": {
+      "sha256": "11e28bca237f8e851077a21326acfd38ac403e5bac5a1db275b2f58ee678c3c9",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpn@@.shader": {
+      "sha256": "cb7820faeff387261a06852f2a7f80a760c2490b779c4dd89fac37079e2a41da",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpn@v@.shader": {
+      "sha256": "70809b850cd8320c4899e543ad2e059fa84804ceb58f8a1ad07d850a4fee5534",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpne@@.shader": {
+      "sha256": "d2fe7e4bd83868cf16b7453c6c0984643bdcdd5e99ee7446bd0a4f5de64bc238",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpne@c@.shader": {
+      "sha256": "8b24fcba694a91dadccbbc2367273944e8f14c321cacc3b1fc9311278d4cd9f8",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpne@v@.shader": {
+      "sha256": "b194fc4c3c328017cb1555d0abb2c7cc003e722b736b0dddee0e7233048fc9fc",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpnr@@.shader": {
+      "sha256": "e06766bd9789c8d1042d6d332f9936e6c467175ebb051f9a239479899a72feb8",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dpr@@.shader": {
+      "sha256": "e83446d80d4b0281158bb7985128250989be4ce47c67bee781d78de688145b07",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dsn@@.shader": {
+      "sha256": "b68465fb9c80d2b743846c69462959c4008830bf3f85aa84a9610b23ee94ca84",
+      "byte_identical": true
+    },
+    "Unleashed/Common_dsne@@.shader": {
+      "sha256": "caa634daad3b0f0ba44202ba427f2c3e5bdad95b13b293b69955f0dbe2dd37f9",
+      "byte_identical": true
+    },
+    "Unleashed/DayEnemyMetalBody_dspne@@.shader": {
+      "sha256": "6a594b7369f1598654662888ff4d36d3c76ca4204ec99839cff2e7bcaa334c60",
+      "byte_identical": true
+    },
+    "Unleashed/DayEnemyMetalSocket_dspne@@.shader": {
+      "sha256": "6a594b7369f1598654662888ff4d36d3c76ca4204ec99839cff2e7bcaa334c60",
+      "byte_identical": true
+    },
+    "Unleashed/DayEnemyMetal_dspne@@.shader": {
+      "sha256": "6a594b7369f1598654662888ff4d36d3c76ca4204ec99839cff2e7bcaa334c60",
+      "byte_identical": true
+    },
+    "Unleashed/IgnoreLight_d@@.shader": {
+      "sha256": "1ef56156dd207d2ca9f494d53e500ffc3c49fd2da8dab6bb2aa8d02950ecf1b2",
+      "byte_identical": true
+    },
+    "Unleashed/IgnoreLight_d@v@.shader": {
+      "sha256": "1276640d1f0e6da6da7b9c0e315654312b7e3ec449d32f21787e1c4f1941813f",
+      "byte_identical": true
+    },
+    "Unleashed/Luminescence_d@E@.shader": {
+      "sha256": "17ddbae5cf010bd6113f26069c94b520c4b77dce9df2f7ec1d817e68bcedef83",
+      "byte_identical": true
+    },
+    "Unleashed/Luminescence_d@Ev@.shader": {
+      "sha256": "a7bb8d8dda34e7571834918928013f0bef144bdb7b1396f00a8a5d00bf1e3651",
+      "byte_identical": true
+    },
+    "Unleashed/Luminescence_dE@@.shader": {
+      "sha256": "573f8afd155e8ee219aa70fef4b7e107eef14ed28482bcaccdb88c1e24673f30",
+      "byte_identical": true
+    },
+    "Unleashed/Luminescence_dE@v@.shader": {
+      "sha256": "d6a347f3a47ed2593847d4fe5a5f49c8a34b9a5fe3869f42d7ef6bf0c27a1519",
+      "byte_identical": true
+    },
+    "Unleashed/Luminescence_dnE@@.shader": {
+      "sha256": "a2f1bef0d7b6c423852b91016f685600199f55998a1c4bd0be89a5706ea0b72c",
+      "byte_identical": true
+    },
+    "Unleashed/Luminescence_dnE@v@.shader": {
+      "sha256": "57464f4264e3af26d697089dda0008a73083aa43ca161c16a3d36c4c8f6ddd08",
+      "byte_identical": true
+    },
+    "Unleashed/Luminescence_dpE@@.shader": {
+      "sha256": "cb8f8f20568332ec2c1a6b944410ee46547eb6fa50bd0941aacf29f04cddf8a8",
+      "byte_identical": true
+    },
+    "Unleashed/Luminescence_dpnE@@.shader": {
+      "sha256": "d0c4088b557595e043503f66456fa77e077cbd19e04bbcd27a107951c8ad1833",
+      "byte_identical": true
+    },
+    "Unleashed/NightEnemyCommon_drE@@.shader": {
+      "sha256": "81c5803f9a8881ae7c855b1c1f1c6d373662dbf42abcdd8f6c9731156d0fcce2",
+      "byte_identical": true
+    },
+    "Unleashed/SonicCloth_ds@@.shader": {
+      "sha256": "f577759c60786d305606f16816232c2de055c5a1b8bc3419b3502c45bddca240",
+      "byte_identical": true
+    },
+    "Unleashed/SonicCloth_dsn@@.shader": {
+      "sha256": "f6929eaedda7cbe92cbb1ea64bb13b7dd6b551bc89ecd5466188e67c1dbd1b61",
+      "byte_identical": true
+    },
+    "Unleashed/SonicEnamel_dspe@@.shader": {
+      "sha256": "893b3b83ef36d0a2710f2a116c37a4cbea2813e1780471c171631d662b16a608",
+      "byte_identical": true
+    },
+    "Unleashed/SonicEnamel_dspe@c@.shader": {
+      "sha256": "2987c01b02cfa96b193bf9935e7a34461781e09ab0c2dbbfea17a16f59d2a5ab",
+      "byte_identical": true
+    },
+    "Unleashed/SonicEnamel_dspne@@.shader": {
+      "sha256": "90e18c7bbe7adb96b7d3a7f7640da21ef8508ab764724dc65f323235d93a4087",
+      "byte_identical": true
+    },
+    "Unleashed/SonicEnamel_dspne@c@.shader": {
+      "sha256": "9b4fb8633bbc239ec99584bd7e98c0f3b4dd855b4672abbfec2c51012b00d649",
+      "byte_identical": true
+    },
+    "Unleashed/SonicEye_dpe@@.shader": {
+      "sha256": "9ab08ae185a1a3dba9ef9dbc39b96febbb16ce3ac5d356876c1758b2534900c2",
+      "byte_identical": true
+    },
+    "Unleashed/SonicEye_dpe@c@.shader": {
+      "sha256": "10583619bd4b8901b5e891c875be68edf2717628261bff0d8a4106e2ed3fe077",
+      "byte_identical": true
+    },
+    "Unleashed/SonicEye_dpne@@.shader": {
+      "sha256": "833875163c8db6f547e5a059d01cb76f6b5ca83f29780d75e6be9033bbb0be54",
+      "byte_identical": true
+    },
+    "Unleashed/SonicEye_dpne@c@.shader": {
+      "sha256": "c1ce44a4c4147070db4ee6f71c93b4519e2277ab5020874358b8a726e48214c4",
+      "byte_identical": true
+    },
+    "Unleashed/SonicMetal_dpe@@.shader": {
+      "sha256": "d4bdc9556d8446b4062d022f5f1b654a6ef8df395a1cf780c3bbaf2681013bd3",
+      "byte_identical": true
+    },
+    "Unleashed/SonicMetal_dpe@c@.shader": {
+      "sha256": "1490a61c4a295ac362e8c8afe37f63733c2f8dbf90829804ca4771bb100d97cb",
+      "byte_identical": true
+    },
+    "Unleashed/SonicMetal_dpne@@.shader": {
+      "sha256": "2e3393563f56f5fc015bd7ac072a69fe4ca225bdcee7b414952ed325b3cc98a7",
+      "byte_identical": true
+    },
+    "Unleashed/SonicMetal_dpne@c@.shader": {
+      "sha256": "9c7feb81fa461863fb38c4ca7ef119f6466ef9870f7df53d6780517f5d42b87c",
+      "byte_identical": true
+    },
+    "Unleashed/SonicSkin_dnf@@.shader": {
+      "sha256": "d35f5b6b7e536eb572a067835df807c544bc73c67c310bce83ecfe9cb788aa00",
+      "byte_identical": true
+    },
+    "Unleashed/SonicSkin_dspf@@.shader": {
+      "sha256": "b59471f27cf3e50d5af41b3614caf6ca06dfd626c90371c99a37ca888e1a5a69",
+      "byte_identical": true
+    },
+    "Unleashed/SonicSkin_dspnf@@.shader": {
+      "sha256": "f0296b7817041da64a6885bbff4813292bae1e530070bb115526cfca984349f4",
+      "byte_identical": true
+    }
+  }
+}

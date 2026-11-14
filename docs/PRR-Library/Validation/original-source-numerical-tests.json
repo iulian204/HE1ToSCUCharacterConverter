@@ -1,0 +1,82 @@
+{
+  "tests": 22,
+  "failures": 0,
+  "errors": 0,
+  "provenance": {
+    "test_accuracy_math": {
+      "original_tool_sha256": "42c3e3012e9297b26f724cd0e78806422a97f15ef3e351ec5638587348c385d3",
+      "executed_copy_sha256": "870cd8a2622cbb08e49f7ee5d311c8d47e707bf2cf30501b2c5662954cfb7877",
+      "inventory_count_updates": [
+        [
+          "self.assertEqual(len(records),44)",
+          "self.assertEqual(len(records),11)"
+        ]
+      ]
+    },
+    "test_unleashed_lobes": {
+      "original_tool_sha256": "5b346165fead26c5a7b30c42042d9256d00fbb5698d8c21a4f57bba35e9980e6",
+      "executed_copy_sha256": "34bbf564534e6a2a725e080420b141969ab0b931db35fb29c0ca2f044f07d306",
+      "inventory_count_updates": [
+        [
+          "self.assertEqual(len(records),16)",
+          "self.assertEqual(len(records),3)",
+          1
+        ],
+        [
+          "self.assertEqual(len(records),16)",
+          "self.assertEqual(len(records),4)",
+          1
+        ],
+        [
+          "self.assertEqual(len(records),24)",
+          "self.assertEqual(len(records),3)"
+        ],
+        [
+          "self.assertEqual(len(proof),44)",
+          "self.assertEqual(len(proof),11)"
+        ]
+      ]
+    },
+    "test_generations_eye": {
+      "original_tool_sha256": "a6d1fc287fad05f8bddafff691e6af03b4dd98dab83a9a0e06367bd3bba62987",
+      "executed_copy_sha256": "7fa66c863aa548122ce2b3a591bf5c9932d1bd4e735340b2f600061e1e88e244",
+      "inventory_count_updates": [
+        [
+          "self.assertEqual(len(records),12)",
+          "self.assertEqual(len(records),3)"
+        ]
+      ]
+    },
+    "test_generations_camera": {
+      "original_tool_sha256": "77383451f01f5f4d760f40f2f442ac03507d0348b69b5b2bc11e732891ec7194",
+      "executed_copy_sha256": "1358c904ce11e21876f7ea180088a7a09ee5c927a7aaa66fad31dbb502ee1d2a",
+      "inventory_count_updates": [
+        [
+          "self.assertEqual(len(records),304)",
+          "self.assertEqual(len(records),44)"
+        ]
+      ]
+    },
+    "test_unleashed_eye_environment": {
+      "original_tool_sha256": "ef66e7f0bc523c73c60bf4d753dc41638ee0ced5c5db38e8045300e486a412e7",
+      "executed_copy_sha256": "0245e22b721547469acc04e14f7822e88bd9c3cfc2dcd4bcd326c6dd7b110443",
+      "inventory_count_updates": [
+        [
+          "self.assertEqual(len(records),16)",
+          "self.assertEqual(len(records),4)"
+        ]
+      ]
+    },
+    "test_vertex_trace": {
+      "original_tool_sha256": "c68e600e99858f4dd2dc74a59de8ccbbc491acb757db7c9983ea5eb9d6dd3e9d",
+      "executed_copy_sha256": "281053a40809c4062485b7f12922d8874867d6783881cdccb073ec7f54bf7479",
+      "inventory_count_updates": []
+    },
+    "test_camera_integration": {
+      "original_tool_sha256": "fe6af36048c4c59d93c12b6a6645d45abd7aa69bb6413b1f390db89810e7f5a6",
+      "executed_copy_sha256": "0b4bddd26abcf94bba559dceccf2487a6f8db45b1a3d4d54c7818f1c0c4fc90d",
+      "inventory_count_updates": []
+    }
+  },
+  "scope": "Original-source numeric equations, HLSL swizzles/normalize, source gloss/lobes/Fresnel/reflection/highlight/basis and dependency analysis. Python-double checks; not a claim of original GPU/appearance parity."
+}

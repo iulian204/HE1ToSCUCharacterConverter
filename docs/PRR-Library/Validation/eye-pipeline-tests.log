@@ -1,0 +1,6 @@
+test_all_three_eye_projections_preserve_camera_and_native_light (test_generations_eye_pipeline.EyePipeline.test_all_three_eye_projections_preserve_camera_and_native_light) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.471s
+
+OK

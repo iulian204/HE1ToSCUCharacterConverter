@@ -1,6 +1,6 @@
 # HE1 to Godot 3.1 SpatialMaterial approximation
 
-All converted materials are standard Godot 3.x `SpatialMaterial` resources. The converter generates no custom shaders and makes no renderer changes. Original material and texture stems are retained.
+This document describes the default export mode: standard Godot 3.x `SpatialMaterial` resources, without custom shaders or renderer changes. Original material and texture stems are retained. The optional [PRR export mode](PRR-MATERIALS.md) uses the supplied ShaderMaterials instead and does not apply these approximations.
 
 The Generations reference is the supplied `ChrSkin.hlsl` (SHA256 `A0059944E938803D2C91795C23736548A3B73B181ACBE16AB4C84A53A2AA7367`). The supplied Unleashed `SonicSkin_dspnf@@`, `SonicEnamel_dspe@@` (shoes), `SonicCloth_dsn@@` and `SonicEye_dpne@@` pixel-shader disassemblies were also inspected. These local reference files are not redistributed. They guide an approximation; their entire lighting graphs are not reproduced.
 

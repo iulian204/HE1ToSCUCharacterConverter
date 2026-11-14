@@ -1,0 +1,31 @@
+{
+  "shader_code_sources": [
+    "Release/Generations",
+    "Release/Unleashed",
+    "Release/Render States"
+  ],
+  "release_date": "2026-11-14",
+  "release_manifest_sha256": "8445b7d26bd60c3279b89286a232644455bd8401f62771b5629fb223d8e692dc",
+  "canonical_counts": {
+    "Unleashed": 53,
+    "Generations": 99
+  },
+  "native_shader_presets": 3648,
+  "source_identifier_aliases": 285,
+  "source_documents_reviewed": [
+    "Release/Documentation/ENVIRONMENT_MAPS.md",
+    "Release/Documentation/GENERATIONS_EYE_REFLECTION.md",
+    "Release/Documentation/LIMITATIONS.md",
+    "Release/Documentation/NATIVE_RENDER_PRESETS_HISTORY.md",
+    "Release/Documentation/PARAMETERS.md",
+    "Release/Documentation/PROJECT_MAP.md",
+    "Release/Documentation/RENDER_STATE_RESEARCH.md",
+    "Release/Documentation/RENDER_STATES.md",
+    "Release/Documentation/RENDERING.md",
+    "Release/Documentation/USAGE.md",
+    "Release/Documentation/VALIDATION.md"
+  ],
+  "dependencies": "Standalone, script-free Godot 3.1.2 GLES3 shaders; no runtime helpers or engine modifications",
+  "redistribution": "Custom shader libraries supplied by the project owner for express inclusion; no separate shader license file supplied",
+  "excluded": "Older PRR shader generator inputs, historical helpers, scripts and optional empty material templates"
+}

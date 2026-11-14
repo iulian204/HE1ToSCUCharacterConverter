@@ -3,7 +3,8 @@ using System.Text.Json;
 
 namespace HE1ToSCU.Core;
 
-public sealed record ConversionRequest(string ModelPath,string? SkeletonPath,IReadOnlyList<string> AnimationPaths,string OutputDirectory,string? AcornEditorPath=null,SourceGame Game=SourceGame.SonicGenerations,bool GenerateMouthL=false);
+public sealed record ConversionRequest(string ModelPath,string? SkeletonPath,IReadOnlyList<string> AnimationPaths,string OutputDirectory,string? AcornEditorPath=null,SourceGame Game=SourceGame.SonicGenerations,bool GenerateMouthL=false,
+    bool ExportPrrMaterials=false, string? PrrShaderPath=null);
 public sealed record ConversionProgress(int Percent,string Message);
 public sealed record ConversionResult(string Directory,int Surfaces,int Vertices,int Bones,int Animations,bool BinaryValidated);
 
@@ -12,12 +13,16 @@ public sealed class ConversionService
     public async Task<ConversionResult> ConvertAsync(ConversionRequest request,IProgress<ConversionProgress>? progress=null,CancellationToken token=default)
     {
         void Report(int p,string message)=>progress?.Report(new ConversionProgress(p,message));
+        if (!request.ExportPrrMaterials && !string.IsNullOrWhiteSpace(request.PrrShaderPath))
+            throw new ArgumentException("Choose shader path requires Export PRR materials (--export-prr-materials).");
         if(request.GenerateMouthL && request.Game!=SourceGame.SonicUnleashed) throw new ArgumentException("Mouth_L generation is available only for Sonic Unleashed.");
         if(!File.Exists(request.ModelPath))throw new FileNotFoundException("Select an existing HE1 .model file.",request.ModelPath);
         string destination=Path.GetFullPath(request.OutputDirectory);
         if(Directory.Exists(destination)||File.Exists(destination))throw new IOException($"Output already exists: {destination}. Choose a new export folder to preserve existing files.");
         if(request.AnimationPaths.Count>0&&string.IsNullOrWhiteSpace(request.SkeletonPath))throw new InvalidDataException("Animation export requires its matching skeleton .hkx file.");
         if(!string.IsNullOrWhiteSpace(request.AcornEditorPath)&&!File.Exists(request.AcornEditorPath))throw new FileNotFoundException("Acorn editor executable does not exist.",request.AcornEditorPath);
+        var shaderDestination = request.ExportPrrMaterials ? new PrrShaderDestination(request.PrrShaderPath, destination,
+            !string.IsNullOrWhiteSpace(request.AcornEditorPath)) : null;
         Report(2,"Reading HE1 geometry, vertex declarations, bone palettes and inverse bind matrices...");
         Report(2,$"Source game: {request.Game}.");
         var model=new He1ModelReader().Read(request.ModelPath,token,request.Game);
@@ -97,26 +102,61 @@ public sealed class ConversionService
         try
         {
             Report(60,"Writing Godot 3 ArrayMesh, Skeleton and rest-relative quaternion Animation resources...");
-            GodotWriter.Write(model,clips,staging,token,message=>Report(64,message),request.Game);
+            var prr = shaderDestination == null ? null : new PrrMaterialWriter().Write(model, staging, request.Game,
+                shaderDestination, message => Report(64, message), token);
+            GodotWriter.Write(model,clips,staging,token,message=>Report(64,message),request.Game,prr?.MaterialFiles);
             bool binary=!string.IsNullOrWhiteSpace(request.AcornEditorPath);
             if(binary)
             {
                 Report(75,"Loading resources in Acorn and saving native binary mesh, animation and scene files...");
-                await AcornResourceCompiler.CompileAsync(request.AcornEditorPath!,staging,model,clips,sourceModel,sourceClips,log=>Report(82,log),token);
+                prr?.StageExternalShaders(staging);
+                prr?.WriteExpected(staging);
+                try
+                {
+                    await AcornResourceCompiler.CompileAsync(request.AcornEditorPath!,staging,model,clips,sourceModel,sourceClips,log=>Report(82,log),token,prr?.ShaderMaterials > 0,
+                        prr?.ShaderFiles.Keys.Select(path => shaderDestination!.External ? path : "res://" + path).ToArray());
+                    if(prr?.ShaderMaterials>0 && (!File.Exists(Path.Combine(staging,"__prr-readback-text.json")) ||
+                        !File.Exists(Path.Combine(staging,"__prr-readback-binary.json"))))
+                        throw new InvalidDataException("Acorn did not produce both independent PRR parameter readback reports.");
+                }
+                catch(Exception e) when(e is not OperationCanceledException)
+                {
+                    prr?.ValidationErrors.Add(e.Message);
+                    throw;
+                }
+                finally
+                {
+                    if(token.IsCancellationRequested)
+                    {
+                        try { prr?.ReadBack(staging); }
+                        catch(Exception e) when(e is JsonException or IOException)
+                        { Report(0,"PRR validation was cancelled before its readback report completed: "+e.Message); }
+                    }
+                    else prr?.ReadBack(staging);
+                }
+                if(prr!=null) PrrParameterAuditReport.CleanExpected(staging);
+                prr?.RemoveStagedShaders(staging);
             }
             else Report(85,"Text resources written. Acorn binary validation skipped because no editor was selected.");
-            Report(90,$"Converted {materials.Count} HE1 materials to textured SpatialMaterials. Custom HE1 lighting is approximated using built-in shading.");
+            if (prr == null) Report(90,$"Converted {materials.Count} HE1 materials to textured SpatialMaterials. Custom HE1 lighting is approximated using built-in shading.");
             var result=new ConversionResult(destination,model.AllSurfaces.Count(),model.AllSurfaces.Sum(s=>s.Vertices.Count),model.Bones.Count,clips.Count,binary);
             var manifest=new
             {
-                converter="HE1ToSCU 0.6.2",game=request.Game.ToString(),request.GenerateMouthL,result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
+                converter="HE1ToSCU 0.7.0",game=request.Game.ToString(),request.GenerateMouthL,result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
                 sourceAnimations=request.AnimationPaths,spatialProfile=new{scale=Spatial.Scale,basis="Y-up preserved"},
                 outputScene=binary?ExportNames.SceneBinary(model):ExportNames.SceneText(model),outputMesh=binary?ExportNames.MeshBinary(model):ExportNames.MeshText(model),
                 meshes=model.MeshParts.Select(p=>new {nodePath="Skeleton/"+p.Name,textFile=ExportNames.MeshText(model,p.Name),binaryFile=binary?ExportNames.MeshBinary(model,p.Name):null,p.MouthRootBone,p.Mirrored,surfaces=p.Surfaces.Count,vertices=p.Surfaces.Sum(s=>s.Vertices.Count)}),
                 animations=clips.Select(c=>new{name=c.Name,textFile=ExportNames.AnimationText(c),binaryFile=binary?ExportNames.AnimationBinary(c):null,rootMotionSamples=c.RootMotion?.Samples.Count??0,sourceFrames=sourceClips.Single(s=>s.Name==c.Name).Frames.Length,exportFrames=c.Frames.Length,c.BakedReference}),
                 materials=materials.Values.Select(m=>new{m.Name,m.Shader,m.AlphaThreshold,m.DoubleSided,m.Additive,parameters=m.Parameters.ToDictionary(p=>p.Key,p=>p.Value.Select(v=>new[]{v.X,v.Y,v.Z,v.W}).ToArray()),m.Textures}),
+                prr = new { enabled = request.ExportPrrMaterials, game = request.Game.ToString(), shaderPath = shaderDestination?.ResourceDirectory,
+                    referenceMode = shaderDestination == null ? "disabled" : shaderDestination.External ? "external" : "bundled",
+                    materials = prr?.Materials, shaderMaterials = prr?.ShaderMaterials ?? 0, spatialFallbacks = prr?.SpatialFallbacks ?? 0,
+                    uniqueShaders = prr?.ShaderFiles.Keys.ToArray() ?? [],
+                    bundledShaders = prr != null && !prr.Destination.External ? prr.ShaderFiles.Count : 0,
+                    externalShaders = prr != null && prr.Destination.External ? prr.ShaderFiles.Count : 0 },
+                prrParameterAudit = prr == null ? null : "prr-parameter-audit.json",
                 sourceBoneCount,generatedMouthBones,scaleCompensationBones=prepared.Helpers,
-                limitations=new[]{"Custom HE1 lighting, colored specular maps and reflection/matcap shaders are approximations to SpatialMaterial.","Original HE1 rig exported; SCU player retargeting and gameplay wiring pending.","In-game acceptance and renderer parity not established."}
+                limitations=new[]{prr == null ? "Custom HE1 lighting, colored specular maps and reflection/matcap shaders are approximations to SpatialMaterial." : "PRR preserves mapped source material inputs; scene lighting, GI, region shadows, projected reflections and runtime controls remain project inputs. Unmapped inputs are listed per material.","Original HE1 rig exported; SCU player retargeting and gameplay wiring pending.","In-game acceptance and renderer parity not established."}
             };
             File.WriteAllText(Path.Combine(staging,"conversion.json"),JsonSerializer.Serialize(manifest,new JsonSerializerOptions{WriteIndented=true}));
             token.ThrowIfCancellationRequested();
@@ -133,12 +173,15 @@ public sealed class ConversionService
 
 internal static class AcornResourceCompiler
 {
-    public static async Task CompileAsync(string editor,string directory,ModelAsset model,IReadOnlyList<AnimationClip> clips,ModelAsset source,IReadOnlyList<AnimationClip> originals,Action<string> log,CancellationToken token)
+    public static async Task CompileAsync(string editor,string directory,ModelAsset model,IReadOnlyList<AnimationClip> clips,ModelAsset source,IReadOnlyList<AnimationClip> originals,Action<string> log,CancellationToken token,bool prrShaders=false,IReadOnlyList<string>? shaderPaths=null)
     {
-        File.WriteAllText(Path.Combine(directory,"project.godot"),"config_version=4\n[application]\nconfig/name=\"HE1SCU Resource Compile\"\n[rendering]\nquality/driver/driver_name=\"GLES2\"\n");
+        // Supplied PRR cube/UV shaders require GLES3 (textureSize/textureLod). Keep the legacy mode unchanged.
+        string renderer = prrShaders ? "GLES3" : "GLES2";
+        log("Resource validation renderer: " + renderer);
+        File.WriteAllText(Path.Combine(directory,"project.godot"),$"config_version=4\n[application]\nconfig/name=\"HE1SCU Resource Compile\"\n[rendering]\nquality/driver/driver_name=\"{renderer}\"\n");
         int samples = PoseValidation.Write(Path.Combine(directory,"__poses.bin"),model,source,clips,originals,token);
         log($"Validating {samples:N0} source-derived keyframe, subframe and loop-boundary poses.");
-        string script=BuildScript(model,clips);
+        string script=BuildScript(model,clips,shaderPaths??[]);
         string scriptPath=Path.Combine(directory,"__compile.gd");File.WriteAllText(scriptPath,script);
         async Task RunAsync(string path,string marker,string logFile)
         {
@@ -166,13 +209,14 @@ internal static class AcornResourceCompiler
         }
         await File.WriteAllLinesAsync(Path.Combine(directory,logFile),lines,CancellationToken.None);
         if(process.ExitCode!=0||!lines.Any(l=>l.Contains(marker,StringComparison.Ordinal))||lines.Any(l=>l.Contains("SCRIPT ERROR",StringComparison.Ordinal)||l.StartsWith("ERROR:",StringComparison.Ordinal)))
-            throw new InvalidDataException($"Acorn could not validate the exported resources. See {logFile} in the diagnostic staging folder.");
+            throw new InvalidDataException($"Acorn could not validate the exported resources. See {logFile} in the diagnostic staging folder. " +
+                string.Join(Environment.NewLine, lines.Where(l => l.Contains("ERROR",StringComparison.Ordinal) || l.Contains(".shader",StringComparison.Ordinal)).TakeLast(8)));
         }
         await RunAsync(scriptPath,"HE1SCU_VALIDATED","acorn-validation.log");
         string verifyPath=Path.Combine(directory,"__verify.gd");
         File.WriteAllText(verifyPath,BuildVerifyScript(model,clips));
         await RunAsync(verifyPath,"HE1SCU_BINARY_VALIDATED","acorn-binary-validation.log");
-        File.Delete(verifyPath);File.Delete(Path.Combine(directory,"__poses.bin"));
+        File.Delete(verifyPath);File.Delete(Path.Combine(directory,"__poses.bin"));File.Delete(Path.Combine(directory,"__materials.bin"));
         var header = new byte[4];
         foreach(string file in model.MeshParts.Select(p=>ExportNames.MeshBinary(model,p.Name)).Prepend(ExportNames.SceneBinary(model)))
         {
@@ -189,8 +233,16 @@ internal static class AcornResourceCompiler
         func fail(message):
             printerr("HE1SCU_FAILED: " + message)
             quit()
+        {{MaterialResourceValidation.Functions}}
         {{PoseValidation.GodotFunctions}}
         func _init():
+            load_prr_expectations("binary")
+            var expected = File.new()
+            if expected.open("res://__materials.bin", File.READ) != OK:
+                fail("missing material validation data")
+                return
+            material_snapshots = expected.get_var()
+            expected.close()
             var packed = load({{ExportNames.Literal("res://" + ExportNames.SceneBinary(model))}})
             if packed == null:
                 fail("binary scene load in a fresh process")
@@ -212,7 +264,7 @@ internal static class AcornResourceCompiler
                     fail("standalone mesh load " + entry[0])
                     return
                 for surface in range(mesh.get_surface_count()):
-                    if not (mesh.surface_get_material(surface) is SpatialMaterial) or not (standalone_mesh.surface_get_material(surface) is SpatialMaterial):
+                    if not check_material(mesh.surface_get_material(surface), entry[0] + "/" + str(surface)) or not check_material(standalone_mesh.surface_get_material(surface), entry[0] + "/" + str(surface)):
                         fail("binary material load " + entry[0])
                         return
             if {{clips.Count}} > 0:
@@ -231,22 +283,28 @@ internal static class AcornResourceCompiler
                 if not checked_poses:
                     return
             instance.free()
+            save_prr_readbacks()
             print("HE1SCU_BINARY_VALIDATED bones={{model.Bones.Count}} meshes={{model.MeshParts.Count()}} surfaces={{model.AllSurfaces.Count()}} animations={{clips.Count}}")
             quit()
         """;
-    private static string BuildScript(ModelAsset model,IReadOnlyList<AnimationClip> clips)=>$$"""
+    private static string BuildScript(ModelAsset model,IReadOnlyList<AnimationClip> clips,IReadOnlyList<string> shaderPaths)=>$$"""
         extends SceneTree
         func fail(message):
             printerr("HE1SCU_FAILED: " + message)
             quit()
-        func clear_material_paths(material):
-            material.resource_path = ""
-            for slot in range(SpatialMaterial.TEXTURE_MAX):
-                var texture = material.get_texture(slot)
-                if texture != null:
-                    texture.resource_path = ""
+        {{MaterialResourceValidation.Functions}}
         {{PoseValidation.GodotFunctions}}
         func _init():
+            load_prr_expectations("text")
+            for shader_path in {{JsonSerializer.Serialize(shaderPaths)}}:
+                print("HE1SCU_SHADER_VALIDATE " + shader_path)
+                var shader = load(shader_path)
+                if not (shader is Shader):
+                    fail("PRR shader load: " + shader_path)
+                    return
+                var material_probe = ShaderMaterial.new()
+                material_probe.shader = shader
+                material_probe.get_property_list()
             var packed = load({{ExportNames.Literal("res://" + ExportNames.SceneText(model))}})
             if packed == null:
                 fail("scene load")
@@ -269,9 +327,16 @@ internal static class AcornResourceCompiler
                         fail("empty vertex/index buffer " + entry[0])
                         return
                     var material = mesh.surface_get_material(surface)
-                    if not (material is SpatialMaterial):
-                        fail("expected standard SpatialMaterial")
+                    if not (material is SpatialMaterial or material is ShaderMaterial):
+                        fail("expected SpatialMaterial or ShaderMaterial")
                         return
+                    if not check_prr_material(material):
+                        return
+                    var snapshot = material_snapshot(material)
+                    if snapshot.empty():
+                        fail("invalid shader or sampler " + entry[0] + "/" + str(surface))
+                        return
+                    material_snapshots[entry[0] + "/" + str(surface)] = snapshot
                     clear_material_paths(material)
                 mesh.resource_path = ""
                 if ResourceSaver.save(entry[1], mesh, 65) != OK:
@@ -317,6 +382,12 @@ internal static class AcornResourceCompiler
                 player.stop(true)
                 for bone in range(skeleton.get_bone_count()):
                     skeleton.set_bone_pose(bone, Transform())
+            var expected = File.new()
+            if expected.open("res://__materials.bin", File.WRITE) != OK:
+                fail("material validation snapshot write")
+                return
+            expected.store_var(material_snapshots)
+            expected.close()
             instance.transform = Transform()
             var output = PackedScene.new()
             if output.pack(instance) != OK or ResourceSaver.save({{ExportNames.Literal("res://" + ExportNames.SceneBinary(model))}}, output, 65) != OK:
@@ -332,6 +403,7 @@ internal static class AcornResourceCompiler
                 return
             check.free()
             instance.free()
+            save_prr_readbacks()
             print("HE1SCU_VALIDATED bones={{model.Bones.Count}} meshes={{model.MeshParts.Count()}} surfaces={{model.AllSurfaces.Count()}} animations={{clips.Count}}")
             quit()
         """;

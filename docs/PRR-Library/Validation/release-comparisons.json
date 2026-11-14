@@ -1,0 +1,164 @@
+{
+  "scope": "Fresh actual-asset capture from Release; comparison to currently accepted/corrected library, not original-game image parity. No shader/material/camera/light tuning.",
+  "games": {
+    "Unleashed": {
+      "captures": [
+        {
+          "mode": "combined",
+          "sha256": "e570cc5bad3e7c03184aa83dce03aabb1074297ad5b85b7d20b9026c73c2ffb8",
+          "reference": "comparison-preview\\comparisons\\native-render-presets-final-v2-2026-11-14\\combined.png",
+          "reference_sha256": "e570cc5bad3e7c03184aa83dce03aabb1074297ad5b85b7d20b9026c73c2ffb8",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "fake",
+          "sha256": "3aa2a2a00a5f64501b666fef2665283bfc2ffdd5e35e336e0d95d01906377403",
+          "reference": "comparison-preview\\comparisons\\native-render-presets-final-v2-2026-11-14\\fake.png",
+          "reference_sha256": "3aa2a2a00a5f64501b666fef2665283bfc2ffdd5e35e336e0d95d01906377403",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "scene_specular",
+          "sha256": "47fa4055eea7535be67b6e7d6308239d9cfd583a3fe7b990efdfd00eeaeae5bd",
+          "reference": "comparison-preview\\comparisons\\native-render-presets-final-v2-2026-11-14\\scene_specular.png",
+          "reference_sha256": "47fa4055eea7535be67b6e7d6308239d9cfd583a3fe7b990efdfd00eeaeae5bd",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "no_fake",
+          "sha256": "319184a8fb9617c45ad5b33c322cd76d55a65ed4fae5c2254b9e080c56ac2035",
+          "reference": "comparison-preview\\comparisons\\native-render-presets-final-v2-2026-11-14\\no_fake.png",
+          "reference_sha256": "319184a8fb9617c45ad5b33c322cd76d55a65ed4fae5c2254b9e080c56ac2035",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "no_scene_specular",
+          "sha256": "308bc5fa420bb8a80ddd45cedf733c85175adf39d7e1aff1b8a3ae1d52ff9534",
+          "reference": "comparison-preview\\comparisons\\native-render-presets-final-v2-2026-11-14\\no_scene_specular.png",
+          "reference_sha256": "308bc5fa420bb8a80ddd45cedf733c85175adf39d7e1aff1b8a3ae1d52ff9534",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "reflection",
+          "sha256": "3baf663a90bcde4bbf469ba1bd033daf0cb864f8bc94b94e362f5dfda420b3fe",
+          "reference": "comparison-preview\\comparisons\\native-render-presets-final-v2-2026-11-14\\reflection.png",
+          "reference_sha256": "3baf663a90bcde4bbf469ba1bd033daf0cb864f8bc94b94e362f5dfda420b3fe",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "authored_highlight",
+          "sha256": "7890395139d3d5d5aef3bde2c7eb15409f29c594c145d07ff4a15e2360418ab7",
+          "reference": "comparison-preview\\comparisons\\native-render-presets-final-v2-2026-11-14\\authored_highlight.png",
+          "reference_sha256": "7890395139d3d5d5aef3bde2c7eb15409f29c594c145d07ff4a15e2360418ab7",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        }
+      ],
+      "shader_hashes": {
+        "Unleashed/SonicEye_dpne@c@.shader": "1517553e01873b848248e267c96aedba6a328700d2e69bf5e69ae27c4a2d26ef",
+        "Unleashed/SonicSkin_dspf@@.shader": "dcdb9e8705cb09d6bc74250023f191de7a5dedcd3ea2b9ce3086d767905c5c2c",
+        "Unleashed/SonicEnamel_dspe@c@.shader": "f5e62ffecb455b6f7b95d282b824db218c9c17ba9c1034785975bf7c44536e71",
+        "Unleashed/SonicCloth_dsn@@.shader": "b4300ef64b7c2f14f9d66f1b5b943c24c2de4953e3d7800d4f4f77c611900304",
+        "Unleashed/SonicMetal_dpe@@.shader": "b1d3d2544264565712adaa6e6f66e49fb3400daa68d250119e5db746ea5842db",
+        "Render States/Opaque/Normal/DoubleSided/Unleashed/SonicSkin_dspf@@.shader": "07f8982a402542b669a0cecb4d181c525b4865b095f9e81c22792b3ee57d89f6"
+      },
+      "material_input_sha256": "7db31f53a215f6931f77d062588ad46c7265577d0db7c0497e0013517b708f3a",
+      "preview_script_sha256": "072dcfb17e4d0ff9961f5c1f3a8a2f66f2d744c64f220430161350a270d708d2",
+      "directory": "comparison-preview\\comparisons\\release-verification-2026-11-14",
+      "inputs_modified": false,
+      "plain_materials": true
+    },
+    "Generations": {
+      "captures": [
+        {
+          "mode": "combined",
+          "sha256": "838ec10061522134181121cc239f67ea36569fe675b18c3da4532d9301f9db05",
+          "reference": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14\\after\\combined.png",
+          "reference_sha256": "838ec10061522134181121cc239f67ea36569fe675b18c3da4532d9301f9db05",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "fake",
+          "sha256": "8594282371a0af66a8a58fbcecd13e146b34ad753f935d7d8e965c34685614ae",
+          "reference": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14\\after\\fake.png",
+          "reference_sha256": "8594282371a0af66a8a58fbcecd13e146b34ad753f935d7d8e965c34685614ae",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "scene_specular",
+          "sha256": "c0e0b9af2fec96bc447688bd92e3c6c39bb37a19b1ef0bed3046b4a8bf8f38ad",
+          "reference": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14\\after\\scene_specular.png",
+          "reference_sha256": "c0e0b9af2fec96bc447688bd92e3c6c39bb37a19b1ef0bed3046b4a8bf8f38ad",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "no_fake",
+          "sha256": "e968628d0519cf122931022409bf3b04232415561b1ee531699e4e73f6a99ccd",
+          "reference": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14\\after\\no_fake.png",
+          "reference_sha256": "e968628d0519cf122931022409bf3b04232415561b1ee531699e4e73f6a99ccd",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "no_scene_specular",
+          "sha256": "c08989a111ade05ac26f206897da1c6fcace43431ad3a61ada277345215e3e9f",
+          "reference": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14\\after\\no_scene_specular.png",
+          "reference_sha256": "c08989a111ade05ac26f206897da1c6fcace43431ad3a61ada277345215e3e9f",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "reflection",
+          "sha256": "5ed8e3dcecf8fcaacf26a671453c2a93b6e7476b382e1b997287933a2fed8a58",
+          "reference": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14\\after\\reflection.png",
+          "reference_sha256": "5ed8e3dcecf8fcaacf26a671453c2a93b6e7476b382e1b997287933a2fed8a58",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        },
+        {
+          "mode": "authored_highlight",
+          "sha256": "e9a2486ef0d3d30270e36c42e53c907cc39813d5f46fa387bfe374a738454ca1",
+          "reference": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14\\after\\authored_highlight.png",
+          "reference_sha256": "e9a2486ef0d3d30270e36c42e53c907cc39813d5f46fa387bfe374a738454ca1",
+          "changed_components": 0,
+          "changed_pixels": 0,
+          "maximum_8bit_difference": 0
+        }
+      ],
+      "shader_hashes": {
+        "Generations/ChrSkin_dsf@@.shader": "6aca7b78715d927430b0eddeecc1ecbf7893572d652d9bf6ee781debbda9c8f4",
+        "Generations/ChrSkin_dse1@@.shader": "ba810f207e51c014d3ae6f554d24306cc733688d74169ae9e62501254110bfab",
+        "Generations/ChrSkin_dsn@@.shader": "f97f45adc78f00dbf1182510d8deee87b8f76bf04e357be301dc3f919cdbe9cb",
+        "Generations/ChrEye_dpne1@@.shader": "3223fc79435fafe3071019f0560c78c26bd0433f3aa78e784165154006a74543"
+      },
+      "material_input_sha256": "221feb1696b7d0f792ede0d2c45c712002c9d4880ef6e0c4751df303faeae989",
+      "preview_script_sha256": "eefafa6b7cc3103078627c6bc1d64786ea2de74a650ce5db70a9743af3ec717f",
+      "directory": "comparison-generations\\comparisons\\release-verification-2026-11-14",
+      "inputs_modified": false,
+      "plain_materials": true
+    }
+  },
+  "failures": 0
+}

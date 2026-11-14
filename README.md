@@ -25,6 +25,10 @@ dotnet run --project src/HE1ToSCU.App
 
 Scale and coordinate conversion are automatic. There are no scale/orientation switches.
 
+Optional **Export PRR materials** preserves source material parameters and textures in game-specific Project Re-Rainbow `ShaderMaterial` resources. It defaults off, leaving SpatialMaterial export unchanged. Leave **Choose shader path** empty to bundle only the shaders used by the character, or reference verified existing project shaders through a `res://` directory / project folder. Both complete shader libraries are included in the portable application. PRR requires GLES3; unavailable shader implementations fall back per material. See [PRR materials](docs/PRR-MATERIALS.md) for mappings, external paths, Acorn embedding and visual-parity limitations.
+
+The PRR exporter uses the current script-free [Release library](docs/PRR-Library/README.md): 152 programs with 3,648 native draw-state presets. It selects coverage from the source mesh slot, preserves raw numeric material inputs, and binds each map's UV0/UV1 selector. Only used presets are copied into a character export. For external shaders, choose the complete Release root to resolve game and render-state subdirectories.
+
 The published Windows x64 executable includes the .NET runtime. Acorn itself is **not** bundled; it is needed only for engine validation and binary resource compilation. Parsing, decoding, transforms and text resource writing are implemented in the external C# application.
 
 ## Output
@@ -33,7 +37,8 @@ The published Windows x64 executable includes the .NET runtime. Acorn itself is 
 |---|---|
 | `chr_Sonic_HD.tscn` | Editable Spatial → Skeleton → MeshInstance scene with AnimationPlayer |
 | `chr_Sonic_HD.mesh.tres` | ArrayMesh with vertex channels, clockwise triangles, skin weights and source material references |
-| `materials/<source-name>.tres` | Built-in SpatialMaterial approximations of the HE1 materials |
+| `materials/<source-name>.tres` | SpatialMaterial approximations, or optional PRR ShaderMaterials with individual fallbacks |
+| `shaders/<game or native-state path>/<matched-name>.shader` | Only used PRR shaders; omitted when existing project shaders are selected |
 | `textures/<source-name>.texture.tres` | Decoded source DDS textures embedded in editable ImageTexture resources |
 | `sn_dead.tres`, etc. | Native Godot Animation resources with quaternion transform tracks |
 | `chr_Sonic_HD.scn` | Acorn binary PackedScene with embedded mesh/materials and embedded or companion animations |
@@ -41,6 +46,7 @@ The published Windows x64 executable includes the .NET runtime. Acorn itself is 
 | `chr_Sonic_HD_Mouth.mesh.tres` / `.mesh`, `_Mouth_L.mesh.tres` / `.mesh` | Separate weighted mouth meshes; the second is generated when a second mouth branch exists |
 | `sn_dead.anim`, etc. | Standalone binary Animation resources |
 | `conversion.json` | Source paths, conversion counts, spatial profile and limitations |
+| `prr-parameter-audit.json` | PRR raw inputs, typed mappings/defaults, sampler diagnostics and independent Acorn value readbacks |
 | `acorn-validation.log` | Text load, pose comparisons and native save results |
 | `acorn-binary-validation.log` | A second, fresh Acorn process loads binaries and compares bone positions |
 
@@ -76,7 +82,7 @@ This is a usable first conversion slice, **not a complete game-ready character r
 - 64-bit packfiles, tagfiles, quantized animation (`hkaQuantizedAnimation`), delta/wavelet codecs and big-endian compressed spline payloads are unsupported. For a folder with mixed codecs, select the supported clips individually.
 - Float/morph animation tracks and model morph targets are rejected. Additive clips become standalone reference-pose animations, not runtime additive overlays. Looping is inferred from `loop` in the source name; other clips can be set to loop in the target editor.
 - Archives must already be extracted. `.ar`, `.ar.00`, `.pac` and PCK import/repacking are not implemented.
-- Material conversion approximates the original shaders; it does not reproduce HE1 light probes, colored per-pixel specular, reflection/matcap sampling or custom eye highlights. Unsupported DDS codecs (including BC7), texture arrays and volume/cube textures produce specific errors. Missing material files use neutral fallbacks; missing textures are logged.
+- Default SpatialMaterial conversion approximates the original shaders, including their colored specular, reflections and eye highlights. Optional PRR export preserves supported shader inputs but still requires scene lighting/runtime integration; it supports source cube environment atlases. Unsupported DDS codecs (including BC7), texture arrays and volume textures produce specific errors. Missing material files use neutral fallbacks; missing textures are logged. See [PRR limitations](docs/PRR-MATERIALS.md#fallbacks-diagnostics-and-limitations).
 - Original HE1 bones and bind transforms are retained, with scale-compensation helpers added when needed. SCU player bone retargeting, attachment mapping, game scripts, animation trees, collision and gameplay wiring remain separate work.
 - The 10× profile is directly checked against Generations/SCU Sonic reference bones. It has not been independently established for every asset from every HE1 game.
 - Engine loading and numerical bone checks do not establish in-game acceptance, visual fidelity, DX11/shader-cache compatibility or complete renderer parity.

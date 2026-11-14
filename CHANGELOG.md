@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.7.0
+
+- Add optional PRR ShaderMaterial export for Sonic Generations and Sonic Unleashed, with saved GUI settings and matching CLI options.
+- Include 152 shader programs and 3,648 native presets, selecting coverage, additive blending and sidedness from source assets.
+- Bundle only used shaders, or reference an existing project library with validated paths and self-contained Acorn binaries.
+- Preserve original numeric parameters, eye-highlight positions, texture channels and per-map UVs; initialize applicable Sky/Ground colors to 0.5/0.25.
+- Add detailed parameter audits and independent text/binary validation while preserving default SpatialMaterial output and existing model, animation and mouth workflows.
+
 ## 0.6.2
 
 - Use an opaque Light or Dark Fluent background when Windows or the compositor cannot provide Mica.

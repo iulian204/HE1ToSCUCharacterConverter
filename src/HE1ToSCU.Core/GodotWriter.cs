@@ -13,12 +13,13 @@ public static class GodotWriter
     // VariantParser's text Transform constructor accepts basis ROWS (unlike GDScript's three axis vectors).
     private static string Transform(Matrix4x4 m)=>$"Transform( {F(m.M11)}, {F(m.M21)}, {F(m.M31)}, {F(m.M12)}, {F(m.M22)}, {F(m.M32)}, {F(m.M13)}, {F(m.M23)}, {F(m.M33)}, {F(m.M41)}, {F(m.M42)}, {F(m.M43)} )";
     private static void Save(string path,StringBuilder text)=>File.WriteAllText(path,text.ToString(),new UTF8Encoding(false));
-    public static void Write(ModelAsset model,IReadOnlyList<AnimationClip> clips,string directory,CancellationToken token,Action<string>? log = null,SourceGame game=SourceGame.SonicGenerations)
+    public static void Write(ModelAsset model,IReadOnlyList<AnimationClip> clips,string directory,CancellationToken token,Action<string>? log = null,SourceGame game=SourceGame.SonicGenerations,
+        Dictionary<(string Material, string Slot), string>? materialFiles = null)
     {
         model = MouthMeshSplitter.Split(model, token, log);
         ExportNames.Validate(model, clips);
         Directory.CreateDirectory(directory);
-        var materialFiles = new SpatialMaterialWriter().Write(model, directory, log, token,game);
+        materialFiles ??= new SpatialMaterialWriter().Write(model, directory, log, token,game);
         var parts = model.MeshParts.ToArray();
         foreach (var part in parts) WriteMesh(model, part, directory, materialFiles, token);
         var scene=new StringBuilder($"[gd_scene load_steps={clips.Count+parts.Length+1} format=2]\n\n");

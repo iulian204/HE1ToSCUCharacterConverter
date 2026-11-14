@@ -1,0 +1,55 @@
+shader_type spatial;
+render_mode unshaded, ambient_light_disabled, blend_mix, cull_disabled, depth_draw_opaque;
+
+uniform sampler2D diffuse_texture;
+uniform int diffuse_uv_set : hint_range(0, 1) = 0;
+
+uniform sampler2D emission_texture;
+uniform int emission_uv_set : hint_range(0, 1) = 0;
+
+uniform vec4 diffuse_color = vec4(1.0);
+uniform vec3 emission_ambient;
+uniform vec4 material_emission;
+
+uniform vec2 uv0_offset;
+uniform vec2 uv1_offset;
+
+varying vec4 uv_coordinates_0_1;
+
+varying vec4 vColor;
+
+void vertex()
+{
+	vec2 second_uv = UV2;
+	
+	
+	uv_coordinates_0_1 = vec4(UV, second_uv) + vec4(uv0_offset, uv1_offset);
+	
+	vColor = COLOR;
+}
+
+vec2 get_material_uv(int index)
+{
+	if (index == 0)
+	{
+		return uv_coordinates_0_1.xy;
+	}
+	if (index == 1)
+	{
+		return uv_coordinates_0_1.zw;
+	}
+	return vec2(0.0);
+}
+
+void fragment()
+{
+	vec4 diffuse = texture(diffuse_texture, get_material_uv(diffuse_uv_set));
+
+	float fade = 1.0;
+	vec3 emission = (texture(emission_texture, get_material_uv(emission_uv_set)).rgb + material_emission.rgb) * emission_ambient * material_emission.a * fade;
+	vec3 radiance = min(((mix(vec3(1.0), diffuse.rgb, fade) * diffuse_color.rgb * vColor.rgb) + emission) * vec3(1.0), vec3(4.0));
+	ALBEDO = radiance * radiance;
+
+	
+
+}

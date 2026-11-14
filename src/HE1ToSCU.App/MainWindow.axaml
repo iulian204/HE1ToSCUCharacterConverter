@@ -83,7 +83,7 @@
                         </Border>
                         <TextBlock Grid.Row="2" Text="Export" Classes="sectionTitle" Margin="0,0,0,6"/>
                         <Border Grid.Row="3" Classes="settingsCard">
-                            <Grid ColumnDefinitions="112,*,140" RowDefinitions="Auto,Auto,Auto"
+                            <Grid ColumnDefinitions="112,*,140" RowDefinitions="Auto,Auto,Auto,Auto,Auto"
                                   ColumnSpacing="12" RowSpacing="7">
                                 <TextBlock Text="Export folder" Grid.Row="0" VerticalAlignment="Center"/>
                                 <TextBox x:Name="OutputPath" Grid.Row="0" Grid.Column="1" AutomationProperties.Name="Export folder"
@@ -93,8 +93,20 @@
                                 <TextBox x:Name="EditorPath" Grid.Row="1" Grid.Column="1" AutomationProperties.Name="Acorn editor"
                                          ToolTip.Tip="Optional. Uses Acorn to validate and write .scn, .mesh and .anim. Leave blank for text resources."/>
                                 <Button x:Name="EditorBrowseButton" Content="File…" Grid.Row="1" Grid.Column="2" Click="BrowseEditor" AutomationProperties.Name="Browse Acorn editor"/>
-                                <TextBlock Grid.Row="2" Grid.ColumnSpan="3" Margin="0,4,0,0" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12"
-                                           Text="Scale and coordinates are handled automatically. HE1 textures and parameters are adapted to SpatialMaterial. Export preserves the HE1 rig; SCU player retargeting is a separate step."/>
+                                <CheckBox x:Name="ExportPrrMaterials" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
+                                          Content="Export PRR materials" IsCheckedChanged="PrrOptionsChanged"
+                                          ToolTip.Tip="Use game-specific PRR ShaderMaterials. Missing implementations use SpatialMaterial."/>
+                                <TextBlock Grid.Row="3" Text="Choose shader path" TextWrapping="Wrap" VerticalAlignment="Center"
+                                           IsVisible="{Binding !!#ExportPrrMaterials.IsChecked}"/>
+                                <TextBox x:Name="PrrShaderPath" Grid.Row="3" Grid.Column="1"
+                                         IsVisible="{Binding !!#ExportPrrMaterials.IsChecked}" PlaceholderText="Optional · bundle used shaders when empty"
+                                         LostFocus="PrrPathLostFocus"
+                                         AutomationProperties.Name="Choose shader path"
+                                         ToolTip.Tip="Choose the complete PRR Release root inside a Godot project (res:// or a folder). Leave empty to bundle only used shader presets."/>
+                                <Button x:Name="ShaderBrowseButton" Grid.Row="3" Grid.Column="2" Content="Folder…" Click="BrowseShaderPath"
+                                        IsVisible="{Binding !!#ExportPrrMaterials.IsChecked}" AutomationProperties.Name="Browse PRR shader folder"/>
+                                <TextBlock Grid.Row="4" Grid.ColumnSpan="3" Margin="0,4,0,0" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12"
+                                           Text="Scale and coordinates are automatic. Leave Choose shader path empty to bundle the required PRR shaders. Export preserves the HE1 rig; SCU player retargeting is a separate step."/>
                             </Grid>
                         </Border>
                     </Grid>

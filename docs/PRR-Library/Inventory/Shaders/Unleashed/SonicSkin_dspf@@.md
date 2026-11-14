@@ -1,0 +1,491 @@
+# Unleashed: SonicSkin_dspf@@
+
+[Inventory](../../SHADERS.md) · [Default shader](../../../Unleashed/SonicSkin_dspf@@.shader)
+
+Architecture: **foundation-lit**. Environment: **none**.
+
+## Selecting and binding
+
+Use the same filename from the desired native-state folder. Material numeric vectors are raw data; copy original values without color conversion. No optional engine effect registers are required. Supply any actual foundation/scene textures used below. See [setup](../../../Documentation/USAGE.md) and [renderer limits](../../../Documentation/LIMITATIONS.md).
+
+## Source-defined behavior
+
+- Windows and Xbox agree on material texture fetch slots [0, 1, 3] and lobe constants.
+- Two alpha-scaled lobes with the source exponent blend and 1/16 exponent gain.
+- Both ambient paths use an authored light field, bound through the PRR panorama and region.
+- NodeInvX or morph companions retain the Godot asset-side coordinate and blend-shape boundary.
+- Source camera and native specular share the paired vertex Fresnel; the material normal map does not substitute a new fragment Fresnel into that light weight.
+- Original paired vertex Fresnel is evaluated by the retained compute_fresnel helper using source mrgFresnelParam endpoints. vertex_fresnel caches its interpolated result; no duplicate inline equation or unused helper remains.
+- Godot 3.1 uploads scene light RGB times energy times PI. Convert native specular light units once and divide the measured downstream residual: default roughness 1, metallic 0 and specular 0.5 produce Lazarov env=(0.4524,-0.0024), F0=0.04, hence BRDF=0.015696 and retained gain 100 leaves 1.5696. Correct this renderer residual separately from HE1 material math and fake_specular. Foundation diffuse/rim inputs and final specular gain 100 remain unchanged. Material-default writes fail closed pending a revised transfer analysis.
+- The source camera RGB multiplier and the actual foundation camera constant multiply the individual fake_specular contribution before its square. Preserve this ordering with the unchanged Unleashed default 0.2. The rejected post-square adapter changed I^2 into I and made 0.2 five times stronger in linear output. Source gloss, lobe mixture and final native-light 100 remain unchanged; Generations retains its existing 0.8 path.
+- Bind original material diffuse RGB as raw Plane values and multiply the sampled texture before the foundation contribution square. Both linear-target and final displayed response are tested; moving tint after the square would apply an unintended output-gamma curve to the material parameter.
+- Original camera range/cone attenuation multiplies each actual foundation fake_specular contribution before its square, alongside the source camera RGB input. Mode <=0 bypasses attenuation, mode >0 enables the Range.zw distance ramp, mode >1 also enables the Attribute.yz smoothstep cone raised to Attribute.w. Godot fragment VERTEX supplies camera-space distance and forward cosine without HE1 matrix uniforms. Bind range distances in model export units; bind Attribute as raw Plane. Default mode 0 preserves existing callers until original scene camera values are supplied. This does not implement the separate source camera diffuse contribution.
+
+These source-review notes retain historical mathematical findings. References to removed optional camera/forced-color controls or old helper interfaces describe history, not the final uniform API. The declarations below are authoritative.
+
+## Coverage and native draw state
+
+Source alpha before state specialization: `min(diffuse.a * material_opacity, 4.0)`.
+
+Opaque ignores coverage alpha. Punch discards below alpha_cutoff (default 0.502) then uses full coverage. Trans writes the source alpha. Blend/culling use real native state. No material script or state-changing uniform is involved.
+
+## Parameters
+
+Tables follow shader declaration order. Godot 3.1.2 Inspector displays numeric controls before samplers while retaining their relative order. No explicit initializer means the shader does not declare an authored material default; bind original material/renderer inputs.
+
+### Opaque
+
+| Parameter | Type | Explicit default / hint | Role | Stage path |
+|---|---|---|---|---|
+| `diffuse_texture` | sampler2D | not declared / none | Base diffuse/color texture; RGB and alpha use are source/state-specific. | fragment |
+| `diffuse_uv_set` | int | 0 / hint_range(0, 1) | Per-map UV selector for diffuse_texture: 0 = mesh UV0 (Godot UV), 1 = mesh UV1 (Godot UV2). Default 0; corresponding uv0_offset or uv1_offset is applied. No external UV data texture or channels 2/3 are required. | fragment |
+| `specular_texture` | sampler2D | not declared / none | Original RGB specular/material response and/or alpha reflection mask as this variant requires; it is not universally a scalar gloss map. | fragment, light |
+| `specular_uv_set` | int | 0 / hint_range(0, 1) | Per-map UV selector for specular_texture: 0 = mesh UV0 (Godot UV), 1 = mesh UV1 (Godot UV2). Default 0; corresponding uv0_offset or uv1_offset is applied. No external UV data texture or channels 2/3 are required. | fragment, light |
+| `falloff_texture` | sampler2D | not declared / none | Original falloff lookup texture, sampled using this variant's UV/data flow. | light |
+| `falloff_uv_set` | int | 0 / hint_range(0, 1) | Per-map UV selector for falloff_texture: 0 = mesh UV0 (Godot UV), 1 = mesh UV1 (Godot UV2). Default 0; corresponding uv0_offset or uv1_offset is applied. No external UV data texture or channels 2/3 are required. | light |
+| `diffuse_color` | vec4 | vec4(1.0) / none | Original numeric material diffuse RGBA. RGB tints the source-specific direct/surface response; ambient tinting differs by game/variant. W participates only where the selected alpha expression uses it. Preserve authored values, including 0.6. | fragment |
+| `specular_color` | vec4 | vec4(1.0) / none | Original numeric material specular RGBA. RGB weights source specular and/or reflection terms as shown in this shader. Do not apply an sRGB color-picker conversion. | fragment, light |
+| `power_gloss_level` | vec4 | not declared / none | Original numeric g_PowerGlossLevel vector; name is intentionally unchanged. Y controls exponent and Z controls applicable Generations intensity. Other used lanes are variant-defined; see expressions. This is not the renamed gloss texture. | fragment, light |
+| `sonic_skin_falloff_param` | vec4 | not declared / none | Original Sonic skin falloff/fresnel/material vector. Preserve the authored lanes; skin variants retain their own multi-exponent response rather than ordinary specular rules. | light |
+| `luminance_range` | float | not declared / none | Original environment HDR decode factor: sampled RGB is increased by RGB * sampled alpha * luminance_range in variants using that encoding. Zero disables the encoded extra range, not the base reflection. | light |
+| `sonic_fresnel_param` | vec2 | vec2(0.3, 1.0) / none | Original numeric two-component Fresnel parameter used by this variant. Exact scale/bias or exponent interpretation is recorded in its shader expressions. | vertex |
+| `uv0_offset` | vec2 | not declared / none | 2D offset added to mesh UV0 before per-texture channel selection. Default has no explicit initializer. These are texture coordinates, not pixels. | vertex |
+| `uv1_offset` | vec2 | not declared / none | 2D offset added to mesh UV1 (Godot UV2) before per-texture channel selection. Default has no explicit initializer. UV1 must exist in the mesh. | vertex |
+| `sky_color` | vec4 | not declared / hint_color | Foundation upper-hemisphere lighting color. A color-picker input intentionally retained from the foundation; used by actual panorama/light-field or rim helpers where present. | fragment, light |
+| `ground_color` | vec4 | not declared / hint_color | Foundation lower-hemisphere lighting color. A color-picker input intentionally retained from the foundation; not an original numeric HE1 material vector. | fragment, light |
+| `ambient_light_color` | vec4 | not declared / hint_color | Foundation ambient color in lit materials (color picker). A declaration without hint_color is a numeric source-use specialization; the exact declaration and uses below take precedence. Not Godot Environment ambient by itself. | fragment, light |
+| `sky_panorama` | sampler2D | not declared / none | Foundation 2D panorama used by its five-sample light-field and reflected-direction rim functions. This input is distinct from environment_texture and is not a 4x3 cubemap cross. | fragment, light |
+| `ambient_light_sky_contribution` | float | not declared / none | Foundation interpolation weight mixing supplied ambient with sampled panorama/sky/ground. Use the actual foundation function, including brightness floor and clamp; it is not a generic scene-light intensity. | fragment, light |
+| `inner_shadow_amount` | float | 1.0 / hint_range(0.0, 1.0, 0.05) | Foundation region-shadow strength inside the region; default 1. Applied through compute_shadow and the texture/box mask. With no valid region the shader bypasses this shadow. | vertex |
+| `outer_shadow_amount` | float | 0.0 / hint_range(0.0, 1.0, 0.05) | Foundation region-shadow strength outside the region; default 0. Not the native DirectionalLight shadow strength. | vertex |
+| `inner_min` | vec3 | vec3(-1.0) / none | Foundation local shadow-region lower bounds, clamped componentwise to [-1,0] in sdBox. Default (-1,-1,-1). | vertex |
+| `inner_max` | vec3 | vec3(1.0) / none | Foundation local shadow-region upper bounds, clamped componentwise to [0,1] in sdBox. Default (1,1,1). | vertex |
+| `shadow_texture` | sampler2D | not declared / none | Foundation region shadow mask. Red is inverted in sdBox; bind together with the region transform/bounds. Not an HE1 shadow-register dump or an automatically generated engine shadow map. | vertex |
+| `region_transform` | mat4 | not declared / none | Foundation region-to-world transform consumed by compute_shadow. Supply it only for a functioning region-shadow setup; a degenerate axis bypasses the region. It is a real mandatory integration input when that system is used. | vertex |
+
+### Punch
+
+| Parameter | Type | Explicit default / hint | Role | Stage path |
+|---|---|---|---|---|
+| `diffuse_texture` | sampler2D | not declared / none | Base diffuse/color texture; RGB and alpha use are source/state-specific. | fragment |
+| `diffuse_uv_set` | int | 0 / hint_range(0, 1) | Per-map UV selector for diffuse_texture: 0 = mesh UV0 (Godot UV), 1 = mesh UV1 (Godot UV2). Default 0; corresponding uv0_offset or uv1_offset is applied. No external UV data texture or channels 2/3 are required. | fragment |
+| `specular_texture` | sampler2D | not declared / none | Original RGB specular/material response and/or alpha reflection mask as this variant requires; it is not universally a scalar gloss map. | fragment, light |
+| `specular_uv_set` | int | 0 / hint_range(0, 1) | Per-map UV selector for specular_texture: 0 = mesh UV0 (Godot UV), 1 = mesh UV1 (Godot UV2). Default 0; corresponding uv0_offset or uv1_offset is applied. No external UV data texture or channels 2/3 are required. | fragment, light |
+| `falloff_texture` | sampler2D | not declared / none | Original falloff lookup texture, sampled using this variant's UV/data flow. | light |
+| `falloff_uv_set` | int | 0 / hint_range(0, 1) | Per-map UV selector for falloff_texture: 0 = mesh UV0 (Godot UV), 1 = mesh UV1 (Godot UV2). Default 0; corresponding uv0_offset or uv1_offset is applied. No external UV data texture or channels 2/3 are required. | light |
+| `diffuse_color` | vec4 | vec4(1.0) / none | Original numeric material diffuse RGBA. RGB tints the source-specific direct/surface response; ambient tinting differs by game/variant. W participates only where the selected alpha expression uses it. Preserve authored values, including 0.6. | fragment |
+| `specular_color` | vec4 | vec4(1.0) / none | Original numeric material specular RGBA. RGB weights source specular and/or reflection terms as shown in this shader. Do not apply an sRGB color-picker conversion. | fragment, light |
+| `power_gloss_level` | vec4 | not declared / none | Original numeric g_PowerGlossLevel vector; name is intentionally unchanged. Y controls exponent and Z controls applicable Generations intensity. Other used lanes are variant-defined; see expressions. This is not the renamed gloss texture. | fragment, light |
+| `material_opacity` | float | 1.0 / none | Original material opacity factor retained only when source coverage needs it in Punch/Trans. It does not turn an opaque shader transparent. Default 1; combine with texture/material alpha according to the listed expression. | fragment |
+| `sonic_skin_falloff_param` | vec4 | not declared / none | Original Sonic skin falloff/fresnel/material vector. Preserve the authored lanes; skin variants retain their own multi-exponent response rather than ordinary specular rules. | light |
+| `luminance_range` | float | not declared / none | Original environment HDR decode factor: sampled RGB is increased by RGB * sampled alpha * luminance_range in variants using that encoding. Zero disables the encoded extra range, not the base reflection. | light |
+| `sonic_fresnel_param` | vec2 | vec2(0.3, 1.0) / none | Original numeric two-component Fresnel parameter used by this variant. Exact scale/bias or exponent interpretation is recorded in its shader expressions. | vertex |
+| `alpha_cutoff` | float | 0.502 / hint_range(0.0, 1.0) | Punch-only discard threshold, default 0.502. Source material alpha below this is discarded; surviving pixels have full coverage. Not present in Opaque or Trans. | fragment |
+| `uv0_offset` | vec2 | not declared / none | 2D offset added to mesh UV0 before per-texture channel selection. Default has no explicit initializer. These are texture coordinates, not pixels. | vertex |
+| `uv1_offset` | vec2 | not declared / none | 2D offset added to mesh UV1 (Godot UV2) before per-texture channel selection. Default has no explicit initializer. UV1 must exist in the mesh. | vertex |
+| `sky_color` | vec4 | not declared / hint_color | Foundation upper-hemisphere lighting color. A color-picker input intentionally retained from the foundation; used by actual panorama/light-field or rim helpers where present. | fragment, light |
+| `ground_color` | vec4 | not declared / hint_color | Foundation lower-hemisphere lighting color. A color-picker input intentionally retained from the foundation; not an original numeric HE1 material vector. | fragment, light |
+| `ambient_light_color` | vec4 | not declared / hint_color | Foundation ambient color in lit materials (color picker). A declaration without hint_color is a numeric source-use specialization; the exact declaration and uses below take precedence. Not Godot Environment ambient by itself. | fragment, light |
+| `sky_panorama` | sampler2D | not declared / none | Foundation 2D panorama used by its five-sample light-field and reflected-direction rim functions. This input is distinct from environment_texture and is not a 4x3 cubemap cross. | fragment, light |
+| `ambient_light_sky_contribution` | float | not declared / none | Foundation interpolation weight mixing supplied ambient with sampled panorama/sky/ground. Use the actual foundation function, including brightness floor and clamp; it is not a generic scene-light intensity. | fragment, light |
+| `inner_shadow_amount` | float | 1.0 / hint_range(0.0, 1.0, 0.05) | Foundation region-shadow strength inside the region; default 1. Applied through compute_shadow and the texture/box mask. With no valid region the shader bypasses this shadow. | vertex |
+| `outer_shadow_amount` | float | 0.0 / hint_range(0.0, 1.0, 0.05) | Foundation region-shadow strength outside the region; default 0. Not the native DirectionalLight shadow strength. | vertex |
+| `inner_min` | vec3 | vec3(-1.0) / none | Foundation local shadow-region lower bounds, clamped componentwise to [-1,0] in sdBox. Default (-1,-1,-1). | vertex |
+| `inner_max` | vec3 | vec3(1.0) / none | Foundation local shadow-region upper bounds, clamped componentwise to [0,1] in sdBox. Default (1,1,1). | vertex |
+| `shadow_texture` | sampler2D | not declared / none | Foundation region shadow mask. Red is inverted in sdBox; bind together with the region transform/bounds. Not an HE1 shadow-register dump or an automatically generated engine shadow map. | vertex |
+| `region_transform` | mat4 | not declared / none | Foundation region-to-world transform consumed by compute_shadow. Supply it only for a functioning region-shadow setup; a degenerate axis bypasses the region. It is a real mandatory integration input when that system is used. | vertex |
+
+### Trans
+
+| Parameter | Type | Explicit default / hint | Role | Stage path |
+|---|---|---|---|---|
+| `diffuse_texture` | sampler2D | not declared / none | Base diffuse/color texture; RGB and alpha use are source/state-specific. | fragment |
+| `diffuse_uv_set` | int | 0 / hint_range(0, 1) | Per-map UV selector for diffuse_texture: 0 = mesh UV0 (Godot UV), 1 = mesh UV1 (Godot UV2). Default 0; corresponding uv0_offset or uv1_offset is applied. No external UV data texture or channels 2/3 are required. | fragment |
+| `specular_texture` | sampler2D | not declared / none | Original RGB specular/material response and/or alpha reflection mask as this variant requires; it is not universally a scalar gloss map. | fragment, light |
+| `specular_uv_set` | int | 0 / hint_range(0, 1) | Per-map UV selector for specular_texture: 0 = mesh UV0 (Godot UV), 1 = mesh UV1 (Godot UV2). Default 0; corresponding uv0_offset or uv1_offset is applied. No external UV data texture or channels 2/3 are required. | fragment, light |
+| `falloff_texture` | sampler2D | not declared / none | Original falloff lookup texture, sampled using this variant's UV/data flow. | light |
+| `falloff_uv_set` | int | 0 / hint_range(0, 1) | Per-map UV selector for falloff_texture: 0 = mesh UV0 (Godot UV), 1 = mesh UV1 (Godot UV2). Default 0; corresponding uv0_offset or uv1_offset is applied. No external UV data texture or channels 2/3 are required. | light |
+| `diffuse_color` | vec4 | vec4(1.0) / none | Original numeric material diffuse RGBA. RGB tints the source-specific direct/surface response; ambient tinting differs by game/variant. W participates only where the selected alpha expression uses it. Preserve authored values, including 0.6. | fragment |
+| `specular_color` | vec4 | vec4(1.0) / none | Original numeric material specular RGBA. RGB weights source specular and/or reflection terms as shown in this shader. Do not apply an sRGB color-picker conversion. | fragment, light |
+| `power_gloss_level` | vec4 | not declared / none | Original numeric g_PowerGlossLevel vector; name is intentionally unchanged. Y controls exponent and Z controls applicable Generations intensity. Other used lanes are variant-defined; see expressions. This is not the renamed gloss texture. | fragment, light |
+| `material_opacity` | float | 1.0 / none | Original material opacity factor retained only when source coverage needs it in Punch/Trans. It does not turn an opaque shader transparent. Default 1; combine with texture/material alpha according to the listed expression. | fragment |
+| `sonic_skin_falloff_param` | vec4 | not declared / none | Original Sonic skin falloff/fresnel/material vector. Preserve the authored lanes; skin variants retain their own multi-exponent response rather than ordinary specular rules. | light |
+| `luminance_range` | float | not declared / none | Original environment HDR decode factor: sampled RGB is increased by RGB * sampled alpha * luminance_range in variants using that encoding. Zero disables the encoded extra range, not the base reflection. | light |
+| `sonic_fresnel_param` | vec2 | vec2(0.3, 1.0) / none | Original numeric two-component Fresnel parameter used by this variant. Exact scale/bias or exponent interpretation is recorded in its shader expressions. | vertex |
+| `uv0_offset` | vec2 | not declared / none | 2D offset added to mesh UV0 before per-texture channel selection. Default has no explicit initializer. These are texture coordinates, not pixels. | vertex |
+| `uv1_offset` | vec2 | not declared / none | 2D offset added to mesh UV1 (Godot UV2) before per-texture channel selection. Default has no explicit initializer. UV1 must exist in the mesh. | vertex |
+| `sky_color` | vec4 | not declared / hint_color | Foundation upper-hemisphere lighting color. A color-picker input intentionally retained from the foundation; used by actual panorama/light-field or rim helpers where present. | fragment, light |
+| `ground_color` | vec4 | not declared / hint_color | Foundation lower-hemisphere lighting color. A color-picker input intentionally retained from the foundation; not an original numeric HE1 material vector. | fragment, light |
+| `ambient_light_color` | vec4 | not declared / hint_color | Foundation ambient color in lit materials (color picker). A declaration without hint_color is a numeric source-use specialization; the exact declaration and uses below take precedence. Not Godot Environment ambient by itself. | fragment, light |
+| `sky_panorama` | sampler2D | not declared / none | Foundation 2D panorama used by its five-sample light-field and reflected-direction rim functions. This input is distinct from environment_texture and is not a 4x3 cubemap cross. | fragment, light |
+| `ambient_light_sky_contribution` | float | not declared / none | Foundation interpolation weight mixing supplied ambient with sampled panorama/sky/ground. Use the actual foundation function, including brightness floor and clamp; it is not a generic scene-light intensity. | fragment, light |
+| `inner_shadow_amount` | float | 1.0 / hint_range(0.0, 1.0, 0.05) | Foundation region-shadow strength inside the region; default 1. Applied through compute_shadow and the texture/box mask. With no valid region the shader bypasses this shadow. | vertex |
+| `outer_shadow_amount` | float | 0.0 / hint_range(0.0, 1.0, 0.05) | Foundation region-shadow strength outside the region; default 0. Not the native DirectionalLight shadow strength. | vertex |
+| `inner_min` | vec3 | vec3(-1.0) / none | Foundation local shadow-region lower bounds, clamped componentwise to [-1,0] in sdBox. Default (-1,-1,-1). | vertex |
+| `inner_max` | vec3 | vec3(1.0) / none | Foundation local shadow-region upper bounds, clamped componentwise to [0,1] in sdBox. Default (1,1,1). | vertex |
+| `shadow_texture` | sampler2D | not declared / none | Foundation region shadow mask. Red is inverted in sdBox; bind together with the region transform/bounds. Not an HE1 shadow-register dump or an automatically generated engine shadow map. | vertex |
+| `region_transform` | mat4 | not declared / none | Foundation region-to-world transform consumed by compute_shadow. Supply it only for a functioning region-shadow setup; a degenerate axis bypasses the region. It is a real mandatory integration input when that system is used. | vertex |
+
+## Parameter data-flow evidence
+
+Exact references from the full Trans interface (the union of RGB and source-coverage inputs), plus Punch-only parameters. These excerpts document expression/channel uses; they do not replace the conservative backward-liveness audit in Validation.
+
+### `diffuse_texture`
+
+Category: source_material_texture. 
+
+```glsl
+uniform sampler2D diffuse_texture;
+// Referenced in fragment
+vec4 diffuse_sample = texture(diffuse_texture, get_material_uv(diffuse_uv_set));
+```
+
+### `diffuse_uv_set`
+
+Category: material_uv_control. 
+
+```glsl
+uniform int diffuse_uv_set : hint_range(0, 1) = 0;
+// Referenced in fragment
+vec4 diffuse_sample = texture(diffuse_texture, get_material_uv(diffuse_uv_set));
+```
+
+### `specular_texture`
+
+Category: source_material_texture. 
+
+```glsl
+uniform sampler2D specular_texture;
+// Referenced in fragment
+vec4 specular = texture(specular_texture, get_material_uv(specular_uv_set));
+vec4 fake_specular = texture(specular_texture, get_material_uv(specular_uv_set));
+// Referenced in light
+vec4 specular = texture(specular_texture, get_material_uv(specular_uv_set));
+```
+
+### `specular_uv_set`
+
+Category: material_uv_control. 
+
+```glsl
+uniform int specular_uv_set : hint_range(0, 1) = 0;
+// Referenced in fragment
+vec4 specular = texture(specular_texture, get_material_uv(specular_uv_set));
+vec4 fake_specular = texture(specular_texture, get_material_uv(specular_uv_set));
+// Referenced in light
+vec4 specular = texture(specular_texture, get_material_uv(specular_uv_set));
+```
+
+### `falloff_texture`
+
+Category: source_material_texture. 
+
+```glsl
+uniform sampler2D falloff_texture;
+// Referenced in light
+vec4 falloff = texture(falloff_texture, get_material_uv(falloff_uv_set));
+```
+
+### `falloff_uv_set`
+
+Category: material_uv_control. 
+
+```glsl
+uniform int falloff_uv_set : hint_range(0, 1) = 0;
+// Referenced in light
+vec4 falloff = texture(falloff_texture, get_material_uv(falloff_uv_set));
+```
+
+### `diffuse_color`
+
+Category: original_material_parameter. Source binding: g_Diffuse / material diffuse.
+
+```glsl
+uniform vec4 diffuse_color = vec4(1.0);
+// Referenced in fragment
+vec4 diffuse = diffuse_sample * diffuse_color;
+```
+
+### `specular_color`
+
+Category: original_material_parameter. Source binding: g_Specular / material specular.
+
+```glsl
+uniform vec4 specular_color = vec4(1.0);
+// Referenced in fragment
+fake_specular.rgb *= specular_color.rgb;
+// Referenced in light
+specular.rgb *= specular_color.rgb;
+```
+
+### `power_gloss_level`
+
+Category: original_material_parameter. Source binding: g_PowerGlossLevel / power_gloss_level.
+
+```glsl
+uniform vec4 power_gloss_level;
+// Referenced in compute_gloss_pair
+return clamp(exp2(power_gloss_level.y * 10.0 + 2.0) * specular_alpha * vec2(1.2, 0.2), 1.0, 512.0);
+```
+
+### `material_opacity`
+
+Category: original_material_parameter. Source binding: g_OpacityReflectionRefractionSpectype.x.
+
+```glsl
+uniform float material_opacity = 1.0;
+// Referenced in fragment
+float material_alpha = min(diffuse.a * material_opacity, 4.0);
+```
+
+### `sonic_skin_falloff_param`
+
+Category: original_material_parameter. Source binding: g_SonicSkinFalloffParam.
+
+```glsl
+uniform vec4 sonic_skin_falloff_param;
+// Referenced in compute_falloff
+return pow(clamp(1.0 - cos_theta, 0.0, 1.0), sonic_skin_falloff_param.z) * sonic_skin_falloff_param.y * shadow_gain + sonic_skin_falloff_param.x;
+```
+
+### `luminance_range`
+
+Category: original_material_parameter. Source binding: mrgLuminanceRange.x.
+
+```glsl
+uniform float luminance_range;
+// Referenced in light
+falloff.rgb += falloff.rgb * falloff.a * luminance_range;
+```
+
+### `sonic_fresnel_param`
+
+Category: original_material_parameter. Source binding: mrgFresnelParam.xy.
+
+```glsl
+uniform vec2 sonic_fresnel_param = vec2(0.3, 1.0);
+// Referenced in compute_fresnel
+return pow(clamp(1.0 - cos_theta, 0.0, 1.0), 5.0) * (1.0 - sonic_fresnel_param.x) * sonic_fresnel_param.y + sonic_fresnel_param.x * sonic_fresnel_param.y;
+```
+
+### `uv0_offset`
+
+Category: material_uv_control. 
+
+```glsl
+uniform vec2 uv0_offset;
+// Referenced in vertex
+UV = (0 == 1 ? UV2 : UV) + uv0_offset;
+```
+
+### `uv1_offset`
+
+Category: material_uv_control. 
+
+```glsl
+uniform vec2 uv1_offset;
+// Referenced in vertex
+uv_coordinates_0_1 = vec4(UV, texture_uv1 + uv1_offset);
+```
+
+### `sky_color`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform vec4 sky_color : hint_color;
+// Referenced in get_light_field_color
+vec3 up_color = mix(sky_color.rgb, final_ambient_color, ambient_light_sky_contribution);
+```
+
+### `ground_color`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform vec4 ground_color : hint_color;
+// Referenced in get_light_field_color
+vec3 down_color = mix(ground_color.rgb, final_ambient_color, ambient_light_sky_contribution);
+```
+
+### `ambient_light_color`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform vec4 ambient_light_color : hint_color;
+// Referenced in get_light_field_color
+vec3 final_ambient_color = ambient_light_color.rgb * (1.0 - ambient_light_sky_contribution) + final_avg_sky_tex.rgb * ambient_light_sky_contribution;
+```
+
+### `sky_panorama`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform sampler2D sky_panorama;
+// Referenced in get_light_field_color
+vec4 sky_tex1 = texture(sky_panorama, vec2(0.25, 0.25));
+vec4 sky_tex2 = texture(sky_panorama, vec2(0.75, 0.25));
+vec4 sky_tex3 = texture(sky_panorama, vec2(0.25, 0.75));
+vec4 sky_tex4 = texture(sky_panorama, vec2(0.75, 0.75));
+vec4 sky_tex5 = texture(sky_panorama, vec2(0.5, 0.5));
+```
+
+### `ambient_light_sky_contribution`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform float ambient_light_sky_contribution;
+// Referenced in get_light_field_color
+vec3 final_ambient_color = ambient_light_color.rgb * (1.0 - ambient_light_sky_contribution) + final_avg_sky_tex.rgb * ambient_light_sky_contribution;
+vec3 up_color = mix(sky_color.rgb, final_ambient_color, ambient_light_sky_contribution);
+vec3 down_color = mix(ground_color.rgb, final_ambient_color, ambient_light_sky_contribution);
+```
+
+### `inner_shadow_amount`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform float inner_shadow_amount : hint_range(0.0, 1.0, 0.05) = 1.0;
+// Referenced in compute_shadow
+return 1.0 - mix(inner_shadow_amount, outer_shadow_amount, clamp(sdBox(p, inner_min, inner_max, shadow_texture), 0.0, 1.0));
+```
+
+### `outer_shadow_amount`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform float outer_shadow_amount : hint_range(0.0, 1.0, 0.05) = 0.0;
+// Referenced in compute_shadow
+return 1.0 - mix(inner_shadow_amount, outer_shadow_amount, clamp(sdBox(p, inner_min, inner_max, shadow_texture), 0.0, 1.0));
+```
+
+### `inner_min`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform vec3 inner_min = vec3(-1.0);
+// Referenced in sdBox
+vec3 imin = clamp(inner_min, -1.0, 0.0);
+// Referenced in compute_shadow
+return 1.0 - mix(inner_shadow_amount, outer_shadow_amount, clamp(sdBox(p, inner_min, inner_max, shadow_texture), 0.0, 1.0));
+```
+
+### `inner_max`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform vec3 inner_max = vec3(1.0);
+// Referenced in sdBox
+vec3 imax = clamp(inner_max, 0.0, 1.0);
+// Referenced in compute_shadow
+return 1.0 - mix(inner_shadow_amount, outer_shadow_amount, clamp(sdBox(p, inner_min, inner_max, shadow_texture), 0.0, 1.0));
+```
+
+### `shadow_texture`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform sampler2D shadow_texture;
+// Referenced in compute_shadow
+return 1.0 - mix(inner_shadow_amount, outer_shadow_amount, clamp(sdBox(p, inner_min, inner_max, shadow_texture), 0.0, 1.0));
+```
+
+### `region_transform`
+
+Category: foundation_renderer_input. 
+
+```glsl
+uniform mat4 region_transform;
+// Referenced in compute_shadow
+vec3 region_axis_length = vec3(length(region_transform[0]), length(region_transform[1]), length(region_transform[2]));
+p = (p - region_transform[3].xyz) * mat3(region_transform);
+```
+
+### `alpha_cutoff`
+
+Category: native_cutout_coverage. 
+
+```glsl
+uniform float alpha_cutoff : hint_range(0.0, 1.0) = 0.502;
+// Referenced in fragment
+if (material_alpha < alpha_cutoff)
+```
+
+## Foundation evidence
+
+Preserved functions: `get_rim_light_color`, `sdBox`.
+
+Modified functions: `compute_falloff`, `compute_fresnel`, `compute_shadow`, `fragment`, `get_light_field_color`, `getq`, `light`, `vertex`.
+
+Removed functions: `decode_normal_map`.
+
+Introduced functions: `compute_gloss_pair`, `compute_specular_lobe`, `get_material_uv`.
+
+Modified/removed functions are not assumed valid merely because their names match. Source enforcement checks actual bodies; final exact-regeneration proofs cover render-state/UV specializations. Documented source differences:
+
+- `compute_fresnel`: Reuse the foundation fifth-power/clamp helper with the paired source vertex Fresnel endpoints; cache its result per vertex. The source material determines coefficients, not a second unused inline implementation.
+- `decode_normal_map`: The source pixel body has no material normal sample. The linked vertex normal remains the surface basis.
+
+## Original source mapping
+
+Paths below are relative to the original project root and are not bundled game source files.
+
+- Pixel: `he1shaders/unleashed asm/SonicSkin_dspf@@.xpu.asm`
+- Vertex companion: `he1shaders/unleashed asm/CharactorNodeInvX_@b@.xvu.asm`
+- Vertex companion: `he1shaders/unleashed asm/CharactorDefault_@b@.xvu.asm`
+- Vertex companion: `he1shaders/unleashed asm/CharactorNodeInvX_@b@p.xvu.asm`
+- Vertex companion: `he1shaders/unleashed asm/CharactorDefault_@b@p.xvu.asm`
+
+| Shader list | Pixel mode | Vertex mode | Vertex identity |
+|---|---|---|---|
+| he1shaders/unleashed asm/SonicSkinNodeInvX_dspf[b].shader-list | default | none | CharactorNodeInvX_@b@ |
+| he1shaders/unleashed asm/SonicSkin_dspf[b].shader-list | default | none | CharactorDefault_@b@ |
+| he1shaders/unleashed asm/SonicSkinNodeInvX_dspf[b].shader-list | default | p | CharactorNodeInvX_@b@p |
+| he1shaders/unleashed asm/SonicSkin_dspf[b].shader-list | default | p | CharactorDefault_@b@p |
+
+## Validation status
+
+Final artifact: exact source-generator/native-state/two-UV regeneration and dependency audit passed. Whole-library stock-engine results are in [VALIDATION](../../../Documentation/VALIDATION.md).
+
+Source mathematics: source-backed material equations retained; neutral engine-effect specialization and per-map UV routes verified; full renderer equivalence remains partial
+
+Visual validation: {'status': 'all7actual-asset contribution captures pixel-identical to accepted baseline', 'capture': 'comparison-preview/comparisons/uniform-layout-final-2026-11-14', 'comparison': 'comparison-preview/comparisons/uniform-layout-final-2026-11-14/accepted-parity.json', 'scope': 'Source assets for this program; not original-game parity across every shader'}
+
+Original-game renderer and appearance equivalence is not claimed. [Known boundaries](../../../Documentation/LIMITATIONS.md) apply.
+
+## Available preset paths
+
+| Coverage | Blend | Faces | Shader | Optional material |
+|---|---|---|---|---|
+| Opaque | Additive | DoubleSided | [Shader](../../../Render%20States/Opaque/Additive/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Opaque/Additive/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Opaque | Additive | SingleSided | [Shader](../../../Render%20States/Opaque/Additive/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Opaque/Additive/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Opaque | Multiply | DoubleSided | [Shader](../../../Render%20States/Opaque/Multiply/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Opaque/Multiply/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Opaque | Multiply | SingleSided | [Shader](../../../Render%20States/Opaque/Multiply/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Opaque/Multiply/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Opaque | Normal | DoubleSided | [Shader](../../../Render%20States/Opaque/Normal/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Opaque/Normal/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Opaque | Subtract | DoubleSided | [Shader](../../../Render%20States/Opaque/Subtract/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Opaque/Subtract/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Opaque | Subtract | SingleSided | [Shader](../../../Render%20States/Opaque/Subtract/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Opaque/Subtract/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Punch | Additive | DoubleSided | [Shader](../../../Render%20States/Punch/Additive/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Punch/Additive/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Punch | Additive | SingleSided | [Shader](../../../Render%20States/Punch/Additive/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Punch/Additive/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Punch | Multiply | DoubleSided | [Shader](../../../Render%20States/Punch/Multiply/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Punch/Multiply/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Punch | Multiply | SingleSided | [Shader](../../../Render%20States/Punch/Multiply/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Punch/Multiply/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Punch | Normal | DoubleSided | [Shader](../../../Render%20States/Punch/Normal/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Punch/Normal/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Punch | Normal | SingleSided | [Shader](../../../Render%20States/Punch/Normal/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Punch/Normal/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Punch | Subtract | DoubleSided | [Shader](../../../Render%20States/Punch/Subtract/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Punch/Subtract/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Punch | Subtract | SingleSided | [Shader](../../../Render%20States/Punch/Subtract/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Punch/Subtract/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Trans | Additive | DoubleSided | [Shader](../../../Render%20States/Trans/Additive/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Trans/Additive/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Trans | Additive | SingleSided | [Shader](../../../Render%20States/Trans/Additive/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Trans/Additive/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Trans | Multiply | DoubleSided | [Shader](../../../Render%20States/Trans/Multiply/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Trans/Multiply/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Trans | Multiply | SingleSided | [Shader](../../../Render%20States/Trans/Multiply/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Trans/Multiply/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Trans | Normal | DoubleSided | [Shader](../../../Render%20States/Trans/Normal/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Trans/Normal/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Trans | Normal | SingleSided | [Shader](../../../Render%20States/Trans/Normal/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Trans/Normal/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Trans | Subtract | DoubleSided | [Shader](../../../Render%20States/Trans/Subtract/DoubleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Trans/Subtract/DoubleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Trans | Subtract | SingleSided | [Shader](../../../Render%20States/Trans/Subtract/SingleSided/Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Render%20States/Trans/Subtract/SingleSided/Materials/Unleashed/SonicSkin_dspf@@.tres) |
+| Opaque | Normal | SingleSided | [Shader](../../../Unleashed/SonicSkin_dspf@@.shader) | [Material](../../../Materials/Unleashed/SonicSkin_dspf@@.tres) |

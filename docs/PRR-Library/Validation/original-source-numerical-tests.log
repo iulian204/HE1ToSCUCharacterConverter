@@ -1,0 +1,27 @@
+test_helpers_branch_control_overwrite_and_varying (current_test_accuracy_math.DependencyTests.test_helpers_branch_control_overwrite_and_varying) ... ok
+test_keep_conditional_and_shadow_sampler (current_test_accuracy_math.DependencyTests.test_keep_conditional_and_shadow_sampler) ... ok
+test_unknown_syntax_fails_closed (current_test_accuracy_math.DependencyTests.test_unknown_syntax_fails_closed) ... ok
+test_all_published_unleashed_ambient_is_independent_of_diffuse_tint (current_test_accuracy_math.SourceTests.test_all_published_unleashed_ambient_is_independent_of_diffuse_tint) ... ok
+test_eye_reflection_projection_and_linear_mask (current_test_accuracy_math.SourceTests.test_eye_reflection_projection_and_linear_mask) ... ok
+test_simultaneous_swizzles_and_partial_writes (current_test_accuracy_math.SourceTests.test_simultaneous_swizzles_and_partial_writes) ... ok
+test_skin_gloss_and_diffuse_original_trace (current_test_accuracy_math.SourceTests.test_skin_gloss_and_diffuse_original_trace) ... ok
+test_trace_float4_normalize_overload (current_test_accuracy_math.SourceTests.test_trace_float4_normalize_overload) ... ok
+test_coating_environment_shadow_is_not_fragment_fresnel (current_test_unleashed_lobes.LobeTests.test_coating_environment_shadow_is_not_fragment_fresnel) ... ok
+test_day_enemy_dual_lobes (current_test_unleashed_lobes.LobeTests.test_day_enemy_dual_lobes) ... ok
+test_eye_outer_and_iris_lobes (current_test_unleashed_lobes.LobeTests.test_eye_outer_and_iris_lobes) ... ok
+test_installed_unleashed_direct_lobes (current_test_unleashed_lobes.LobeTests.test_installed_unleashed_direct_lobes) ... ok
+test_untextured_gloss_cloth_and_night (current_test_unleashed_lobes.LobeTests.test_untextured_gloss_cloth_and_night) ... ok
+test_all_original_environment_variants (current_test_generations_eye.GenerationsEye.test_all_original_environment_variants) ... ok
+test_authored_highlight_uses_plus_direction_and_original_gloss (current_test_generations_eye.GenerationsEye.test_authored_highlight_uses_plus_direction_and_original_gloss) ... ok
+test_original_camera_specular_across_material_profiles (current_test_generations_camera.GenerationsCamera.test_original_camera_specular_across_material_profiles) ... ok
+test_all_variants_original_projection_and_mask (current_test_unleashed_eye_environment.EyeEnvironment.test_all_variants_original_projection_and_mask) ... ok
+test_nested_control_blocks_and_masked_writes (current_test_vertex_trace.VertexTrace.test_nested_control_blocks_and_masked_writes) ... ok
+test_original_unskinned_and_identity_skinned_eye (current_test_vertex_trace.VertexTrace.test_original_unskinned_and_identity_skinned_eye) ... ok
+test_unleashed_highlight_is_normalized_before_bone_transform (current_test_vertex_trace.VertexTrace.test_unleashed_highlight_is_normalized_before_bone_transform) ... ok
+test_original_camera_color_is_linear_not_squared (current_test_camera_integration.CameraIntegration.test_original_camera_color_is_linear_not_squared) ... ok
+test_original_vertex_stage_negates_imported_binormal (current_test_camera_integration.CameraIntegration.test_original_vertex_stage_negates_imported_binormal) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 28.491s
+
+OK

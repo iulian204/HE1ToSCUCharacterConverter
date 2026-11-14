@@ -1,0 +1,1082 @@
+{
+  "Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "0b36d086dff0548158e5f05b1b7bab44e61424f5f181f4f87ddd45e00beaa990",
+    "sha256": "5ecbf6da83fb1e264d4d42f3f2673d3116a0ff1c5fe119347c636cf579e1fbc2",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Normal/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "3093d380748a2a7bfe1cfa9ddf49c787d363344fc0142711ba35ffe9e35f7658",
+    "sha256": "a6b36627f2eda40df20a52c9c014e5d15753c1962709e16b194eb2af6d909e6a",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Additive/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "68c0dc1ffe52c912310e5ec8f34d238f89b4b3eae22bbfbb4df71204581f4063",
+    "sha256": "f646e04a7d8c1de40a14118868a93a237e7a73392130db62675b49385d581680",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Additive/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "8f633762be73f5007e35c769f47e82a42956fb4ab7aa513d6a601bc7962676e5",
+    "sha256": "ef9b81d01e6e86bad4a916f0cc68328dedd22a6929e8e296b9feb386f2052625",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Multiply/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "1af6f21c868274b6927bb1b3f5154b64e894aab8b832d1d1f9f2463dae4e5059",
+    "sha256": "5ed47afc50385690b9886942db60454b04797a397fb852aa4f2159885faaeefa",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Multiply/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "d4fb4e7f5627d817b734f2b5898c63477aac603a8c1bc5673a8c1c661dfc8b7b",
+    "sha256": "28079e4ff57872309f333938ae2ab940ab10892e18072d4b91521d998d3452ca",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Subtract/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "9f224e5199bcc3427a5069053b560469237552c2687601d652b5d1b938d58025",
+    "sha256": "32907eb5991d2bde33e7557abcbb501470f836c91763f37c2b463ef329dd58c0",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Subtract/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "e3be5cefd12d31e92d7834bd2a21cb74fc295c42f9afa00b7b6e76ef0166482f",
+    "sha256": "1574882122072667e5b8e637b9187d19936403670741525530b921ea2ab4a1b7",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Normal/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "f2f8c81bc1665c45b7248cdba4664b6174153cfd25f0b3b35cd035d19bbd10a4",
+    "sha256": "d097e2da61d55669ebbf1857f7d182871a0c37dd358ef943f3e3df869a6cc2a1",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Normal/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "552f92b4fe8df88befa4281f62c080b9486e04cb12fd68ea5940ab33022b1be0",
+    "sha256": "890c7dd3fa682f458246085365f9f8507ca333b5a2fd530d0fb57fa4fde7a378",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Additive/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "fcbdbe408999e8ddc109de02099c45f3cf34fbfdc5a95806942d2077c9c9b08e",
+    "sha256": "e228393d45fce06c44e6614e58d6fcaab6e6d3d6540d786d5474a752ec06a894",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Additive/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "221ecd7c445d0484b9609f7b3c5117a22506c7c8cec6954dac3bc7cd1ab70325",
+    "sha256": "4547afbf529c9e2507b6df5756ecdf386129dd89d04e81f47e8d975ea6c389f4",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Multiply/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "6f5c7d33d75cb11748eae5d131478fb4c076bb7d6d3c872e51bbba6b2214cc78",
+    "sha256": "b6aa6924c1c4a2869c6d134175bf8df88a23e122c1decc66e2810b67eb29314d",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Multiply/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "f9669e6d2f1fb84f3dba9e0bb5c9c83d427f88d293b0dccdf505ee641f0240ef",
+    "sha256": "8dd52d9033bb8ce2947488080e52a8cd7435f448165841cc604c53a431da4253",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Subtract/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "35208daf5f48c037436e78f3e72c23b39ebe8a150fcf11ff315483756fc84bdf",
+    "sha256": "504a4e6f81b5bc4640cfb5d1c60f29f41886c22f310eecbd9ffc77d925541b2c",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Subtract/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "ba7c93d1163d0ebafa242ee0128f5f53f47b9829c9c0d060172269eead0ee083",
+    "sha256": "70439726fee744013aae38e5a211abf276374845b5bf8af2e76dc37e402a0102",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Normal/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "934eb5699f2d8c8f74884eb068f3a726a6a72f93172703574f3ebf239435c7aa",
+    "sha256": "adffade9dfb01fb2dfb625cb6e6628e11526045eaeb3982017ef11abb098b92e",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Normal/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "4faf7167a0f7b6a81fda64274e6dfed4992d476645e94a9aa35b94509bf91d0a",
+    "sha256": "4df69322beef6b4cf3e6e65991b5d7f4a60cdf4d366b963066d0f1cf448ea3ef",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Additive/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "dbe0f85aff135d8a8367d37bab883d9bca40214874a28bf9ad7a20bcfc3f4a05",
+    "sha256": "b66d75e8106da199b7c82abab81dcd5eeb95e23313886b85ef7a6d3cc1ca66b5",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Additive/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "03f71e604f68035bfc0a2cfd25435d6c3ae903e4bd710cd0d97eb58ffc1587be",
+    "sha256": "fcecace4a64dec4bb5182d75e550cb8adcbd0f4ce62e83aaa64c544889968e0d",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Multiply/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "44f130f48760bd521c07bf67ac820a3752ac8873c99ef61970b42d2854910814",
+    "sha256": "510cdb7760bbac83ed7b38e7a47a336421c7cc3733efbf8586eeddf053f596dd",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Multiply/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "361180d0fd2f2d7e1db9f396bd6d3be2cb5a651914c4df1ca58169173dcbf002",
+    "sha256": "b9ba7931c8be2b539e44ea7e2b22619f2d7515903f12c8ad8218393fb22afd9e",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Subtract/SingleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "e3b56d4d87f448f17876419092bb90e2ee0671975bdab1e08f57b64211c841a6",
+    "sha256": "088f15eb08591cc55eb61358f463ab1f7bed01e122dc5e00525387d0c3156e96",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Subtract/DoubleSided/Generations/ChrEye_dpne@@.shader": {
+    "canonical": "Generations/ChrEye_dpne@@.shader",
+    "before_sha256": "9cbc118a522da0b881e610fb89eb8d62243fb2fb6f34d61d2a79eaf8c031d390",
+    "sha256": "382340c859498c0bc1496a0c828dffab8b03f8a81dd9254988a1aec7ae60e93e",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "c1dd77b05507a8659fe7b774325854f0a5944e8704e722a014d78f5d95529fb3",
+    "sha256": "3223fc79435fafe3071019f0560c78c26bd0433f3aa78e784165154006a74543",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Normal/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "2fc4d901e35d108ed73663fbac5c3c9a501538879b1f03a2ca330d071e1e71dd",
+    "sha256": "34df4057d5cfc66cec6ae4e82a5cf4db2d3367f059d84cb3c3596a14b3266531",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Additive/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "9432c62fe925f1d081605c5d6da7361682d68d9eed4975711c3e3988f9af6512",
+    "sha256": "9ea5061fcdf4fb2663aff0adc503f05a8125b0dee042c59a3866cdbdb3631cfe",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Additive/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "c686eb1ab0817779398dd8fc4a2eac962eb16ba25f25f014ef767c55c47b6ce0",
+    "sha256": "d10713a6c5c165448b60148c04ec00e40d132651e1638743df930f20a53e3531",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Multiply/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "e966163b0e2eb047f232737b00122da1bb69e0788952ec941c762ff57abd17a9",
+    "sha256": "b4ae5160077a0936791b8f9328b313d3422b4802b0198dcf55f32f5759ad68de",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Multiply/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "3dda98fb538209e841e82b15cd1161ce654a2f77866f70f7a032dc5dde65dfaf",
+    "sha256": "fc7b610ccc3f4bfb243b88d9d4039c066eb918dedd7dd3e90dfcfe0d39686d74",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Subtract/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "cd4d30e2362e878953994fe358b7a96a11d9378c0f83ba83835b0ab19d9ec2c0",
+    "sha256": "053f78237c7645262da3e9b22e1404d6f87bca10e24f797a605d10a5d777fc15",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Subtract/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "be3f49d551c7b85c8f3d18068bf4eadeccaf6dfc4a260697e0b8ac3a02b1a848",
+    "sha256": "7623481e1bc8f9fa536036941693f0599f3a4ff8af65276cbf5ea18188e2268b",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Normal/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "79b681c532bd79e913d5bf8d36d7fa88510a0727182c6b5b62b443779211b598",
+    "sha256": "a805edcf18d4ff2ef2c4679910228a498f471e88c8581a515c2dad180c6d08f2",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Normal/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "681282a96bc70cf547813708b88105f356aae35d439086752f43e402b1c94e9a",
+    "sha256": "1178a0b62bf24a1a4a5bfc34cf3414ef23cd8e2669f4ffd09759ac7da2f06eca",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Additive/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "bc8308de890e166bc2310ef755dd1024ad31d6fbd750b22911981774c5cba796",
+    "sha256": "6d4af3f1932f2cab91d9109ecca9e74b5ab32560a7ce84cbf72633fb757cb279",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Additive/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "50f848062a6c36fc424677434bab2e59ecfb190e8cbc228417565af306e299a4",
+    "sha256": "be40395243bd3d5e2fde464c485dd917ecb1c9855645f2b4bcbb2812a616b4a9",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Multiply/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "dbfc763f142445053b748b6cb58c9500fbc0f4a9b18fc898fddcb055dc4d191c",
+    "sha256": "678f722060fefac51d8f4605924b6993431b6ac1b1e7ddf3faec7b7b7b28a47d",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Multiply/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "f13f923a162083c757c83e745128241515de81655a3ccbd5199939c68af1025a",
+    "sha256": "5a451c76d2ba9b2e28634e5d35192f686cfa0fc1d40d0a993c7a0cbbadd054e6",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Subtract/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "58c5777270ad0643b4cb33c3c3f20f6cd5b131e52bf2612ea95b83a45259e6f1",
+    "sha256": "36eedd6980429283898a6413badbdfc7e77bd95bfb1c12e5911dc79c28a2c2d0",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Subtract/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "87c42939660cb0c67f563ce10f7a15668fe239d39752cd8d374ffdeda6a640f8",
+    "sha256": "cb4463e0f55fa6271f9f447f2731857819f04ac770809f12c24552acaf997716",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Normal/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "7de52341ade5486ca37dbb3b0e23c039eeb218811be263a09854084ccbc56867",
+    "sha256": "c00f648a811d098cb8bbf8cb52b48016e12f9257bc72cdbc162df8bf8499823c",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Normal/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "c59519206827cbfe1afa117afe6643c88d41f5b3482c925d42ad848322bbce65",
+    "sha256": "92bb0de5e765e8647166ff4265bb8e9d6ce4e8936bbc3156a4734f1371071f5c",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Additive/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "69471cb02717622b4c29b08edefb8899d9fe9e1e5f25bad7b814b2164483f107",
+    "sha256": "c5eda2977b1572ecbed12e57afd3787079d5a6406b3899182858c18b61a88e0c",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Additive/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "9ddbab1f076f87e40076cfb98a85f33fdd383df518761afe5c06906c1feb3505",
+    "sha256": "3fbcb6d2b128b168565c5fe04b4433cf2936ec72d01502e0e38d8a016d22ec3b",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Multiply/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "9619880309dc4130e3ae7d53eb55348131edfed38a43393bcbbea4fe27e41a92",
+    "sha256": "cc2d950478118fac5bd974ac04a031d5ed6ade681e322219de11db24629c59c2",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Multiply/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "5d622aa4213cc2e31613cbf03291a96d9a9414f97206af71c9bbff184f45ee02",
+    "sha256": "5d679a68626524efc64230a7333bda0ae833f5fa3f14d51c285d9bd70dbfb664",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Subtract/SingleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "6b6007ab7332b8162ca56e1f38c2a690afecb0232d56a880f5dd401da76f9f15",
+    "sha256": "0dfd8e77138cc0e76afe1e1f611f49f7f77a909a24e8dab544810ba57f0c9033",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Subtract/DoubleSided/Generations/ChrEye_dpne1@@.shader": {
+    "canonical": "Generations/ChrEye_dpne1@@.shader",
+    "before_sha256": "8675e0e7f92ae9626533968f0ccc05b0d6f5d4e3e2dbf94bc65ad2f5e7dc2081",
+    "sha256": "e2e5398049b6a98eb33c9578adf88b1e9a3d4ccb841b61c146d15077a61a5895",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "fa5b23fe553f21d5ea89f1c568c650db10052ca77d462ab911f427556d2c6006",
+    "sha256": "1270f0d79cc308e2e36d35eaf92a7f9f02397c2f5c054cacc128668c48f35ca2",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Normal/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "77c2bd8187ae6213d21b5ac8da29c4b18f032eaf14975ade2d7b01402fbe8022",
+    "sha256": "c274ef4a9a5aab0329f673827e3940653b5ef14fb0563f1e7f72c307a56df8a5",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Additive/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "eeb703c786a3cf26bd4c7a6efae32ea21f3daf64b7f3d89169ebbb1f67183b86",
+    "sha256": "0e81bb3eef57173b431e6375ae5e7647987e3e53158081c4110a116427e86f99",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Additive/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "07974d1cb856fa3de39d84affbac840ef353e195fa5b4567ea627439a3599732",
+    "sha256": "d1997cc15b70f0f0f46f54d9da96068e01609638a02a61b4496eaf0351d53d74",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Multiply/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "edb17c213f58a33ad5b1dde3ce4288fba0e5f71b42462f8da5b415d55118e5ab",
+    "sha256": "d09d379c101d5909214647a6400b5d34365124dc625f25c3b3beb7776e1693bb",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Multiply/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "6403c5ae6f58a19f913f010245149ce3d38748666fc6666e5a7869e95c4c3f7e",
+    "sha256": "05e543ebc2cc360e3db097492b94b66b0593757aa7f0b866869c95bf2df754df",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Subtract/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "670ca8387b4d68799b00fecad8256479d03b589ff4afd1a8e20708745df0a1a3",
+    "sha256": "035065fb518252cc30aa43b4e16a10ac71ef8a1933d13e12fa11a06bc47fb685",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Opaque/Subtract/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "bf1b59d61941160ebeb2dac3862811a5b2fc3f427fda764df400bb606fbe2349",
+    "sha256": "beef6b98cc52b529bb3210c0fa58b54c480fb349ed2aba77c6716bec61715c7a",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Normal/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "9b896ca0e7c4bd85e65ccef7a03f268195bf8076d07badb0c0d5facd7bd35d69",
+    "sha256": "966e85fa0ddfc183cbfafc6e9e29bb31ab3b063ff64b2203c75fc97d3dcf7b81",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Normal/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "15201a721f9731e723aeb2594927ac97f6bcd714bb6d3c4bacd44de2711443d2",
+    "sha256": "0ac5c26fefeec3855ab64f5eaea1f4f5c3594ae3a2bf1605af728ca5bb08970c",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Additive/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "bdb2ccb48c042c84ffe85a642488e409fe4776a204b2e9d817c506e58629bb96",
+    "sha256": "418c02a83014ce45e33adcbe14333f7c84a55c11256b800fb40c4722797fedee",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Additive/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "942a0f2bb0c352a99aae22aee52ce005227dfd66eef8d2f2586c957fb6ad4e60",
+    "sha256": "9be0ce8132ab39abfc26a411e00f3c350830e448afc6545c5360c94af75cf911",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Multiply/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "571ff2506708768ab4e7fc913e9c266348450989c4e2ada57d963f0d8d462509",
+    "sha256": "267424da50c894734496fc4f8d8ba058fb4c2e9498346ca8f52174225115bc94",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Multiply/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "85634ec143061ab9fffc8e592df449d4da23c4349e57c0148779524dbfa2dd78",
+    "sha256": "8ed7adba720535533136825a47c4c1f139711e861175c83d5a6ea524124b5759",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Subtract/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "5648389e6246c461c5552909eab7c0713d33e84628fc423726ef95a99c22e344",
+    "sha256": "fbe069e6138a1001364045f2c86a29c54c25a9e83cbdb7710ba4c7e1f66f7ece",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Punch/Subtract/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "dab5b7bad7d684d4ce6fc4358d6247bc282655c893913de22b57e589d379a683",
+    "sha256": "d359521972ec8fcbd9eea8065415925532433838b4ea3bc9f4d5045b4a4bfb7a",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Normal/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "b4562e470d2f5a0591132581b82737740a95166ec79cbbf1d5ef65525730ee68",
+    "sha256": "046a5fb389409f3d41d72fafdf1da85e91ccfc19f94a8ece5d501f304849f967",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Normal/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "a89686e7c19eac5dea604ea05a751554d79fb170f5c37527596912e281be85f4",
+    "sha256": "60718496615631c0c8c6af6b94da20eb15649710e8d238590178648162f13102",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Additive/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "162e4da8f549bad289acdf29e31abbfa01b1344f674ae643a3dc7f8e83afc2d1",
+    "sha256": "dd9266471882c69bf2403e5571da5fa92c28d3baf1720ca58a0feea0e72fab27",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Additive/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "3d9788b5f72c17f4ef803f4a8192792e7e550a19e6201d0574e742bc918f4cdd",
+    "sha256": "af32ab72d4867308e9b9b1946ef1c705bd8b3b9416aecb9ea4273bc9056c930e",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Multiply/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "8304423d156203e4f5f3b678c6537254849da0c2791b452a023815efde758ee5",
+    "sha256": "c6529182223ac0abd7abb80514f293c82c84fc6627f87677794a2690c9d039f7",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Multiply/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "702feb34d503ad702096bfa7f84581ff7c26b3220760e512f628d866aeb464b3",
+    "sha256": "08144a76c5b7e1bfd4bcdd42916e1b0c981a08ab2bb36bda5ec37f3251d35446",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Subtract/SingleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "40cee5bf24b7489d62281c1e1ee2031cb51d9dc3eda4e95e5dd11cc959f8fe8a",
+    "sha256": "c5ea767edc544b6b3ec2f68d4edbe66c196901dbc6316a4170cea0caff46da24",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  },
+  "Render States/Trans/Subtract/DoubleSided/Generations/ChrEye_dpne2@@.shader": {
+    "canonical": "Generations/ChrEye_dpne2@@.shader",
+    "before_sha256": "0ba5e7222c6be984d251a6e6ef2e3d9e8acc1ee94151d7d77a883b1abcc8dad5",
+    "sha256": "2e6e51e95aa7aec963e1edceed61fed48a8bea808f37bf572f1f9ef237b9c69b",
+    "source": "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl",
+    "terms": [
+      "2.0 * eye_highlight * reflection * vColor.rgb * vec3(1.0)",
+      "2.0 * eye_highlight * light_field * vColor.rgb * vec3(1.0)",
+      "2.0 * reflection * light_field * vColor.rgb * vec3(1.0)"
+    ],
+    "unchanged_vertex_light_helpers_interface": true,
+    "alpha_unchanged": true,
+    "source_gpu_cases": 864,
+    "generator_equivalence": true
+  }
+}

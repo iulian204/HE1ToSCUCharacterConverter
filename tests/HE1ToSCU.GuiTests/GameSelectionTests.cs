@@ -28,6 +28,74 @@ public sealed class GameSelectionTests : IDisposable
     private string SettingsPath => Path.Combine(temp.FullName, "settings.json");
 
     [AvaloniaFact]
+    public async Task DisabledPrrKeepsSavedPathButPassesTheOriginalConversionDefaults()
+    {
+        Touch(temp.FullName, "a.model");
+        File.WriteAllText(SettingsPath, System.Text.Json.JsonSerializer.Serialize(new
+        {
+            source = temp.FullName, output = Path.Combine(temp.FullName, "export"), editor = "",
+            exportPrr = "False", prrShaderPath = "res://kept-but-inactive"
+        }));
+        var started = new TaskCompletionSource<ConversionRequest>();
+        var window = new MainWindow(SettingsPath, convert: (request, _, _) =>
+        {
+            started.SetResult(request);
+            return Task.FromResult(new ConversionResult(request.OutputDirectory, 1, 3, 1, 0, false));
+        });
+        try
+        {
+            window.Show(); Click(window, "ConvertButton");
+            var request = await started.Task.WaitAsync(TimeSpan.FromSeconds(5));
+            Assert.False(request.ExportPrrMaterials);
+            Assert.Null(request.PrrShaderPath);
+            Assert.Equal("res://kept-but-inactive", Control<TextBox>(window, "PrrShaderPath").Text);
+        }
+        finally { window.Close(); }
+    }
+
+    [AvaloniaFact]
+    public void PrrOptionsPersistWithoutConversionAndStayIndependentOfGameAndMouth()
+    {
+        var picker = new TestPicker();
+        var window = new MainWindow(SettingsPath, picker);
+        try
+        {
+            window.Show();
+            var option = Control<CheckBox>(window, "ExportPrrMaterials");
+            var path = Control<TextBox>(window, "PrrShaderPath");
+            Assert.False(option.IsChecked == true);
+            Assert.False(path.IsVisible);
+            Assert.False(Control<Button>(window, "ShaderBrowseButton").IsVisible);
+            option.IsChecked = true;
+            Assert.True(path.IsVisible);
+            path.Text = "res://PRR/Generations";
+            Control<ComboBox>(window, "GameSelector").SelectedIndex = 1;
+            Control<CheckBox>(window, "GenerateMouthLeft").IsChecked = true;
+            Assert.True(option.IsChecked);
+            Assert.Equal("res://PRR/Generations", path.Text);
+            option.IsChecked = false;
+            Assert.False(path.IsVisible);
+            Assert.True(window.SelectedGenerateMouthL);
+        }
+        finally { window.Close(); }
+        var reopened = new MainWindow(SettingsPath, picker);
+        try
+        {
+            reopened.Show();
+            Assert.False(Control<CheckBox>(reopened, "ExportPrrMaterials").IsChecked);
+            Assert.Equal("res://PRR/Generations", Control<TextBox>(reopened, "PrrShaderPath").Text);
+            Control<CheckBox>(reopened, "ExportPrrMaterials").IsChecked = true;
+            Assert.True(Control<TextBox>(reopened, "PrrShaderPath").IsVisible);
+            string project = temp.CreateSubdirectory("project").FullName;
+            File.WriteAllText(Path.Combine(project, "project.godot"), "config_version=4");
+            picker.Folder = Directory.CreateDirectory(Path.Combine(project, "shaders")).FullName;
+            Click(reopened, "ShaderBrowseButton");
+            Assert.Equal(picker.Folder, Control<TextBox>(reopened, "PrrShaderPath").Text);
+        }
+        finally { reopened.Close(); }
+    }
+
+    [AvaloniaFact]
     public void GameSelectionAndCompactFluentLayoutWorkInBothThemes()
     {
         var window = new MainWindow(SettingsPath) { Width = 560, Height = 420 };
@@ -229,6 +297,8 @@ public sealed class GameSelectionTests : IDisposable
             window.KeyPress(Key.Enter, RawInputModifiers.None, PhysicalKey.Enter, null);
             Control<ComboBox>(window, "GameSelector").SelectedIndex = 1;
             Control<CheckBox>(window, "GenerateMouthLeft").IsChecked = true;
+            Control<CheckBox>(window, "ExportPrrMaterials").IsChecked = true;
+            Control<TextBox>(window, "PrrShaderPath").Text = "res://PRR/Unleashed";
             Control<TextBox>(window, "OutputPath").Text = output;
             Control<TextBox>(window, "EditorPath").Text = "";
             Click(window, "AnimationAddButton");
@@ -241,6 +311,8 @@ public sealed class GameSelectionTests : IDisposable
             Assert.Equal("", request.AcornEditorPath);
             Assert.Equal(SourceGame.SonicUnleashed, request.Game);
             Assert.True(request.GenerateMouthL);
+            Assert.True(request.ExportPrrMaterials);
+            Assert.Equal("res://PRR/Unleashed", request.PrrShaderPath);
             await WaitFor(() => Control<ProgressBar>(window, "Progress").Value == 45);
             Assert.Equal("Sampling animation", Control<TextBlock>(window, "Status").Text);
             Assert.False(Control<Grid>(window, "Inputs").IsEnabled);
@@ -260,6 +332,8 @@ public sealed class GameSelectionTests : IDisposable
             Assert.Equal(output, Control<TextBox>(reopened, "OutputPath").Text);
             Assert.Equal(skeleton, Control<TextBox>(reopened, "SkeletonPath").Text);
             Assert.Equal("", Control<TextBox>(reopened, "EditorPath").Text);
+            Assert.True(Control<CheckBox>(reopened, "ExportPrrMaterials").IsChecked);
+            Assert.Equal("res://PRR/Unleashed", Control<TextBox>(reopened, "PrrShaderPath").Text);
         }
         finally { reopened.Close(); }
     }

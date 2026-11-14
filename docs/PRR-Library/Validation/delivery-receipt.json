@@ -1,0 +1,31 @@
+{
+  "canonical_programs": 152,
+  "Generations": 99,
+  "Unleashed": 53,
+  "aliases": 4,
+  "shader_presets": 3648,
+  "plain_material_presets": 3648,
+  "eye_programs_repaired": 3,
+  "eye_shader_presets_repaired": 72,
+  "unchanged_preset_shaders": 3576,
+  "original_source_cases": 432,
+  "source_gpu_cases": 864,
+  "changed_native_resource_checks": 72,
+  "changed_full_source_draws": 15,
+  "whole_source_generator_replay": 152,
+  "isolated_layers_pixel_identical": true,
+  "changes_confined_to_eyes": true,
+  "runtime_scripts": false,
+  "plugins": false,
+  "uv_channels": [
+    0,
+    1
+  ],
+  "uv_data_uniforms_removed": true,
+  "snapshot": "Shader Playground\\Native-Render-State-Shaders-Eye-Repair-2026-11-14",
+  "archive": "Shader Playground\\Native-Render-State-Shaders-Eye-Repair-2026-11-14.zip",
+  "comparison": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14",
+  "boundary": "Preserved established PRR architecture/transfer with verified source fragment addition; full original-game framebuffer/renderer parity is not claimed",
+  "archive_sha256": "49ccde532f0f95d6cc2864c1ea6c5d21746aa2827c3f487dad09a35ce064cc9d",
+  "archive_bytes": 13886993
+}

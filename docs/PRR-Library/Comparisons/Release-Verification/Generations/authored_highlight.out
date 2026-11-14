@@ -1,0 +1,47 @@
+Godot Engine v3.1.2.stable.official - https://godotengine.org
+OpenGL ES 3.0 Renderer: AMD Radeon RX 9060 XT
+WARNING: _update_root_rect: Font oversampling only works with the resize modes 'Keep Width', 'Keep Height', and 'Expand'.
+     At: scene/main/scene_tree.cpp:1159
+WARNING: _update_root_rect: Font oversampling does not work in 'Viewport' stretch mode, only '2D'.
+     At: scene/main/scene_tree.cpp:1242
+GENERATIONS POSE sn_idle_loop frame 0; alternate Mouth_L hidden
+NATIVE PRESET BIND sonic_gm_body D:/HE1TOPRRShaders/Release/Generations/ChrSkin_dsf@@.shader
+TEXTURE BIND sonic_gm_body diffuse_texture res://textures/dds/chr_sonic_body01_dif_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_body specular_texture res://textures/dds/chr_sonic_body01_spc_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_body falloff_texture res://textures/dds/chr_sonic_body01_fal_HD.dds mipmaps=True flags=7
+NATIVE PRESET BIND sonic_gm_mouth D:/HE1TOPRRShaders/Release/Generations/ChrSkin_dsf@@.shader
+TEXTURE BIND sonic_gm_mouth diffuse_texture res://textures/dds/chr_sonic_body01_dif_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_mouth specular_texture res://textures/dds/chr_sonic_body01_spc_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_mouth falloff_texture res://textures/dds/chr_sonic_body01_fal_HD.dds mipmaps=True flags=7
+NATIVE PRESET BIND sonic_gm_nose D:/HE1TOPRRShaders/Release/Generations/ChrSkin_dsf@@.shader
+TEXTURE BIND sonic_gm_nose diffuse_texture res://textures/dds/chr_sonic_body01_dif_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_nose specular_texture res://textures/dds/chr_sonic_body01_spc_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_nose falloff_texture res://textures/dds/chr_sonic_body01_fal_HD.dds mipmaps=True flags=7
+NATIVE PRESET BIND sonic_gm_shoes_red D:/HE1TOPRRShaders/Release/Generations/ChrSkin_dse1@@.shader
+TEXTURE BIND sonic_gm_shoes_red diffuse_texture res://textures/dds/chr_sonic_shoes_dif_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_shoes_red specular_texture res://textures/dds/chr_sonic_shoes_spc_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_shoes_red environment_texture res://textures/dds/chr_sonic_red_ref_HD.dds mipmaps=True flags=5
+NATIVE PRESET BIND sonic_gm_shoes_belt D:/HE1TOPRRShaders/Release/Generations/ChrSkin_dse1@@.shader
+TEXTURE BIND sonic_gm_shoes_belt diffuse_texture res://textures/dds/chr_sonic_shoes_dif_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_shoes_belt specular_texture res://textures/dds/chr_sonic_shoes_spc_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_shoes_belt environment_texture res://textures/dds/chr_sonic_red_ref_HD.dds mipmaps=True flags=5
+NATIVE PRESET BIND sonic_gm_cloth D:/HE1TOPRRShaders/Release/Generations/ChrSkin_dsn@@.shader
+TEXTURE BIND sonic_gm_cloth diffuse_texture res://textures/dds/chr_sonic_cloth_dif_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_cloth specular_texture res://textures/dds/chr_sonic_cloth_spc_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_cloth normal_texture res://textures/dds/chr_sonic_cloth_nrm_HD.dds mipmaps=True flags=7
+NATIVE PRESET BIND sonic_gm_shoes_ring D:/HE1TOPRRShaders/Release/Generations/ChrSkin_dse1@@.shader
+TEXTURE BIND sonic_gm_shoes_ring diffuse_texture res://textures/dds/chr_sonic_shoes_dif_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_shoes_ring specular_texture res://textures/dds/chr_sonic_shoes_spc_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_shoes_ring environment_texture res://textures/dds/chr_sonic_ring_ref_HD.dds mipmaps=True flags=5
+NATIVE PRESET BIND sonic_gm_eyeL D:/HE1TOPRRShaders/Release/Generations/ChrEye_dpne1@@.shader
+TEXTURE BIND sonic_gm_eyeL diffuse_texture res://textures/dds/chr_sonic_eye_dif_HD.dds mipmaps=False flags=6
+TEXTURE BIND sonic_gm_eyeL gloss_texture res://textures/dds/chr_sonic_eye_spc_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_eyeL normal_texture res://textures/dds/chr_sonic_eye_nrm_HD.dds mipmaps=False flags=6
+TEXTURE BIND sonic_gm_eyeL environment_texture res://textures/dds/chr_sonic_white_ref_HD.dds mipmaps=True flags=5
+NATIVE PRESET BIND sonic_gm_eyeR D:/HE1TOPRRShaders/Release/Generations/ChrEye_dpne1@@.shader
+TEXTURE BIND sonic_gm_eyeR diffuse_texture res://textures/dds/chr_sonic_eye_dif_HD.dds mipmaps=False flags=6
+TEXTURE BIND sonic_gm_eyeR gloss_texture res://textures/dds/chr_sonic_eye_spc_HD.dds mipmaps=True flags=7
+TEXTURE BIND sonic_gm_eyeR normal_texture res://textures/dds/chr_sonic_eye_nrm_HD.dds mipmaps=False flags=6
+TEXTURE BIND sonic_gm_eyeR environment_texture res://textures/dds/chr_sonic_white_ref_HD.dds mipmaps=True flags=5
+PREVIEW READY materials=9 center=(-0.327977, 5.41949, -1.12382) distance=15.723038
+CAMERA LIGHT PRESET foundation; original material vectors unchanged

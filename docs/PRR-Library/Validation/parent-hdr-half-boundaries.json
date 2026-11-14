@@ -1,0 +1,237 @@
+{
+  "pairs": 23,
+  "components": 23,
+  "max_absolute_difference": 0.00048828125,
+  "changes": [
+    {
+      "shader": "Generations/ChrSkinIgnore_dsle11@@.shader",
+      "scenario": 0,
+      "after_half": 13417,
+      "before_half": 13416,
+      "component": 7334,
+      "before": 0.275390625,
+      "after": 0.275634765625,
+      "absolute_difference": 0.000244140625
+    },
+    {
+      "shader": "Generations/ChrSkinIgnore_dsle11@@.shader",
+      "scenario": 1,
+      "after_half": 13417,
+      "before_half": 13416,
+      "component": 7334,
+      "before": 0.275390625,
+      "after": 0.275634765625,
+      "absolute_difference": 0.000244140625
+    },
+    {
+      "shader": "Generations/EnmGlass_dse1@@.shader",
+      "scenario": 2,
+      "after_half": 10255,
+      "before_half": 10256,
+      "component": 11113,
+      "before": 0.03173828125,
+      "after": 0.031707763671875,
+      "absolute_difference": 3.0517578125e-05
+    },
+    {
+      "shader": "Generations/EnmIgnore_dsle1@@.shader",
+      "scenario": 0,
+      "after_half": 13037,
+      "before_half": 13036,
+      "component": 6817,
+      "before": 0.21630859375,
+      "after": 0.2164306640625,
+      "absolute_difference": 0.0001220703125
+    },
+    {
+      "shader": "Generations/EnmIgnore_dsle1@@.shader",
+      "scenario": 1,
+      "after_half": 13037,
+      "before_half": 13036,
+      "component": 6817,
+      "before": 0.21630859375,
+      "after": 0.2164306640625,
+      "absolute_difference": 0.0001220703125
+    },
+    {
+      "shader": "Generations/EnmMetal_dsne1@@.shader",
+      "scenario": 2,
+      "after_half": 10294,
+      "before_half": 10293,
+      "component": 11621,
+      "before": 0.032867431640625,
+      "after": 0.03289794921875,
+      "absolute_difference": 3.0517578125e-05
+    },
+    {
+      "shader": "Generations/EnmMetal_dsnfe1@@.shader",
+      "scenario": 2,
+      "after_half": 10294,
+      "before_half": 10293,
+      "component": 11621,
+      "before": 0.032867431640625,
+      "after": 0.03289794921875,
+      "absolute_difference": 3.0517578125e-05
+    },
+    {
+      "shader": "Generations/LuminescenceV_dn@v@.shader",
+      "scenario": 0,
+      "after_half": 13434,
+      "before_half": 13435,
+      "component": 6780,
+      "before": 0.280029296875,
+      "after": 0.27978515625,
+      "absolute_difference": 0.000244140625
+    },
+    {
+      "shader": "Generations/LuminescenceV_dn@v@.shader",
+      "scenario": 1,
+      "after_half": 13434,
+      "before_half": 13435,
+      "component": 6780,
+      "before": 0.280029296875,
+      "after": 0.27978515625,
+      "absolute_difference": 0.000244140625
+    },
+    {
+      "shader": "Generations/Luminescence_dne1E@v@.shader",
+      "scenario": 0,
+      "after_half": 12530,
+      "before_half": 12529,
+      "component": 4724,
+      "before": 0.1544189453125,
+      "after": 0.154541015625,
+      "absolute_difference": 0.0001220703125
+    },
+    {
+      "shader": "Generations/Luminescence_dne1E@v@.shader",
+      "scenario": 1,
+      "after_half": 12530,
+      "before_half": 12529,
+      "component": 4724,
+      "before": 0.1544189453125,
+      "after": 0.154541015625,
+      "absolute_difference": 0.0001220703125
+    },
+    {
+      "shader": "Generations/Luminescence_dne1E@v@.shader",
+      "scenario": 2,
+      "after_half": 14733,
+      "before_half": 14734,
+      "component": 7342,
+      "before": 0.6943359375,
+      "after": 0.69384765625,
+      "absolute_difference": 0.00048828125
+    },
+    {
+      "shader": "Unleashed/DayEnemyMetalBody_dspne@@.shader",
+      "scenario": 2,
+      "after_half": 14756,
+      "before_half": 14755,
+      "component": 9846,
+      "before": 0.70458984375,
+      "after": 0.705078125,
+      "absolute_difference": 0.00048828125
+    },
+    {
+      "shader": "Unleashed/DayEnemyMetalSocket_dspne@@.shader",
+      "scenario": 2,
+      "after_half": 14756,
+      "before_half": 14755,
+      "component": 9846,
+      "before": 0.70458984375,
+      "after": 0.705078125,
+      "absolute_difference": 0.00048828125
+    },
+    {
+      "shader": "Unleashed/DayEnemyMetal_dspne@@.shader",
+      "scenario": 2,
+      "after_half": 14756,
+      "before_half": 14755,
+      "component": 9846,
+      "before": 0.70458984375,
+      "after": 0.705078125,
+      "absolute_difference": 0.00048828125
+    },
+    {
+      "shader": "Unleashed/SonicCloth_dsn@@.shader",
+      "scenario": 2,
+      "after_half": 11315,
+      "before_half": 11314,
+      "component": 7061,
+      "before": 0.0655517578125,
+      "after": 0.06561279296875,
+      "absolute_difference": 6.103515625e-05
+    },
+    {
+      "shader": "Unleashed/SonicEnamel_dspne@@.shader",
+      "scenario": 2,
+      "after_half": 13550,
+      "before_half": 13549,
+      "component": 9834,
+      "before": 0.307861328125,
+      "after": 0.30810546875,
+      "absolute_difference": 0.000244140625
+    },
+    {
+      "shader": "Unleashed/SonicEye_dpne@@.shader",
+      "scenario": 0,
+      "after_half": 10917,
+      "before_half": 10916,
+      "component": 10096,
+      "before": 0.0518798828125,
+      "after": 0.051910400390625,
+      "absolute_difference": 3.0517578125e-05
+    },
+    {
+      "shader": "Unleashed/SonicEye_dpne@@.shader",
+      "scenario": 1,
+      "after_half": 10917,
+      "before_half": 10916,
+      "component": 10096,
+      "before": 0.0518798828125,
+      "after": 0.051910400390625,
+      "absolute_difference": 3.0517578125e-05
+    },
+    {
+      "shader": "Unleashed/SonicEye_dpne@c@.shader",
+      "scenario": 0,
+      "after_half": 10917,
+      "before_half": 10916,
+      "component": 10096,
+      "before": 0.0518798828125,
+      "after": 0.051910400390625,
+      "absolute_difference": 3.0517578125e-05
+    },
+    {
+      "shader": "Unleashed/SonicEye_dpne@c@.shader",
+      "scenario": 1,
+      "after_half": 10917,
+      "before_half": 10916,
+      "component": 10096,
+      "before": 0.0518798828125,
+      "after": 0.051910400390625,
+      "absolute_difference": 3.0517578125e-05
+    },
+    {
+      "shader": "Unleashed/SonicMetal_dpe@@.shader",
+      "scenario": 2,
+      "after_half": 11716,
+      "before_half": 11715,
+      "component": 10937,
+      "before": 0.09002685546875,
+      "after": 0.090087890625,
+      "absolute_difference": 6.103515625e-05
+    },
+    {
+      "shader": "Unleashed/SonicMetal_dpne@@.shader",
+      "scenario": 2,
+      "after_half": 13247,
+      "before_half": 13248,
+      "component": 8822,
+      "before": 0.2421875,
+      "after": 0.2420654296875,
+      "absolute_difference": 0.0001220703125
+    }
+  ]
+}

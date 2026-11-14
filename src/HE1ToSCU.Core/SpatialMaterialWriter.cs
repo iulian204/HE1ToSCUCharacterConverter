@@ -65,11 +65,7 @@ public sealed class SpatialMaterialWriter
                     relative = "textures/" + name + "_" + flags + ".texture.tres";
                 if (outputOwners.TryGetValue(relative, out owner) && owner != cache) throw new InvalidDataException($"Texture output name collision: {relative}.");
                 outputOwners[relative] = cache;
-                byte[] mipData = Mipmaps(image, token);
-                using var writer = new StreamWriter(Path.Combine(directory, relative), false, new UTF8Encoding(false));
-                writer.Write($"[gd_resource type=\"ImageTexture\" load_steps=2 format=2]\n\n[sub_resource type=\"Image\" id=1]\ndata = {{\n\"width\": {image.Width},\n\"height\": {image.Height},\n\"format\": \"RGBA8\",\n\"mipmaps\": true,\n\"data\": PoolByteArray( ");
-                for (int i = 0; i < mipData.Length; i++) { if (i > 0) writer.Write(", "); writer.Write(mipData[i].ToString(CultureInfo.InvariantCulture)); }
-                writer.Write($" )\n}}\n\n[resource]\nresource_name = {ExportNames.Literal(name)}\nflags = {flags}\nimage = SubResource( 1 )\n");
+                TextureResourceWriter.Write(Path.Combine(directory, relative), name, image, flags, token);
                 exported[cache] = relative; return relative;
             }
             string Stem(He1Texture texture) => Path.GetFileNameWithoutExtension(texture.Name.Replace('\\', '/'));
@@ -317,22 +313,4 @@ public sealed class SpatialMaterialWriter
         return (int)Math.Round(sum / weight);
     }
 
-    private static byte[] Mipmaps(DdsImage image, CancellationToken token)
-    {
-        using var stream = new MemoryStream(); byte[] current = image.Pixels; int width = image.Width, height = image.Height;
-        while (true)
-        {
-            token.ThrowIfCancellationRequested(); stream.Write(current);
-            if (width == 1 && height == 1) break;
-            int nw = Math.Max(1, width / 2), nh = Math.Max(1, height / 2); var next = new byte[nw * nh * 4];
-            for (int y = 0; y < nh; y++) for (int x = 0; x < nw; x++) for (int channel = 0; channel < 4; channel++)
-            {
-                int sum = 0, count = 0;
-                for (int dy = 0; dy < 2 && y * 2 + dy < height; dy++) for (int dx = 0; dx < 2 && x * 2 + dx < width; dx++) { sum += current[((y * 2 + dy) * width + x * 2 + dx) * 4 + channel]; count++; }
-                next[(y * nw + x) * 4 + channel] = (byte)(sum / count);
-            }
-            current = next; width = nw; height = nh;
-        }
-        return stream.ToArray();
-    }
 }

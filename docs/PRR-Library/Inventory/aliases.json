@@ -1,0 +1,138 @@
+{
+  "Generations/EnmMetal_dse@@.shader": {
+    "name": "EnmMetal_dse@@",
+    "output": "Generations/EnmMetal_dse@@.shader",
+    "pixel_source": "he1shaders/gens hlsl/EnmMetal_dse@@.wpu.hlsl",
+    "vertex_sources": [
+      "he1shaders/gens hlsl/ChrDefault_MultiUV_@@.wvu.hlsl",
+      "he1shaders/gens hlsl/ChrDefault_MultiUV_@@p.wvu.hlsl"
+    ],
+    "references": [
+      {
+        "list": "he1shaders/gens hlsl/EnmMetal_dse.shader-list",
+        "pixel_mode": "default",
+        "pixel_flags": 255,
+        "vertex_mode": "none",
+        "vertex_flags": 3,
+        "vertex": "ChrDefault_MultiUV_@@",
+        "vertex_variant": 0,
+        "vertex_source": "he1shaders/gens hlsl/ChrDefault_MultiUV_@@.wvu.hlsl"
+      },
+      {
+        "list": "he1shaders/gens hlsl/EnmMetal_dse.shader-list",
+        "pixel_mode": "default",
+        "pixel_flags": 255,
+        "vertex_mode": "p",
+        "vertex_flags": 3,
+        "vertex": "ChrDefault_MultiUV_@@p",
+        "vertex_variant": 1,
+        "vertex_source": "he1shaders/gens hlsl/ChrDefault_MultiUV_@@p.wvu.hlsl"
+      }
+    ],
+    "alias_of": "Generations/EnmMetal_dse1@@.shader",
+    "status": "resolved alias",
+    "published_path": "Generations/EnmMetal_dse1@@.shader"
+  },
+  "Generations/EnmMetal_dsfe@@.shader": {
+    "name": "EnmMetal_dsfe@@",
+    "output": "Generations/EnmMetal_dsfe@@.shader",
+    "pixel_source": "he1shaders/gens hlsl/EnmMetal_dsfe@@.wpu.hlsl",
+    "vertex_sources": [
+      "he1shaders/gens hlsl/ChrDefault_MultiUV_@@.wvu.hlsl",
+      "he1shaders/gens hlsl/ChrDefault_MultiUV_@@p.wvu.hlsl"
+    ],
+    "references": [
+      {
+        "list": "he1shaders/gens hlsl/EnmMetal_dsfe.shader-list",
+        "pixel_mode": "default",
+        "pixel_flags": 255,
+        "vertex_mode": "none",
+        "vertex_flags": 3,
+        "vertex": "ChrDefault_MultiUV_@@",
+        "vertex_variant": 0,
+        "vertex_source": "he1shaders/gens hlsl/ChrDefault_MultiUV_@@.wvu.hlsl"
+      },
+      {
+        "list": "he1shaders/gens hlsl/EnmMetal_dsfe.shader-list",
+        "pixel_mode": "default",
+        "pixel_flags": 255,
+        "vertex_mode": "p",
+        "vertex_flags": 3,
+        "vertex": "ChrDefault_MultiUV_@@p",
+        "vertex_variant": 1,
+        "vertex_source": "he1shaders/gens hlsl/ChrDefault_MultiUV_@@p.wvu.hlsl"
+      }
+    ],
+    "alias_of": "Generations/EnmMetal_dsfe1@@.shader",
+    "status": "resolved alias",
+    "published_path": "Generations/EnmMetal_dsfe1@@.shader"
+  },
+  "Generations/EnmMetal_dsne@@.shader": {
+    "name": "EnmMetal_dsne@@",
+    "output": "Generations/EnmMetal_dsne@@.shader",
+    "pixel_source": "he1shaders/gens hlsl/EnmMetal_dsne@@.wpu.hlsl",
+    "vertex_sources": [
+      "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@.wvu.hlsl",
+      "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@p.wvu.hlsl"
+    ],
+    "references": [
+      {
+        "list": "he1shaders/gens hlsl/EnmMetal_dsne.shader-list",
+        "pixel_mode": "default",
+        "pixel_flags": 255,
+        "vertex_mode": "none",
+        "vertex_flags": 3,
+        "vertex": "ChrDefault_MultiUV_@n@",
+        "vertex_variant": 0,
+        "vertex_source": "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@.wvu.hlsl"
+      },
+      {
+        "list": "he1shaders/gens hlsl/EnmMetal_dsne.shader-list",
+        "pixel_mode": "default",
+        "pixel_flags": 255,
+        "vertex_mode": "p",
+        "vertex_flags": 3,
+        "vertex": "ChrDefault_MultiUV_@n@p",
+        "vertex_variant": 1,
+        "vertex_source": "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@p.wvu.hlsl"
+      }
+    ],
+    "alias_of": "Generations/EnmMetal_dsne1@@.shader",
+    "status": "resolved alias",
+    "published_path": "Generations/EnmMetal_dsne1@@.shader"
+  },
+  "Generations/EnmMetal_dsnfe@@.shader": {
+    "name": "EnmMetal_dsnfe@@",
+    "output": "Generations/EnmMetal_dsnfe@@.shader",
+    "pixel_source": "he1shaders/gens hlsl/EnmMetal_dsnfe@@.wpu.hlsl",
+    "vertex_sources": [
+      "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@.wvu.hlsl",
+      "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@p.wvu.hlsl"
+    ],
+    "references": [
+      {
+        "list": "he1shaders/gens hlsl/EnmMetal_dsnfe.shader-list",
+        "pixel_mode": "default",
+        "pixel_flags": 255,
+        "vertex_mode": "none",
+        "vertex_flags": 3,
+        "vertex": "ChrDefault_MultiUV_@n@",
+        "vertex_variant": 0,
+        "vertex_source": "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@.wvu.hlsl"
+      },
+      {
+        "list": "he1shaders/gens hlsl/EnmMetal_dsnfe.shader-list",
+        "pixel_mode": "default",
+        "pixel_flags": 255,
+        "vertex_mode": "p",
+        "vertex_flags": 3,
+        "vertex": "ChrDefault_MultiUV_@n@p",
+        "vertex_variant": 1,
+        "vertex_source": "he1shaders/gens hlsl/ChrDefault_MultiUV_@n@p.wvu.hlsl"
+      }
+    ],
+    "alias_of": "Generations/EnmMetal_dsnfe1@@.shader",
+    "status": "resolved alias",
+    "published_path": "Generations/EnmMetal_dsnfe1@@.shader"
+  }
+}

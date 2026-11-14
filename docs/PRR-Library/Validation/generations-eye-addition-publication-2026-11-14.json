@@ -1,0 +1,25 @@
+{
+  "canonical_programs": 3,
+  "native_presets": 72,
+  "canonical_source_hashes": {
+    "Generations/ChrEye_dpne@@.shader": "3d039a8ca611cab7f14769146d042629db8e86d0040d807045c8f610bb02d5a7",
+    "Generations/ChrEye_dpne1@@.shader": "e0be70d0e7164016780032a64d8c3e1dbc1f2b38ff4d8fd1da6e27d3f5e6d388",
+    "Generations/ChrEye_dpne2@@.shader": "49faae176c22fb3a229dd8d632cd9ebfd5f67c476b0722d6a4c62bd5dbcd103a"
+  },
+  "source_cases": 432,
+  "gpu_cases": 864,
+  "native_resource_checks": 72,
+  "full_source_draws": 15,
+  "source_probes": "validation\\generations-eye-fragment-addition-v4-2026-11-14",
+  "candidate_project": "validation\\generations-eye-repair-library-v2-2026-11-14",
+  "original_parameters_unchanged": true,
+  "fake_specular_unchanged": true,
+  "original_foundation_unchanged": true,
+  "actual_asset_comparison": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14",
+  "original_source_byte_hashes": {
+    "he1shaders/gens hlsl/ChrEye_dpne@@.wpu.hlsl": "a712feec4c5be977a6cb041bcb8f90e2d5506f675a3844503960f2b63eaaac6a",
+    "he1shaders/gens hlsl/ChrEye_dpne1@@.wpu.hlsl": "982f2a63e2358dfc56a4c732edd7c07740b6a515acb3eca46f76b0e4a9025e23",
+    "he1shaders/gens hlsl/ChrEye_dpne2@@.wpu.hlsl": "cfd3ea650dc8775e54e7f3d2750beb7aaa41f6eeed1cde6faf51c27ec4308827"
+  },
+  "boundary": "Verified fragment addition within established PRR transfer; original game framebuffer encoding and full native accumulator coupling remain separate limits"
+}

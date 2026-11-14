@@ -1,0 +1,188 @@
+[
+  {
+    "program": "Unleashed/SonicEye_dpe@@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "COLOR",
+      "COLOR1",
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicEye_dpe[b].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicEye_dpe[b].shader-list"
+    }
+  },
+  {
+    "program": "Unleashed/SonicEye_dpe@@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "COLOR",
+      "COLOR1",
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicEye_dpe[bu].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicEye_dpe[bu].shader-list"
+    }
+  },
+  {
+    "program": "Unleashed/SonicEye_dpe@c@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "COLOR",
+      "COLOR1",
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicEye_dpe[bc].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicEye_dpe[bc].shader-list"
+    }
+  },
+  {
+    "program": "Unleashed/SonicEye_dpe@c@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "COLOR",
+      "COLOR1",
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicEye_dpe[bcu].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicEye_dpe[bcu].shader-list"
+    }
+  },
+  {
+    "program": "Unleashed/SonicEye_dpne@@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "COLOR",
+      "COLOR1",
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicEye_dpne[b].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicEye_dpne[b].shader-list"
+    }
+  },
+  {
+    "program": "Unleashed/SonicEye_dpne@@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "COLOR",
+      "COLOR1",
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicEye_dpne[bu].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicEye_dpne[bu].shader-list"
+    }
+  },
+  {
+    "program": "Unleashed/SonicEye_dpne@c@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "COLOR",
+      "COLOR1",
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicEye_dpne[bc].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicEye_dpne[bc].shader-list"
+    }
+  },
+  {
+    "program": "Unleashed/SonicEye_dpne@c@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "COLOR",
+      "COLOR1",
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicEye_dpne[bcu].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicEye_dpne[bcu].shader-list"
+    }
+  },
+  {
+    "program": "Unleashed/SonicMetal_dpne@@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicMetal_dpne[b].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicMetal_dpne[b].shader-list"
+    }
+  },
+  {
+    "program": "Unleashed/SonicMetal_dpne@c@.shader",
+    "reason": "Listed stage lacks pixel input semantics",
+    "vertex": "he1shaders/unleashed asm/Dummy_@@p.xvu.asm",
+    "missing_semantics": [
+      "TEXCOORD7"
+    ],
+    "reference": {
+      "list": "he1shaders/unleashed hlsl/SonicMetal_dpne[bc].shader-list",
+      "pixel_mode": "default",
+      "pixel_flags": 85,
+      "vertex_mode": "p",
+      "vertex_flags": 3,
+      "vertex": "Dummy_@@p",
+      "counterpart_list": "he1shaders/unleashed asm/SonicMetal_dpne[bc].shader-list"
+    }
+  }
+]

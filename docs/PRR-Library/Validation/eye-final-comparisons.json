@@ -1,0 +1,79 @@
+{
+  "before": "Shader Playground\\Native-Render-State-Shaders-2026-11-14",
+  "after": "validation\\generations-eye-repair-library-v2-2026-11-14",
+  "directory": "comparison-generations\\comparisons\\generations-eye-addition-2026-11-14",
+  "source_material_inputs_sha256": "221feb1696b7d0f792ede0d2c45c712002c9d4880ef6e0c4751df303faeae989",
+  "isolated_layers_unchanged": true,
+  "changes_confined_to_eye_meshes": true,
+  "modes": {
+    "combined": {
+      "changed_components": 39147,
+      "changed_pixels": 13714,
+      "maximum_8bit_difference": 61,
+      "outside_eye_pixels": 0
+    },
+    "fake": {
+      "changed_components": 0,
+      "changed_pixels": 0,
+      "maximum_8bit_difference": 0,
+      "outside_eye_pixels": 0
+    },
+    "scene_specular": {
+      "changed_components": 0,
+      "changed_pixels": 0,
+      "maximum_8bit_difference": 0,
+      "outside_eye_pixels": 0
+    },
+    "no_fake": {
+      "changed_components": 39524,
+      "changed_pixels": 13851,
+      "maximum_8bit_difference": 61,
+      "outside_eye_pixels": 0
+    },
+    "no_scene_specular": {
+      "changed_components": 39200,
+      "changed_pixels": 13750,
+      "maximum_8bit_difference": 61,
+      "outside_eye_pixels": 0
+    },
+    "reflection": {
+      "changed_components": 0,
+      "changed_pixels": 0,
+      "maximum_8bit_difference": 0,
+      "outside_eye_pixels": 0
+    },
+    "authored_highlight": {
+      "changed_components": 0,
+      "changed_pixels": 0,
+      "maximum_8bit_difference": 0,
+      "outside_eye_pixels": 0
+    },
+    "no_reflection": {
+      "changed_components": 2133,
+      "changed_pixels": 915,
+      "maximum_8bit_difference": 59,
+      "outside_eye_pixels": 0
+    },
+    "eye_mask": {
+      "changed_components": 0,
+      "changed_pixels": 0,
+      "maximum_8bit_difference": 0,
+      "outside_eye_pixels": 0
+    }
+  },
+  "reflection_visibility": {
+    "before": {
+      "eye_pixels": 24727,
+      "reflection_changed_eye_pixels": 0,
+      "maximum_display_contribution": 0,
+      "mean_positive_eye_contribution": 0.0
+    },
+    "after": {
+      "eye_pixels": 24727,
+      "reflection_changed_eye_pixels": 13713,
+      "maximum_display_contribution": 12,
+      "mean_positive_eye_contribution": 1.646445855407719
+    }
+  },
+  "boundary": "Controlled comparison to previous accepted Godot rendering; original-game framebuffer/tone parity is not established."
+}

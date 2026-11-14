@@ -1,0 +1,4 @@
+# Preserve the supplied shader bytes and their recorded SHA-256 across Windows checkouts.
+src/HE1ToSCU.Core/PrrShaders/**/*.shader -text -whitespace
+# Upstream documentation/receipts are also verbatim imports, including their formatting.
+docs/PRR-Library/** -text -whitespace

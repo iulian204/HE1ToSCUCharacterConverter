@@ -1,0 +1,857 @@
+{
+  "Generations/ChrEye_dpne": [
+    "Generations/ChrEye_dpne@@.shader"
+  ],
+  "Generations/ChrEye_dpne[c]": [
+    "Generations/ChrEye_dpne2@@.shader"
+  ],
+  "Generations/ChrEye_dpne1": [
+    "Generations/ChrEye_dpne1@@.shader"
+  ],
+  "Generations/ChrEye_dpne2": [
+    "Generations/ChrEye_dpne2@@.shader"
+  ],
+  "Generations/ChrSkin_ds": [
+    "Generations/ChrSkin_ds@@.shader"
+  ],
+  "Generations/ChrSkin_dse": [
+    "Generations/ChrSkin_dse@@.shader"
+  ],
+  "Generations/ChrSkin_dse1": [
+    "Generations/ChrSkin_dse1@@.shader"
+  ],
+  "Generations/ChrSkin_dse2": [
+    "Generations/ChrSkin_dse2@@.shader"
+  ],
+  "Generations/ChrSkin_dsf": [
+    "Generations/ChrSkin_dsf@@.shader"
+  ],
+  "Generations/ChrSkin_dsfe": [
+    "Generations/ChrSkin_dsfe@@.shader"
+  ],
+  "Generations/ChrSkin_dsfe1": [
+    "Generations/ChrSkin_dsfe1@@.shader"
+  ],
+  "Generations/ChrSkin_dsfe2": [
+    "Generations/ChrSkin_dsfe2@@.shader"
+  ],
+  "Generations/ChrSkin_dsn": [
+    "Generations/ChrSkin_dsn@@.shader"
+  ],
+  "Generations/ChrSkin_dsne": [
+    "Generations/ChrSkin_dsne@@.shader"
+  ],
+  "Generations/ChrSkin_dsne1": [
+    "Generations/ChrSkin_dsne1@@.shader"
+  ],
+  "Generations/ChrSkin_dsnf": [
+    "Generations/ChrSkin_dsnf@@.shader"
+  ],
+  "Generations/ChrSkin_dsnfe": [
+    "Generations/ChrSkin_dsnfe@@.shader"
+  ],
+  "Generations/ChrSkin_dsnfe1": [
+    "Generations/ChrSkin_dsnfe1@@.shader"
+  ],
+  "Generations/ChrSkinHalf_dse11": [
+    "Generations/ChrSkinHalf_dse11@@.shader"
+  ],
+  "Generations/ChrSkinIgnore_dsle11": [
+    "Generations/ChrSkinIgnore_dsle11@@.shader"
+  ],
+  "Generations/Common_d": [
+    "Generations/Common_d@@.shader"
+  ],
+  "Generations/Common_d[b]": [
+    "Generations/Common_d@@.shader"
+  ],
+  "Generations/Common_d[bu]": [
+    "Generations/Common_d@@.shader"
+  ],
+  "Generations/Common_d[bv]": [
+    "Generations/Common_d@@.shader"
+  ],
+  "Generations/Common_d[bw]": [
+    "Generations/Common_d@@.shader"
+  ],
+  "Generations/Common_d[u]": [
+    "Generations/Common_d@@.shader"
+  ],
+  "Generations/Common_d[uv]": [
+    "Generations/Common_d@@.shader"
+  ],
+  "Generations/Common_d[v]": [
+    "Generations/Common_d@@.shader"
+  ],
+  "Generations/Common_d[w]": [
+    "Generations/Common_d@@.shader"
+  ],
+  "Generations/Common_da": [
+    "Generations/Common_da@@.shader"
+  ],
+  "Generations/Common_de": [
+    "Generations/Common_de@@.shader"
+  ],
+  "Generations/Common_de[b]": [
+    "Generations/Common_de@@.shader"
+  ],
+  "Generations/Common_de[bw]": [
+    "Generations/Common_de@@.shader"
+  ],
+  "Generations/Common_de[c]": [
+    "Generations/Common_de2@@.shader"
+  ],
+  "Generations/Common_de1": [
+    "Generations/Common_de1@@.shader"
+  ],
+  "Generations/Common_de2": [
+    "Generations/Common_de2@@.shader"
+  ],
+  "Generations/Common_dn": [
+    "Generations/Common_dn@@.shader"
+  ],
+  "Generations/Common_dn[b]": [
+    "Generations/Common_dn@@.shader"
+  ],
+  "Generations/Common_dn[bv]": [
+    "Generations/Common_dn@@.shader"
+  ],
+  "Generations/Common_dn[bw]": [
+    "Generations/Common_dn@@.shader"
+  ],
+  "Generations/Common_dn[v]": [
+    "Generations/Common_dn@@.shader"
+  ],
+  "Generations/Common_dne": [
+    "Generations/Common_dne@@.shader"
+  ],
+  "Generations/Common_dne[b]": [
+    "Generations/Common_dne@@.shader"
+  ],
+  "Generations/Common_dne[bc]": [
+    "Generations/Common_dne2@@.shader"
+  ],
+  "Generations/Common_dne[bcv]": [
+    "Generations/Common_dne2@@.shader"
+  ],
+  "Generations/Common_dne[c]": [
+    "Generations/Common_dne2@@.shader"
+  ],
+  "Generations/Common_dne[cv]": [
+    "Generations/Common_dne2@@.shader"
+  ],
+  "Generations/Common_dne1": [
+    "Generations/Common_dne1@@.shader"
+  ],
+  "Generations/Common_dne1[v]": [
+    "Generations/Common_dne2@@.shader"
+  ],
+  "Generations/Common_dne2": [
+    "Generations/Common_dne2@@.shader"
+  ],
+  "Generations/Common_dne2[v]": [
+    "Generations/Common_dne2@@.shader"
+  ],
+  "Generations/Common_dp": [
+    "Generations/Common_dp@@.shader"
+  ],
+  "Generations/Common_dp[b]": [
+    "Generations/Common_dp@@.shader"
+  ],
+  "Generations/Common_dp[bu]": [
+    "Generations/Common_dp@@.shader"
+  ],
+  "Generations/Common_dp[bw]": [
+    "Generations/Common_dp@@.shader"
+  ],
+  "Generations/Common_dp[E]": [
+    "Generations/Common_dp@E@.shader"
+  ],
+  "Generations/Common_dp[u]": [
+    "Generations/Common_dp@@.shader"
+  ],
+  "Generations/Common_dp[uv]": [
+    "Generations/Common_dp@@.shader"
+  ],
+  "Generations/Common_dp[v]": [
+    "Generations/Common_dp@@.shader"
+  ],
+  "Generations/Common_dp[w]": [
+    "Generations/Common_dp@@.shader"
+  ],
+  "Generations/Common_dpe": [
+    "Generations/Common_dpe@@.shader"
+  ],
+  "Generations/Common_dpe[b]": [
+    "Generations/Common_dpe@@.shader"
+  ],
+  "Generations/Common_dpe[bc]": [
+    "Generations/Common_dpe2@@.shader"
+  ],
+  "Generations/Common_dpe[c]": [
+    "Generations/Common_dpe2@@.shader"
+  ],
+  "Generations/Common_dpe[uv]": [
+    "Generations/Common_dpe@@.shader"
+  ],
+  "Generations/Common_dpe[v]": [
+    "Generations/Common_dpe@@.shader"
+  ],
+  "Generations/Common_dpe[w]": [
+    "Generations/Common_dpe@@.shader"
+  ],
+  "Generations/Common_dpe1": [
+    "Generations/Common_dpe1@@.shader"
+  ],
+  "Generations/Common_dpe2": [
+    "Generations/Common_dpe2@@.shader"
+  ],
+  "Generations/Common_dpn": [
+    "Generations/Common_dpn@@.shader"
+  ],
+  "Generations/Common_dpn[b]": [
+    "Generations/Common_dpn@@.shader"
+  ],
+  "Generations/Common_dpn[bv]": [
+    "Generations/Common_dpn@@.shader"
+  ],
+  "Generations/Common_dpn[bw]": [
+    "Generations/Common_dpn@@.shader"
+  ],
+  "Generations/Common_dpn[E]": [
+    "Generations/Common_dpn@E@.shader"
+  ],
+  "Generations/Common_dpn[u]": [
+    "Generations/Common_dpn@@.shader"
+  ],
+  "Generations/Common_dpn[uv]": [
+    "Generations/Common_dpn@@.shader"
+  ],
+  "Generations/Common_dpn[v]": [
+    "Generations/Common_dpn@@.shader"
+  ],
+  "Generations/Common_dpn[w]": [
+    "Generations/Common_dpn@@.shader"
+  ],
+  "Generations/Common_dpne": [
+    "Generations/Common_dpne@@.shader"
+  ],
+  "Generations/Common_dpne[b]": [
+    "Generations/Common_dpne@@.shader"
+  ],
+  "Generations/Common_dpne[bc]": [
+    "Generations/Common_dpne2@@.shader"
+  ],
+  "Generations/Common_dpne[bcw]": [
+    "Generations/Common_dpne2@@.shader"
+  ],
+  "Generations/Common_dpne[bw]": [
+    "Generations/Common_dpne@@.shader"
+  ],
+  "Generations/Common_dpne[c]": [
+    "Generations/Common_dpne2@@.shader"
+  ],
+  "Generations/Common_dpne[v]": [
+    "Generations/Common_dpne@@.shader"
+  ],
+  "Generations/Common_dpne1": [
+    "Generations/Common_dpne1@@.shader"
+  ],
+  "Generations/Common_dpne2": [
+    "Generations/Common_dpne2@@.shader"
+  ],
+  "Generations/Common_dpnne2": [
+    "Generations/Common_dpnne2@@.shader"
+  ],
+  "Generations/Common_dpnr": [
+    "Generations/Common_dpnr@@.shader"
+  ],
+  "Generations/Common_dpr": [
+    "Generations/Common_dpr@@.shader"
+  ],
+  "Generations/Common_dsae1": [
+    "Generations/Common_dsae1@@.shader"
+  ],
+  "Generations/Common_dse": [
+    "Generations/Common_dse@@.shader"
+  ],
+  "Generations/Common_dse[c]": [
+    "Generations/Common_dse2@@.shader"
+  ],
+  "Generations/Common_dse1": [
+    "Generations/Common_dse1@@.shader"
+  ],
+  "Generations/Common_dse2": [
+    "Generations/Common_dse2@@.shader"
+  ],
+  "Generations/Common_dsn": [
+    "Generations/Common_dsn@@.shader"
+  ],
+  "Generations/Common_dsn[b]": [
+    "Generations/Common_dsn@@.shader"
+  ],
+  "Generations/Common_dsn[bw]": [
+    "Generations/Common_dsn@@.shader"
+  ],
+  "Generations/Common_dsne": [
+    "Generations/Common_dsne@@.shader"
+  ],
+  "Generations/Common_dsne[b]": [
+    "Generations/Common_dsne@@.shader"
+  ],
+  "Generations/Common_dsne1": [
+    "Generations/Common_dsne1@@.shader"
+  ],
+  "Generations/Common_dsnne1": [
+    "Generations/Common_dsnne1@@.shader"
+  ],
+  "Generations/Common_dsp": [
+    "Generations/Common_dsp@@.shader"
+  ],
+  "Generations/Common_dspe": [
+    "Generations/Common_dspe@@.shader"
+  ],
+  "Generations/Common_dspn": [
+    "Generations/Common_dspn@@.shader"
+  ],
+  "Generations/Common_dspne": [
+    "Generations/Common_dspne@@.shader"
+  ],
+  "Generations/Common_dspne[c]": [
+    "Generations/Common_dspne2@@.shader"
+  ],
+  "Generations/Common_dspne2": [
+    "Generations/Common_dspne2@@.shader"
+  ],
+  "Generations/EnmCloud_nfe1": [
+    "Generations/EnmCloud_nfe1@@.shader"
+  ],
+  "Generations/EnmEmission_d": [
+    "Generations/EnmEmission_d@@.shader"
+  ],
+  "Generations/EnmEmission_dl": [
+    "Generations/EnmEmission_dl@@.shader"
+  ],
+  "Generations/EnmEmission_dsl": [
+    "Generations/EnmEmission_dsl@@.shader"
+  ],
+  "Generations/EnmEmission_dsle1": [
+    "Generations/EnmEmission_dsle1@@.shader"
+  ],
+  "Generations/EnmEmission_dsnl": [
+    "Generations/EnmEmission_dsnl@@.shader"
+  ],
+  "Generations/EnmEmission_dsnle1": [
+    "Generations/EnmEmission_dsnle1@@.shader"
+  ],
+  "Generations/EnmGlass_dse1": [
+    "Generations/EnmGlass_dse1@@.shader"
+  ],
+  "Generations/EnmGlass_dsle1": [
+    "Generations/EnmGlass_dsle1@@.shader"
+  ],
+  "Generations/EnmGlass_dsne1": [
+    "Generations/EnmGlass_dsne1@@.shader"
+  ],
+  "Generations/EnmGlass_dsnle1": [
+    "Generations/EnmGlass_dsnle1@@.shader"
+  ],
+  "Generations/EnmGlass_e1": [
+    "Generations/EnmGlass_e1@@.shader"
+  ],
+  "Generations/EnmIgnore_dl": [
+    "Generations/EnmIgnore_dl@@.shader"
+  ],
+  "Generations/EnmIgnore_dle1": [
+    "Generations/EnmIgnore_dle1@@.shader"
+  ],
+  "Generations/EnmIgnore_dsle1": [
+    "Generations/EnmIgnore_dsle1@@.shader"
+  ],
+  "Generations/EnmIgnore_le1": [
+    "Generations/EnmIgnore_le1@@.shader"
+  ],
+  "Generations/EnmMetal_dse": [
+    "Generations/EnmMetal_dse1@@.shader"
+  ],
+  "Generations/EnmMetal_dse@@": [
+    "Generations/EnmMetal_dse1@@.shader"
+  ],
+  "Generations/EnmMetal_dse1": [
+    "Generations/EnmMetal_dse1@@.shader"
+  ],
+  "Generations/EnmMetal_dsfe": [
+    "Generations/EnmMetal_dsfe1@@.shader"
+  ],
+  "Generations/EnmMetal_dsfe@@": [
+    "Generations/EnmMetal_dsfe1@@.shader"
+  ],
+  "Generations/EnmMetal_dsfe1": [
+    "Generations/EnmMetal_dsfe1@@.shader"
+  ],
+  "Generations/EnmMetal_dsne": [
+    "Generations/EnmMetal_dsne1@@.shader"
+  ],
+  "Generations/EnmMetal_dsne@@": [
+    "Generations/EnmMetal_dsne1@@.shader"
+  ],
+  "Generations/EnmMetal_dsne1": [
+    "Generations/EnmMetal_dsne1@@.shader"
+  ],
+  "Generations/EnmMetal_dsnfe": [
+    "Generations/EnmMetal_dsnfe1@@.shader"
+  ],
+  "Generations/EnmMetal_dsnfe@@": [
+    "Generations/EnmMetal_dsnfe1@@.shader"
+  ],
+  "Generations/EnmMetal_dsnfe1": [
+    "Generations/EnmMetal_dsnfe1@@.shader"
+  ],
+  "Generations/IgnoreLight_d": [
+    "Generations/IgnoreLight_d@v@.shader"
+  ],
+  "Generations/IgnoreLight_d[b]": [
+    "Generations/IgnoreLight_d@v@.shader"
+  ],
+  "Generations/IgnoreLight_d[bu]": [
+    "Generations/IgnoreLight_d@v@.shader"
+  ],
+  "Generations/IgnoreLight_d[buv]": [
+    "Generations/IgnoreLight_d@v@.shader"
+  ],
+  "Generations/IgnoreLight_d[bv]": [
+    "Generations/IgnoreLight_d@v@.shader"
+  ],
+  "Generations/IgnoreLight_d[u]": [
+    "Generations/IgnoreLight_d@v@.shader"
+  ],
+  "Generations/IgnoreLight_d[uv]": [
+    "Generations/IgnoreLight_d@v@.shader"
+  ],
+  "Generations/IgnoreLight_d[v]": [
+    "Generations/IgnoreLight_d@v@.shader"
+  ],
+  "Generations/IgnoreLight_da": [
+    "Generations/IgnoreLight_da@v@.shader"
+  ],
+  "Generations/IgnoreLight_dE": [
+    "Generations/IgnoreLight_dE@v@.shader"
+  ],
+  "Generations/IgnoreLightTwice_d": [
+    "Generations/IgnoreLightTwice_d@v@.shader"
+  ],
+  "Generations/IgnoreLightV_d[s]": [
+    "Generations/IgnoreLightV_d@s@.shader"
+  ],
+  "Generations/Luminescence_d": [
+    "Generations/Luminescence_d@v@.shader"
+  ],
+  "Generations/Luminescence_d[b]": [
+    "Generations/Luminescence_d@v@.shader"
+  ],
+  "Generations/Luminescence_d[bu]": [
+    "Generations/Luminescence_d@v@.shader"
+  ],
+  "Generations/Luminescence_d[buv]": [
+    "Generations/Luminescence_d@v@.shader"
+  ],
+  "Generations/Luminescence_d[bv]": [
+    "Generations/Luminescence_d@v@.shader"
+  ],
+  "Generations/Luminescence_d[v]": [
+    "Generations/Luminescence_d@v@.shader"
+  ],
+  "Generations/Luminescence_dE": [
+    "Generations/Luminescence_dE@v@.shader"
+  ],
+  "Generations/Luminescence_dE[b]": [
+    "Generations/Luminescence_dE@v@.shader"
+  ],
+  "Generations/Luminescence_dE[bv]": [
+    "Generations/Luminescence_dE@v@.shader"
+  ],
+  "Generations/Luminescence_dE[v]": [
+    "Generations/Luminescence_dE@v@.shader"
+  ],
+  "Generations/Luminescence_dnE": [
+    "Generations/Luminescence_dnE@v@.shader"
+  ],
+  "Generations/Luminescence_dnE[u]": [
+    "Generations/Luminescence_dnE@v@.shader"
+  ],
+  "Generations/Luminescence_dnE[uv]": [
+    "Generations/Luminescence_dnE@v@.shader"
+  ],
+  "Generations/Luminescence_dnE[v]": [
+    "Generations/Luminescence_dnE@v@.shader"
+  ],
+  "Generations/Luminescence_dne1E": [
+    "Generations/Luminescence_dne1E@v@.shader"
+  ],
+  "Generations/Luminescence_dne2E": [
+    "Generations/Luminescence_dne2E@v@.shader"
+  ],
+  "Generations/Luminescence_dpE": [
+    "Generations/Luminescence_dpE@v@.shader"
+  ],
+  "Generations/Luminescence_dpE[v]": [
+    "Generations/Luminescence_dpE@v@.shader"
+  ],
+  "Generations/Luminescence_dpe1E": [
+    "Generations/Luminescence_dpe1E@v@.shader"
+  ],
+  "Generations/Luminescence_dpe2E": [
+    "Generations/Luminescence_dpe2E@v@.shader"
+  ],
+  "Generations/Luminescence_dpnE": [
+    "Generations/Luminescence_dpnE@v@.shader"
+  ],
+  "Generations/Luminescence_dpnE[v]": [
+    "Generations/Luminescence_dpnE@v@.shader"
+  ],
+  "Generations/Luminescence_dpne1E": [
+    "Generations/Luminescence_dpne1E@v@.shader"
+  ],
+  "Generations/Luminescence_dpne2E": [
+    "Generations/Luminescence_dpne2E@v@.shader"
+  ],
+  "Generations/LuminescenceV_d": [
+    "Generations/LuminescenceV_d@v@.shader"
+  ],
+  "Generations/LuminescenceV_dn": [
+    "Generations/LuminescenceV_dn@v@.shader"
+  ],
+  "Generations/LuminescenceV_dp": [
+    "Generations/LuminescenceV_dp@v@.shader"
+  ],
+  "Generations/LuminescenceV_dpdpv": [
+    "Generations/LuminescenceV_dpdpv@v@.shader"
+  ],
+  "Generations/LuminescenceV_dpe1": [
+    "Generations/LuminescenceV_dpe1@v@.shader"
+  ],
+  "Generations/LuminescenceV_dpe2": [
+    "Generations/LuminescenceV_dpe2@v@.shader"
+  ],
+  "Generations/LuminescenceV_dpn": [
+    "Generations/LuminescenceV_dpn@v@.shader"
+  ],
+  "Generations/LuminescenceV_dpndp": [
+    "Generations/LuminescenceV_dpndp@v@.shader"
+  ],
+  "Generations/LuminescenceV_dpnv": [
+    "Generations/LuminescenceV_dpnv@v@.shader"
+  ],
+  "Unleashed/Common_d": [
+    "Unleashed/Common_d@@.shader"
+  ],
+  "Unleashed/Common_d[b]": [
+    "Unleashed/Common_d@@.shader"
+  ],
+  "Unleashed/Common_d[bu]": [
+    "Unleashed/Common_d@@.shader"
+  ],
+  "Unleashed/Common_d[bv]": [
+    "Unleashed/Common_d@v@.shader"
+  ],
+  "Unleashed/Common_d[bw]": [
+    "Unleashed/Common_d@@.shader"
+  ],
+  "Unleashed/Common_d[u]": [
+    "Unleashed/Common_d@@.shader"
+  ],
+  "Unleashed/Common_d[uv]": [
+    "Unleashed/Common_d@v@.shader"
+  ],
+  "Unleashed/Common_d[v]": [
+    "Unleashed/Common_d@v@.shader"
+  ],
+  "Unleashed/Common_d[w]": [
+    "Unleashed/Common_d@@.shader"
+  ],
+  "Unleashed/Common_de": [
+    "Unleashed/Common_de@@.shader"
+  ],
+  "Unleashed/Common_de[b]": [
+    "Unleashed/Common_de@@.shader"
+  ],
+  "Unleashed/Common_de[bw]": [
+    "Unleashed/Common_de@@.shader"
+  ],
+  "Unleashed/Common_dn": [
+    "Unleashed/Common_dn@@.shader"
+  ],
+  "Unleashed/Common_dn[b]": [
+    "Unleashed/Common_dn@@.shader"
+  ],
+  "Unleashed/Common_dn[bv]": [
+    "Unleashed/Common_dn@v@.shader"
+  ],
+  "Unleashed/Common_dn[bw]": [
+    "Unleashed/Common_dn@@.shader"
+  ],
+  "Unleashed/Common_dn[v]": [
+    "Unleashed/Common_dn@v@.shader"
+  ],
+  "Unleashed/Common_dne": [
+    "Unleashed/Common_dne@@.shader"
+  ],
+  "Unleashed/Common_dne[b]": [
+    "Unleashed/Common_dne@@.shader"
+  ],
+  "Unleashed/Common_dne[bc]": [
+    "Unleashed/Common_dne@c@.shader"
+  ],
+  "Unleashed/Common_dne[bcv]": [
+    "Unleashed/Common_dne@cv@.shader"
+  ],
+  "Unleashed/Common_dne[c]": [
+    "Unleashed/Common_dne@c@.shader"
+  ],
+  "Unleashed/Common_dp": [
+    "Unleashed/Common_dp@@.shader"
+  ],
+  "Unleashed/Common_dp[b]": [
+    "Unleashed/Common_dp@@.shader"
+  ],
+  "Unleashed/Common_dp[bu]": [
+    "Unleashed/Common_dp@@.shader"
+  ],
+  "Unleashed/Common_dp[bw]": [
+    "Unleashed/Common_dp@@.shader"
+  ],
+  "Unleashed/Common_dp[u]": [
+    "Unleashed/Common_dp@@.shader"
+  ],
+  "Unleashed/Common_dp[uv]": [
+    "Unleashed/Common_dp@v@.shader"
+  ],
+  "Unleashed/Common_dp[v]": [
+    "Unleashed/Common_dp@v@.shader"
+  ],
+  "Unleashed/Common_dp[w]": [
+    "Unleashed/Common_dp@@.shader"
+  ],
+  "Unleashed/Common_dpe": [
+    "Unleashed/Common_dpe@@.shader"
+  ],
+  "Unleashed/Common_dpe[b]": [
+    "Unleashed/Common_dpe@@.shader"
+  ],
+  "Unleashed/Common_dpe[bc]": [
+    "Unleashed/Common_dpe@c@.shader"
+  ],
+  "Unleashed/Common_dpe[c]": [
+    "Unleashed/Common_dpe@c@.shader"
+  ],
+  "Unleashed/Common_dpe[uv]": [
+    "Unleashed/Common_dpe@v@.shader"
+  ],
+  "Unleashed/Common_dpe[w]": [
+    "Unleashed/Common_dpe@@.shader"
+  ],
+  "Unleashed/Common_dpn": [
+    "Unleashed/Common_dpn@@.shader"
+  ],
+  "Unleashed/Common_dpn[b]": [
+    "Unleashed/Common_dpn@@.shader"
+  ],
+  "Unleashed/Common_dpn[bv]": [
+    "Unleashed/Common_dpn@v@.shader"
+  ],
+  "Unleashed/Common_dpn[bw]": [
+    "Unleashed/Common_dpn@@.shader"
+  ],
+  "Unleashed/Common_dpn[u]": [
+    "Unleashed/Common_dpn@@.shader"
+  ],
+  "Unleashed/Common_dpn[uv]": [
+    "Unleashed/Common_dpn@v@.shader"
+  ],
+  "Unleashed/Common_dpn[v]": [
+    "Unleashed/Common_dpn@v@.shader"
+  ],
+  "Unleashed/Common_dpn[w]": [
+    "Unleashed/Common_dpn@@.shader"
+  ],
+  "Unleashed/Common_dpne": [
+    "Unleashed/Common_dpne@@.shader"
+  ],
+  "Unleashed/Common_dpne[b]": [
+    "Unleashed/Common_dpne@@.shader"
+  ],
+  "Unleashed/Common_dpne[bc]": [
+    "Unleashed/Common_dpne@c@.shader"
+  ],
+  "Unleashed/Common_dpne[bcw]": [
+    "Unleashed/Common_dpne@c@.shader"
+  ],
+  "Unleashed/Common_dpne[bw]": [
+    "Unleashed/Common_dpne@@.shader"
+  ],
+  "Unleashed/Common_dpne[c]": [
+    "Unleashed/Common_dpne@c@.shader"
+  ],
+  "Unleashed/Common_dpne[v]": [
+    "Unleashed/Common_dpne@v@.shader"
+  ],
+  "Unleashed/Common_dpnr": [
+    "Unleashed/Common_dpnr@@.shader"
+  ],
+  "Unleashed/Common_dpr": [
+    "Unleashed/Common_dpr@@.shader"
+  ],
+  "Unleashed/Common_dsn[b]": [
+    "Unleashed/Common_dsn@@.shader"
+  ],
+  "Unleashed/Common_dsn[bw]": [
+    "Unleashed/Common_dsn@@.shader"
+  ],
+  "Unleashed/Common_dsne[b]": [
+    "Unleashed/Common_dsne@@.shader"
+  ],
+  "Unleashed/DayEnemyMetal_dspne[b]": [
+    "Unleashed/DayEnemyMetal_dspne@@.shader"
+  ],
+  "Unleashed/DayEnemyMetalBody_dspne[b]": [
+    "Unleashed/DayEnemyMetalBody_dspne@@.shader"
+  ],
+  "Unleashed/DayEnemyMetalSocket_dspne[b]": [
+    "Unleashed/DayEnemyMetalSocket_dspne@@.shader"
+  ],
+  "Unleashed/IgnoreLight_d": [
+    "Unleashed/IgnoreLight_d@@.shader"
+  ],
+  "Unleashed/IgnoreLight_d[b]": [
+    "Unleashed/IgnoreLight_d@@.shader"
+  ],
+  "Unleashed/IgnoreLight_d[bu]": [
+    "Unleashed/IgnoreLight_d@@.shader"
+  ],
+  "Unleashed/IgnoreLight_d[buv]": [
+    "Unleashed/IgnoreLight_d@v@.shader"
+  ],
+  "Unleashed/IgnoreLight_d[bv]": [
+    "Unleashed/IgnoreLight_d@v@.shader"
+  ],
+  "Unleashed/IgnoreLight_d[u]": [
+    "Unleashed/IgnoreLight_d@@.shader"
+  ],
+  "Unleashed/IgnoreLight_d[uv]": [
+    "Unleashed/IgnoreLight_d@v@.shader"
+  ],
+  "Unleashed/IgnoreLight_d[v]": [
+    "Unleashed/IgnoreLight_d@v@.shader"
+  ],
+  "Unleashed/Luminescence_d": [
+    "Unleashed/Luminescence_d@E@.shader"
+  ],
+  "Unleashed/Luminescence_d[b]": [
+    "Unleashed/Luminescence_d@E@.shader"
+  ],
+  "Unleashed/Luminescence_d[buv]": [
+    "Unleashed/Luminescence_d@Ev@.shader"
+  ],
+  "Unleashed/Luminescence_d[bv]": [
+    "Unleashed/Luminescence_d@Ev@.shader"
+  ],
+  "Unleashed/Luminescence_dE": [
+    "Unleashed/Luminescence_dE@@.shader"
+  ],
+  "Unleashed/Luminescence_dE[b]": [
+    "Unleashed/Luminescence_dE@@.shader"
+  ],
+  "Unleashed/Luminescence_dE[bv]": [
+    "Unleashed/Luminescence_dE@v@.shader"
+  ],
+  "Unleashed/Luminescence_dE[v]": [
+    "Unleashed/Luminescence_dE@v@.shader"
+  ],
+  "Unleashed/Luminescence_dnE": [
+    "Unleashed/Luminescence_dnE@@.shader"
+  ],
+  "Unleashed/Luminescence_dnE[u]": [
+    "Unleashed/Luminescence_dnE@@.shader"
+  ],
+  "Unleashed/Luminescence_dnE[uv]": [
+    "Unleashed/Luminescence_dnE@v@.shader"
+  ],
+  "Unleashed/Luminescence_dpE": [
+    "Unleashed/Luminescence_dpE@@.shader"
+  ],
+  "Unleashed/Luminescence_dpnE": [
+    "Unleashed/Luminescence_dpnE@@.shader"
+  ],
+  "Unleashed/NightEnemyCommon_drE[b]": [
+    "Unleashed/NightEnemyCommon_drE@@.shader"
+  ],
+  "Unleashed/SonicCloth_ds[b]": [
+    "Unleashed/SonicCloth_ds@@.shader"
+  ],
+  "Unleashed/SonicCloth_dsn[b]": [
+    "Unleashed/SonicCloth_dsn@@.shader"
+  ],
+  "Unleashed/SonicEnamel_dspe[b]": [
+    "Unleashed/SonicEnamel_dspe@@.shader"
+  ],
+  "Unleashed/SonicEnamel_dspe[bc]": [
+    "Unleashed/SonicEnamel_dspe@c@.shader"
+  ],
+  "Unleashed/SonicEnamel_dspne[b]": [
+    "Unleashed/SonicEnamel_dspne@@.shader"
+  ],
+  "Unleashed/SonicEnamel_dspne[bc]": [
+    "Unleashed/SonicEnamel_dspne@c@.shader"
+  ],
+  "Unleashed/SonicEye_dpe[b]": [
+    "Unleashed/SonicEye_dpe@@.shader"
+  ],
+  "Unleashed/SonicEye_dpe[bc]": [
+    "Unleashed/SonicEye_dpe@c@.shader"
+  ],
+  "Unleashed/SonicEye_dpe[bcu]": [
+    "Unleashed/SonicEye_dpe@c@.shader"
+  ],
+  "Unleashed/SonicEye_dpe[bu]": [
+    "Unleashed/SonicEye_dpe@@.shader"
+  ],
+  "Unleashed/SonicEye_dpne[b]": [
+    "Unleashed/SonicEye_dpne@@.shader"
+  ],
+  "Unleashed/SonicEye_dpne[bc]": [
+    "Unleashed/SonicEye_dpne@c@.shader"
+  ],
+  "Unleashed/SonicEye_dpne[bcu]": [
+    "Unleashed/SonicEye_dpne@c@.shader"
+  ],
+  "Unleashed/SonicEye_dpne[bu]": [
+    "Unleashed/SonicEye_dpne@@.shader"
+  ],
+  "Unleashed/SonicMetal_dpe[b]": [
+    "Unleashed/SonicMetal_dpe@@.shader"
+  ],
+  "Unleashed/SonicMetal_dpe[bc]": [
+    "Unleashed/SonicMetal_dpe@c@.shader"
+  ],
+  "Unleashed/SonicMetal_dpne[b]": [
+    "Unleashed/SonicMetal_dpne@@.shader"
+  ],
+  "Unleashed/SonicMetal_dpne[bc]": [
+    "Unleashed/SonicMetal_dpne@c@.shader"
+  ],
+  "Unleashed/SonicSkin_dspf[b]": [
+    "Unleashed/SonicSkin_dspf@@.shader"
+  ],
+  "Unleashed/SonicSkin_dspnf[b]": [
+    "Unleashed/SonicSkin_dspnf@@.shader"
+  ],
+  "Unleashed/SonicSkinNodeInvX_dnf[b]": [
+    "Unleashed/SonicSkin_dnf@@.shader"
+  ],
+  "Unleashed/SonicSkinNodeInvX_dspf[b]": [
+    "Unleashed/SonicSkin_dspf@@.shader"
+  ],
+  "Unleashed/SonicSkinNodeInvX_dspnf[b]": [
+    "Unleashed/SonicSkin_dspnf@@.shader"
+  ]
+}

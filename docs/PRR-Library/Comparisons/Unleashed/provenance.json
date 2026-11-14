@@ -1,0 +1,67 @@
+{
+  "game": "Unleashed",
+  "preset_hashes": {
+    "Unleashed/SonicEye_dpne@c@.shader": "1517553e01873b848248e267c96aedba6a328700d2e69bf5e69ae27c4a2d26ef",
+    "Unleashed/SonicSkin_dspf@@.shader": "dcdb9e8705cb09d6bc74250023f191de7a5dedcd3ea2b9ce3086d767905c5c2c",
+    "Unleashed/SonicEnamel_dspe@c@.shader": "f5e62ffecb455b6f7b95d282b824db218c9c17ba9c1034785975bf7c44536e71",
+    "Unleashed/SonicCloth_dsn@@.shader": "b4300ef64b7c2f14f9d66f1b5b943c24c2de4953e3d7800d4f4f77c611900304",
+    "Unleashed/SonicMetal_dpe@@.shader": "b1d3d2544264565712adaa6e6f66e49fb3400daa68d250119e5db746ea5842db",
+    "Render States/Opaque/Normal/DoubleSided/Unleashed/SonicSkin_dspf@@.shader": "07f8982a402542b669a0cecb4d181c525b4865b095f9e81c22792b3ee57d89f6"
+  },
+  "plain_shader_material": true,
+  "runtime_material_script": false,
+  "material_inputs_sha256": "7db31f53a215f6931f77d062588ad46c7265577d0db7c0497e0013517b708f3a",
+  "preview_script_sha256": "072dcfb17e4d0ff9961f5c1f3a8a2f66f2d744c64f220430161350a270d708d2",
+  "captures": [
+    {
+      "mode": "combined",
+      "different_components": 1,
+      "max_8bit_difference": 1,
+      "reference": "comparison-preview\\comparisons\\uniform-layout-final-2026-11-14\\combined.png",
+      "sha256": "e570cc5bad3e7c03184aa83dce03aabb1074297ad5b85b7d20b9026c73c2ffb8"
+    },
+    {
+      "mode": "fake",
+      "different_components": 0,
+      "max_8bit_difference": 0,
+      "reference": "comparison-preview\\comparisons\\uniform-layout-final-2026-11-14\\fake.png",
+      "sha256": "3aa2a2a00a5f64501b666fef2665283bfc2ffdd5e35e336e0d95d01906377403"
+    },
+    {
+      "mode": "scene_specular",
+      "different_components": 0,
+      "max_8bit_difference": 0,
+      "reference": "comparison-preview\\comparisons\\uniform-layout-final-2026-11-14\\scene_specular.png",
+      "sha256": "47fa4055eea7535be67b6e7d6308239d9cfd583a3fe7b990efdfd00eeaeae5bd"
+    },
+    {
+      "mode": "no_fake",
+      "different_components": 0,
+      "max_8bit_difference": 0,
+      "reference": "comparison-preview\\comparisons\\uniform-layout-final-2026-11-14\\no_fake.png",
+      "sha256": "319184a8fb9617c45ad5b33c322cd76d55a65ed4fae5c2254b9e080c56ac2035"
+    },
+    {
+      "mode": "no_scene_specular",
+      "different_components": 1,
+      "max_8bit_difference": 1,
+      "reference": "comparison-preview\\comparisons\\uniform-layout-final-2026-11-14\\no_scene_specular.png",
+      "sha256": "308bc5fa420bb8a80ddd45cedf733c85175adf39d7e1aff1b8a3ae1d52ff9534"
+    },
+    {
+      "mode": "reflection",
+      "different_components": 0,
+      "max_8bit_difference": 0,
+      "reference": "comparison-preview\\comparisons\\uniform-layout-final-2026-11-14\\reflection.png",
+      "sha256": "3baf663a90bcde4bbf469ba1bd033daf0cb864f8bc94b94e362f5dfda420b3fe"
+    },
+    {
+      "mode": "authored_highlight",
+      "different_components": 0,
+      "max_8bit_difference": 0,
+      "reference": "comparison-preview\\comparisons\\uniform-layout-final-2026-11-14\\authored_highlight.png",
+      "sha256": "7890395139d3d5d5aef3bde2c7eb15409f29c594c145d07ff4a15e2360418ab7"
+    }
+  ],
+  "boundary": "Identical controlled inputs/camera/pose/lighting. Comparison to previous accepted Godot output, not a new original-game parity claim."
+}

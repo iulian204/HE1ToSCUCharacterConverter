@@ -71,6 +71,8 @@ public partial class MainWindow : Window
                 EditorPath.Text = settings.GetValueOrDefault("editor") ?? EditorPath.Text;
                 GameSelector.SelectedIndex = settings.GetValueOrDefault("game") == "SonicUnleashed" ? 1 : 0;
                 GenerateMouthLeft.IsChecked = bool.TryParse(settings.GetValueOrDefault("mouthLeft"), out bool mouthLeft) && mouthLeft;
+                ExportPrrMaterials.IsChecked = bool.TryParse(settings.GetValueOrDefault("exportPrr"), out bool prr) && prr;
+                PrrShaderPath.Text = settings.GetValueOrDefault("prrShaderPath") ?? "";
                 if (Directory.Exists(SourceFolder.Text))
                     LoadFolder(SourceFolder.Text);
             }
@@ -87,6 +89,7 @@ public partial class MainWindow : Window
             _ => (int)Appearance.Automatic
         };
         UpdateMouthOption();
+        UpdatePrrOptions();
         Append("Ready. Select a model, its matching skeleton, and the animations to export.");
         Append("Binary HKX: Generations Havok 2010.2.0; Unleashed Havok 5.5.0. 32-bit skeletons and spline/interleaved animations. XML: skeletons/interleaved. Unsupported variants stop with a specific error.");
     }
@@ -212,6 +215,7 @@ public partial class MainWindow : Window
     protected override void OnClosing(WindowClosingEventArgs e)
     {
         base.OnClosing(e);
+        SavePrrSettings();
         if (cancellation == null) return;
         CancelConversion();
         e.Cancel = true;
@@ -219,6 +223,44 @@ public partial class MainWindow : Window
     }
 
     private void GameChanged(object? sender, SelectionChangedEventArgs e) => UpdateMouthOption();
+
+    private void PrrOptionsChanged(object? sender, RoutedEventArgs e)
+    {
+        UpdatePrrOptions();
+        SavePrrSettings();
+    }
+
+    private void PrrPathLostFocus(object? sender, RoutedEventArgs e) => SavePrrSettings();
+
+    private void SavePrrSettings()
+    {
+        if (!IsVisible || PrrShaderPath == null || ExportPrrMaterials == null) return;
+        bool savedEnabled = bool.TryParse(settings.GetValueOrDefault("exportPrr"), out bool saved) && saved;
+        if (savedEnabled == (ExportPrrMaterials.IsChecked == true) &&
+            (settings.GetValueOrDefault("prrShaderPath") ?? "") == (PrrShaderPath.Text ?? "")) return;
+        settings["exportPrr"] = (ExportPrrMaterials.IsChecked == true).ToString();
+        settings["prrShaderPath"] = PrrShaderPath.Text ?? "";
+        try { SaveSettings(); }
+        catch (Exception ex) when (ex is IOException or UnauthorizedAccessException or ArgumentException)
+        {
+            Append("PRR preference could not be saved: " + ex.Message);
+        }
+    }
+
+    private void UpdatePrrOptions()
+    {
+        if (Workspace != null && ExportPrrMaterials != null)
+            Workspace.MinHeight = ExportPrrMaterials.IsChecked == true ? 840 : 790;
+    }
+
+    private async void BrowseShaderPath(object? sender, RoutedEventArgs e) => await TryPickerAsync(async () =>
+    {
+        if (await PickFolderAsync("Select existing PRR shader folder inside a Godot project") is not { } folder) return;
+        // Retain the local folder for existence checks and temporary Acorn staging.
+        _ = PrrShaderDestination.ResourcePathFromFolder(folder);
+        PrrShaderPath.Text = folder;
+        SavePrrSettings();
+    });
 
     private void UpdateMouthOption()
     {
@@ -371,7 +413,8 @@ public partial class MainWindow : Window
         }
 
         var request = new ConversionRequest(modelPath, SkeletonPath.Text?.Trim() ?? "", animationFiles.Select(file => file.FullName).ToArray(),
-            OutputPath.Text.Trim(), EditorPath.Text?.Trim() ?? "", SelectedGame, SelectedGenerateMouthL);
+            OutputPath.Text.Trim(), EditorPath.Text?.Trim() ?? "", SelectedGame, SelectedGenerateMouthL,
+            ExportPrrMaterials.IsChecked == true, ExportPrrMaterials.IsChecked == true ? PrrShaderPath.Text?.Trim() : null);
         using var operation = new CancellationTokenSource();
         cancellation = operation;
         Inputs.IsEnabled = false;
@@ -386,6 +429,8 @@ public partial class MainWindow : Window
             settings["editor"] = EditorPath.Text ?? "";
             settings["game"] = request.Game.ToString();
             settings["mouthLeft"] = (GenerateMouthLeft.IsChecked == true).ToString();
+            settings["exportPrr"] = (ExportPrrMaterials.IsChecked == true).ToString();
+            settings["prrShaderPath"] = PrrShaderPath.Text ?? "";
             SaveSettings();
 
             var progress = new Progress<ConversionProgress>(update =>
