@@ -2,13 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <Version>0.7.0</Version>
+    <Version>0.8.0</Version>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="HE1ToSCU.Tests" />
     <EmbeddedResource Include="PrrShaders/**/*" LogicalName="PRR/%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="../../assets/SCU/*.json" LogicalName="SCU/%(Filename)%(Extension)" />
   </ItemGroup>
 
 </Project>

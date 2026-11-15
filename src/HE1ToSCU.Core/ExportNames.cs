@@ -10,12 +10,18 @@ public static class ExportNames
         string stem = Path.GetFileNameWithoutExtension(sourcePath);
         return stem.EndsWith(".anm", StringComparison.OrdinalIgnoreCase) ? stem[..^4] : stem;
     }
-    public static string SceneText(ModelAsset model) => File(model.Name, ".tscn");
-    public static string SceneBinary(ModelAsset model) => File(model.Name, ".scn");
-    public static string MeshText(ModelAsset model, string nodeName = "Mesh") => File(model.Name + (nodeName == "Mesh" ? "" : "_" + nodeName), ".mesh.tres");
-    public static string MeshBinary(ModelAsset model, string nodeName = "Mesh") => File(model.Name + (nodeName == "Mesh" ? "" : "_" + nodeName), ".mesh");
-    public static string AnimationText(AnimationClip clip) => File(clip.Name, ".tres");
-    public static string AnimationBinary(AnimationClip clip) => File(clip.Name, ".anim");
+    public static string SceneText(ModelAsset model) => File(model.ExportIdentity?.SceneStem??model.Name, ".tscn");
+    public static string SceneBinary(ModelAsset model) => model.ExportIdentity?.NativeSceneFile is{} file?File(file,""):File(model.ExportIdentity?.SceneStem??model.Name, ".scn");
+    public static string MeshStem(ModelAsset model,string nodeName="Mesh")=>model.ExportIdentity is{} names?
+        nodeName=="Mesh"||nodeName==names.MeshNodeName?names.MeshResourceName:names.SceneStem+"_"+nodeName:model.Name+(nodeName=="Mesh"?"":"_"+nodeName);
+    public static string MeshText(ModelAsset model, string nodeName = "Mesh") => File(MeshStem(model,nodeName), ".mesh.tres");
+    public static string MeshBinary(ModelAsset model, string nodeName = "Mesh") => File(MeshStem(model,nodeName), ".mesh");
+    public static string AnimationName(AnimationClip clip)=>clip.ExportIdentity?.PlayerKey??clip.Name;
+    public static bool AnimationLoops(AnimationClip clip)=>clip.Name.Contains("loop",StringComparison.OrdinalIgnoreCase);
+    public static string SkeletonNode(ModelAsset model)=>model.ExportIdentity?.SkeletonNodeName??"Skeleton";
+    public static string AnimationText(AnimationClip clip) => (clip.ExportIdentity==null?"":"animations/")+File(clip.ExportIdentity?.FileStem??clip.Name, ".tres");
+    public static string AnimationBinary(AnimationClip clip) => (clip.ExportIdentity==null?"":"animations/")+File(clip.ExportIdentity?.FileStem??clip.Name, ".anim");
+    public static void ValidateStem(string stem)=>_ = File(stem,"");
     internal static string Literal(string text) => JsonSerializer.Serialize(text);
     internal static string AnimationPaths(IReadOnlyList<AnimationClip> clips) =>
         "[" + string.Join(", ", clips.Select(c => Literal("res://" + AnimationBinary(c)))) + "]";
@@ -35,7 +41,7 @@ public static class ExportNames
         {
             if (!files.Add(name)) throw new InvalidDataException($"Output filename collision: {name}. Original names are preserved; select uniquely named assets.");
         }
-        foreach (var name in new[] { SceneText(model), SceneBinary(model), "conversion.json", "acorn-validation.log", "acorn-binary-validation.log" }) Add(name);
+        foreach (var name in new[] { SceneText(model), SceneBinary(model), "conversion.json", "acorn-validation.log", "acorn-binary-validation.log", "scu-animation-mapping.txt", "scu-animation-mapping.json" }) Add(name);
         foreach (var part in model.MeshParts) { Add(MeshText(model, part.Name)); Add(MeshBinary(model, part.Name)); }
         foreach (var clip in clips) { Add(AnimationText(clip)); Add(AnimationBinary(clip)); }
     }

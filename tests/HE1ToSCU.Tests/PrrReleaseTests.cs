@@ -8,6 +8,19 @@ namespace HE1ToSCU.Tests;
 
 public sealed class PrrReleaseTests
 {
+    [LocalPrrReleaseFact]
+    public void BundledShadersMatchTheCurrentlySuppliedReleaseNotOnlyTheirOwnInventory()
+    {
+        string root=LocalPrrReleaseFactAttribute.Directory;
+        var library=PrrShaderLibrary.Default;
+        var files=System.IO.Directory.GetFiles(root,"*.shader",SearchOption.AllDirectories);
+        Assert.Equal(library.PresetPaths.Count,files.Length);
+        foreach(string file in files)
+        {
+            string path=Path.GetRelativePath(root,file).Replace('\\','/');
+            Assert.Equal(SHA256.HashData(File.ReadAllBytes(file)),SHA256.HashData(Encoding.UTF8.GetBytes(library.Get(path).Code)));
+        }
+    }
     [Fact]
     public void CompleteReleaseHasAllNativePresetsWithExactHashesAndSupportedInterfaces()
     {
@@ -102,4 +115,10 @@ public sealed class PrrReleaseTests
         }
         finally {Directory.Delete(root,true);}
     }
+}
+
+public sealed class LocalPrrReleaseFactAttribute : FactAttribute
+{
+    public static string Directory=>Environment.GetEnvironmentVariable("HE1SCU_PRR_RELEASE")??@"D:\HE1TOPRRShaders\Release";
+    public LocalPrrReleaseFactAttribute(){if(!System.IO.Directory.Exists(Directory))Skip="Set HE1SCU_PRR_RELEASE to verify against an independently supplied current shader library.";}
 }

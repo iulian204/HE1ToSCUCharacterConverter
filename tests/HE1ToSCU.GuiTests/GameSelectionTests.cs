@@ -24,6 +24,33 @@ public static class TestApplication
 
 public sealed class GameSelectionTests : IDisposable
 {
+    [AvaloniaFact]
+    public async Task SonicNamingOptionsPersistAndReachConversionIndependentlyOfPrr()
+    {
+        Touch(temp.FullName,"a.model");
+        File.WriteAllText(SettingsPath,System.Text.Json.JsonSerializer.Serialize(new{source=temp.FullName,output=Path.Combine(temp.FullName,"export"),editor=""}));
+        var started=new TaskCompletionSource<ConversionRequest>();
+        var window=new MainWindow(SettingsPath,convert:(request,_,_)=>{started.TrySetResult(request);return Task.FromResult(new ConversionResult(request.OutputDirectory,0,0,0,0,false));});
+        try
+        {
+            window.Show();var master=Control<CheckBox>(window,"MatchSonicNames");var super=Control<CheckBox>(window,"SuperSonicNames");
+            Assert.Equal("Match Sonic Asset Names",master.Content);Assert.False(master.IsChecked==true);Assert.False(super.IsEffectivelyEnabled);
+            master.IsChecked=true;super.IsChecked=true;Assert.True(super.IsEffectivelyEnabled);
+            Click(window,"ConvertButton");var request=await started.Task.WaitAsync(TimeSpan.FromSeconds(5));
+            Assert.True(request.MatchSonicAssetNames);Assert.True(request.SuperSonic);Assert.False(request.ExportPrrMaterials);
+        }
+        finally{window.Close();}
+        var reopened=new MainWindow(SettingsPath);
+        try
+        {
+            reopened.Show();Assert.True(Control<CheckBox>(reopened,"MatchSonicNames").IsChecked);
+            Assert.True(Control<CheckBox>(reopened,"SuperSonicNames").IsChecked);
+            Control<CheckBox>(reopened,"MatchSonicNames").IsChecked=false;
+            Assert.True(Control<CheckBox>(reopened,"SuperSonicNames").IsChecked);Assert.False(Control<CheckBox>(reopened,"SuperSonicNames").IsEffectivelyEnabled);
+        }
+        finally{reopened.Close();}
+    }
+
     private readonly DirectoryInfo temp = Directory.CreateTempSubdirectory("HE1ToSCU-GUI-");
     private string SettingsPath => Path.Combine(temp.FullName, "settings.json");
 

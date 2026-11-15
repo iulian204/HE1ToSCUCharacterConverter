@@ -42,6 +42,7 @@ public partial class MainWindow : Window
     private bool micaRequested;
     private string? modelPath;
     private string? lastModelName;
+    private string? namingCorrectionsPath;
 
     public SourceGame SelectedGame => GameSelector.SelectedIndex == 1 ? SourceGame.SonicUnleashed : SourceGame.SonicGenerations;
     public bool SelectedGenerateMouthL => SelectedGame == SourceGame.SonicUnleashed && GenerateMouthLeft.IsChecked == true;
@@ -73,6 +74,9 @@ public partial class MainWindow : Window
                 GenerateMouthLeft.IsChecked = bool.TryParse(settings.GetValueOrDefault("mouthLeft"), out bool mouthLeft) && mouthLeft;
                 ExportPrrMaterials.IsChecked = bool.TryParse(settings.GetValueOrDefault("exportPrr"), out bool prr) && prr;
                 PrrShaderPath.Text = settings.GetValueOrDefault("prrShaderPath") ?? "";
+                MatchSonicNames.IsChecked=bool.TryParse(settings.GetValueOrDefault("matchSonicNames"),out bool names)&&names;
+                SuperSonicNames.IsChecked=bool.TryParse(settings.GetValueOrDefault("superSonicNames"),out bool super)&&super;
+                namingCorrectionsPath=settings.GetValueOrDefault("namingCorrections");
                 if (Directory.Exists(SourceFolder.Text))
                     LoadFolder(SourceFolder.Text);
             }
@@ -250,7 +254,28 @@ public partial class MainWindow : Window
     private void UpdatePrrOptions()
     {
         if (Workspace != null && ExportPrrMaterials != null)
-            Workspace.MinHeight = ExportPrrMaterials.IsChecked == true ? 840 : 790;
+            Workspace.MinHeight = ExportPrrMaterials.IsChecked == true ? 890 : 840;
+    }
+
+    private void NamingOptionsChanged(object? sender,RoutedEventArgs e)
+    {
+        if(!IsVisible||MatchSonicNames==null||SuperSonicNames==null)return;
+        settings["matchSonicNames"]=(MatchSonicNames.IsChecked==true).ToString();
+        settings["superSonicNames"]=(SuperSonicNames.IsChecked==true).ToString();
+        settings["namingCorrections"]=namingCorrectionsPath??"";
+        try{SaveSettings();}
+        catch(Exception ex)when(ex is IOException or UnauthorizedAccessException or ArgumentException){Append("Naming preferences could not be saved: "+ex.Message);}
+    }
+    private async void LoadNamingCorrections(object? sender,RoutedEventArgs e)=>await TryPickerAsync(async()=>
+    {
+        var files=await dialogs.OpenFilesAsync(new FilePickerOpenOptions{Title="Load optional animation naming corrections",AllowMultiple=false,
+            FileTypeFilter=[new FilePickerFileType("SCU naming corrections"){Patterns=["*.json"]}]},null);
+        if(files.Length==0)return;
+        namingCorrectionsPath=files[0];NamingOptionsChanged(sender,e);Append("Optional naming corrections: "+namingCorrectionsPath);
+    });
+    private void ClearNamingCorrections(object? sender,RoutedEventArgs e)
+    {
+        namingCorrectionsPath=null;NamingOptionsChanged(sender,e);Append("Naming corrections cleared; automatic matching will be used.");
     }
 
     private async void BrowseShaderPath(object? sender, RoutedEventArgs e) => await TryPickerAsync(async () =>
@@ -414,7 +439,9 @@ public partial class MainWindow : Window
 
         var request = new ConversionRequest(modelPath, SkeletonPath.Text?.Trim() ?? "", animationFiles.Select(file => file.FullName).ToArray(),
             OutputPath.Text.Trim(), EditorPath.Text?.Trim() ?? "", SelectedGame, SelectedGenerateMouthL,
-            ExportPrrMaterials.IsChecked == true, ExportPrrMaterials.IsChecked == true ? PrrShaderPath.Text?.Trim() : null);
+            ExportPrrMaterials.IsChecked == true, ExportPrrMaterials.IsChecked == true ? PrrShaderPath.Text?.Trim() : null,
+            MatchSonicNames.IsChecked==true,MatchSonicNames.IsChecked==true&&SuperSonicNames.IsChecked==true,
+            MatchSonicNames.IsChecked==true?namingCorrectionsPath:null);
         using var operation = new CancellationTokenSource();
         cancellation = operation;
         Inputs.IsEnabled = false;

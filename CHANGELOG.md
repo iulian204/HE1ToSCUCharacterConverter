@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.0
+
+- Added optional automatic Sonic and Super Sonic resource naming with a bundled offline asset inventory.
+- Added motion-aware animation matching, confidence reports and optional saved corrections for GUI and CLI exports.
+- Preserved source animation playback and material identities across named text and native Acorn resources.
+- Fixed named native scenes to retain animations when moved within a project, with standalone animation files also exported.
+- Added regression coverage for original output filenames, shader-library freshness, GUI preferences and large native animation banks.
+
 ## 0.7.0
 
 - Add optional PRR ShaderMaterial export for Sonic Generations and Sonic Unleashed, with saved GUI settings and matching CLI options.

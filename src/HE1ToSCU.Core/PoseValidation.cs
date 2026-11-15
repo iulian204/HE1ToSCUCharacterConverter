@@ -22,14 +22,17 @@ internal static class PoseValidation
     public static int Write(string path,ModelAsset target,ModelAsset source,IReadOnlyList<AnimationClip> clips,IReadOnlyList<AnimationClip> originals,CancellationToken token)
     {
         using var writer=new BinaryWriter(File.Create(path),Encoding.UTF8);
-        writer.Write(target.Bones.Count);writer.Write(clips.Count);int checks=0;
+        // Reused target resources are key-for-key checked against this representative in Acorn.
+        var seen=new HashSet<string>(StringComparer.Ordinal);
+        var indices=Enumerable.Range(0,clips.Count).Where(i=>clips[i].ExportIdentity==null||seen.Add(clips[i].Name)).ToArray();
+        writer.Write(target.Bones.Count);writer.Write(indices.Length);int checks=0;
         void Transform(Matrix4x4 m) {
             writer.Write(m.M11);writer.Write(m.M12);writer.Write(m.M13);
             writer.Write(m.M21);writer.Write(m.M22);writer.Write(m.M23);
             writer.Write(m.M31);writer.Write(m.M32);writer.Write(m.M33);
             writer.Write(m.M41);writer.Write(m.M42);writer.Write(m.M43);
         }
-        for(int c=0;c<clips.Count;c++) {
+        foreach(int c in indices) {
             var clip=clips[c];var original=originals[c];
             var times=Enumerable.Range(0,original.Frames.Length).Select(i=>AnimationSampling.Time(original,i))
                 .Concat(Enumerable.Range(0,clip.Frames.Length).Select(i=>AnimationSampling.Time(clip,i))).Distinct().Order().ToArray();
@@ -39,7 +42,7 @@ internal static class PoseValidation
                 float step=Math.Min(clip.Duration*.1f,1f/120);
                 cases.Add((clip.Duration-step,step*2,true,step));
             }
-            byte[] name=Encoding.UTF8.GetBytes(clip.Name);writer.Write(name.Length);writer.Write(name);writer.Write(cases.Count);
+            byte[] name=Encoding.UTF8.GetBytes(ExportNames.AnimationName(clip));writer.Write(name.Length);writer.Write(name);writer.Write(cases.Count);
             foreach(var entry in cases) {
                 token.ThrowIfCancellationRequested();writer.Write(entry.Time);writer.Write(entry.Advance);writer.Write(entry.Loop?1:0);
                 Transform(Spatial.Convert((original.RootMotion?.Sample(entry.Expected) ?? new Pose(Vector3.Zero,Quaternion.Identity,Vector3.One)).Matrix));

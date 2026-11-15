@@ -83,7 +83,7 @@
                         </Border>
                         <TextBlock Grid.Row="2" Text="Export" Classes="sectionTitle" Margin="0,0,0,6"/>
                         <Border Grid.Row="3" Classes="settingsCard">
-                            <Grid ColumnDefinitions="112,*,140" RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                            <Grid ColumnDefinitions="112,*,140" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
                                   ColumnSpacing="12" RowSpacing="7">
                                 <TextBlock Text="Export folder" Grid.Row="0" VerticalAlignment="Center"/>
                                 <TextBox x:Name="OutputPath" Grid.Row="0" Grid.Column="1" AutomationProperties.Name="Export folder"
@@ -105,7 +105,20 @@
                                          ToolTip.Tip="Choose the complete PRR Release root inside a Godot project (res:// or a folder). Leave empty to bundle only used shader presets."/>
                                 <Button x:Name="ShaderBrowseButton" Grid.Row="3" Grid.Column="2" Content="Folder…" Click="BrowseShaderPath"
                                         IsVisible="{Binding !!#ExportPrrMaterials.IsChecked}" AutomationProperties.Name="Browse PRR shader folder"/>
-                                <TextBlock Grid.Row="4" Grid.ColumnSpan="3" Margin="0,4,0,0" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12"
+                                <WrapPanel Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2">
+                                    <CheckBox x:Name="MatchSonicNames" Content="Match Sonic Asset Names" Margin="0,0,12,0"
+                                              IsCheckedChanged="NamingOptionsChanged"
+                                              ToolTip.Tip="Automatically match exported model, skeleton, and animation names to the original Sonic Colors Ultimate assets."/>
+                                    <CheckBox x:Name="SuperSonicNames" Content="Super Sonic" Margin="0,0,12,0"
+                                              IsEnabled="{Binding !!#MatchSonicNames.IsChecked}" IsCheckedChanged="NamingOptionsChanged"
+                                              ToolTip.Tip="Use the bundled Super Sonic inventory instead of Sonic."/>
+                                    <Button x:Name="NamingCorrectionsButton" Content="Corrections…" Click="LoadNamingCorrections"
+                                            IsEnabled="{Binding !!#MatchSonicNames.IsChecked}"
+                                            ToolTip.Tip="Optionally load saved JSON corrections. Right-click to clear. Automatic matching needs no setup.">
+                                        <Button.ContextMenu><ContextMenu><MenuItem Header="Clear saved corrections" Click="ClearNamingCorrections"/></ContextMenu></Button.ContextMenu>
+                                    </Button>
+                                </WrapPanel>
+                                <TextBlock Grid.Row="5" Grid.ColumnSpan="3" Margin="0,4,0,0" TextWrapping="Wrap" Foreground="{DynamicResource SecondaryTextBrush}" FontSize="12"
                                            Text="Scale and coordinates are automatic. Leave Choose shader path empty to bundle the required PRR shaders. Export preserves the HE1 rig; SCU player retargeting is a separate step."/>
                             </Grid>
                         </Border>

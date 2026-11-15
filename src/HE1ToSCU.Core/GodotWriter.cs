@@ -21,6 +21,7 @@ public static class GodotWriter
         Directory.CreateDirectory(directory);
         materialFiles ??= new SpatialMaterialWriter().Write(model, directory, log, token,game);
         var parts = model.MeshParts.ToArray();
+        string skeletonNode=ExportNames.SkeletonNode(model);
         foreach (var part in parts) WriteMesh(model, part, directory, materialFiles, token);
         var scene=new StringBuilder($"[gd_scene load_steps={clips.Count+parts.Length+1} format=2]\n\n");
         for (int i=0;i<parts.Length;i++) scene.AppendLine($"[ext_resource path={Quote(ExportNames.MeshText(model,parts[i].Name))} type=\"ArrayMesh\" id={i+1}]");
@@ -28,9 +29,11 @@ public static class GodotWriter
         {
             string file=ExportNames.AnimationText(clips[i]);
             scene.AppendLine($"[ext_resource path={Quote(file)} type=\"Animation\" id={i+parts.Length+1}]");
-            WriteAnimation(clips[i],model.Bones,Path.Combine(directory,file),token);
+            string animationPath=Path.Combine(directory,file);
+            Directory.CreateDirectory(Path.GetDirectoryName(animationPath)!);
+            WriteAnimation(clips[i],model.Bones,animationPath,token,skeletonNode);
         }
-        scene.AppendLine($"\n[node name={Quote(model.Name)} type=\"Spatial\"]\n\n[node name=\"Skeleton\" type=\"Skeleton\" parent=\".\"]");
+        scene.AppendLine($"\n[node name={Quote(model.ExportIdentity?.RootNodeName??model.Name)} type=\"Spatial\"]\n\n[node name={Quote(skeletonNode)} type=\"Skeleton\" parent=\".\"]");
         // Declare all bones before assigning parents; compensation parents may have higher indexes.
         for(int i=0;i<model.Bones.Count;i++) scene.AppendLine($"bones/{i}/name = {Quote(model.Bones[i].Name)}");
         for(int i=0;i<model.Bones.Count;i++)
@@ -40,13 +43,13 @@ public static class GodotWriter
         }
         for (int i=0;i<parts.Length;i++)
         {
-            scene.AppendLine($"\n[node name={Quote(parts[i].Name)} type=\"MeshInstance\" parent=\"Skeleton\"]\nmesh = ExtResource( {i+1} )\nskeleton = NodePath(\"..\")\ncast_shadow = 0\ncast_character_shadow = true");
+            scene.AppendLine($"\n[node name={Quote(parts[i].Name)} type=\"MeshInstance\" parent={Quote(skeletonNode)}]\nmesh = ExtResource( {i+1} )\nskeleton = NodePath(\"..\")\ncast_shadow = 0\ncast_character_shadow = true");
             if(parts[i].Mirrored) scene.AppendLine("visible = false");
         }
         if(clips.Count>0)
         {
             scene.AppendLine("\n[node name=\"AnimationPlayer\" type=\"AnimationPlayer\" parent=\".\"]\nroot_node = NodePath(\"..\")");
-            for(int i=0;i<clips.Count;i++)scene.AppendLine($"anims/{clips[i].Name} = ExtResource( {i+parts.Length+1} )");
+            for(int i=0;i<clips.Count;i++)scene.AppendLine($"anims/{ExportNames.AnimationName(clips[i])} = ExtResource( {i+parts.Length+1} )");
         }
         Save(Path.Combine(directory,ExportNames.SceneText(model)),scene);
     }
@@ -58,7 +61,7 @@ public static class GodotWriter
         {
             mesh.AppendLine($"[ext_resource path={Quote(materialFiles[materials[i]])} type=\"Material\" id={i+1}]");
         }
-        mesh.AppendLine("[resource]");mesh.AppendLine($"resource_name = {Quote(part.Name == "Mesh" ? model.Name : model.Name + "_" + part.Name)}");
+        mesh.AppendLine("[resource]");mesh.AppendLine($"resource_name = {Quote(ExportNames.MeshStem(model,part.Name))}");
         for(int i=0;i<part.Surfaces.Count;i++)
         {
             token.ThrowIfCancellationRequested();var s=part.Surfaces[i];
@@ -79,15 +82,15 @@ public static class GodotWriter
         }
         Save(Path.Combine(directory,ExportNames.MeshText(model, part.Name)),mesh);
     }
-    private static void WriteAnimation(AnimationClip clip,IReadOnlyList<Bone> bones,string path,CancellationToken token)
+    private static void WriteAnimation(AnimationClip clip,IReadOnlyList<Bone> bones,string path,CancellationToken token,string skeletonNode)
     {
         var text=new StringBuilder("[gd_resource type=\"Animation\" format=2]\n\n[resource]\n");
-        text.AppendLine($"resource_name = {Quote(clip.Name)}\nlength = {F(clip.Duration)}\nloop = {(clip.Name.Contains("loop",StringComparison.OrdinalIgnoreCase)?"true":"false")}");
+        text.AppendLine($"resource_name = {Quote(clip.ExportIdentity?.ResourceName??clip.Name)}\nlength = {F(clip.Duration)}\nloop = {(ExportNames.AnimationLoops(clip)?"true":"false")}");
         for(int t=0;t<clip.TrackToBone.Length;t++)
         {
             token.ThrowIfCancellationRequested();int bone=clip.TrackToBone[t];
             if(bone<0||bone>=bones.Count)throw new InvalidDataException("Animation refers to a missing export bone.");
-            text.AppendLine($"tracks/{t}/type = \"transform\"\ntracks/{t}/path = NodePath({Quote("Skeleton:"+bones[bone].Name)})\ntracks/{t}/interp = 1\ntracks/{t}/loop_wrap = true\ntracks/{t}/imported = true\ntracks/{t}/enabled = true");
+            text.AppendLine($"tracks/{t}/type = \"transform\"\ntracks/{t}/path = NodePath({Quote(skeletonNode+":"+bones[bone].Name)})\ntracks/{t}/interp = 1\ntracks/{t}/loop_wrap = true\ntracks/{t}/imported = true\ntracks/{t}/enabled = true");
             text.Append($"tracks/{t}/keys = PoolRealArray( ");
             Quaternion previous=Quaternion.Identity;
             for(int f=0;f<clip.Frames.Length;f++)

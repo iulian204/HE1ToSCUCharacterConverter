@@ -3,16 +3,18 @@ using HE1ToSCU.Core;
 
 if(args.Length<2)
 {
-    Console.WriteLine("HE1ToSCU.Cli <model> <new-output-folder> [--game generations|unleashed] [--generate-mouth-l] [--export-prr-materials] [--prr-shader-path res://folder-or-project-folder] [--skeleton file.hkx] [--animation file.hkx]... [--animation-folder folder] [--acorn editor.exe]");
+    Console.WriteLine("HE1ToSCU.Cli <model> <new-output-folder> [--game generations|unleashed] [--generate-mouth-l] [--export-prr-materials] [--prr-shader-path res://folder-or-project-folder] [--match-scu-sonic-names] [--super-sonic] [--animation-name-map file.json] [--skeleton file.hkx] [--animation file.hkx]... [--animation-folder folder] [--acorn editor.exe]");
     return 2;
 }
 try
 {
-    string? skeleton=null,editor=null,prrShaderPath=null;var animations=new List<string>();var game=SourceGame.SonicGenerations;bool generateMouthL=false,exportPrr=false;
+    string? skeleton=null,editor=null,prrShaderPath=null,nameMap=null;var animations=new List<string>();var game=SourceGame.SonicGenerations;bool generateMouthL=false,exportPrr=false,matchNames=false,super=false;
     for(int i=2;i<args.Length;i++)
     {
         if(args[i]=="--generate-mouth-l") {generateMouthL=true;continue;}
         if(args[i]=="--export-prr-materials") {exportPrr=true;continue;}
+        if(args[i]=="--match-scu-sonic-names"){matchNames=true;continue;}
+        if(args[i]=="--super-sonic"){super=true;continue;}
         if(i+1>=args.Length)throw new ArgumentException($"Missing value after {args[i]}.");
         switch(args[i])
         {
@@ -22,13 +24,14 @@ try
             case "--game":game=args[++i].ToLowerInvariant() switch {"generations"=>SourceGame.SonicGenerations,"unleashed"=>SourceGame.SonicUnleashed,_=>throw new ArgumentException("Game must be generations or unleashed.")};break;
             case "--acorn":editor=args[++i];break;
             case "--prr-shader-path":prrShaderPath=args[++i];break;
+            case "--animation-name-map":nameMap=args[++i];break;
             default:throw new ArgumentException($"Unknown option {args[i]}.");
         }
     }
     using var cancellation=new CancellationTokenSource();
     Console.CancelKeyPress+=(_,e)=>{e.Cancel=true;cancellation.Cancel();};
     var progress=new InlineProgress(p=>Console.WriteLine($"[{p.Percent,3}%] {p.Message}"));
-    await Task.Run(()=>new ConversionService().ConvertAsync(new ConversionRequest(args[0],skeleton,animations,args[1],editor,game,generateMouthL,exportPrr,prrShaderPath),progress,cancellation.Token));
+    await Task.Run(()=>new ConversionService().ConvertAsync(new ConversionRequest(args[0],skeleton,animations,args[1],editor,game,generateMouthL,exportPrr,prrShaderPath,matchNames,super,nameMap),progress,cancellation.Token));
     return 0;
 }
 catch(Exception e){Console.Error.WriteLine(e.ToString());return 1;}

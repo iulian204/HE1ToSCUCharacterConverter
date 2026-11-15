@@ -4,7 +4,7 @@ using System.Text.Json;
 namespace HE1ToSCU.Core;
 
 public sealed record ConversionRequest(string ModelPath,string? SkeletonPath,IReadOnlyList<string> AnimationPaths,string OutputDirectory,string? AcornEditorPath=null,SourceGame Game=SourceGame.SonicGenerations,bool GenerateMouthL=false,
-    bool ExportPrrMaterials=false, string? PrrShaderPath=null);
+    bool ExportPrrMaterials=false, string? PrrShaderPath=null,bool MatchSonicAssetNames=false,bool SuperSonic=false,string? AnimationNameMapPath=null);
 public sealed record ConversionProgress(int Percent,string Message);
 public sealed record ConversionResult(string Directory,int Surfaces,int Vertices,int Bones,int Animations,bool BinaryValidated);
 
@@ -13,6 +13,10 @@ public sealed class ConversionService
     public async Task<ConversionResult> ConvertAsync(ConversionRequest request,IProgress<ConversionProgress>? progress=null,CancellationToken token=default)
     {
         void Report(int p,string message)=>progress?.Report(new ConversionProgress(p,message));
+        if(!request.MatchSonicAssetNames&&(request.SuperSonic||!string.IsNullOrWhiteSpace(request.AnimationNameMapPath)))
+            throw new ArgumentException("Super Sonic and animation naming corrections require Match Sonic Asset Names (--match-scu-sonic-names).");
+        if(!string.IsNullOrWhiteSpace(request.AnimationNameMapPath)&&!File.Exists(request.AnimationNameMapPath))
+            throw new FileNotFoundException("Animation naming correction file does not exist.",request.AnimationNameMapPath);
         if (!request.ExportPrrMaterials && !string.IsNullOrWhiteSpace(request.PrrShaderPath))
             throw new ArgumentException("Choose shader path requires Export PRR materials (--export-prr-materials).");
         if(request.GenerateMouthL && request.Game!=SourceGame.SonicUnleashed) throw new ArgumentException("Mouth_L generation is available only for Sonic Unleashed.");
@@ -94,6 +98,15 @@ public sealed class ConversionService
         var sourceModel = model; var sourceClips = clips;
         var prepared = AnimationRig.Prepare(model, clips, token);
         model = prepared.Model; clips = prepared.Clips;
+        ScuNamingPlan? naming=null;
+        if(request.MatchSonicAssetNames)
+        {
+            Report(59,"Matching against the bundled SCU inventory using semantic, timing and normalized motion evidence...");
+            naming=ScuNameMatcher.Match(sourceModel,sourceClips,request.Game,request.SuperSonic,request.AnimationNameMapPath,message=>Report(59,message),token);
+            var bySource=clips.ToDictionary(c=>c.Name,StringComparer.Ordinal);
+            clips=naming.Matches.Select(m=>bySource[m.SourceName] with{ExportIdentity=new(m.TargetName,m.ResourceName,m.PlayerKey)}).ToList();
+            model=model with{ExportIdentity=naming.TargetModel};
+        }
         if (prepared.Helpers > 0) Report(59,$"Added {prepared.Helpers} rigid scale-control bones to preserve HE1 translation/rotation/scale inheritance ({sourceBoneCount} original bones, {generatedMouthBones} generated mouth bones).");
         string parent=Path.GetDirectoryName(destination)??throw new IOException("Export folder has no parent.");
         Directory.CreateDirectory(parent);
@@ -101,6 +114,7 @@ public sealed class ConversionService
         Directory.CreateDirectory(staging);
         try
         {
+            naming?.WriteReports(staging);
             Report(60,"Writing Godot 3 ArrayMesh, Skeleton and rest-relative quaternion Animation resources...");
             var prr = shaderDestination == null ? null : new PrrMaterialWriter().Write(model, staging, request.Game,
                 shaderDestination, message => Report(64, message), token);
@@ -113,7 +127,8 @@ public sealed class ConversionService
                 prr?.WriteExpected(staging);
                 try
                 {
-                    await AcornResourceCompiler.CompileAsync(request.AcornEditorPath!,staging,model,clips,sourceModel,sourceClips,log=>Report(82,log),token,prr?.ShaderMaterials > 0,
+                    var validationSources=naming==null?sourceClips:clips.Select(c=>sourceClips.Single(s=>s.Name==c.Name)).ToList();
+                    await AcornResourceCompiler.CompileAsync(request.AcornEditorPath!,staging,model,clips,sourceModel,validationSources,log=>Report(82,log),token,prr?.ShaderMaterials > 0,
                         prr?.ShaderFiles.Keys.Select(path => shaderDestination!.External ? path : "res://" + path).ToArray());
                     if(prr?.ShaderMaterials>0 && (!File.Exists(Path.Combine(staging,"__prr-readback-text.json")) ||
                         !File.Exists(Path.Combine(staging,"__prr-readback-binary.json"))))
@@ -136,17 +151,22 @@ public sealed class ConversionService
                 }
                 if(prr!=null) PrrParameterAuditReport.CleanExpected(staging);
                 prr?.RemoveStagedShaders(staging);
+                if(model.ExportIdentity?.SceneRemapText is{} remap)
+                    File.WriteAllText(Path.Combine(staging,ExportNames.SceneText(model)+".remap"),remap);
             }
             else Report(85,"Text resources written. Acorn binary validation skipped because no editor was selected.");
             if (prr == null) Report(90,$"Converted {materials.Count} HE1 materials to textured SpatialMaterials. Custom HE1 lighting is approximated using built-in shading.");
             var result=new ConversionResult(destination,model.AllSurfaces.Count(),model.AllSurfaces.Sum(s=>s.Vertices.Count),model.Bones.Count,clips.Count,binary);
             var manifest=new
             {
-                converter="HE1ToSCU 0.7.0",game=request.Game.ToString(),request.GenerateMouthL,result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
+                converter="HE1ToSCU 0.8.0",game=request.Game.ToString(),request.GenerateMouthL,result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
                 sourceAnimations=request.AnimationPaths,spatialProfile=new{scale=Spatial.Scale,basis="Y-up preserved"},
                 outputScene=binary?ExportNames.SceneBinary(model):ExportNames.SceneText(model),outputMesh=binary?ExportNames.MeshBinary(model):ExportNames.MeshText(model),
-                meshes=model.MeshParts.Select(p=>new {nodePath="Skeleton/"+p.Name,textFile=ExportNames.MeshText(model,p.Name),binaryFile=binary?ExportNames.MeshBinary(model,p.Name):null,p.MouthRootBone,p.Mirrored,surfaces=p.Surfaces.Count,vertices=p.Surfaces.Sum(s=>s.Vertices.Count)}),
-                animations=clips.Select(c=>new{name=c.Name,textFile=ExportNames.AnimationText(c),binaryFile=binary?ExportNames.AnimationBinary(c):null,rootMotionSamples=c.RootMotion?.Samples.Count??0,sourceFrames=sourceClips.Single(s=>s.Name==c.Name).Frames.Length,exportFrames=c.Frames.Length,c.BakedReference}),
+                meshes=model.MeshParts.Select(p=>new {nodePath=ExportNames.SkeletonNode(model)+"/"+p.Name,textFile=ExportNames.MeshText(model,p.Name),binaryFile=binary?ExportNames.MeshBinary(model,p.Name):null,p.MouthRootBone,p.Mirrored,surfaces=p.Surfaces.Count,vertices=p.Surfaces.Sum(s=>s.Vertices.Count)}),
+                animations=clips.Select(c=>new{name=c.Name,targetName=ExportNames.AnimationName(c),textFile=ExportNames.AnimationText(c),binaryFile=binary?ExportNames.AnimationBinary(c):null,rootMotionSamples=c.RootMotion?.Samples.Count??0,sourceFrames=sourceClips.Single(s=>s.Name==c.Name).Frames.Length,exportFrames=c.Frames.Length,c.BakedReference}),
+                sonicNaming=new{enabled=request.MatchSonicAssetNames,profile=naming?.Profile,inventoryVersion=naming?.InventoryVersion,sourceModel=model.Name,targetModel=model.ExportIdentity,
+                    matches=naming?.Matches,unfilled=naming?.Unfilled,unusedSources=naming?.UnusedSources,warnings=naming?.Warnings,rigPolicy=naming?.RigPolicy,
+                    report=naming==null?null:"scu-animation-mapping.txt",corrections=request.AnimationNameMapPath},
                 materials=materials.Values.Select(m=>new{m.Name,m.Shader,m.AlphaThreshold,m.DoubleSided,m.Additive,parameters=m.Parameters.ToDictionary(p=>p.Key,p=>p.Value.Select(v=>new[]{v.X,v.Y,v.Z,v.W}).ToArray()),m.Textures}),
                 prr = new { enabled = request.ExportPrrMaterials, game = request.Game.ToString(), shaderPath = shaderDestination?.ResourceDirectory,
                     referenceMode = shaderDestination == null ? "disabled" : shaderDestination.External ? "external" : "bundled",
@@ -227,6 +247,36 @@ internal static class AcornResourceCompiler
         }
         File.Delete(scriptPath);File.Delete(Path.Combine(directory,"project.godot"));
     }
+    private static string NamedAnimationChecks(IReadOnlyList<AnimationClip> clips) => JsonSerializer.Serialize(
+        clips.Where(c=>c.ExportIdentity!=null).Select(c=>new[]{ExportNames.AnimationName(c),
+            ExportNames.AnimationName(clips.First(original=>original.Name==c.Name)),"res://"+ExportNames.AnimationBinary(c),c.ExportIdentity!.ResourceName}));
+    private const string NamingValidationFunctions = """
+        func named_animation_data(a):
+            var data = [a.length,a.loop,a.step,a.get_track_count()]
+            for t in range(a.get_track_count()):
+                data.append([a.track_get_type(t),str(a.track_get_path(t)),a.track_is_enabled(t),a.track_get_interpolation_type(t),a.track_get_interpolation_loop_wrap(t)])
+                for k in range(a.track_get_key_count(t)):
+                    data.append([a.track_get_key_time(t,k),a.track_get_key_transition(t,k),a.track_get_key_value(t,k)])
+            return var2bytes(data)
+        func check_named_animations(player, entries):
+            var representatives = {}
+            for entry in entries:
+                var actual = player.get_animation(entry[0])
+                if actual == null or actual.resource_name != entry[3]:
+                    fail("renamed animation identity " + entry[0])
+                    return false
+                if not representatives.has(entry[1]):
+                    representatives[entry[1]] = named_animation_data(player.get_animation(entry[1]))
+                if named_animation_data(actual) != representatives[entry[1]]:
+                    fail("reused animation data differs from source representative " + entry[0])
+                    return false
+                if naming_binary_stage:
+                    var standalone = load(entry[2])
+                    if standalone == null or standalone.resource_name != entry[3] or named_animation_data(standalone) != representatives[entry[1]]:
+                        fail("renamed standalone animation differs " + entry[0])
+                        return false
+            return true
+        """;
     private static string MeshChecks(ModelAsset model) => JsonSerializer.Serialize(model.MeshParts.Select(p=>new object[] {p.Name,"res://"+ExportNames.MeshBinary(model,p.Name),p.Surfaces.Count,!p.Mirrored}));
     private static string BuildVerifyScript(ModelAsset model,IReadOnlyList<AnimationClip> clips)=>$$"""
         extends SceneTree
@@ -235,6 +285,8 @@ internal static class AcornResourceCompiler
             quit()
         {{MaterialResourceValidation.Functions}}
         {{PoseValidation.GodotFunctions}}
+        {{NamingValidationFunctions}}
+        var naming_binary_stage = true
         func _init():
             load_prr_expectations("binary")
             var expected = File.new()
@@ -249,7 +301,7 @@ internal static class AcornResourceCompiler
                 return
             var instance = packed.instance()
             get_root().add_child(instance)
-            var skeleton = instance.get_node("Skeleton")
+            var skeleton = instance.get_node({{ExportNames.Literal(ExportNames.SkeletonNode(model))}})
             if skeleton.get_bone_count() != {{model.Bones.Count}}:
                 fail("binary scene counts")
                 return
@@ -277,6 +329,8 @@ internal static class AcornResourceCompiler
                     if standalone_animation == null or standalone_animation.get_track_count() == 0:
                         fail("standalone animation load")
                         return
+                if not check_named_animations(player, {{NamedAnimationChecks(clips)}}):
+                    return
                 var checked_poses = check_poses(instance, skeleton)
                 if checked_poses is GDScriptFunctionState:
                     checked_poses = yield(checked_poses, "completed")
@@ -294,6 +348,8 @@ internal static class AcornResourceCompiler
             quit()
         {{MaterialResourceValidation.Functions}}
         {{PoseValidation.GodotFunctions}}
+        {{NamingValidationFunctions}}
+        var naming_binary_stage = false
         func _init():
             load_prr_expectations("text")
             for shader_path in {{JsonSerializer.Serialize(shaderPaths)}}:
@@ -311,7 +367,7 @@ internal static class AcornResourceCompiler
                 return
             var instance = packed.instance()
             get_root().add_child(instance)
-            var skeleton = instance.get_node("Skeleton")
+            var skeleton = instance.get_node({{ExportNames.Literal(ExportNames.SkeletonNode(model))}})
             if skeleton.get_bone_count() != {{model.Bones.Count}}:
                 fail("bone counts")
                 return
@@ -349,6 +405,7 @@ internal static class AcornResourceCompiler
                 mesh.resource_path = ""
             if {{clips.Count}} > 0:
                 var player = instance.get_node("AnimationPlayer")
+                var animation_files = {{JsonSerializer.Serialize(clips.ToDictionary(ExportNames.AnimationName,c=>"res://"+ExportNames.AnimationBinary(c)))}}
                 var names = player.get_animation_list()
                 if names.size() != {{clips.Count}}:
                     fail("animation count")
@@ -363,17 +420,22 @@ internal static class AcornResourceCompiler
                             if is_nan(pose.origin.x) or is_nan(pose.origin.y) or is_nan(pose.origin.z) or is_inf(pose.origin.length()):
                                 fail("non-finite bone pose")
                                 return
-                    var filename = animation.resource_path.get_file().replace(".tres", ".anim")
-                    if ResourceSaver.save("res://" + filename, animation, 1) != OK:
+                    var filename = animation_files[name]
+                    if ResourceSaver.save(filename, animation, 1) != OK:
                         fail("animation save")
                         return
-                    if {{((long)clips.Count*model.Bones.Count<24000?"true":"false")}}:
+                    # Named character folders must also load below an arbitrary project folder.
+                    # Acorn preloads external binary dependencies relative to the project root,
+                    # so keep their animations embedded while still exporting standalone files.
+                    if {{(model.ExportIdentity!=null||(long)clips.Count*model.Bones.Count<24000?"true":"false")}}:
                         animation.resource_path = ""
                     else:
-                        animation.take_over_path("res://" + filename)
+                        animation.take_over_path(filename)
                 player.stop(true)
                 for bone in range(skeleton.get_bone_count()):
                     skeleton.set_bone_pose(bone, Transform())
+                if not check_named_animations(player, {{NamedAnimationChecks(clips)}}):
+                    return
                 var checked_poses = check_poses(instance, skeleton)
                 if checked_poses is GDScriptFunctionState:
                     checked_poses = yield(checked_poses, "completed")
@@ -390,7 +452,7 @@ internal static class AcornResourceCompiler
             expected.close()
             instance.transform = Transform()
             var output = PackedScene.new()
-            if output.pack(instance) != OK or ResourceSaver.save({{ExportNames.Literal("res://" + ExportNames.SceneBinary(model))}}, output, 65) != OK:
+            if output.pack(instance) != OK or ResourceSaver.save({{ExportNames.Literal("res://" + ExportNames.SceneBinary(model))}}, output, {{(model.ExportIdentity!=null?64:65)}}) != OK:
                 fail("scene save")
                 return
             var reloaded = ResourceLoader.load({{ExportNames.Literal("res://" + ExportNames.SceneBinary(model))}}, "PackedScene", true)
@@ -398,7 +460,7 @@ internal static class AcornResourceCompiler
                 fail("binary scene reload")
                 return
             var check = reloaded.instance()
-            if check.get_node("Skeleton").get_bone_count() != {{model.Bones.Count}}:
+            if check.get_node({{ExportNames.Literal(ExportNames.SkeletonNode(model))}}).get_bone_count() != {{model.Bones.Count}}:
                 fail("binary skeleton reload")
                 return
             check.free()

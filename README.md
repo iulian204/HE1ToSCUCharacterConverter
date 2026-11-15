@@ -164,3 +164,6 @@ Thanks to the authors and contributors of the repositories that informed the con
 - Test and coverage tooling. [xunit/xunit](https://github.com/xunit/xunit), [microsoft/vstest](https://github.com/microsoft/vstest), [coverlet-coverage/coverlet](https://github.com/coverlet-coverage/coverlet)
 
 See [pinned reference revisions](docs/reference-lock.json), [format evidence](docs/FORMAT-EVIDENCE.md), [validation results](docs/VALIDATION.md), and [third-party notices](THIRD-PARTY-NOTICES.md). This project is licensed under **GPL-3.0-or-later**, including its attributed spline decoder adaptation.
+## Automatic Sonic naming
+
+The optional **Match Sonic Asset Names** setting automatically names model, mesh, Skeleton and animation resources using a bundled SCU inventory. **Super Sonic** selects the Super Sonic profile. Matching is offline and automatic, including uncertain best-effort matches; confidence, reuse and corrections are recorded in the export report. Materials and textures keep their original names. See [automatic naming documentation](docs/SCU-NAMING.md) for CLI flags, optional corrections and compatibility limits.

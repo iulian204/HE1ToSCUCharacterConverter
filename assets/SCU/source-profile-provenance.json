@@ -1,0 +1,4903 @@
+{
+  "schemaVersion": 1,
+  "inventoryVersion": "2026-11-14.7da219239e39",
+  "descriptorVersion": 1,
+  "entries": [
+    {
+      "game": "SonicGenerations",
+      "file": "sn_airboost_loop.anm.hkx",
+      "name": "sn_airboost_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "53413415991cebc60cf01d1def27cb4b7f81f9cdab2fd38319bf313a82ff4dc2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_ball_loop.anm.hkx",
+      "name": "sn_ball_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "6120203a3a7ed74e5dbcdaafdb2498853bb2154baf5d6679d22fe5d75e450577"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_balloon_loop.anm.hkx",
+      "name": "sn_balloon_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "d287335697b61ba2216557441d94acb3089c45f2dbbcbcb6aff447c44efe75cd"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_boost_l_loop.anm.hkx",
+      "name": "sn_boost_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "928cbc90cb5d7e4824fb028afcbd9bf3cdfb3979d4f716859954ceda9aad2e58"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_boost_loop.anm.hkx",
+      "name": "sn_boost_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "d7af0c90bc414faf42ed55a6fd01798f98a1562b960e9f657e12516b7726bbc0"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_boost_r_loop.anm.hkx",
+      "name": "sn_boost_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "2070da47f0c621cb24ba274c6ba9b25a8b0771d176f5ce8159f4191d5894acab"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_boost_wall_l_loop.anm.hkx",
+      "name": "sn_boost_wall_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "cd3c5cfb2cae2164d42eacca23fb7e1fbe985b3a18196ec8ce4400c3e1d23e29"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_boost_wall_r_loop.anm.hkx",
+      "name": "sn_boost_wall_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "cc5203a2a018ad1925f46ba44fb8776e16d5145b9a04e5bb921dea8e4b417c2c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_box_catch_l.anm.hkx",
+      "name": "sn_box_catch_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.53333336,
+      "frames": 33,
+      "sha256": "ee88b56599c49d3f301ec52f9eb223f8cac989600ba7d05d46e1bd75d6d55369"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_box_catch_r.anm.hkx",
+      "name": "sn_box_catch_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.53333336,
+      "frames": 33,
+      "sha256": "7396c6b154fffc30618e9551378541b5888ec7e0b5c04f17a2190d7eb6d792f4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_box_kick_boost_l.anm.hkx",
+      "name": "sn_box_kick_boost_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.15,
+      "frames": 70,
+      "sha256": "fee55b7dcfbee337e2517487be7bb958ba79b4de21d4714ad08c2459bdaf84b4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_box_kick_boost_r.anm.hkx",
+      "name": "sn_box_kick_boost_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.15,
+      "frames": 70,
+      "sha256": "995184a7d5138a5ad8b23fb47806f4779cb58903c8e1d74570581eed82d2eec8"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_box_l_e.anm.hkx",
+      "name": "sn_box_l_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6166667,
+      "frames": 38,
+      "sha256": "5de0183a4dd40b2fa1fbdc6bb280bd64487f4b6c82379d95a09ec7833426e2c6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_box_push_l_loop.anm.hkx",
+      "name": "sn_box_push_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "ec3f2507e1fe654216ace8b4cc651d23de8397f1df09dc28e34017eca4d58d75"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_box_push_r_loop.anm.hkx",
+      "name": "sn_box_push_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "ddab73e5122c397f1a8b24c07520d6959634f1c8e6637856ad215a78da52f986"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_box_r_e.anm.hkx",
+      "name": "sn_box_r_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6166667,
+      "frames": 38,
+      "sha256": "fcb637e914dccc2d0c271ca0fc7f3b11d438ff733554bac13f35df9830c38711"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake00_l.anm.hkx",
+      "name": "sn_brake00_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.28333333,
+      "frames": 18,
+      "sha256": "b33f0d729c63e5d8b565d20556c9415fa3214f89afd8c5652ddcf76e29b55799"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake00_r.anm.hkx",
+      "name": "sn_brake00_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.28333333,
+      "frames": 18,
+      "sha256": "497177da667bd71ad6cfab33475c3ac780a543edf00b84978aa20a98d8961679"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake01_l.anm.hkx",
+      "name": "sn_brake01_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "da62511fc594300432c48f20012defaa6f6d1e382ed1b0065338225606befa9b"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake01_l_e.anm.hkx",
+      "name": "sn_brake01_l_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "d2a74ddabc973af99ecc0102b99f2e8401b817d0cdd65cde500abe3b80ffa322"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake01_l_loop.anm.hkx",
+      "name": "sn_brake01_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "e27dcc3b69fd437b40a651c7ba796d95ef09338175520a789f26b18ae2371c15"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake01_r.anm.hkx",
+      "name": "sn_brake01_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "35e168b3678ab159b74d0e5a7b74ae5a6d005424335e179eb03b7b5798ac9358"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake01_r_e.anm.hkx",
+      "name": "sn_brake01_r_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "2225bc058163284d8f91e4159c0be66c4cf1c146907cd2db02415c2e1ddc43d2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake01_r_loop.anm.hkx",
+      "name": "sn_brake01_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "0ac1198213edf27b3cbb0ae452019be4ade6bba1e92177f737001ff00db52fdd"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake02_l_s.anm.hkx",
+      "name": "sn_brake02_l_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "78e5c2d148c01d48fd38239d856c51ffce5fb584010695843ed3601eb80727fe"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake_02_loop.anm.hkx",
+      "name": "sn_brake_02_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "e10945cbce40c2f25e6f572463bffa5080de331e0407d695219852aead90672d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake_l_turn_idle.anm.hkx",
+      "name": "sn_brake_l_turn_idle",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.41666666,
+      "frames": 26,
+      "sha256": "0dff653930431f76ba2a4263ae11d244631950b5be1fe404a5ad407e9f5ff9b6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_brake_r_turn_idle.anm.hkx",
+      "name": "sn_brake_r_turn_idle",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.41666666,
+      "frames": 26,
+      "sha256": "ecf671d431a1c0a3c3826ee3894acf8caa72417e080ce68c9f11e579f98434bf"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_catch_rocket_wait_loop.anm.hkx",
+      "name": "sn_catch_rocket_wait_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "350b41bf9a22424d264eb0a9345288dfbe6a8ea841394538be68eec9f6a31b30"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_change_ssn_loop.anm.hkx",
+      "name": "sn_change_ssn_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "265d9d837f1599756eaa8ce275b0104230d9a85ccaeadfe5c21dbf69ccd4a050"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_change_ssn_s.anm.hkx",
+      "name": "sn_change_ssn_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "46e2522e4c06c93f640dcbd4259b5a710245b22edf192ad581601139d5aa2df7"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_damage_b.anm.hkx",
+      "name": "sn_damage_b",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "e8d63307c80e10fde01b07033970baf7fc0c0973be1a9b3d8400bdade1f33966"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_damage_cancel.anm.hkx",
+      "name": "sn_damage_cancel",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "05904a52ef7b1ff5f6f5f95a1c453693ec6e853f879cd5f571692f3114effa75"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_damage_electric_loop.anm.hkx",
+      "name": "sn_damage_electric_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.7,
+      "frames": 43,
+      "sha256": "6126f0976bc1a0122260644b63c3220359ba4c9586a79418ba8746f7e835d322"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_damage_f.anm.hkx",
+      "name": "sn_damage_f",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "05511fceeeb7e5032c3cf0208f30b87f3425954d95b56f189d7e13136af9632d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_damage_far.anm.hkx",
+      "name": "sn_damage_far",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2,
+      "frames": 121,
+      "sha256": "a67d82be228ed5b0d61263fd10b156b58a969b01582d7f2a79676dc0d999c7cf"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_damage_l.anm.hkx",
+      "name": "sn_damage_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "b5c0a35ad07c5fabc501c9183442e4e9fb454e13e3327f8b4afb9842377f22be"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_damage_near.anm.hkx",
+      "name": "sn_damage_near",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2,
+      "frames": 121,
+      "sha256": "f11979214867957524056ca5ddc57e8fe63505c7852bbf12c5c648d7a00ee5ca"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_damage_r.anm.hkx",
+      "name": "sn_damage_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "acc5251f6eef258bf8c921ae794b382cc19f4a555f03193379a7789bc997351a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_dash_l_loop.anm.hkx",
+      "name": "sn_dash_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "64820a428132614c571d5f01d30745f5b4fb59b3bfd577ea68b562a2cc461ed3"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_dash_loop.anm.hkx",
+      "name": "sn_dash_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "ccd0e8a7165eb62431907dfd65010b14fb502990b528c5a753503185bf583470"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_dash_r_loop.anm.hkx",
+      "name": "sn_dash_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "283d7a11511f960c67405aedc64af50560470f408d100c223a20f2ab238144de"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_dashring_l.anm.hkx",
+      "name": "sn_dashring_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "f20ed6ea443ebb0862a9f18ac7deb21f81324cedfbd8d56d00e5556752649f42"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_dashring_r.anm.hkx",
+      "name": "sn_dashring_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "ffac02a541d8415ccbacbc47e0660bab3a22572f66b5bbb63194720991083e2e"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_dead.anm.hkx",
+      "name": "sn_dead",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.5,
+      "frames": 91,
+      "sha256": "7408d3639b179bf34df507ece7691d14a56543bd326e6bfb4ef4ae270dde153b"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_dead_fall_loop.anm.hkx",
+      "name": "sn_dead_fall_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.26666668,
+      "frames": 17,
+      "sha256": "ed5ab15d6f695d502494e351f1851ffe1972792ee5d32927bd4d04ba9618f295"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_direct_l.anm.hkx",
+      "name": "sn_direct_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.016666668,
+      "frames": 2,
+      "sha256": "61febc957f90bd8484f7d9b4833c6bcbce71d914284aa344fa7aed2565dac6cc"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_direct_r.anm.hkx",
+      "name": "sn_direct_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.016666668,
+      "frames": 2,
+      "sha256": "2855c200868559471e2e7a25e3e28ff9e902e05261846b0d9c981f39307ed2d2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_drow_e_loop.anm.hkx",
+      "name": "sn_drow_e_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "dfd2b228bb1ce5140401454756e4869bc28b1fd0bfc109c8edbf45102ada0909"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_float_loop.anm.hkx",
+      "name": "sn_float_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.75,
+      "frames": 106,
+      "sha256": "8c6b5dc01c6079101b132b2597c002207f89e5a75031692df66bea1959fce7db"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_freeze.anm.hkx",
+      "name": "sn_freeze",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.05,
+      "frames": 4,
+      "sha256": "b60854862f52a4d5c1c4586be55b1198fd8876881a9f74f48921031d0287a6c6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_b_l_loop.anm.hkx",
+      "name": "sn_grind_b_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "c08cfd1502b01f56ef35f95695a86947978609bae7c01d791058d300a591c0f4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_b_r_loop.anm.hkx",
+      "name": "sn_grind_b_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "d9f959b50ab3b549decca616d7dfbc972872b0b31f2fffbfb3c1bfadc3090ffc"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_boost_l_loop.anm.hkx",
+      "name": "sn_grind_boost_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "09918a932b8b03bb90741aaad17c666061ee1f26143d8cec3b8400d9e3ee9a1f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_boost_r_loop.anm.hkx",
+      "name": "sn_grind_boost_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "4c42911b7bd9b4e468c5fdaf009e41700ea4ca4b48770558de9094e285c92f4e"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_f_l_loop.anm.hkx",
+      "name": "sn_grind_f_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "5d27110960957f038a361c62d96b087cffb4aa7fcff869dda8d14a233477753c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_f_r_loop.anm.hkx",
+      "name": "sn_grind_f_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "54522832bf4daa69db17dc7015fdfe02f23adcc7bbd427799a1ee843cc380e58"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_jump_l.anm.hkx",
+      "name": "sn_grind_jump_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "577b64c65d9e1ed48d4701aefcc0b03412d458e2a33f90b8ce2d5f8887f442fe"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_jump_r.anm.hkx",
+      "name": "sn_grind_jump_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "25b2a27ab7d07cf189dc063b6d939bd4663582701b02031a6a7adb8d41808f52"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_l_l_loop.anm.hkx",
+      "name": "sn_grind_l_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "bf3e3f8298b30c8f9d117e68ca18ec65a30ccf53bc21748c9ce66ca971e12eb1"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_l_r_loop.anm.hkx",
+      "name": "sn_grind_l_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "8ad4ca307b8f72a0d125963c8285d3fe84db68991b47d6ba5c1da80ff8a367ac"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_l_wall_l.anm.hkx",
+      "name": "sn_grind_l_wall_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6,
+      "frames": 37,
+      "sha256": "e452f660016557a1856cb1de1fffd090c51e2a650cbe152e3f9a420adaca027c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_l_wall_r.anm.hkx",
+      "name": "sn_grind_l_wall_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6,
+      "frames": 37,
+      "sha256": "7f5237f39bd152d1c899d2fe572c094180311dbf6677461984bd74c45e038389"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_landing_l.anm.hkx",
+      "name": "sn_grind_landing_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.7,
+      "frames": 43,
+      "sha256": "6dbeb0fd894497567a73557d89f70a857d2f981c907c17a4e2ba767af597eb2e"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_landing_r.anm.hkx",
+      "name": "sn_grind_landing_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.7,
+      "frames": 43,
+      "sha256": "fb7a6cbfce5fa8f6cfed65fde8b0c7eb73fe5477ab337d8e484abcbd869bd308"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_long_l_loop.anm.hkx",
+      "name": "sn_grind_long_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2,
+      "frames": 121,
+      "sha256": "88cef90ee81b4d47b676bfc590e2c87ae37bc3785fb50b329a1530a86265c046"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_long_r_loop.anm.hkx",
+      "name": "sn_grind_long_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2,
+      "frames": 121,
+      "sha256": "d771cdb513772b8b225eac0b77dc5456579b87b9b109ac870ff8854119ec2088"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_move_l_l.anm.hkx",
+      "name": "sn_grind_move_l_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "cd069823350c467739728e2b5b242f33dc3f52ef66c9bef2a982beca0f981b56"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_move_l_r.anm.hkx",
+      "name": "sn_grind_move_l_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "9a7938335556a66d379f9e1fa1f363ef9228a2b1e10474f753e87454d50ed9ad"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_move_r_l.anm.hkx",
+      "name": "sn_grind_move_r_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "ff12978f8fbfb6693249ba8d2b7c883ff80a9fc6a23484bd4d5742baef00e1a1"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_move_r_r.anm.hkx",
+      "name": "sn_grind_move_r_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "e8e0024c0770de3bd1196766bfdd16a02146b89b03b84190b0821b7d02023904"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_piyo_l_loop.anm.hkx",
+      "name": "sn_grind_piyo_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "3c17541b298577ead329589772a1c081fb0779b7eeb63b47d543b6ab8f679479"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_piyo_r_loop.anm.hkx",
+      "name": "sn_grind_piyo_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "6d5c9e846cfa504b1ef8a5bba0fbdbd190760fd55f3a1ea61aa89b676eb6bfa4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_r_l_loop.anm.hkx",
+      "name": "sn_grind_r_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "5cbfb7756516bc272c41b7bba6fc807f590eeb9e502eef6cf77f8c2aa9479b19"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_r_r_loop.anm.hkx",
+      "name": "sn_grind_r_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "19b1950fbc696cfbc8de0196ad9f1ed0250050fd28cb9f846602e957ff0d7582"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_r_wall_l.anm.hkx",
+      "name": "sn_grind_r_wall_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6,
+      "frames": 37,
+      "sha256": "c88ebd4640c1d9e58b3427b735ae6ca5dd1aaffd4b3538a41c2e15f0affc19f7"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_r_wall_r.anm.hkx",
+      "name": "sn_grind_r_wall_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "0fc568cc7156c1e5c94bba7e6a912cfb29eca91527aae1d72c1fbb7656d862d8"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_squat_l_loop.anm.hkx",
+      "name": "sn_grind_squat_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "f826c56622b3d396368dffbbed7b4baacbe430117ac09d9518f9573c225d4307"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_squat_r_loop.anm.hkx",
+      "name": "sn_grind_squat_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "d985994015e48992b1a68e5b259d7602d84eedf5469e911327dce23fc664032f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_stumble_l_loop.anm.hkx",
+      "name": "sn_grind_stumble_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "58cbe89d908e1cad9bb469e2f5d1a0f15b2aa1360d19efee9831c301926ff9e8"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_stumble_r_loop.anm.hkx",
+      "name": "sn_grind_stumble_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "87982fe58f90da9f94bdcc2946f53a1b9947804eae4f093aa99ca0cc366210b2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_switch_l.anm.hkx",
+      "name": "sn_grind_switch_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "53852c19f0b888990caebc003a4fa568c6a44f20c8c6b5156fe9c3abfd75b7e6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_grind_switch_r.anm.hkx",
+      "name": "sn_grind_switch_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "98ddd4f1e20e5ba1f25ee7fc6e951ba3309bf9e6dcd4f58dee2c03f96ca488ca"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_homing_act00.anm.hkx",
+      "name": "sn_homing_act00",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "fb42a4a56e55c8384319f5c8babd5d924fe97c40f61eb28aa965ff0d9970b844"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_homing_act01.anm.hkx",
+      "name": "sn_homing_act01",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "a78208cb0424b480344951a34d16e8c54c50d475e0f60aa2cdfd0f64240b54d9"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_homing_act02.anm.hkx",
+      "name": "sn_homing_act02",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "537cf803cd09ff2fa578887ab143817174d296923bcb949259749461f5a4fdd3"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_homing_act03.anm.hkx",
+      "name": "sn_homing_act03",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "0d2e7c25e32a28e847924e609f11b034ae0187468c571b94408412db92cabeec"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_homing_act04.anm.hkx",
+      "name": "sn_homing_act04",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "b1ff565acf5b489a4692ec98212d389b66b7d8c354c787cca56c48dd89ebf5e0"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_homing_act05.anm.hkx",
+      "name": "sn_homing_act05",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "612c815267e4320c828e6493936f8730dac7b80f1b0dae6c33a38ac4c2f732c3"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_hurdle_l.anm.hkx",
+      "name": "sn_hurdle_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.46666667,
+      "frames": 29,
+      "sha256": "23b181bfde668c2cd7656648a3c0cc93ddf97e5e15a2ae032ab967e33182c794"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_hurdle_r.anm.hkx",
+      "name": "sn_hurdle_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.46666667,
+      "frames": 29,
+      "sha256": "61ca97cfc05f81c949352a9ccaa3d46d7065c8d535f88a4f2dece1b5a89468e3"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle00.anm.hkx",
+      "name": "sn_idle00",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 6.166667,
+      "frames": 371,
+      "sha256": "b6e87217d905da5c0452e0b60101dca3567da2a27aae914a50a37654ba44fbff"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle01.anm.hkx",
+      "name": "sn_idle01",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3.2333333,
+      "frames": 195,
+      "sha256": "b80f861735c983679b0f93d318e85844ed1d3f7970c45b6dc9fffca268b550a2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle02.anm.hkx",
+      "name": "sn_idle02",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.8333333,
+      "frames": 171,
+      "sha256": "a65ce0c5eb33c7abd84ad80ad97cfab73d4f899b12e9eb8c94ae5150360f2a4a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle03.anm.hkx",
+      "name": "sn_idle03",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 9.166667,
+      "frames": 551,
+      "sha256": "cd8efd1ab365fa76a258f0b29a56e067169ade275b6a65f57e81a8dc93004790"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle04_a_loop.anm.hkx",
+      "name": "sn_idle04_a_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.8333334,
+      "frames": 111,
+      "sha256": "1647400230d1fce381a92581d88737cea8910d17d5e2b0286786ca679a2dfd3a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle04_b_loop.anm.hkx",
+      "name": "sn_idle04_b_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.5,
+      "frames": 151,
+      "sha256": "518c9635b4b09374599d2fa038423ad4dcd8fb986a57acdc1c7422750f580a6a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle04_s.anm.hkx",
+      "name": "sn_idle04_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.8333334,
+      "frames": 111,
+      "sha256": "b72eb6bbfeb172b5df81bdc1a9987440d82468b4f3f449163d396123a528929d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle04_sv_a_loop.anm.hkx",
+      "name": "sn_idle04_sv_a_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.8333334,
+      "frames": 111,
+      "sha256": "f81bdb5d6fa1619a98a9aac9f4c4a7cb26f618ee7194ceb2520d4df569df3dd5"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle04_sv_b_loop.anm.hkx",
+      "name": "sn_idle04_sv_b_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.5,
+      "frames": 151,
+      "sha256": "69e9e7c63cd506c1f2ebccfa73e3e961aaf9944cff0a3de01ae1cf15919360b2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle04_sv_rev_a_loop.anm.hkx",
+      "name": "sn_idle04_sv_rev_a_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.8333334,
+      "frames": 111,
+      "sha256": "9de6e40962ac1a6286afe6fc7fd11903e09938aecbadea2c7fac6bd1ba110f01"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle04_sv_rev_b_loop.anm.hkx",
+      "name": "sn_idle04_sv_rev_b_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.5,
+      "frames": 151,
+      "sha256": "37da927b4701c5858b3a59d2e3d73f20b789971160ab7c2146581515e0bded5c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle04_sv_rev_s.anm.hkx",
+      "name": "sn_idle04_sv_rev_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.8333334,
+      "frames": 111,
+      "sha256": "91690559c35a5684f1e6669aa6ff68e9dba2f542a9c97d8a929310488c435126"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle04_sv_s.anm.hkx",
+      "name": "sn_idle04_sv_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.8333334,
+      "frames": 111,
+      "sha256": "ae97b7cc61d1b4d637bed2bb905f0fadfe534d959f8dbc464bba1fe0e804c1ff"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle05.anm.hkx",
+      "name": "sn_idle05",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 5.333333,
+      "frames": 321,
+      "sha256": "9347c848e4a03694510c432df7aa1736c0a6cbb25e124c8277909e7f9531bad7"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle_loop.anm.hkx",
+      "name": "sn_idle_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.6666667,
+      "frames": 161,
+      "sha256": "5d76dcd6f6a7d8cb22b652772b616400199f62dc5aebdb7e5a80cf4a7044c86f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle_quickstep_l.anm.hkx",
+      "name": "sn_idle_quickstep_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "a865451784b2360d75cf33a8d9305b3e89e8b4c3f363382aff5358ecc8951823"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_idle_quickstep_r.anm.hkx",
+      "name": "sn_idle_quickstep_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "7700b9801726b4d160d8ca215b656da91a102f3907299fae322b8f6c6cefe8a7"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jet_l_loop.anm.hkx",
+      "name": "sn_jet_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "1fbd4d2eae80a6dcf5cd4ddf73b8cd29754b37e4bfc5f470fd9e4a20de111692"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jet_loop.anm.hkx",
+      "name": "sn_jet_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "86f3d38e550392f773babc3b9806ecb0bd6b584ba207ae3e225b2a35a2edcd47"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jet_r_loop.anm.hkx",
+      "name": "sn_jet_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "37c84d705aed74111bdccd1d7b775908c043a2da1d1192830e96587076523d69"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jet_wall_l_loop.anm.hkx",
+      "name": "sn_jet_wall_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "50dfab96ad433c9c71809b9a371222a35d3c1d6796e2fd51dce5084c69fcef07"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jet_wall_r_loop.anm.hkx",
+      "name": "sn_jet_wall_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "4258b8b8611d6fba22d58c869707186beb8b7d8951203a7e0e42b465884aec89"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jog_l_loop.anm.hkx",
+      "name": "sn_jog_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "fcbec843798102481e99ebbf8eefeb6569888262995111ddafce0aa3a0c37cb6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jog_loop.anm.hkx",
+      "name": "sn_jog_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "5456d19908b0cba113f3d495a8ec84af13819a6b98c5c792391d83336b007c97"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jog_r_loop.anm.hkx",
+      "name": "sn_jog_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "3107c10c59e1ff8ba693d1f4eea6e225fb329f0216a2621737e515f1843eaf32"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jump_d_arc_loop.anm.hkx",
+      "name": "sn_jump_d_arc_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "54b6465790b520976e9b8da3cadea2eac2095bb753483b58ab3515093f4a8086"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jump_d_loop.anm.hkx",
+      "name": "sn_jump_d_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "0b0c3907d4c639aff79b45dc7263c3aaa2d9de5e30aec6eeca2dba673d9c3075"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jump_d_s_loop.anm.hkx",
+      "name": "sn_jump_d_s_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "73b0d27a31c87159c71e9322298ca455c5f4e05644a4abd9eb0f4378f135d44b"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jump_e.anm.hkx",
+      "name": "sn_jump_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "3bf4e2963ce0fb70bbe91cfdb22ce825d3ae5ffdbac769f8aa268e79666c7939"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jump_loop.anm.hkx",
+      "name": "sn_jump_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "b86f01c9caa240c14f34facfe572f0da414dbc08d32302bf5a2cb8d4526ad659"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jump_s.anm.hkx",
+      "name": "sn_jump_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "616cc3de609e745f0ee51a96596106918af863f0eacc9df558a09e63859c4fca"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jump_top.anm.hkx",
+      "name": "sn_jump_top",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "4071d6fc41c5ef93a14f5c34130e31bcb93236b9d802fb6e590799ffd221ab10"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jumpstand01_l_s.anm.hkx",
+      "name": "sn_jumpstand01_l_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.56666666,
+      "frames": 35,
+      "sha256": "b02ae8155de73ad7519f149c9c42054e9466ab4be4284ae4e93213fc823ab0f1"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jumpstand01_r_s.anm.hkx",
+      "name": "sn_jumpstand01_r_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.56666666,
+      "frames": 35,
+      "sha256": "683a6c54074bd362de5c1678a01f0f8207715a91bce209e3f7cf72ad30d4bb2a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_jumpstand_s.anm.hkx",
+      "name": "sn_jumpstand_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "e25aeb0f8fe548e1d106daa6dff59cb683164dfb8e1e4cc77019b556958bbde9"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_landing_big.anm.hkx",
+      "name": "sn_landing_big",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6,
+      "frames": 37,
+      "sha256": "b8ef4e6a89205b587c22eceec00f7931dcc54e33eb0934067f0a7df0f4435936"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_landing_idle.anm.hkx",
+      "name": "sn_landing_idle",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "58583052fd369de8fb4b6c20451e46a39b29256f67bb01312fde632a696acbfb"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_landing_loop.anm.hkx",
+      "name": "sn_landing_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "645d94e544529a3fdf8a9a47b3c1bd559bfa3fea54c2cc678101b7b184d2bf7a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_landing_s.anm.hkx",
+      "name": "sn_landing_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "e474662e2ee8cb473378b080934e4973d045c7020d5fc05d9e42416979d3bb8c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_needle_blow_loop.anm.hkx",
+      "name": "sn_needle_blow_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "d47083293ac31c5ef021f915bd11ae9f4c42ffb9346686e7d182d6d34f5ccb29"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_plate_h.anm.hkx",
+      "name": "sn_plate_h",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "87015fab55c277aeb8993a1ca7e5466ddf49bb409fae66bfeb24dae6bbfdf500"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_plate_v_l.anm.hkx",
+      "name": "sn_plate_v_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "0f5dfe97922b48f803799e97fbb0f840846432d50e586ffe29bf0f9dd9e71162"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_plate_v_r.anm.hkx",
+      "name": "sn_plate_v_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "cdc19829b9a661525c958e95fa21f7bc06d6a1299f3d829b4685e4586602ecdc"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_polespin_jump_loop.anm.hkx",
+      "name": "sn_polespin_jump_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "1ecdef6ae58e27a7b70cfe94e92ea6d3be38f883d467e118073e56d23f4f737a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_polespin_jump_s.anm.hkx",
+      "name": "sn_polespin_jump_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.28333333,
+      "frames": 18,
+      "sha256": "d3e3104a8dbd71c2b0e842d5db50342f389114dee89d64e739911341e1cac6a5"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_polespin_loop.anm.hkx",
+      "name": "sn_polespin_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "155dcb1342b1bb385dd534df6d075f8610eef927c56e6caaa859ce791086eb5e"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_polespin_s.anm.hkx",
+      "name": "sn_polespin_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "2b26f582b23e041d999193cf43e39b61f73bf6994c0aab13485a09294bbcda24"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_pulley_jump.anm.hkx",
+      "name": "sn_pulley_jump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "8416b6005218f24bead607f4d0dc51e19242cbedfbdc1c3ad5a29c3fb0a71ce0"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_pulley_loop.anm.hkx",
+      "name": "sn_pulley_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "e436e973cfdbb90fac14528c8fe6acc24716ee67dffb3c4eb22aa9979733ba7d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_pulley_s.anm.hkx",
+      "name": "sn_pulley_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "771c8c16ac56fe49b9df1322ef98c86f57580a79f744b13ae8f8919a2b57dfab"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_pulley_up_e.anm.hkx",
+      "name": "sn_pulley_up_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "6f6f305d2c2622815db9c2a204b41262e07a28ea5887ab8c51812abe7d71cc5e"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_pulley_up_loop.anm.hkx",
+      "name": "sn_pulley_up_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "953db2c3f4d12daa141b07755a9b7c6d736f5e165574d07802883b457c2b776f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_pulley_up_s.anm.hkx",
+      "name": "sn_pulley_up_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.1,
+      "frames": 7,
+      "sha256": "e1d4026f780ae5215a52c006013259a3ecd0310deafe8a9b98d8c5affe251a30"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_result_look.anm.hkx",
+      "name": "sn_result_look",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3.3333333,
+      "frames": 201,
+      "sha256": "bf1f9bd694c8d96d049e8828a1920479ca13c650555efe027a644fe5d125c3f3"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_ringdash_loop.anm.hkx",
+      "name": "sn_ringdash_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "5cdf487c4216b167d02d3fe3546896648f4f7bb633c4e6011dd2f8516143642b"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_run_l_loop.anm.hkx",
+      "name": "sn_run_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "9aa6b1b27e8b860cc46f371bf3428e2229c732736e9c9dc06d244bff339b53dd"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_run_loop.anm.hkx",
+      "name": "sn_run_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "6d765adb9af1705400a9bf6917118462713edf89ff49b2248b0ce6df2850b8d1"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_run_quickstep_l.anm.hkx",
+      "name": "sn_run_quickstep_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "aa70caf95919553755433022280c18abf789819c9db5992c0e49dde99fc4cf7a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_run_quickstep_r.anm.hkx",
+      "name": "sn_run_quickstep_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "8c0b730605fe37b76db9a5742adc9500a514b8f6c41a67af0e31d7133b2d3c3a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_run_r_loop.anm.hkx",
+      "name": "sn_run_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "d5637dbf6a90260dd28e245c42c11c1870bbdc9d776541c3f60da0df47df7673"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump00_f_e.anm.hkx",
+      "name": "sn_selectjump00_f_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.1666666,
+      "frames": 71,
+      "sha256": "eba59f63bde9858b03ce96f7009fe9c5334130a4b893f5e85d7a130ec0ce1e2d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump00_f_loop.anm.hkx",
+      "name": "sn_selectjump00_f_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "0d9f7cc086ad47898a486c564865228d331bffe38144af8540a74d293ee02b42"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump00_f_s.anm.hkx",
+      "name": "sn_selectjump00_f_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "c22c69a3f0edd682f146437e5925f225dcf84088d4cdfc67980fd61f63cfb4c7"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump00_u_e.anm.hkx",
+      "name": "sn_selectjump00_u_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.55,
+      "frames": 34,
+      "sha256": "cef70347338d4184a22195cc40189642c74fedcf47dbc78f429ce5fff0f65113"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump00_u_loop.anm.hkx",
+      "name": "sn_selectjump00_u_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "0a29745b421917488b97bf89fbfea9761f2be3dcc966a641a79a405aa83b6ad4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump00_u_s.anm.hkx",
+      "name": "sn_selectjump00_u_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "832ee1153f0c95ac4fdd147192a5718a14eb8b591fefc4aad770e57e65ff07d3"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump01_f_e.anm.hkx",
+      "name": "sn_selectjump01_f_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.6333333,
+      "frames": 99,
+      "sha256": "0e610f2061912f703b5af82d09a1911a8a1a758251adf8883553b604432798b4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump01_f_loop.anm.hkx",
+      "name": "sn_selectjump01_f_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "eb4d618805a37975294ee7ca7a45efe7665925be4a44ff719f5f10f84fe6e808"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump01_f_s.anm.hkx",
+      "name": "sn_selectjump01_f_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "c3da7127fba0e5de15ecde98b242a63ba24ee7de746dd7c25da5d32fdd275b27"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump01_u_e.anm.hkx",
+      "name": "sn_selectjump01_u_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "fd70aaac9d23f93cba856690cc93e61b0973ce7217bd947305f607786842d875"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump01_u_loop.anm.hkx",
+      "name": "sn_selectjump01_u_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "4dc6965f566574c3f8fe2f3403bd1ba560bb1da8356d31643f4ef2b900c2fbd9"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump01_u_s.anm.hkx",
+      "name": "sn_selectjump01_u_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "9f31736cc9aac0716fbc2d3120af900ca40281108b8e1d9688a8cd424ce17ca4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump_d_miss_loop.anm.hkx",
+      "name": "sn_selectjump_d_miss_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "df4e2637858c0b8187ef729b465fa25d5eb38adec65ec1ade94d41d2c5df4911"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump_d_s.anm.hkx",
+      "name": "sn_selectjump_d_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "7516eb43b27ab7d405bb7e8e3a767ca46e01dac5d4e3790643991b2a1e7bee9d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump_d_true_loop.anm.hkx",
+      "name": "sn_selectjump_d_true_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "1feba103a2efc3573a074c40eef1db7d1a4ed8e19deb28db575e079509058257"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump_d_true_s.anm.hkx",
+      "name": "sn_selectjump_d_true_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "287ee419f39a341c47514d302f317dde048b15a856079c81759caf47f65b1bcf"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump_miss_e.anm.hkx",
+      "name": "sn_selectjump_miss_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "dcc391d97c45c8e9e4686b533bc335eb91721f6ce1b6e25b3987e4ce6d6eb375"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump_miss_loop.anm.hkx",
+      "name": "sn_selectjump_miss_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "05bab6f7bd93f5887b21e806a4ea5042ed2d2a3b506e020cab364bca3a309bf5"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_selectjump_miss_s.anm.hkx",
+      "name": "sn_selectjump_miss_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "06cabb6f03fda1beb43a2ae110b388909c4913afbb5095ed092ec9ce8e718ed9"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_slide_hip_loop.anm.hkx",
+      "name": "sn_slide_hip_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "d0e35ba63a0d6e36829741c0f317963e2b8b8a6b53362c2f008f20745735aaac"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_sliding_e.anm.hkx",
+      "name": "sn_sliding_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "a9c50cc1ca2b26430dde650f204f654a74e78b5b753008e70557e54b2727018f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_sliding_l_loop.anm.hkx",
+      "name": "sn_sliding_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "fcf2b1ab804c638ba28e73d54f6b07bfb819d43900eb642d00f84cfcc4c56703"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_sliding_loop.anm.hkx",
+      "name": "sn_sliding_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "61107b28c52852b5b482ee2cd43ce9ab80e8baf277f7476c7d22fbba885ef981"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_sliding_middle_loop.anm.hkx",
+      "name": "sn_sliding_middle_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "43def1b26dbd57d2dd692bd96301bbac389f1395613779b63056ba5ec077ff98"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_sliding_r_loop.anm.hkx",
+      "name": "sn_sliding_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "0eac3b5e6fc99ead83f175a5c708bae99e8b96907f5372daf639b32f72ca8b55"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_springjump_e.anm.hkx",
+      "name": "sn_springjump_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "c4638e410857a08a2ab176ab6c11617718bc5d4d9709cfd363e0fcbab76af6fe"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_springjump_loop.anm.hkx",
+      "name": "sn_springjump_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "3a8306da9622e2e24d4f64f339d9054b4828fb3ef2ce7edd238939883cb4b387"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_squat_jump.anm.hkx",
+      "name": "sn_squat_jump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "a5e9039550f42fdbcfa8b6ba3e5c9375f39c0e908f00dfbb5ed70d4862c7a613"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_squat_kick.anm.hkx",
+      "name": "sn_squat_kick",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.1666666,
+      "frames": 71,
+      "sha256": "d29eab242a3fcb9847b08bd2ecf2ade3dea168d56c4be474a6ae8bb7f407cb95"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_squat_loop.anm.hkx",
+      "name": "sn_squat_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.5,
+      "frames": 91,
+      "sha256": "c1660a6f9a80815750070006102949a12e9171d89db8307ca2115139c718e858"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_squat_stand.anm.hkx",
+      "name": "sn_squat_stand",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "b7bdec51146328cdfb830951eeb8513159bc807c16e2cd59d8176a7a9c58d28f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stand_squat.anm.hkx",
+      "name": "sn_stand_squat",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "b8dd17b667e3df122d02ba6e2f9d397d810b20d36560d0b7ee36845778c753f2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_standup_b.anm.hkx",
+      "name": "sn_standup_b",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.9166667,
+      "frames": 56,
+      "sha256": "ad7b60e2ffc44f36c0bfaf3a7430f796ce8b40ae64c632ee02a170d4d23c948a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_standup_f.anm.hkx",
+      "name": "sn_standup_f",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "cd20411eadddaa4e187f7019602ba8ff6cb3eab71bae7a6eef0f2658e02203e6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_standup_l.anm.hkx",
+      "name": "sn_standup_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.9166667,
+      "frames": 56,
+      "sha256": "b8bb68819c01122fcdb16a4d346838b32d57ddecf4fd370459b8ba44ec29fd43"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_standup_r.anm.hkx",
+      "name": "sn_standup_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.9166667,
+      "frames": 56,
+      "sha256": "e078e8d641d71bb4e960f4c0509b57574931f45edab2f6e6c783189a1e87f1ba"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_start_normal.anm.hkx",
+      "name": "sn_start_normal",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3,
+      "frames": 181,
+      "sha256": "b991fa3a03935b32fed6513c8b54102132b9f2dd19dfba2d92e6479edf626c36"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_start_wait_a.anm.hkx",
+      "name": "sn_start_wait_a",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3,
+      "frames": 181,
+      "sha256": "eba502840bc63dc4b32bbba2360d31bc0c055b7d38ff5251a63450fdf5bbfa37"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stomp_loop.anm.hkx",
+      "name": "sn_stomp_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "5b43e088fc6d68e685a9c25b26fffb80329ea2ea0c314d2e375cee1a179aa8ce"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stomp_squat.anm.hkx",
+      "name": "sn_stomp_squat",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "bf8c56cf913fa2e0c78d4e3a9d7be8243dd2d13d1fce0cc19dd9cf77357d739d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_struggle_grb_loop.anm.hkx",
+      "name": "sn_struggle_grb_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "6c9d08cb50f58112650cab0f0be2c69301123ff1ced5e24b0580cfa859af97cb"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stumble00_b_loop.anm.hkx",
+      "name": "sn_stumble00_b_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "2c825473c4082f36ae4b56cd127adf7f110ebdfa6b80f1487bfd0fca02be2aa0"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stumble00_f_loop.anm.hkx",
+      "name": "sn_stumble00_f_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "5420b557f4a5829d8882b03a7c51a00d733d28b97a6722d3bfa9b41990aabda5"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stumble_l_loop.anm.hkx",
+      "name": "sn_stumble_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "25dab4af4cd0444b9ba68086544ac2869207fb63db58a4e2c3d68502aa22bfc6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stumble_r_loop.anm.hkx",
+      "name": "sn_stumble_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "b6498cca685e069204b5d96c21ef7f3bfaa4e6f50cfd240ee57e0c794f85c5e8"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stumble_run_l_loop.anm.hkx",
+      "name": "sn_stumble_run_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "a608d62b39921759c055d9705ca58c811aa25966c881a7a6b8c00b8fa35b4cb3"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stumble_run_loop.anm.hkx",
+      "name": "sn_stumble_run_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "6e44456f8401477e5e74bcb9bed50be97ef2a2df1277e5ba4da541335ad4e463"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_stumble_run_r_loop.anm.hkx",
+      "name": "sn_stumble_run_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "0316fa57acb86fe4ec0d0c2e8cfa86da1d619a3702e88ff469579e3fe5f7672f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_test.anm.hkx",
+      "name": "sn_test",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.6666667,
+      "frames": 161,
+      "sha256": "778bc8f88cb671a7e806b048850eebe57e694dc1655a4bd2e17ea59516bb2f81"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_d0.anm.hkx",
+      "name": "sn_trick_d0",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8666667,
+      "frames": 53,
+      "sha256": "f6c18f20acbbbd0637c9c7415334abc54d8d83f8154040d6e65eb1e47e4e9d8a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_d0_sv.anm.hkx",
+      "name": "sn_trick_d0_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8666667,
+      "frames": 53,
+      "sha256": "3cc94acb225b13de32865085dd0ec307f67958885c04457d284c3608fbc3e1e2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_d1.anm.hkx",
+      "name": "sn_trick_d1",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "5cd38ef3b2d325d2564d0f4d0195371fd38bb8c71c2beaea2e42b06cb5b640ee"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_d1_sv.anm.hkx",
+      "name": "sn_trick_d1_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "5cd38ef3b2d325d2564d0f4d0195371fd38bb8c71c2beaea2e42b06cb5b640ee"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_d2.anm.hkx",
+      "name": "sn_trick_d2",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.0666667,
+      "frames": 65,
+      "sha256": "12b3a0cbb44001e265fef552350c19b686965bcc6290c61f2ae81c6b1582b0a3"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_d2_sv.anm.hkx",
+      "name": "sn_trick_d2_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.0666667,
+      "frames": 65,
+      "sha256": "3d7ecf4cdfbe68f7ac78f61b54c9dd007cfc0a3ae48b9f87f548fac4540ef73a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_finish_b.anm.hkx",
+      "name": "sn_trick_finish_b",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "97035a72f24482a0a72dad00fab6adfd3a3d4ee9f50bdc764e42a515840cc5da"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_finish_f.anm.hkx",
+      "name": "sn_trick_finish_f",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "7ccbb4909115ac6923a56900c745f436b1732f90203a90ea608d01e32ea7ceb2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_finish_sv.anm.hkx",
+      "name": "sn_trick_finish_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "6cc4928b73fd4b86f9b8fe95077b6212f18bbcb5cbde878c49b10df35437dbe5"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_jump.anm.hkx",
+      "name": "sn_trick_jump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3.8333333,
+      "frames": 231,
+      "sha256": "cac8ea4f4d874bc1551ae4700c2033eb6453b25baa8a09866830d1b538e3f75f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_l0.anm.hkx",
+      "name": "sn_trick_l0",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.9,
+      "frames": 55,
+      "sha256": "77dd9ef04327247fcc90c930c6d3efea8cc057ae3fde5ecee6e6e83441975b00"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_l0_sv.anm.hkx",
+      "name": "sn_trick_l0_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.9,
+      "frames": 55,
+      "sha256": "83e61e5895b5eb5e2b12ceb7393921db9066a88a24ee5c0f28adb62a3f08e569"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_l1.anm.hkx",
+      "name": "sn_trick_l1",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "fdff99e0ccdf7a41cc2794d85c7d34155618f8f04eaa4a472ed91fe7d9377fba"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_l1_sv.anm.hkx",
+      "name": "sn_trick_l1_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "30c25d787f3ecdea54f8140eb49fe066208d69b2d19569195164408430e50c2f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_l2.anm.hkx",
+      "name": "sn_trick_l2",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.2,
+      "frames": 73,
+      "sha256": "edb574eca277642ffe6b61a8de09239319c00b58401f4d765ddb76d21de47403"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_l2_sv.anm.hkx",
+      "name": "sn_trick_l2_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.2,
+      "frames": 73,
+      "sha256": "edb574eca277642ffe6b61a8de09239319c00b58401f4d765ddb76d21de47403"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_mis_b.anm.hkx",
+      "name": "sn_trick_mis_b",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "db6aff7c61a00aa7926d6890f03a084d05ef0ba651dd921cae50172714e5ebbe"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_mis_f.anm.hkx",
+      "name": "sn_trick_mis_f",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "a10f277ac80f4c97756244994dc86a63b3298076f7c0977c502fa9b98da8ccbb"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_r0.anm.hkx",
+      "name": "sn_trick_r0",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "35bef5a78070ace67427dc04b73a8e4187f1054d5a6f5d1cf451bea7610842d4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_r0_sv.anm.hkx",
+      "name": "sn_trick_r0_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "7d31f33e9d0910ba49f8434cdc05476677bb35475596c62c1c139488a2e13d53"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_r1.anm.hkx",
+      "name": "sn_trick_r1",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "8f019c029cce8d9047b56a5d2ab35c3b02cbd4ac03bd754a3688e10ddd995754"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_r1_sv.anm.hkx",
+      "name": "sn_trick_r1_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "8f019c029cce8d9047b56a5d2ab35c3b02cbd4ac03bd754a3688e10ddd995754"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_r2.anm.hkx",
+      "name": "sn_trick_r2",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.1666666,
+      "frames": 71,
+      "sha256": "abe3018d52b234fec7f66e91b8c172f199e470eaafd5d43fb7622dd769970d2e"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_r2_sv.anm.hkx",
+      "name": "sn_trick_r2_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.1666666,
+      "frames": 71,
+      "sha256": "93f68fb7ff676f3419c27f303e359a4eda8862ee72d350752560ed43fbd1ca6d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_u0.anm.hkx",
+      "name": "sn_trick_u0",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "6eb5a39e325b8f7a269038c59e59cda48d4c2349f49f3c6dfd365c5ee0da6190"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_u0_sv.anm.hkx",
+      "name": "sn_trick_u0_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "b372a154676026db3cdae9a9f631301c5b58aedfe48286d61a10dd3dcced818d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_u1.anm.hkx",
+      "name": "sn_trick_u1",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8666667,
+      "frames": 53,
+      "sha256": "b252a4abf67cd036e8483a03cde86f9bd445b9f0dba6d1ab96315130b4385b18"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_u1_sv.anm.hkx",
+      "name": "sn_trick_u1_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8666667,
+      "frames": 53,
+      "sha256": "b252a4abf67cd036e8483a03cde86f9bd445b9f0dba6d1ab96315130b4385b18"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_u2.anm.hkx",
+      "name": "sn_trick_u2",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.0666667,
+      "frames": 65,
+      "sha256": "4119573874c4b2b337f4bad0b174220f380588d0d61f0e52ddc92c8984d46245"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_trick_u2_sv.anm.hkx",
+      "name": "sn_trick_u2_sv",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.0666667,
+      "frames": 65,
+      "sha256": "4624fc84bebe5b9fcd33aebb90c4d7dab4fbc9bc8a49f093811298b6a136f99b"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_updownpaul_damage.anm.hkx",
+      "name": "sn_updownpaul_damage",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.76666665,
+      "frames": 47,
+      "sha256": "99eef266eab143374a00226d9e89ab3df24323a8051492f5fa0c1ef5927a74fe"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_walk_fast_loop.anm.hkx",
+      "name": "sn_walk_fast_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "4bf801349b4dcfee6cbbbcabc4226d43fe6b1a53156aff982a04b8604aed5b6d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_walk_loop.anm.hkx",
+      "name": "sn_walk_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "b572745dbe5b50d2d7277095e54c67499cf4090a626bf1349966934eb8a3ec31"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_wall_fly00_loop.anm.hkx",
+      "name": "sn_wall_fly00_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "637be14beb9b5b852bc2bd5fed0eaffee84c803b7919b9c1af8c876caf255f4b"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_wall_fly01_loop.anm.hkx",
+      "name": "sn_wall_fly01_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "ea14c1baf73f3f892ef2ce569b1c71d43d61718e0bebfa2e850844901de65839"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_wall_fly02_loop.anm.hkx",
+      "name": "sn_wall_fly02_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "2d6a5bf15814a9bf82122c8c5c6cedd47fabfa2934b857b36a9f323a1486ee37"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_wall_stick_d_loop.anm.hkx",
+      "name": "sn_wall_stick_d_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.26666668,
+      "frames": 17,
+      "sha256": "bdf95a22900b25564e98775c9196d476e83f5b5f45b3bd2aca6d1799c376ad64"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_wall_stick_s.anm.hkx",
+      "name": "sn_wall_stick_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "1b6760e417496a7a6673e8a3d7e9bfe64888edaf27170409f7d37e90e428211a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_water_idle00.anm.hkx",
+      "name": "sn_water_idle00",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 5.5,
+      "frames": 331,
+      "sha256": "6f79095b2599a9ff0c610e403c87794135935f981afd3606047b644004d85ba4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_water_idle00_tired.anm.hkx",
+      "name": "sn_water_idle00_tired",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 5.3333335,
+      "frames": 321,
+      "sha256": "e065c141c2d67f3ab6391441d6463ed5054b28125928d0287e5cc1155c540254"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_water_idle_tired_loop.anm.hkx",
+      "name": "sn_water_idle_tired_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "c2dc13d652f8b7c80cf2504aa470949447b94c0ffc19368fe6973f6325205ec0"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sn_water_idle_tired_s.anm.hkx",
+      "name": "sn_water_idle_tired_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "f4bc06e9806bd4275c5dcd870979cf9d8b32c5a56f96da1b4eb0f036557f3658"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sns_drift_l_loop.anm.hkx",
+      "name": "sns_drift_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "68a983412a39cc237de487d7cbc3d4ef1c50045d5c7fead71641ede2f3b377e9"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sns_drift_loop.anm.hkx",
+      "name": "sns_drift_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "3a14fb2c8b0671d240348ceecc838e3f424645036d4604667d0ed4cdc1c562e6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sns_drift_r_loop.anm.hkx",
+      "name": "sns_drift_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "090e0c31c96fa42ded4cf2988cd7d48ba8d8e3487d4f800f0b1420deb9f6a2ef"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sns_spin_loop.anm.hkx",
+      "name": "sns_spin_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "a9b702830ec28c035c543d4c30af3e57e2de095ea7b2f677ddfff9ad33d7548f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "sns_transform.anm.hkx",
+      "name": "sns_transform",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6,
+      "frames": 37,
+      "sha256": "a4b9e2368341afabc77e1793cf06e5d75bea2da08c096c3e183fde72850bfac4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_airboost_loop.anm.hkx",
+      "name": "ssn_airboost_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "de32b10e70bd426cf1b03a5cb9b471da71dfe26c33c1db0c9f355587adb1fa0c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_ball_loop.anm.hkx",
+      "name": "ssn_ball_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.13333334,
+      "frames": 9,
+      "sha256": "120a4cd6a4018d9bc3aab37a77ddb5e2398372446b9edce0bf635e5e546c19ef"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_boost_loop.anm.hkx",
+      "name": "ssn_boost_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "5da14d1a07900a124349858600aa86d68ec32af4ed234645f33dfba4abdc7753"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_box_kick_boost_l.anm.hkx",
+      "name": "ssn_box_kick_boost_l",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.5333333,
+      "frames": 93,
+      "sha256": "68dcdfe85d4025aa0a6181d3b74ab2aaf2db4cf6bc8bca741faf32017237e1af"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_box_kick_boost_r.anm.hkx",
+      "name": "ssn_box_kick_boost_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.5333333,
+      "frames": 93,
+      "sha256": "1f170effd70619b812543d1cdae0597bdd2282e6395be7d6fa8920f3c0ff4fec"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_brake01_r.anm.hkx",
+      "name": "ssn_brake01_r",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "254610086037f923b548e3e995a9b9c61c323c243e7313e1c2ccd0f3e3df029e"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_brake01_r_e.anm.hkx",
+      "name": "ssn_brake01_r_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.3,
+      "frames": 19,
+      "sha256": "76e4e80185cb0f723c6492daade34b8cf79d09c1460975a8ce60a570173c0896"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_brake_r_turn_idle.anm.hkx",
+      "name": "ssn_brake_r_turn_idle",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.41666666,
+      "frames": 26,
+      "sha256": "e6d25daa7a12a5d387e8acfc59eda2cdcaf350f1bcc155151fa754cb78045ca8"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_brake_r_turn_walk.anm.hkx",
+      "name": "ssn_brake_r_turn_walk",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.36666667,
+      "frames": 23,
+      "sha256": "46264f8f61df8039e68ad14727375f25bd5aee73fff91b37b23cd42f56451a4b"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_catch_heli_r_loop.anm.hkx",
+      "name": "ssn_catch_heli_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "adc00238a160e8e286b723b0abbc948cc367e3a63cc6ede1b2b92ff15efed29f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_catch_heli_r_s.anm.hkx",
+      "name": "ssn_catch_heli_r_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "ae4582da081c1905c336ac2ca3211b7499f7a90e77cf52ed63f7180b72f5d5e0"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_catch_rocket.anm.hkx",
+      "name": "ssn_catch_rocket",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "b55de7b1a1e1f2f59bba8b108ae319e4b1cd2e9d15d403c58673dcbf90d316fe"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_catch_rocket_wait_loop.anm.hkx",
+      "name": "ssn_catch_rocket_wait_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "f116837e3b85f5ca1a5d3ced837db610c80b0f024f00d8d450740c92c8de5ac9"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_change_e.anm.hkx",
+      "name": "ssn_change_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "6149f8664940552f82fca9aeb2a3a727f6904a711b46ae1cdec08d6271326067"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_change_loop.anm.hkx",
+      "name": "ssn_change_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "28d67041430bd3283a546bd1e819ef1caa893af3372d452e07dfddee370b1eab"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_damage_f.anm.hkx",
+      "name": "ssn_damage_f",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "832577b6425891e62eb240e6f28203c740eb06be71590b38563f3d60c34407a6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_dive_damage_loop.anm.hkx",
+      "name": "ssn_dive_damage_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "b12ab45a746e76848c065b363996b2c1f6ab09499396290955aeb6da52cad228"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_dive_fast_loop.anm.hkx",
+      "name": "ssn_dive_fast_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "d2bf5707053530a4c89a35814dc5f4a024fd30c5aad69ce019e58064173428cd"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_homing_act00.anm.hkx",
+      "name": "ssn_homing_act00",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "bef9a8b94256e6194f9f970e934afc63e23ddc3e27ae281d1037bb395374e0e4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_homing_act03.anm.hkx",
+      "name": "ssn_homing_act03",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "e586fb68e55def213bab740d875ab571fc4a9437971ae2df5d947d0cb991d506"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_homing_act04.anm.hkx",
+      "name": "ssn_homing_act04",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "35cf09d90fd29a84098d5d1aa48a1a3f24ba99ea40009b4549cd979c5ef19b5a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_idle_fly_loop.anm.hkx",
+      "name": "ssn_idle_fly_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "da9e1656f2567aa33c46ace0859e203cb65ac97a0ef83af4f358c1e335250f6a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_idle_loop.anm.hkx",
+      "name": "ssn_idle_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.6666667,
+      "frames": 161,
+      "sha256": "47f776b5b18c6387e3f75c31e1b2c210e26830eb5cc9661161c5288250500eaa"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_jump_d_loop.anm.hkx",
+      "name": "ssn_jump_d_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "0a017a6c7f30b26b4c77ab80218252db81122ebeec8953c24b956a632d008de8"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_jump_e.anm.hkx",
+      "name": "ssn_jump_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "3569c743429486fea0f6bfbdd518904ffa7e4b77239c0295b72ba1acd8206d1d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_jump_loop.anm.hkx",
+      "name": "ssn_jump_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "206e9edea2ebb68829bcc5f306c5bd48bf3469897dda61ae0b43cb3017b34f8a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_jump_s.anm.hkx",
+      "name": "ssn_jump_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "db25c730babe4cc4d2bf91347255c3e3986149320f365dce12c58e9033f8e6d6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_jump_top.anm.hkx",
+      "name": "ssn_jump_top",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "810147d9ae3ef2f951362e7397f3cc0d8cdbbcceefaa0d9c85a969bd6cee21a8"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_jump_top01.anm.hkx",
+      "name": "ssn_jump_top01",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5833333,
+      "frames": 36,
+      "sha256": "ca853791fe8d3161b34475583002d0cc2eab5ec12e5155d19a7b9e807e83bcdf"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_loop_quickjump.anm.hkx",
+      "name": "ssn_loop_quickjump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "13efc1fbfa85c2a259dd21567c60b6267c13581cbcd7c3012a98f71fb56f93fa"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_move_b_loop.anm.hkx",
+      "name": "ssn_move_b_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "475174272c040bddef1c4119b17082e25df0c2c309d8e9655df0f8ef244bc8e4"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_move_d_loop.anm.hkx",
+      "name": "ssn_move_d_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "548bd83d0cc262f930c4556ff580068842a1b2da26d273fba33a09596cb922ac"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_move_f_loop.anm.hkx",
+      "name": "ssn_move_f_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "009e196d1d62452370ceb536a1a5fb56a5cc2bccf262ea3f7b3a34b55876e38a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_move_l_loop.anm.hkx",
+      "name": "ssn_move_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "67409a0f25ec3c8d3f7e5117ec7991bf8b42175eb6ebe827a697cdd25206464b"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_move_r_loop.anm.hkx",
+      "name": "ssn_move_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "1ae6bcacc7abb6f3ef7f59ac65ad289fe38d215e83140ab01e1cb6beae289030"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_move_u_loop.anm.hkx",
+      "name": "ssn_move_u_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "2765ecf2d2433c4ea98231fcaec1632c6de4a3952a31a1adc10d3dc428f7975a"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_polespin_jump_loop.anm.hkx",
+      "name": "ssn_polespin_jump_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "9e1cccdbccf926ebac233bbea5dc1e62e620368251a0f3cd2fccce051b929aa3"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_polespin_jump_s.anm.hkx",
+      "name": "ssn_polespin_jump_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.28333333,
+      "frames": 18,
+      "sha256": "af1239b025d9b4e7cf521271bf77db728304776fba082527919b200c355f95e6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_polespin_loop.anm.hkx",
+      "name": "ssn_polespin_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "fbf423de34715738936595c3f1ab6b03d090a397aa0386dae24cc5556e900e01"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_polespin_s.anm.hkx",
+      "name": "ssn_polespin_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "63878918981867c116ac08c005b86bdf349ceb08ca352a0601a9a90307e1ebc2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_pulley_jump.anm.hkx",
+      "name": "ssn_pulley_jump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "9eae203b204317e2dc13e27614b86f4b2826b99b62140e8e241d5ad91fc9ba8c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_pulley_loop.anm.hkx",
+      "name": "ssn_pulley_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "d64e16a86122265f68301c2d707411887d7707d72f4249739312fba7e4df6b84"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_pulley_s.anm.hkx",
+      "name": "ssn_pulley_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "bb541d2ecb8155034ac25c1e4a5dc18e05373ba227ffc1c71b802b8c3f847ec0"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_pulley_up_e.anm.hkx",
+      "name": "ssn_pulley_up_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "7b72df679f24bc93e45131a606ee2e7598a0f2e1d05cc39a93a2d8e6f0ea9cee"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_pulley_up_loop.anm.hkx",
+      "name": "ssn_pulley_up_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "ae8ef1050550d3431f02768bf29a4f240fee8691bdb3628b2712125a1e64e849"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_pulley_up_s.anm.hkx",
+      "name": "ssn_pulley_up_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.1,
+      "frames": 7,
+      "sha256": "d651e19bc7d54e10aa542037be03a1192086f939f0cb7a3880eb2cad6d83ad09"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_result_idle_loop.anm.hkx",
+      "name": "ssn_result_idle_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "6ca47e7e34dc788d6430fc212c84aa4fb18c0c8dbec3c352a36e7323682898c8"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_sliding_e.anm.hkx",
+      "name": "ssn_sliding_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "a64234448737f7683f701e51d0f6cdbdc1746f67fc426152a6386d725b5505d0"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_sliding_l_loop.anm.hkx",
+      "name": "ssn_sliding_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "a7f9ced236c774eef3e804f00cfd8d843f37a7e3df6b7977485d50b973777fb1"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_sliding_loop.anm.hkx",
+      "name": "ssn_sliding_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "f41e803fae36b7d1b213008809ffaa6713a5d632b11c6628ac21357863afedac"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_sliding_middle_loop.anm.hkx",
+      "name": "ssn_sliding_middle_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "5a34c6b018f06893a1de7b97ed0da31f8daf67dc9178cfc83dce8ef65abf1e62"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_sliding_r_loop.anm.hkx",
+      "name": "ssn_sliding_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "2cfbc64aeb389dffed3567ec070e77dd28f09d99f073335a67e6e88c39807aaa"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_springjump_e.anm.hkx",
+      "name": "ssn_springjump_e",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "17ffd0eae3ccde74e7691f4ef1c3b9937f8b6a4f3867601dc3e21d22f054f783"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_springjump_landing.anm.hkx",
+      "name": "ssn_springjump_landing",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "b53e53210cd325dedcb08077ef54dc177efa49722cde1805373ba7354a516f5c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_springjump_loop.anm.hkx",
+      "name": "ssn_springjump_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "44d199ea2cae8e5ce8b4313e86e909a3d6b3901669625d60dc1d2f3d07775608"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_squat_jump.anm.hkx",
+      "name": "ssn_squat_jump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.11666667,
+      "frames": 8,
+      "sha256": "8b7231e7a155a303e5c78c82d269f8bdd93d2cf0e01749dd98acfe44a3bea5e2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_squat_loop.anm.hkx",
+      "name": "ssn_squat_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.5,
+      "frames": 91,
+      "sha256": "a2d1926cf2bc9fdb7bb932488bb9e9e94fa9d4accc40db3c2556d51bae43f6cd"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_squat_stand.anm.hkx",
+      "name": "ssn_squat_stand",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "98109f471b76a87d8b71bbfd00b9500ec8cfc7eb1155a85ecda4becb2844d3cf"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_stand_squat.anm.hkx",
+      "name": "ssn_stand_squat",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.16666667,
+      "frames": 11,
+      "sha256": "58111597cc50b6c5835d427c8f052bc52cbb0d12bbab2339b67bc41ec69abf43"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_standup_f.anm.hkx",
+      "name": "ssn_standup_f",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "e7d23abd3c65bdb62e1a8636e2d488dfcdb958a869142d4f8e5179b057759a2d"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_stomp_loop.anm.hkx",
+      "name": "ssn_stomp_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "b2dbe7c82d996def42807b0fb54846b13f90f7f33cf37d234c97dbb9db428b6c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_stomp_squat.anm.hkx",
+      "name": "ssn_stomp_squat",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "d67d477c9adc0ce2d9df31447dd4b860ca6f340ae92679c4ab1ba0827a86c1c5"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_stumble_run_loop.anm.hkx",
+      "name": "ssn_stumble_run_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "6908fc9d331238b92d4b5ef542c0cb70fff5576751cfbb9c4cccc40e29cc6b89"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_trick.anm.hkx",
+      "name": "ssn_trick",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "4dacba99dbaa545a0b00e8ae0f0d905b5ec108280af1469a5b889ee3d1f66d9c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_trick_finish.anm.hkx",
+      "name": "ssn_trick_finish",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8333333,
+      "frames": 51,
+      "sha256": "61ce65c744a9b1df8a5bf9e8093f533d253b9728cb5876225fdd50c09be2b312"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_turn_l_loop.anm.hkx",
+      "name": "ssn_turn_l_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "c58447be09de0917b44934c62f62497fc9a9468c3e8134f861796f7cfd07124f"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_turn_r_loop.anm.hkx",
+      "name": "ssn_turn_r_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "74ea5d9f9db85c663d9201055045a6f9f522b4a667575860b56a3c6cd8c98904"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_updownpaul_b_loop.anm.hkx",
+      "name": "ssn_updownpaul_b_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.53333336,
+      "frames": 33,
+      "sha256": "1a1747f081def84ca18a173e49bebc23483f205d32a09ed04135d7421dba83ed"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_updownpaul_f_loop.anm.hkx",
+      "name": "ssn_updownpaul_f_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.53333336,
+      "frames": 33,
+      "sha256": "d35514439c60dc0b9747dd90a3e7029a26658a6392529476c078fa3cf0c47b95"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_updownpaul_loop.anm.hkx",
+      "name": "ssn_updownpaul_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.8,
+      "frames": 49,
+      "sha256": "4fa1aa8bdebc6fe755ee0b610942ed396c3d0cd2a642d999150ee066d14a5a6e"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_updownpaul_s.anm.hkx",
+      "name": "ssn_updownpaul_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.76666665,
+      "frames": 47,
+      "sha256": "d5509a18343d811a0feaf4f46a660e136e3e8bc795d65257a7ba4f3801a9263c"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_walk_loop.anm.hkx",
+      "name": "ssn_walk_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.3333334,
+      "frames": 81,
+      "sha256": "5e7b80778230822f1451f025d510b1bc015b65483275508e1e0d636f558d14b6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_wall_fly00_loop.anm.hkx",
+      "name": "ssn_wall_fly00_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "47e8814f40b71b78d94bd4ade85bcd5f2739b8a824fb5d7cdb58426993475840"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_wall_fly01_loop.anm.hkx",
+      "name": "ssn_wall_fly01_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "b46184bf6b13fc6de84e114355472e56d3487ea2693a5c6b2a373681f52fdf82"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_wall_fly02_loop.anm.hkx",
+      "name": "ssn_wall_fly02_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6666667,
+      "frames": 41,
+      "sha256": "9b62c73f0e2f412f8e4c5a186ab21e39302d3585e42fda41038b99e53ad42863"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_wall_stick_d_loop.anm.hkx",
+      "name": "ssn_wall_stick_d_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.26666668,
+      "frames": 17,
+      "sha256": "285b9a08812cd53cf55f77461099d86c70e873cfbb2890a40c49a14c08c144f6"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_wall_stick_s.anm.hkx",
+      "name": "ssn_wall_stick_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.33333334,
+      "frames": 21,
+      "sha256": "d754cdb3f90b96094330b7bf8c5576a9f28f09e09a24f10b3bac68f3f624a5f2"
+    },
+    {
+      "game": "SonicGenerations",
+      "file": "ssn_water_struggle_loop.anm.hkx",
+      "name": "ssn_water_struggle_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2,
+      "frames": 121,
+      "sha256": "a96064916ae0cf556eb027025f77322ae56f1457fd3133158bdc8924cbdb0faf"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "Sonic_damage_B.anm.hkx",
+      "name": "Sonic_damage_B",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "94411586d19b85166a67b8841bae6cb464835f74d6ce3db62781a7347c30d607"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "Sonic_damage_F.anm.hkx",
+      "name": "Sonic_damage_F",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "a0e8d9d074a52359e3339a5ece17b3132a15fd509b1e1ce2640d86cba2374871"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "Sonic_damage_L.anm.hkx",
+      "name": "Sonic_damage_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "eaf87f040d2f39639514aff9b9063e31ba5f08a330c2bf6f220c69fe57868546"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "Sonic_damage_R.anm.hkx",
+      "name": "Sonic_damage_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "a2f4d51dd52ea7a06a0eedc68a9d85681572bfcc9da8dfd76edd4708fee6e17a"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_airboost.anm.hkx",
+      "name": "sonic_airboost",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "0912ed8f0b7e216dce42cc5a538c3ff244b86a33b4db355ce459cd3df4666353"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_ball.anm.hkx",
+      "name": "sonic_ball",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.133333,
+      "frames": 9,
+      "sha256": "c685d19b2a571feb9b8df42fe14c3546e7398f0d20f6af08cdb8d56383e5a390"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_balloon_loop.anm.hkx",
+      "name": "sonic_balloon_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "53b10bc8479d2c9d6bd75a55b2482c0669cbeba07d601cdb588f3e7f3f46d81e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleigh.anm.hkx",
+      "name": "sonic_bobsleigh",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "9657982d5068d0722f71ab1673e3fcfbfc735a1f5e9216ba2da1e263f208435d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleighE.anm.hkx",
+      "name": "sonic_bobsleighE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "8e733b04f45adbbe6c12ef45dc78013bba72b547ccca3728cce5e031e046c8f7"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleighL.anm.hkx",
+      "name": "sonic_bobsleighL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "ff36232aaa687265892a86272bb81247324c4e026bc5b9b48f0d8e3ba6b75063"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleighR.anm.hkx",
+      "name": "sonic_bobsleighR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "17caab6cdca35c88f35d53f286c80cee0752f1850eead88107d12a9f9f3fbca5"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleighS.anm.hkx",
+      "name": "sonic_bobsleighS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "4cb2e45a54ebea8cf6307ce16a169db1f3c7a1a1f4bac41d474842d7598ea84a"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleigh_jump.anm.hkx",
+      "name": "sonic_bobsleigh_jump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "ee81d610939d289f731fc87e23ba0194e06f217f0f1ec88462fb1efa14762b49"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleigh_jumpE.anm.hkx",
+      "name": "sonic_bobsleigh_jumpE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.583333,
+      "frames": 36,
+      "sha256": "652f41ab8f372faf69af637715ad8d1a144bf115604c442947ce00d93a23ac03"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleigh_jumpS.anm.hkx",
+      "name": "sonic_bobsleigh_jumpS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "83cb0b5623bd526adaa852573c5d5ccc8a91422dfa9c19075f49a8592b7492af"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleigh_trickA.anm.hkx",
+      "name": "sonic_bobsleigh_trickA",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.166667,
+      "frames": 71,
+      "sha256": "3772e35b913b471fe44534bfe4520bf5981704d35effa57f87da3fd038035288"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleigh_trickB.anm.hkx",
+      "name": "sonic_bobsleigh_trickB",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.166667,
+      "frames": 71,
+      "sha256": "941c155f17e41887881cf625aac352248591874e7ab227db82a8525f20f766d9"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_bobsleigh_trickC.anm.hkx",
+      "name": "sonic_bobsleigh_trickC",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.166667,
+      "frames": 71,
+      "sha256": "e2a9b4a1c2584718ac6b15f6ef620b42b191bf0286d869cc51ca5ec05580951a"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_box_catch_L.anm.hkx",
+      "name": "sonic_box_catch_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.533333,
+      "frames": 33,
+      "sha256": "4187dc6a6c0f461c8833eea5e5dabe447cc0a3a542490489bb25a6c1a55c2732"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_box_catch_R.anm.hkx",
+      "name": "sonic_box_catch_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.533333,
+      "frames": 33,
+      "sha256": "416628918697718bf70f8e9d2b7ecc667c123d2e7b1fd652bcb47271c8b24cd5"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_box_end_L.anm.hkx",
+      "name": "sonic_box_end_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.616667,
+      "frames": 38,
+      "sha256": "7cd42ed72913017bc20f3646be942be28a534896df15b55aeb235d6d9fcdbb77"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_box_end_R.anm.hkx",
+      "name": "sonic_box_end_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.616667,
+      "frames": 38,
+      "sha256": "8f21eb9c60d1b8207b6230f3279ccd751cfc9490bbe3918a850351067edad521"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_box_push_loop_L.anm.hkx",
+      "name": "sonic_box_push_loop_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "3e02d875edcd3c3c78c8a1e59a1b6c43758e4df1064b3f040baed541c14130c9"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_box_push_loop_R.anm.hkx",
+      "name": "sonic_box_push_loop_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "feea75750dfa0549882854645dde74d644be0404f702defc3e10cb6132c5665d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_brake_E_L.anm.hkx",
+      "name": "sonic_brake_E_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.3,
+      "frames": 19,
+      "sha256": "a387527eb82c7185cebfe093063250911d8b47dbd686a6eb72407c8914157b73"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_brake_E_R.anm.hkx",
+      "name": "sonic_brake_E_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.3,
+      "frames": 19,
+      "sha256": "8ab0d24e82e99332429c81657468ffd41c73f5b4fbd2203e9186a4e21b80c3ea"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_brake_L_ME.anm.hkx",
+      "name": "sonic_brake_L_ME",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.75,
+      "frames": 106,
+      "sha256": "18bb2c5dd1bb7d8515269519e58a6218e388a7d9195a5aeac09658e0bf107924"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_brake_L_S_L.anm.hkx",
+      "name": "sonic_brake_L_S_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "da93f85600ef7e00af291418c86f20886d442caa93adb4107bcc7bd2aa20cb11"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_brake_L_S_R.anm.hkx",
+      "name": "sonic_brake_L_S_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "d9a5a42fc44c68c7b980363e3954cc53ee0482d624dc34177343d40c26233407"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_brake_L_turn_idle.anm.hkx",
+      "name": "sonic_brake_L_turn_idle",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.416667,
+      "frames": 26,
+      "sha256": "56a01c2c17aeaec73f2491082bb010e33b55dbdcf6218a8f78ca391062ce4507"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_brake_M_L.anm.hkx",
+      "name": "sonic_brake_M_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.833333,
+      "frames": 51,
+      "sha256": "ece6ef8ffeb19e43cd932d485aa0652b35f38b6667ed77fe336b354585aef822"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_brake_M_R.anm.hkx",
+      "name": "sonic_brake_M_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.833333,
+      "frames": 51,
+      "sha256": "28991495ce8058a5425a4b07a3eaa189e970a8c44e44b52a951d3168d4952322"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_brake_R_turn_idle.anm.hkx",
+      "name": "sonic_brake_R_turn_idle",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.416667,
+      "frames": 26,
+      "sha256": "0cb0366ac3b56337d39a4206f1d0d043012ac17dcece6f5c97869fe769e9ba2c"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_crawlE.anm.hkx",
+      "name": "sonic_crawlE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "26551c1a456ac39c83b46414f63e3ea43f7deb20a61a21da1dfaa60a08ef84f2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_crawlS.anm.hkx",
+      "name": "sonic_crawlS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "2960bcb372f20532c69b3abf800239c5dc194701b57118eb8b212113d380f95a"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_crawl_loop.anm.hkx",
+      "name": "sonic_crawl_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "1564a96dd7e984e0d531d5a1e7c2250217c84975f6f6f2aab2917cc6248dd4f3"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_damage_electric.anm.hkx",
+      "name": "sonic_damage_electric",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.7,
+      "frames": 43,
+      "sha256": "9f7dd05ca6d814cb3dd648c2d02ed3cae8490a927a3b75b4bb36480f8c52ccc1"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_damage_far.anm.hkx",
+      "name": "sonic_damage_far",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2,
+      "frames": 121,
+      "sha256": "12cb7321aebdf63e5d178d697fc5989b90ec7bc559cfcfbd77c73f5b654b7145"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_damage_near.anm.hkx",
+      "name": "sonic_damage_near",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2,
+      "frames": 121,
+      "sha256": "0b972e5c35a870f7aea4164a72fc057be1ccca8f2cf06abf707530fa68c8a3f2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_dash.anm.hkx",
+      "name": "sonic_dash",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "af460e8951a711e1c27c5e61575ba9d716f968ef242a72effe5f203aba75cb6b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_dash_L.anm.hkx",
+      "name": "sonic_dash_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "a5aa61dd982fefcda27de588fcc93a5d978defa0419d93c0acdb5f20baca6fae"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_dash_R.anm.hkx",
+      "name": "sonic_dash_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "e0e914ac266689b2b8c89a4198c2bcd97d088d93fcfbc20bbfec00982a26d1a7"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_dashringL.anm.hkx",
+      "name": "sonic_dashringL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "f30eb961e1da356dfb17f5739a60d3a396117094940216ae9a49460b955c21ca"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_dashringR.anm.hkx",
+      "name": "sonic_dashringR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "d3d8e9c3746f4bf867c2a300a96fcdf829b6a368680c5e73cecd37fb10ee49eb"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_drift_L.anm.hkx",
+      "name": "sonic_drift_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.233333,
+      "frames": 15,
+      "sha256": "06b31aed437377b596e6ddf092173aa56782058bf5dbdc3ea8d04b0ce165e921"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_drift_LE.anm.hkx",
+      "name": "sonic_drift_LE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.533333,
+      "frames": 33,
+      "sha256": "54fbfbbc65efacc570f22bfd26c4ec1432c4191587f95ba07dd7f0ea2beed69e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_drift_LS.anm.hkx",
+      "name": "sonic_drift_LS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "bbb644244956b433113bb5aac9b07aadcff886da44fead7b4e30375f8f4516eb"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_drift_R.anm.hkx",
+      "name": "sonic_drift_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.233333,
+      "frames": 15,
+      "sha256": "abdcd4f0773654281dacd85ccf9ac9a1e819e5688552247f81d5a6231d21a7e6"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_drift_RE.anm.hkx",
+      "name": "sonic_drift_RE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.533333,
+      "frames": 33,
+      "sha256": "f5ed146d1bca8715d53080489cba384e9abc9cd870af43ca8e28db32ed40ca2b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_drift_RS.anm.hkx",
+      "name": "sonic_drift_RS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "2a5527b823501a937345be6aea1d5fa662e1d63d166d0d4111cf679f627148a1"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_drowning.anm.hkx",
+      "name": "sonic_drowning",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "ba19de5282663614062772064db0bbf5f8824da26c4f72cd076a7737b00a5298"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_drowningE.anm.hkx",
+      "name": "sonic_drowningE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "331b5398587b9b36e5525d14e731dcba2c8eeb7fb8a0af5ec8bb88fd3938c5b9"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_eat.anm.hkx",
+      "name": "sonic_eat",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.866667,
+      "frames": 27,
+      "sha256": "b6dc59d4fa00bb7afc2e5d4a7ea1e957c11f19e88cf098a55e6bcb40018ef0d2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_freeze.anm.hkx",
+      "name": "sonic_freeze",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.05,
+      "frames": 4,
+      "sha256": "24d14e9519befa3adfd177be1b08e774b19aa0428d9ca2091d679c625b5c392a"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindBL.anm.hkx",
+      "name": "sonic_grindBL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "d49835d057ee0d71bfafbf805debab5b39922fc028edab56a1529b08f97bd9af"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindFL.anm.hkx",
+      "name": "sonic_grindFL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "f0bd094aeda1a469e0e2e1e33a0715ba819d19c92c5765b87a0b7e435998b3f7"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindLR.anm.hkx",
+      "name": "sonic_grindLR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "253201ddc4406581b6722792b7394ccd4eaa67a153125540aa96fe985a9b4dd3"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindRL.anm.hkx",
+      "name": "sonic_grindRL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "86901a48d849dfb51de7225b0ba81889fea2fe1696e1fd4d787279bfed4c8493"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_B.anm.hkx",
+      "name": "sonic_grind_B",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "c6deb4c7d90c464b047063f948490a56977bf2beda3edf55b31ad2127c2fdf93"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_F.anm.hkx",
+      "name": "sonic_grind_F",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "d290a7f0481d36185ecbe1c231762bb9f67db6dd9945834bafaf4c3eb1d9a2d1"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_L.anm.hkx",
+      "name": "sonic_grind_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "30a9e173f0075f5b9bb2985122e5b53f0db6075bcea888eae41f1ab27ea0959b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_R.anm.hkx",
+      "name": "sonic_grind_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "97868dc2de1ec26fe06914aa106100dcd8e2759e72f36db7d2ecc631cd4eadca"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_landing.anm.hkx",
+      "name": "sonic_grind_landing",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.7,
+      "frames": 43,
+      "sha256": "c05b8fd1d72fea8b327df44521abafc222146d59176a181828b9c281a7d0da87"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_landingL.anm.hkx",
+      "name": "sonic_grind_landingL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.7,
+      "frames": 43,
+      "sha256": "889d84cd2f304a91df092ded0e8bce4f8b8ca1abbba0d154cda1eea3ba6e4b12"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_piyoL.anm.hkx",
+      "name": "sonic_grind_piyoL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "b2b0c880ef81b2ad77a8c6025b7b87fa3dd5604a026e998059bc015d878e22e2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_piyoR.anm.hkx",
+      "name": "sonic_grind_piyoR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "5ca80c51c41c169003cf77f5e9a7fb05b6268d56ca1816c77c4af4eaf0b484bc"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_squat.anm.hkx",
+      "name": "sonic_grind_squat",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "3f23ab8ff0e7f3dcd57cebe729fb704efcf2a63401d0a47dd0c1fe8ee37f6280"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_stand.anm.hkx",
+      "name": "sonic_grind_stand",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "f72798ba7cecf1146a66ce7d324df0704faff60a0db2ed0d4f6a4ad21e35d92d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_stand_long.anm.hkx",
+      "name": "sonic_grind_stand_long",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2,
+      "frames": 121,
+      "sha256": "60a9304e8a14720ad5e85c675bee92fc3fd2573f2fdb73b70f2308c251c0dcfc"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_stumble_L.anm.hkx",
+      "name": "sonic_grind_stumble_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "2efa011f6b29aaa61f2e1c73821611df74f61d35129dd6e62862507f7a58f2c4"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grind_stumble_R.anm.hkx",
+      "name": "sonic_grind_stumble_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "6a66121f0bfcb7bef0be51272a1348aa746c7c79c96d311a1b83ed2033a1506a"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindmoveL.anm.hkx",
+      "name": "sonic_grindmoveL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "eccd3c96dc0ac85bc77a1d0b7977ed5b1e14007a94d0e155570254a7e358bc5d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindmoveLL.anm.hkx",
+      "name": "sonic_grindmoveLL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "9da6e71a5b3f3270bd14d9a6b928654e0e5e5f70f2d08c789a8a4a8c2447375b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindmoveR.anm.hkx",
+      "name": "sonic_grindmoveR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "5d4474a26f7405f392136bc3ea32073c192b10234b76420ec4257bd12dce1ff5"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindmoveRL.anm.hkx",
+      "name": "sonic_grindmoveRL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "87fc0203050d33f5dca540b6aace7ad5fd7c4054abaeffab11d7a71130da581f"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindquickjump.anm.hkx",
+      "name": "sonic_grindquickjump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "8b25e78849aa94c8f3d99837301511c50eeab0ef69925b7feb2d3b11b646b724"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindquickjumpL.anm.hkx",
+      "name": "sonic_grindquickjumpL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "bd8d56548ab497812a701e71967ea32bf71a5a5fbbf876a386280196bba42e7e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindsquatL.anm.hkx",
+      "name": "sonic_grindsquatL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "252f55a93fde7161785890f75c5c84d7628150a95e179aec85ddc9d1a923f03a"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindstandL.anm.hkx",
+      "name": "sonic_grindstandL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "7d232bf3f0652d89fcf21342274f3fdf8941ba9b6e6020339a8f3f3390492c09"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindstandlongL.anm.hkx",
+      "name": "sonic_grindstandlongL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2,
+      "frames": 121,
+      "sha256": "eb82f9f7b000afcdc0128b01ed1786b6c584f7ac9c6932ce30d6aa2db5c33b32"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindswichAL.anm.hkx",
+      "name": "sonic_grindswichAL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "90dfac533fef08f7ab0a376c858b38fddbb5bb5578fbb34a4e90166e42aad29b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_grindswichAR.anm.hkx",
+      "name": "sonic_grindswichAR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "718ce906f833d7a9a099d3f8d6fa4a1fb29fe4cf2701f6052d4d3647755c990b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_homing_actA.anm.hkx",
+      "name": "sonic_homing_actA",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "329e3591b01585bf5337777d56d148eaf4cb2bb32ff8a81102e4960ee1d1c0e1"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_homing_actB.anm.hkx",
+      "name": "sonic_homing_actB",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "0f6531b0d3e503abbe4aeb579ec8f6745b38cd2b627a671a54d0268bfb5bd6b3"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_homing_actC.anm.hkx",
+      "name": "sonic_homing_actC",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "4c7b79480997e24f79ae76b8bda0376e6377607625a9f0ff423d2b24ce97fbd9"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_homing_actD.anm.hkx",
+      "name": "sonic_homing_actD",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "59470c464c7216a89de2e55699f9abf2c95125a4905062db87cd554577c7bfa3"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_homing_actE.anm.hkx",
+      "name": "sonic_homing_actE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "0a669214c389974e68f672366a784880a2c13c6c93789f2784ed7b55e10962a4"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_homing_actF.anm.hkx",
+      "name": "sonic_homing_actF",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "ac75c9933fc8e3916c595f31834d86d28c49d979f5708c714e9fb85f7ae18c2d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_hurdleL.anm.hkx",
+      "name": "sonic_hurdleL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.483333,
+      "frames": 30,
+      "sha256": "b1f20d9954068c539f0a444248960fba3550ebe5c631ec0a9c7068ef8bdc5d94"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_hurdleR.anm.hkx",
+      "name": "sonic_hurdleR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.483333,
+      "frames": 30,
+      "sha256": "fa8221ab6823ce5c44a672d1d5c50848f66a87a19063e07c9538478e72a61ec6"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_idle.anm.hkx",
+      "name": "sonic_idle",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 4,
+      "frames": 241,
+      "sha256": "8fdbc89d930da643cacf46b1a9f538bd4b5202f51270aeb1e2d3d1d18772431b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_idle_A.anm.hkx",
+      "name": "sonic_idle_A",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 6,
+      "frames": 361,
+      "sha256": "c693434d55617ca0af09849df8160737e7b93fe04c981e7b7b8f505a071926ad"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_idle_B.anm.hkx",
+      "name": "sonic_idle_B",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 7,
+      "frames": 421,
+      "sha256": "c7be6d293669231931757d2fe37c476d55f0257fb7e9a76d112d63ae955ec5e3"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_idle_C.anm.hkx",
+      "name": "sonic_idle_C",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 7.666667,
+      "frames": 461,
+      "sha256": "1394dbc0dd7784ebe9007fc2402460a242535a91d615a2189bf7b2f9c25c95dd"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_idle_D.anm.hkx",
+      "name": "sonic_idle_D",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 4.666667,
+      "frames": 281,
+      "sha256": "f90c26afd48f2c6129dcd7166baed0c38f9869f092d68c3f68938bc1cfe5d07c"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_idle_EA.anm.hkx",
+      "name": "sonic_idle_EA",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.833333,
+      "frames": 111,
+      "sha256": "0ad554173cfb337f1c5ab6887ccc9c04cfcb647662dfe0ac48e4ba5c26cd40fc"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_idle_EB.anm.hkx",
+      "name": "sonic_idle_EB",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.5,
+      "frames": 151,
+      "sha256": "f6aa6ec7100245915dc3805679cabe83960bb3db2e8cdc54480241f55feecd73"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_idle_E_start.anm.hkx",
+      "name": "sonic_idle_E_start",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.833333,
+      "frames": 111,
+      "sha256": "b1d50d5b9de0493ac7a2c0f8d1eb509e0be42ba3ab3aa6ef773713a924156104"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jet.anm.hkx",
+      "name": "sonic_jet",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "37ea8c5b0e9f8bd9c9d87b30c6f9f911e552d014610f96b3e675cf16ff8fb380"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jet_L.anm.hkx",
+      "name": "sonic_jet_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "c7d1488780407a19e4aa1a3f0e8708e7eebfe7d150a9bfd7ebd2f75b87828af7"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jet_R.anm.hkx",
+      "name": "sonic_jet_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "bf8d5eec2431e141e8ce5aff1f60341ea386ac27f3229f34f479d757acbf5237"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jet_wall_L.anm.hkx",
+      "name": "sonic_jet_wall_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "fbddb394bf58d3284d71c1e33983c5fc1fa9a2f89b07076846f25e2211b3de50"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jet_wall_R.anm.hkx",
+      "name": "sonic_jet_wall_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "dafe6d3d4a2a7c8ce9eb7db9544de225b221da031d58a898472201f0086bd050"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jog.anm.hkx",
+      "name": "sonic_jog",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "42d70ea75469a0ab4d2aa8b85ebc8e3e6fc7fa5718a438c0cac1fb648ea7fcf5"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jogL.anm.hkx",
+      "name": "sonic_jogL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "8275f5dd4a230a58c9cff11cc1892f3a3c80cd4d5ac20a20b032c2ef222d1e49"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jogR.anm.hkx",
+      "name": "sonic_jogR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "0b9d95885666346bed62f158766888f8f034fcf91ca60721d930d875bb511092"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_A_start.anm.hkx",
+      "name": "sonic_jump_A_start",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "d6024790d9190508ae411b5da1824da46d23de9738949a1de4f10d6495b4e134"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_A_start_delux.anm.hkx",
+      "name": "sonic_jump_A_start_delux",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "1ed77d624192eb4a9b75691cba66180c9a140b0f0f57824b8aa1703a84c5e404"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_C.anm.hkx",
+      "name": "sonic_jump_C",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "318f77af2c380b5cec349e57555b3e09ef5807031dad6af355964267b9e73d64"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_D_loop.anm.hkx",
+      "name": "sonic_jump_D_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "6c3305f94e2f3ce1c0f791e0d65d11237021db96329d50d0c44865d52a3746c2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_D_loopS.anm.hkx",
+      "name": "sonic_jump_D_loopS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "4109990eb23406516e4725a3dff827101c4eba75813b4a545f9b0a7ad1a6103d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_E.anm.hkx",
+      "name": "sonic_jump_E",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "c97a88a5e5a6d8951a8f74a874efa62244fa2befd7ca3071df7a12662d290ff1"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_E_L.anm.hkx",
+      "name": "sonic_jump_E_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "8a3a254988384efe539b36b988926e62b12dec0af26185e47e405b7d3ba6b3c5"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_U_loop.anm.hkx",
+      "name": "sonic_jump_U_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "42ba16a761796f9ecce7effb877cd6e9ffb610d12376f7f42da3a998185d3cad"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_s.anm.hkx",
+      "name": "sonic_jump_s",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "f7904624d1897d401574307d65a591336a4112d3a8103a4d4ff3511e7539e7d8"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_jump_spring.anm.hkx",
+      "name": "sonic_jump_spring",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "69d19ada5b743e703777447fdaaca1e4e9fc59bd3f0ad63a6212998ff9765f92"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_ladder_up.anm.hkx",
+      "name": "sonic_ladder_up",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.6,
+      "frames": 37,
+      "sha256": "1b700bbac1a5672ccd5ed04432ae7a13cde7a0900e1f62ed67fedc7ce934a8b8"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_landing_A.anm.hkx",
+      "name": "sonic_landing_A",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "74df0b1875b3f81a1e6d11bdbf8f7448a6ee48a29f8357a01b5140b6388aaed0"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_landing_idle.anm.hkx",
+      "name": "sonic_landing_idle",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "a6ed8f3f677cf0418121c5ecb5a9236f1ad19d6452fb2d4c3ada783c9035a998"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_landing_loop.anm.hkx",
+      "name": "sonic_landing_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "b9a915cc344f3d790db2a352d8587c91e7e558c1d57095848e4c2c4383b57603"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_lightdash.anm.hkx",
+      "name": "sonic_lightdash",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "28c51220d4507e3081af7b4e9cc85d308eeb8fdbcecacafe365ad7eeff517bc8"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_mouth_reverse.anm.hkx",
+      "name": "sonic_mouth_reverse",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.066667,
+      "frames": 3,
+      "sha256": "c694dd75072e1475173203f8f96e723c39b05dd7e3b54199f1f74043158500c2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_movestop_L.anm.hkx",
+      "name": "sonic_movestop_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.483333,
+      "frames": 30,
+      "sha256": "8212418763e81318d9e67fa01b671db9de563f764772f0fb25513fc269409378"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_movestop_R.anm.hkx",
+      "name": "sonic_movestop_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.483333,
+      "frames": 30,
+      "sha256": "253bd5b90921d3a92b0b9899d9b6cdd7fda1f23c57b43e408be18c31a298440a"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_polespin_JumpS.anm.hkx",
+      "name": "sonic_polespin_JumpS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.283333,
+      "frames": 18,
+      "sha256": "0a4965aaa7d8b64ba1470b67970c73088b28b880641d39ce681ffa5da4254835"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_polespin_Jumploop.anm.hkx",
+      "name": "sonic_polespin_Jumploop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.25,
+      "frames": 16,
+      "sha256": "15899890e53c13fe8fbe7cc98d04771793103bd55a9599ebaa1dd23f449e8220"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_polespin_S.anm.hkx",
+      "name": "sonic_polespin_S",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "8aeed85a5c08e49d126c0a1351e5aa1df6d44977afdd10a2cf8c4b9f3a417a54"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_polespin_loop.anm.hkx",
+      "name": "sonic_polespin_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.833333,
+      "frames": 51,
+      "sha256": "ff3f3e0a25b610ee70b652549c3fc03204c016833301db1d6bdf601189f2f212"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_pulleyU.anm.hkx",
+      "name": "sonic_pulleyU",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "9ec6ab1ca7ba9e12aab7a42f972f65cf5ad8373fc0323188433a674b57ae6522"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_pulleyUE.anm.hkx",
+      "name": "sonic_pulleyUE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "ec1fead28e0ae25ae71da2bb133de0db958eaabfbb683a3692e014af1072370c"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_pulleyUS.anm.hkx",
+      "name": "sonic_pulleyUS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.1,
+      "frames": 7,
+      "sha256": "897d26a7ac9f3e521f36818747bff67b3d49989e19b984e2941f6d2bd6ebec93"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_pulley_jump.anm.hkx",
+      "name": "sonic_pulley_jump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "6ec9db5169fef2ce4223c5b2613f426f8abd181d02b0448d8485a43194edf6f3"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_pulley_loop.anm.hkx",
+      "name": "sonic_pulley_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "a68434de21261c0966891dc2cc752959288cfed4700696bfe05ab56e7e648f91"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_pulley_start.anm.hkx",
+      "name": "sonic_pulley_start",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "185b51a64685dd30fb1fba3586a630ac6e56d67150f1c376f9f1d7e09f91e7e6"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_quickstep_L.anm.hkx",
+      "name": "sonic_quickstep_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "334a7ce7d5e18c0aab7f42504e4a93e16f01290f987612dab19de3465ebc2b1b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_quickstep_R.anm.hkx",
+      "name": "sonic_quickstep_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.4,
+      "frames": 25,
+      "sha256": "b45068ae49bb155986ea1604836a905b77733afe9b142dbe01155416b3560904"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_reactionplate_L.anm.hkx",
+      "name": "sonic_reactionplate_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "8a79e14c0d3f149ff35046b2adc5078ea84ef9327c7e9125ac778e5d7d7509d2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_reactionplate_R.anm.hkx",
+      "name": "sonic_reactionplate_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "5faa9a1a860b027c019d8fff5cbb83e4e218e0bd6dffe296c0413e39fe972916"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_reactionplate_U.anm.hkx",
+      "name": "sonic_reactionplate_U",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "02b82d1171bce117bc034c842bf228d632710752f3b69fbefecd06bcc75fa502"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_result_look.anm.hkx",
+      "name": "sonic_result_look",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3.333333,
+      "frames": 201,
+      "sha256": "520cb2ddd572246ec560ea19a2048c935ac3f81c5c805c547cd7d497ad9eb366"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_result_reaction_A.anm.hkx",
+      "name": "sonic_result_reaction_A",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3.666667,
+      "frames": 221,
+      "sha256": "c95fe23dc28e6efe48ddd6ce0b4abf9b7523a886fc8568f49032de7a54d8d895"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_result_reaction_B.anm.hkx",
+      "name": "sonic_result_reaction_B",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.833333,
+      "frames": 171,
+      "sha256": "8e9ca838216ab89d24c00cdb7d95791db491b0744aca00845520c8986a00268e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_result_reaction_C.anm.hkx",
+      "name": "sonic_result_reaction_C",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 4,
+      "frames": 241,
+      "sha256": "395286ee69d565a6090813791ca539d831ed3b364cd28a63a77a76d0ac7eeb7e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_result_reaction_D.anm.hkx",
+      "name": "sonic_result_reaction_D",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3.5,
+      "frames": 211,
+      "sha256": "6aff4b62f9a028e1afc0e5d25fde3e89783a9926e4c3cd5ebf16206b247cd12e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_result_reaction_E.anm.hkx",
+      "name": "sonic_result_reaction_E",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 4.666667,
+      "frames": 281,
+      "sha256": "833eaa1ba9b815b4d43cfc517a1c7fd76160091784c987373c63bf9d8a56d626"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_result_reaction_S.anm.hkx",
+      "name": "sonic_result_reaction_S",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 4.833333,
+      "frames": 291,
+      "sha256": "e81c7b39541b29f1de67f99b9b3c286b851568b34f91d8cda989e51353dde540"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_rocket.anm.hkx",
+      "name": "sonic_rocket",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "89336df0ea92f3db303baf1ca92ffc567908008a61caa020d3fc21821ac96b00"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_rocketE.anm.hkx",
+      "name": "sonic_rocketE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "742be0ab84bf0739ccab5f73bc9e64e288b86b48465f37124f24843f16b93cdb"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_rocketS.anm.hkx",
+      "name": "sonic_rocketS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "fd9fce0e949b4dba1c0da49eade426b80ab7f4577084e75cda75b87068770976"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_run.anm.hkx",
+      "name": "sonic_run",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "e7b4d104d13e2480fbbe4404ad44984a676b5183a8c43d9a7ad9f2ca9e4752b4"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_runL.anm.hkx",
+      "name": "sonic_runL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "26a74c0cd154f9856cae29ab52c2f1e97408f822195d7de042d303ab0bfc146e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_runR.anm.hkx",
+      "name": "sonic_runR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "273f070e4789d8acd07e564839052042a2846e741e34ed3e01e2a14d9cd748da"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_run_quickstep_L.anm.hkx",
+      "name": "sonic_run_quickstep_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.133333,
+      "frames": 9,
+      "sha256": "8fd43f6686fbfee27f3066cd7cf496a096d3dca61827d65325f06d7e1c975587"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_run_quickstep_R.anm.hkx",
+      "name": "sonic_run_quickstep_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.133333,
+      "frames": 9,
+      "sha256": "c3f3e86494a0158fca222e44ce491b9ef23bec884fe58238493e9c261df56160"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_select_springjump_E.anm.hkx",
+      "name": "sonic_select_springjump_E",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "34f48770284d741eef643487e6992511f2502c89e1aa82c4373f93994d44c35e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_select_springjump_S.anm.hkx",
+      "name": "sonic_select_springjump_S",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "f23e2723bfd39f20e4cc6d9c6aa5300f8b6950e5f1e1a571d09442f25ddeb0c6"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjumpS_FE.anm.hkx",
+      "name": "sonic_selectjumpS_FE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.633333,
+      "frames": 99,
+      "sha256": "3636142ee1fc06108a0936cd8bc265baf1f5cfc8f7b65037acc0e0c0067701e2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjumpS_FS.anm.hkx",
+      "name": "sonic_selectjumpS_FS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "cd246a3f9dbb8bba074f2de8dfca832209feb91980481edb9187922a9b47ac5d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjumpS_Floop.anm.hkx",
+      "name": "sonic_selectjumpS_Floop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "73f9cfe7d38f10fe4d1690107b5d382b1c996d53fad3a1fb67b6843895ad25d0"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjumpS_UE.anm.hkx",
+      "name": "sonic_selectjumpS_UE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.75,
+      "frames": 46,
+      "sha256": "9841896aeada5ea39c14618f219a26cae3b8209c4fbb5e8eb209616830e8ae12"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjumpS_US.anm.hkx",
+      "name": "sonic_selectjumpS_US",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "3aeb549c4e41287eeec35a91e968b08d5f54353c52233c647ee5d6627f8ea4a2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjumpS_Uloop.anm.hkx",
+      "name": "sonic_selectjumpS_Uloop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "c49304bede40e59e5d6797415414ddd79e618ba854810716fc117bebd18b71c6"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_DS.anm.hkx",
+      "name": "sonic_selectjump_DS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "6e610a78050590230b170361352f45b6478d2bbcc0934bd9b49e82c709a49f66"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_Dloop.anm.hkx",
+      "name": "sonic_selectjump_Dloop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "76dc8c691eca32b1619772610808045aa52a3b244a26c0defd70c3c663b4412d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_FE.anm.hkx",
+      "name": "sonic_selectjump_FE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.166667,
+      "frames": 71,
+      "sha256": "9b679081757d9e7abaf985bacb4b34048898bd8e64e0f82d943ec11e698a5cd3"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_FS.anm.hkx",
+      "name": "sonic_selectjump_FS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "d3515f23cdefdc831ecb0d3729322c91f137ae4a7207a867035b0f5f6601671b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_Floop.anm.hkx",
+      "name": "sonic_selectjump_Floop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "754c9f840e9f40d29f8a4fd2490f773f7afb2766969de4cc02992ad0e6e1a0fb"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_UE.anm.hkx",
+      "name": "sonic_selectjump_UE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.55,
+      "frames": 34,
+      "sha256": "9554d3009bdbc567bc00a34f48a52d756b95dfe86ea7467ca726a4f8c1e3a5b5"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_US.anm.hkx",
+      "name": "sonic_selectjump_US",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "4e8f85b3f94872248679379d28e0219d73f79953efdaba3d362b3677dc88c1d2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_Uloop.anm.hkx",
+      "name": "sonic_selectjump_Uloop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "e9a51f3ecebac515bd1abea56aca5f31b0e4519f9651f8c85ceeed32e335ac1e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_missE.anm.hkx",
+      "name": "sonic_selectjump_missE",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "dc3b4e72948f2a98021a3f83ee692701ab98e28c30c3b1158e0bc6dbb5000f0c"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_missS.anm.hkx",
+      "name": "sonic_selectjump_missS",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "4b5de7bb9a81fb1190265811536e5c45f5741851f798cfae092dc7c61a9a2916"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjump_missloop.anm.hkx",
+      "name": "sonic_selectjump_missloop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "b29a5e809fd470ebdee58e98f93e465fc9c801874bbc3bfaefcd2d94fe46bc8d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjumps_Dloop.anm.hkx",
+      "name": "sonic_selectjumps_Dloop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "293ba110f747223d8599d64ecb498611429e61661bb5e0d6d67bf38a2d2b8271"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_selectjumps_Ds.anm.hkx",
+      "name": "sonic_selectjumps_Ds",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "1a2edbb82311b35ff90de34243792acde32382ac984e3e47803ec82c2da816d1"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_skydiving_D_end.anm.hkx",
+      "name": "sonic_skydiving_D_end",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "06006f807d754247eed05386d6262b1b1820d0acaa9c98a6e5793dbca2c54eaa"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_skydiving_landing_dush.anm.hkx",
+      "name": "sonic_skydiving_landing_dush",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 2.966667,
+      "frames": 179,
+      "sha256": "5b5890de80b38ead5e424ab8f420706d03bc748096a52cb9731da180439f13f8"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_skydiving_loop.anm.hkx",
+      "name": "sonic_skydiving_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "84c649a34ba295b7f7bfca20611f95a56cabe3aa081206a78a5bb282ee395e9b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_skydiving_loop_D.anm.hkx",
+      "name": "sonic_skydiving_loop_D",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "8f6341a85da150330c826dda96796150a6b3c7e76896a3fc5699aaa94d825356"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_skydiving_loop_L.anm.hkx",
+      "name": "sonic_skydiving_loop_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "c4d83d8b23cc6f725fe38d3c951501cbed5d327cb66e0ebd08326edc128d5d36"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_skydiving_loop_R.anm.hkx",
+      "name": "sonic_skydiving_loop_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "d015216f53c398190b596280157610711ee4b0446ec2eb43cd7b531391f715ec"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_skydiving_start.anm.hkx",
+      "name": "sonic_skydiving_start",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "46bc0ae42d1ec8c4c89757a3767aa4e542b7a57c059e4e62d34b6fc76d17e575"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_sliding.anm.hkx",
+      "name": "sonic_sliding",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "5477b372cf3da490dcd90493ef84bc5a60b1580689e82cc50fc75ee32bbde49b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_sliding_E.anm.hkx",
+      "name": "sonic_sliding_E",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "0459e34dc712d12a60ae4db2b149af9e3dc33459db2f3d1e5ed32bbb3f13237a"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_sliding_L.anm.hkx",
+      "name": "sonic_sliding_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "02f08f5dd317cb8ab725fd8293b9166ec4b2982847750ce1df87dc83ecd723d2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_sliding_M.anm.hkx",
+      "name": "sonic_sliding_M",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "41c239c2e76ff93cca535415fd1385b060bc0129b51698463c1f7f021eeb4f0c"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_sliding_R.anm.hkx",
+      "name": "sonic_sliding_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "06d07ed0f63d3ebf91c912eff0785b8aefb36873269437ed9dc182bd6b8b642c"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_springjump_E.anm.hkx",
+      "name": "sonic_springjump_E",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "be55f7dffee2480cbead65723f157ef4dfca70a20d8bb9e50cf9a46c3b969a48"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_squat_jump.anm.hkx",
+      "name": "sonic_squat_jump",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.116667,
+      "frames": 8,
+      "sha256": "7244e3bd09d19335c43830b266abb855a2b21caf08217618684216a1144eb760"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_squat_kick.anm.hkx",
+      "name": "sonic_squat_kick",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.166667,
+      "frames": 71,
+      "sha256": "7a1db8f81cf25a2e9d94b8d4621c98c15d5dcab6c98d781f02e2b93f1596bdd4"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_squat_loop.anm.hkx",
+      "name": "sonic_squat_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.5,
+      "frames": 91,
+      "sha256": "6ba11119586f47052f4f4ad0d4d006da0510a6544d29372462265b6a1f005e58"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_squat_stand.anm.hkx",
+      "name": "sonic_squat_stand",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "dae43e7164286d8b4a908ed23194af6fb63766a4a2642585c21e8c688b41f41d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_stand_squat.anm.hkx",
+      "name": "sonic_stand_squat",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.166667,
+      "frames": 11,
+      "sha256": "a24fa058f61cd23177d2970fd127e2c2bda3d14b7590c096ebe21037bec5e6b2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_standup_B.anm.hkx",
+      "name": "sonic_standup_B",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.916667,
+      "frames": 56,
+      "sha256": "7e2b86f4894422d33885bd34290df6517de2fdee73edccedc85c7f4cafe7cab2"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_standup_F.anm.hkx",
+      "name": "sonic_standup_F",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "3ab0840caf4680ebff65a773f8cd26313a8a71ae9d589685e9703d9ba69fd30f"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_standup_L.anm.hkx",
+      "name": "sonic_standup_L",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.916667,
+      "frames": 56,
+      "sha256": "39a4925af31b4d92410ef22c687e20cfd2daf2d9b6582c04ecc85189462305bc"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_standup_R.anm.hkx",
+      "name": "sonic_standup_R",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.916667,
+      "frames": 56,
+      "sha256": "75df6e9affce3886d2679c6a99c5022a37e8b8699b6a3b3951c83e2ba0ea2094"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_startD.anm.hkx",
+      "name": "sonic_startD",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3.333333,
+      "frames": 201,
+      "sha256": "8664f6db47df0c2b90e591e903fce826e6751bf91fa5bfe7aefff9bcfb5e645b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_startI.anm.hkx",
+      "name": "sonic_startI",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 3.833333,
+      "frames": 231,
+      "sha256": "06a8ac4a2b56925ab32478e23143037745a845575962059bebecbd1ce7b269e8"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_stomping_loop.anm.hkx",
+      "name": "sonic_stomping_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "ce1b0bbb97e18624818303b6be97f725b72be888d44877e08f750764934b6729"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_stomping_squat.anm.hkx",
+      "name": "sonic_stomping_squat",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.833333,
+      "frames": 51,
+      "sha256": "895b1c795808352a8de983c44aa1ec9d4fd80f690fa6b8c9cb757ae114a23e61"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_stumble_runC.anm.hkx",
+      "name": "sonic_stumble_runC",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "ab00cbea0747546df7601f98a680878eb25b63fce506bd49b5042f1cca6d5e24"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_stumble_runL.anm.hkx",
+      "name": "sonic_stumble_runL",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "3f4633c70f5a55407d28d2bd688b2996d084d7fad7bef08f992ccf06e8d96e5b"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_stumble_runR.anm.hkx",
+      "name": "sonic_stumble_runR",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.5,
+      "frames": 31,
+      "sha256": "52c167522863a791a4133665f8504ed121409a87621a242dbf48f09b011395f3"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_trick_A.anm.hkx",
+      "name": "sonic_trick_A",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.166667,
+      "frames": 71,
+      "sha256": "4a8fed7be0b6f038ae86a33387bc975c1aabcd0d97368eef80f2c25ddec0c2c7"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_trick_B.anm.hkx",
+      "name": "sonic_trick_B",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "b07ee41657b81eca06fb87a7fc0dc1aa27f66cce4828b70545e1a2cce089590c"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_trick_C.anm.hkx",
+      "name": "sonic_trick_C",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1,
+      "frames": 61,
+      "sha256": "ab10ba49325416877019cb897fd10ead8be6ffc74ee17aa8643d23c92242b279"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_trick_D.anm.hkx",
+      "name": "sonic_trick_D",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.166667,
+      "frames": 71,
+      "sha256": "f4691582128ffd8b363faf70e85b115a8ec96c33f1e9678e9d6e4578dd51f819"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_trick_E.anm.hkx",
+      "name": "sonic_trick_E",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.166667,
+      "frames": 71,
+      "sha256": "c0809397b0c8ca76a501213dd9790b59f2badc374f08c06655326fd2c63d898e"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_trick_F.anm.hkx",
+      "name": "sonic_trick_F",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "1c81cff7de0f7545aa5e19e81ba9fe47974c12d02123822ef8006ff9d1b7a4ac"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_trick_G.anm.hkx",
+      "name": "sonic_trick_G",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.25,
+      "frames": 76,
+      "sha256": "d6d67c40e87f17c050d4056fa38c95e63529c830e15e03e0c7bbcf6188aa6c23"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_turbo.anm.hkx",
+      "name": "sonic_turbo",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.883333,
+      "frames": 54,
+      "sha256": "906834fa08417437161413f07defa4b92c2b9ae214ca5d0096f3712818780bda"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_walk.anm.hkx",
+      "name": "sonic_walk",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "699f2da0714660edcdb09d94ab93813ed1cac4345d3492080a3f4890af3d4128"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_walkfast.anm.hkx",
+      "name": "sonic_walkfast",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 1.333333,
+      "frames": 81,
+      "sha256": "15a74ed104c4b3cd6e6d9b55083dc5ded93515d1a68f64d4fe8ed24487376a9d"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_wall_jump_loop_A.anm.hkx",
+      "name": "sonic_wall_jump_loop_A",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "4cfb7eb27efa6b0bd8dc40044388b4e54c964e71b881544e1579a7c25564fbfb"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_wall_jump_loop_B.anm.hkx",
+      "name": "sonic_wall_jump_loop_B",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.2,
+      "frames": 13,
+      "sha256": "27d5b13ad7789256b1371121df7d9c6dcd9ca354728019412cab7c05bf67a502"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_wall_jump_loop_C.anm.hkx",
+      "name": "sonic_wall_jump_loop_C",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.666667,
+      "frames": 41,
+      "sha256": "0a6ffa9c89b967c96acdb299255046e042056e35fbe4e33544366b79c22903fd"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_wall_stick_D_loop.anm.hkx",
+      "name": "sonic_wall_stick_D_loop",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.266667,
+      "frames": 17,
+      "sha256": "ad69a0ff9381276c88d67d2035db90a617f6792f938b553828da79fb2a999478"
+    },
+    {
+      "game": "SonicUnleashed",
+      "file": "sonic_wall_stick_S.anm.hkx",
+      "name": "sonic_wall_stick_S",
+      "status": "decoded; inferred candidate profiles, not verified gameplay equivalence",
+      "duration": 0.333333,
+      "frames": 21,
+      "sha256": "07d08dad662a5fd5c9ae59e2909152e4b9251c3c402c621024c6f746e6031d5d"
+    }
+  ]
+}

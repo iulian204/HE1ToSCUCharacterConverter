@@ -4,14 +4,23 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $exportPath = (Resolve-Path -LiteralPath $ExportDirectory).Path
-$sceneFiles = @(Get-ChildItem -LiteralPath $exportPath -File -Filter '*.scn')
-if ($sceneFiles.Count -ne 1) { throw 'Expected exactly one exported .scn scene.' }
+$manifestPath = Join-Path $exportPath 'conversion.json'
+$manifest = if (Test-Path -LiteralPath $manifestPath) { Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json } else { $null }
+if ($manifest.outputScene) {
+    $scenePath = [IO.Path]::GetFullPath((Join-Path $exportPath $manifest.outputScene))
+    if ((Split-Path -Parent $scenePath) -ne $exportPath) { throw 'Invalid scene path in export manifest.' }
+    $sceneFiles = @(Get-Item -LiteralPath $scenePath)
+} else { $sceneFiles = @(Get-ChildItem -LiteralPath $exportPath -File -Filter '*.scn') }
+if ($sceneFiles.Count -ne 1) { throw 'Expected exactly one exported binary scene.' }
 $sceneResource = ConvertTo-Json -InputObject ('res://' + $sceneFiles[0].Name) -Compress
 $verifyPath = Join-Path ([System.IO.Path]::GetTempPath()) ('HE1SCU-relocation-' + [guid]::NewGuid().ToString('N'))
 New-Item -ItemType Directory -Path $verifyPath | Out-Null
-Get-ChildItem -LiteralPath $exportPath -File | Where-Object {$_.Extension -in '.scn','.mesh','.anim'} | ForEach-Object {Copy-Item -LiteralPath $_.FullName -Destination $verifyPath}
+Get-ChildItem -LiteralPath $exportPath -File -Recurse | Where-Object {$_.Extension -in '.scn','.mesh','.anim' -or $_.FullName -eq $sceneFiles[0].FullName} | ForEach-Object {
+    $target = Join-Path $verifyPath ([IO.Path]::GetRelativePath($exportPath,$_.FullName))
+    New-Item -ItemType Directory -Path (Split-Path -Parent $target) -Force | Out-Null
+    Copy-Item -LiteralPath $_.FullName -Destination $target
+}
 $renderer = 'GLES2'
-$manifestPath = Join-Path $exportPath 'conversion.json'
 if (Test-Path -LiteralPath $manifestPath) {
     $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
     if ($manifest.prr.enabled -and $manifest.prr.shaderMaterials -gt 0) { $renderer = 'GLES3' }
