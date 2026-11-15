@@ -46,7 +46,8 @@ def scenes(p):
         nodes.append(node)
         if node.get('type') == 'MeshInstance':
             m = re.search(r'^mesh\s*=\s*SubResource\(\s*(\d+)', block, re.M)
-            meshes.append(dict(node, **(mesh_resources.get(int(m[1]), {}) if m else {})))
+            layers = re.search(r'^layers\s*=\s*(\d+)', block, re.M)
+            meshes.append(dict(node, layers=int(layers[1]) if layers else 1, **(mesh_resources.get(int(m[1]), {}) if m else {})))
         if node.get('type') == 'Skeleton':
             bones = []
             for i, name in re.findall(r'^bones/(\d+)/name\s*=\s*"([^"]*)"', block, re.M):
@@ -74,6 +75,7 @@ for identity, folder in [('Sonic', 'player_Sonic'), ('SuperSonic', 'player_Super
         'sceneStem': pathlib.PurePosixPath(primary['path']).stem, 'sceneResource': primary['path'],
         'rootNodeName': primary['rootNode'], 'skeletonNodeName': skeleton['name'],
         'meshNodeName': mesh['name'], 'meshResourceName': mesh.get('resourceName') or mesh['name'],
+        'meshRenderLayers': mesh['layers'],
         'models': models, 'skeletons': [dict(s, scene=m['path']) for m in models for s in m['skeletons']],
         'primaryBones': skeleton['bones'],
         'animationFiles': [{'path': resource(p), 'diskPath': str(p), 'sha256': digest(p)} for p in files if p.suffix == '.anim']})

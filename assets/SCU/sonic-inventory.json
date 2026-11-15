@@ -58,7 +58,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "homing_sphere",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -109,14 +110,16 @@
               "type": "MeshInstance",
               "parent": "Sonic_UpperEyelid-base",
               "resourceName": "Sonic_UpperEyelid",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Sonic_LowerEyelid_mesh",
               "type": "MeshInstance",
               "parent": "Sonic_LowerEyelid-base",
               "resourceName": "Sonic_LowerEyelid",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -300,91 +303,104 @@
               "type": "MeshInstance",
               "parent": "Skeleton",
               "resourceName": "Sonic_Body",
-              "surfaceCount": 6
+              "surfaceCount": 6,
+              "layers": 3
             },
             {
               "name": "Mouth_open",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile1_L",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile1_R",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile2_L",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile2_R",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_sad_L",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_sad_R",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Sonic_UpperEyelid_mesh",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/blinking_eyelids/Sonic_UpperEyelid",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Sonic_UpperEyelid_mesh",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/expressive_eyelids/Sonic_UpperEyelid-base",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Sonic_LowerEyelid_mesh",
               "type": "MeshInstance",
               "parent": "Skeleton/HeadAttachment/expressive_eyelids/Sonic_LowerEyelid-base",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "bracelet_l",
               "type": "MeshInstance",
               "parent": "Skeleton/hand_l",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "bracelet_r",
               "type": "MeshInstance",
               "parent": "Skeleton/hand_r",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [
@@ -1324,7 +1340,8 @@
               "type": "MeshInstance",
               "parent": "Skeleton",
               "resourceName": "polygon0",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [
@@ -1445,49 +1462,56 @@
               "type": "MeshInstance",
               "parent": "SonicMouthRoot/Mouth_open-base",
               "resourceName": "Mouth_open",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile1_L",
               "type": "MeshInstance",
               "parent": "SonicMouthRoot/Mouth_smile1_L-base",
               "resourceName": "Mouth_smile1_L",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile1_R",
               "type": "MeshInstance",
               "parent": "SonicMouthRoot/Mouth_smile1_R-base",
               "resourceName": "Mouth_smile1_R",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile2_L",
               "type": "MeshInstance",
               "parent": "SonicMouthRoot/Mouth_smile2_L-base",
               "resourceName": "Mouth_smile2_L",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile2_R",
               "type": "MeshInstance",
               "parent": "SonicMouthRoot/Mouth_smile2_R-base",
               "resourceName": "Mouth_smile2_R",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_sad_L",
               "type": "MeshInstance",
               "parent": "SonicMouthRoot/Mouth_sad_L-base",
               "resourceName": "Mouth_sad_L",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_sad_R",
               "type": "MeshInstance",
               "parent": "SonicMouthRoot/Mouth_sad_R-base",
               "resourceName": "Mouth_sad_R",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -1531,14 +1555,16 @@
               "type": "MeshInstance",
               "parent": "eff_sonic_ya_m_spinattack",
               "resourceName": "cap",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "fins",
               "type": "MeshInstance",
               "parent": "eff_sonic_ya_m_spinattack",
               "resourceName": "fins",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -1568,7 +1594,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -1602,7 +1629,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -1666,7 +1694,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -1721,7 +1750,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -1799,7 +1829,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -1861,7 +1892,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -1990,7 +2022,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -2072,7 +2105,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -2154,7 +2188,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -2195,7 +2230,8 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "eff_sonic_yo_boost",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -351765,7 +351801,8 @@
       },
       "nativeSceneFile": "chr_Sonic_SD.tscn.converted.res",
       "nativeScenePath": "res://characters/player_Sonic/chr_Sonic_SD.tscn.converted.res",
-      "sceneRemapText": "[remap]\n\npath=\u0022res://characters/player_Sonic/chr_Sonic_SD.tscn.converted.res\u0022\n"
+      "sceneRemapText": "[remap]\n\npath=\"res://characters/player_Sonic/chr_Sonic_SD.tscn.converted.res\"\n",
+      "meshRenderLayers": 3
     },
     {
       "id": "SuperSonic",
@@ -351837,49 +351874,56 @@
               "type": "MeshInstance",
               "parent": "Root",
               "resourceName": "chr_obj_eme_b_low_SD",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "chr_obj_eme_bg_low_SD",
               "type": "MeshInstance",
               "parent": "Root",
               "resourceName": "chr_obj_eme_bg_low_SD",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "chr_obj_eme_g_low_SD",
               "type": "MeshInstance",
               "parent": "Root",
               "resourceName": "chr_obj_eme_g_low_SD",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "chr_obj_eme_y_low_SD",
               "type": "MeshInstance",
               "parent": "Root",
               "resourceName": "chr_obj_eme_y_low_SD",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "chr_obj_eme_r_low_SD",
               "type": "MeshInstance",
               "parent": "Root",
               "resourceName": "chr_obj_eme_r_low_SD",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "chr_obj_eme_p_low_SD",
               "type": "MeshInstance",
               "parent": "Root",
               "resourceName": "chr_obj_eme_p_low_SD",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "chr_obj_eme_w_low_SD",
               "type": "MeshInstance",
               "parent": "Root",
               "resourceName": "chr_obj_eme_w_low_SD",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -351929,21 +351973,24 @@
               "type": "MeshInstance",
               "parent": ".",
               "resourceName": "homing_sphere",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "cap",
               "type": "MeshInstance",
               "parent": "ss_homing_sphere",
               "resourceName": "cap",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "fins",
               "type": "MeshInstance",
               "parent": "ss_homing_sphere",
               "resourceName": "fins",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [],
@@ -351994,7 +352041,8 @@
               "type": "MeshInstance",
               "parent": "Skeleton",
               "resourceName": "polygon0",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [
@@ -352155,77 +352203,88 @@
               "type": "MeshInstance",
               "parent": "Skeleton",
               "resourceName": "mesh",
-              "surfaceCount": 5
+              "surfaceCount": 5,
+              "layers": 3
             },
             {
               "name": "Mouth_open",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile1_L",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile1_R",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile2_L",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_smile2_R",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_sad_L",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Mouth_sad_R",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/SonicMouthRoot",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "Sonic_UpperEyelid_mesh",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/blinking_eyelids/Sonic_UpperEyelid",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 3
             },
             {
               "name": "Sonic_UpperEyelid_mesh",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/expressive_eyelids/Sonic_UpperEyelid-base",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 3
             },
             {
               "name": "Sonic_LowerEyelid_mesh",
               "type": "MeshInstance",
               "parent": "Skeleton/headAttachment/expressive_eyelids/Sonic_LowerEyelid-base",
               "resourceName": null,
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 3
             }
           ],
           "skeletons": [
@@ -352952,14 +353011,16 @@
               "type": "MeshInstance",
               "parent": "Skeleton",
               "resourceName": "polygon0",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             },
             {
               "name": "polygon1",
               "type": "MeshInstance",
               "parent": "Skeleton",
               "resourceName": "polygon1",
-              "surfaceCount": 1
+              "surfaceCount": 1,
+              "layers": 1
             }
           ],
           "skeletons": [
@@ -427756,7 +427817,8 @@
       },
       "nativeSceneFile": "chr_SuperSonic_SD.tscn.converted.res",
       "nativeScenePath": "res://characters/player_Supersonic/chr_SuperSonic_SD.tscn.converted.res",
-      "sceneRemapText": "[remap]\n\npath=\u0022res://characters/player_Supersonic/chr_SuperSonic_SD.tscn.converted.res\u0022\n"
+      "sceneRemapText": "[remap]\n\npath=\"res://characters/player_Supersonic/chr_SuperSonic_SD.tscn.converted.res\"\n",
+      "meshRenderLayers": 3
     }
   ],
   "files": [

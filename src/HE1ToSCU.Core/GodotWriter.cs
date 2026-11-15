@@ -6,6 +6,8 @@ namespace HE1ToSCU.Core;
 
 public static class GodotWriter
 {
+    // Original SCU Sonic/Super Sonic body meshes participate in both world and character layers.
+    public const uint CharacterRenderLayers = 3;
     private static string F(float f)=>float.IsFinite(f)?(f==0?"0":f.ToString("G9",CultureInfo.InvariantCulture).Replace('E','e')):throw new InvalidDataException("Non-finite Godot resource value.");
     private static string V(Vector3 v)=>$"{F(v.X)}, {F(v.Y)}, {F(v.Z)}";
     private static string Q(Quaternion v)=>$"{F(v.X)}, {F(v.Y)}, {F(v.Z)}, {F(v.W)}";
@@ -43,7 +45,7 @@ public static class GodotWriter
         }
         for (int i=0;i<parts.Length;i++)
         {
-            scene.AppendLine($"\n[node name={Quote(parts[i].Name)} type=\"MeshInstance\" parent={Quote(skeletonNode)}]\nmesh = ExtResource( {i+1} )\nskeleton = NodePath(\"..\")\ncast_shadow = 0\ncast_character_shadow = true");
+            scene.AppendLine($"\n[node name={Quote(parts[i].Name)} type=\"MeshInstance\" parent={Quote(skeletonNode)}]\nmesh = ExtResource( {i+1} )\nskeleton = NodePath(\"..\")\nlayers = {CharacterRenderLayers}\ncast_shadow = 0\ncast_character_shadow = true");
             if(parts[i].Mirrored) scene.AppendLine("visible = false");
         }
         if(clips.Count>0)

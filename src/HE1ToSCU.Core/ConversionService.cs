@@ -151,18 +151,18 @@ public sealed class ConversionService
                 }
                 if(prr!=null) PrrParameterAuditReport.CleanExpected(staging);
                 prr?.RemoveStagedShaders(staging);
-                if(model.ExportIdentity?.SceneRemapText is{} remap)
-                    File.WriteAllText(Path.Combine(staging,ExportNames.SceneText(model)+".remap"),remap);
+                // SCU already supplies its canonical remap. Exporting that absolute path beside
+                // the editable scene redirects Godot away from this folder and breaks opening it.
             }
             else Report(85,"Text resources written. Acorn binary validation skipped because no editor was selected.");
             if (prr == null) Report(90,$"Converted {materials.Count} HE1 materials to textured SpatialMaterials. Custom HE1 lighting is approximated using built-in shading.");
             var result=new ConversionResult(destination,model.AllSurfaces.Count(),model.AllSurfaces.Sum(s=>s.Vertices.Count),model.Bones.Count,clips.Count,binary);
             var manifest=new
             {
-                converter="HE1ToSCU 0.8.0",game=request.Game.ToString(),request.GenerateMouthL,result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
+                converter="HE1ToSCU 0.8.1",game=request.Game.ToString(),request.GenerateMouthL,result,sourceModel=Path.GetFullPath(request.ModelPath),sourceSkeleton=request.SkeletonPath,
                 sourceAnimations=request.AnimationPaths,spatialProfile=new{scale=Spatial.Scale,basis="Y-up preserved"},
                 outputScene=binary?ExportNames.SceneBinary(model):ExportNames.SceneText(model),outputMesh=binary?ExportNames.MeshBinary(model):ExportNames.MeshText(model),
-                meshes=model.MeshParts.Select(p=>new {nodePath=ExportNames.SkeletonNode(model)+"/"+p.Name,textFile=ExportNames.MeshText(model,p.Name),binaryFile=binary?ExportNames.MeshBinary(model,p.Name):null,p.MouthRootBone,p.Mirrored,surfaces=p.Surfaces.Count,vertices=p.Surfaces.Sum(s=>s.Vertices.Count)}),
+                meshes=model.MeshParts.Select(p=>new {nodePath=ExportNames.SkeletonNode(model)+"/"+p.Name,textFile=ExportNames.MeshText(model,p.Name),binaryFile=binary?ExportNames.MeshBinary(model,p.Name):null,p.MouthRootBone,p.Mirrored,layers=GodotWriter.CharacterRenderLayers,surfaces=p.Surfaces.Count,vertices=p.Surfaces.Sum(s=>s.Vertices.Count)}),
                 animations=clips.Select(c=>new{name=c.Name,targetName=ExportNames.AnimationName(c),textFile=ExportNames.AnimationText(c),binaryFile=binary?ExportNames.AnimationBinary(c):null,rootMotionSamples=c.RootMotion?.Samples.Count??0,sourceFrames=sourceClips.Single(s=>s.Name==c.Name).Frames.Length,exportFrames=c.Frames.Length,c.BakedReference}),
                 sonicNaming=new{enabled=request.MatchSonicAssetNames,profile=naming?.Profile,inventoryVersion=naming?.InventoryVersion,sourceModel=model.Name,targetModel=model.ExportIdentity,
                     matches=naming?.Matches,unfilled=naming?.Unfilled,unusedSources=naming?.UnusedSources,warnings=naming?.Warnings,rigPolicy=naming?.RigPolicy,
@@ -309,7 +309,7 @@ internal static class AcornResourceCompiler
                 var mesh_instance = skeleton.get_node(entry[0])
                 var mesh = mesh_instance.mesh
                 var standalone_mesh = load(entry[1])
-                if mesh == null or mesh.get_surface_count() != entry[2] or mesh_instance.get_node(mesh_instance.skeleton) != skeleton or mesh_instance.visible != entry[3]:
+                if mesh == null or mesh.get_surface_count() != entry[2] or mesh_instance.get_node(mesh_instance.skeleton) != skeleton or mesh_instance.visible != entry[3] or mesh_instance.layers != {{GodotWriter.CharacterRenderLayers}}:
                     fail("binary mesh/skeleton binding " + entry[0])
                     return
                 if standalone_mesh == null or standalone_mesh.get_surface_count() != entry[2]:
@@ -337,6 +337,19 @@ internal static class AcornResourceCompiler
                 if not checked_poses:
                     return
             instance.free()
+            # Exercise the public editable entry point too, not only the native resource.
+            # An absolute .tscn.remap can otherwise silently redirect it to a missing file.
+            var text_scene = ResourceLoader.load({{ExportNames.Literal("res://" + ExportNames.SceneText(model))}}, "PackedScene", true)
+            if text_scene == null:
+                fail("editable scene entry point")
+                return
+            var text_instance = text_scene.instance()
+            for part in {{MeshChecks(model)}}:
+                var mesh_instance = text_instance.get_node({{ExportNames.Literal(ExportNames.SkeletonNode(model))}}).get_node(part[0])
+                if mesh_instance.layers != {{GodotWriter.CharacterRenderLayers}}:
+                    fail("editable scene character render layers")
+                    return
+            text_instance.free()
             save_prr_readbacks()
             print("HE1SCU_BINARY_VALIDATED bones={{model.Bones.Count}} meshes={{model.MeshParts.Count()}} surfaces={{model.AllSurfaces.Count()}} animations={{clips.Count}}")
             quit()
@@ -374,7 +387,7 @@ internal static class AcornResourceCompiler
             for entry in {{MeshChecks(model)}}:
                 var mesh_instance = skeleton.get_node(entry[0])
                 var mesh = mesh_instance.mesh
-                if mesh == null or mesh.get_surface_count() != entry[2] or mesh_instance.get_node(mesh_instance.skeleton) != skeleton or mesh_instance.visible != entry[3]:
+                if mesh == null or mesh.get_surface_count() != entry[2] or mesh_instance.get_node(mesh_instance.skeleton) != skeleton or mesh_instance.visible != entry[3] or mesh_instance.layers != {{GodotWriter.CharacterRenderLayers}}:
                     fail("mesh/skeleton binding " + entry[0])
                     return
                 for surface in range(mesh.get_surface_count()):

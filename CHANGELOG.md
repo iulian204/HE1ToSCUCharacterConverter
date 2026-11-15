@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.8.1
+
+- Fix named scenes failing to open when exported outside SCU's original project directory; editable exports no longer carry a fixed-path remap.
+- Restore SCU character render layers on exported meshes, including standard naming and separated mouths.
+- Validate editable scene entry points and add real-asset relocation and character-camera rendering regression checks.
+
 ## 0.8.0
 
 - Added optional automatic Sonic and Super Sonic resource naming with a bundled offline asset inventory.

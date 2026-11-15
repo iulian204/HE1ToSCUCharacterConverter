@@ -47,7 +47,7 @@ func _init():
         if not (child is MeshInstance):
             continue
         var mesh = child.mesh
-        if mesh == null or child.get_node(child.skeleton) != skeleton:
+        if mesh == null or child.get_node(child.skeleton) != skeleton or child.layers != 3:
             printerr("RELOCATION_FAILED mesh/skeleton")
             quit()
             return

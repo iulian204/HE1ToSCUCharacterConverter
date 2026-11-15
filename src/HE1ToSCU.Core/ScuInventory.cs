@@ -57,6 +57,7 @@ public sealed class ScuProfile
     public string SkeletonNodeName {get;set;}="";
     public string MeshNodeName {get;set;}="";
     public string MeshResourceName {get;set;}="";
+    public uint MeshRenderLayers {get;set;}=GodotWriter.CharacterRenderLayers;
     public string? NativeSceneFile {get;set;}
     public string? NativeScenePath {get;set;}
     public string? SceneRemapText {get;set;}
